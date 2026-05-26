@@ -1,0 +1,23 @@
+//css variables (no sass variables)
+@use 'scss/variables';
+
+//global styles
+@use 'scss/global';
+@use 'scss/components/scrolls';
+@use 'scss/components/breadcrumb';
+
+//layout
+@use 'scss/layout/header';
+@use 'scss/layout/footer';
+
+//custom components
+@use 'scss/components/login';
+@use 'scss/components/toast';
+@use 'scss/components/dialog';
+@use 'scss/components/accordions';
+@use 'scss/components/inner-cards';
+@use 'scss/components/buttons';
+@use 'scss/components/forms';
+@use 'scss/components/table';
+@use 'scss/components/tabs';
+@use 'scss/components/tooltip';

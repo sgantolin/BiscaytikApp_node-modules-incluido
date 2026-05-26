@@ -1,0 +1,210 @@
+html,
+body {
+    color: var(--text-custom-color);
+    background-color: var(--home-bg-section-soft-grey-color);
+    height: 100%;
+
+    &.home-page {
+        main {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            background-color: var(--home-bg-section-soft-grey-color);
+        }
+    }
+}
+
+body,
+.p-component,
+.p-inputtext {
+    font-family: var(--font-family);
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Titles*/
+.section-title {
+    font-size: 1.5rem;
+    margin-top: .25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    margin-bottom: 2rem;
+}
+
+.results-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.title-card-data {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.form-section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*END Titles*/
+
+
+p {
+    font-size: 0.938rem;
+}
+
+main {
+    .p-card {
+        border-radius: 8px;
+        box-shadow: 0px 2px 4px var(--box-shadow-color);
+        border: 1px solid var(--soft-grey-color);
+    }
+}
+
+.results-container {
+    .p-card-content {
+        padding: 0px;
+    }
+}
+
+.card-simple-container {
+    .p-card-content {
+        padding: 0px;
+    }
+}
+
+.search-icon {
+    color: var(--primary-color);
+}
+
+.label-darker {
+    color: var(--text-secondary-color);
+}
+
+.acciones-tabla-menu {
+    width: fit-content;
+}
+
+
+//TODO borrar COMENTARIO - estilos para la home (estan aqui porque no se habia pensado, asi que los haremos globales)
+.home-page {
+    .section-title {
+        color: var(--primary-color);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        max-width: 880px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .secondary-section {
+        background-color: var(--home-bg-second-section-soft-grey-color);
+    }
+
+    @media only screen and (min-width: 768px) {
+        section.container.py-4.py-md-5 {
+            padding-top: 5rem !important;
+            padding-bottom: 5rem !important;
+        }
+
+        main{
+            margin-bottom: 48px;
+        }
+    }
+
+}
+
+.home-card {
+    height: 100%;
+    box-shadow: none;
+    border: 1px solid var(--dialog-border-color);
+    cursor: pointer;
+
+    .p-card-body {
+        padding: 40px;
+        padding-bottom: 20px;
+        height: 100%;
+
+        .p-card-content {
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .card-title {
+                font-size: 22px;
+                line-height: 26px;
+                font-weight: 700;
+                min-height: 52px;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                min-height: 83px;
+            }
+
+            i {
+                font-size: 30px;
+                color: var(--home-card-icon-color);
+                margin-left: auto;
+                margin-top: auto;
+                margin-right: -20px;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+//tags
+.p-tag {
+    min-width: 45px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 3px 10px;
+
+    &.p-tag-success {
+        background-color: var(--tag-success-bg-color);
+        color: var(--text-custom-color);
+        border: 1px solid var(--tag-success-border-color);
+    }
+
+    &.p-tag-danger {
+        background-color: var(--tag-danger-bg-color);
+        color: var(--text-custom-color);
+        border: 1px solid var(--tag-danger-border-color);
+    }
+}
+
+
+//estilos especificos para la pagina de elementos de aplicaciones
+.crear-elemento-container {
+    background-color: var(--soft-grey-color);
+    padding: 2rem 1.25rem;
+
+    h2 {
+        margin: 0px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,155 @@
+.p-datatable {
+    //export buttons
+    .p-datatable-header{
+        padding-top: .2rem;
+        .p-button {
+            margin-bottom: .25rem;
+            padding: 0.55rem 1.5rem;
+            .p-button-label{
+                line-height: 22px;
+            }
+        }
+    }
+    //action buttons
+    .p-datatable-table{
+        .p-button{
+            padding: 0.55rem 1.5rem;
+            padding: 0.4rem .7rem 0.4rem .7rem;
+            font-size: 13px;
+            line-height: 19px;
+            &.btn-table-icon{
+                padding: 0.3rem .5rem 0.3rem 0.5rem;
+                width: inherit;
+                border: none;
+                background-color: transparent;
+                color: var(--table-icon-color);
+                .p-button-icon{
+                    font-size: 1rem;
+                }
+                &:hover,
+                &:focus{
+                    //background-color: var(--custom-white);
+                    color: var(--primary-color);
+                    border: 1px solid var(--active-color);
+                    border: none;
+                }
+            }
+            &.p-crear-btn{
+                color: var(--table-icon-color);
+                border: 1px solid;
+                &:hover,
+                &:focus{
+                    background-color: var(--custom-white);
+                    color: var(--primary-color);
+
+                }
+            }
+        }
+        .p-disabled{
+            opacity: .3;
+        }
+    }
+
+    //sortable icons
+    .p-sortable-column{
+        &[aria-sort="none"]{
+            .p-column-header-content{
+                &:after{
+                    content: "";
+                    background-image: url('/src/assets/icons/table-sortable-icon.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 17px;
+                    margin-left: .75rem;
+                    filter: invert(1);
+                }
+                .p-sortable-column-icon{
+                    display: none;
+                }
+            }
+        }
+        &[aria-sort="ascending"]{
+            .p-column-header-content{
+                &:after{
+                    content: "";
+                    background-image: url('/src/assets/icons/table-sortable-up.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 7px;
+                    margin-left: .75rem;
+                    filter: invert(1);
+                }
+                .p-sortable-column-icon{
+                    display: none;
+                }
+            }
+        }
+        &[aria-sort="descending"]{
+            .p-column-header-content{
+                &:after{
+                    content: "";
+                    background-image: url('/src/assets/icons/table-sortable-down.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 7px;
+                    margin-left: .75rem;
+                    filter: invert(1);
+                }
+                .p-sortable-column-icon{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+//clases para centrar el contenido de las celdas y encabezados de las tablas
+th.centered-header .p-column-header-content{
+    justify-content: center;
+}
+.p-datatable .p-datatable-tbody > tr > td{
+    &.centered-cell{
+        text-align: center;
+    }
+    &.right-cell{
+        text-align: right;
+    }
+}
+
+
+//span filas por pagina
+.filasPag{
+    font-size: 14px;
+    color: var(--text-custom-color);
+    margin-right: .5rem;
+    display: none;
+    &:first-child{
+        display: block;
+    }
+}
+
+
+
+//disabled de las tablas
+.p-datatable-disabled{
+    pointer-events: auto;
+    .p-datatable-tbody{
+        pointer-events: none;
+    }
+    
+    .p-checkbox {
+        pointer-events: none;
+        .p-checkbox-box{
+            opacity: .5;
+            background-color: var(--disabled-bg-color);
+            &.p-highlight{
+                opacity: 1;
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}

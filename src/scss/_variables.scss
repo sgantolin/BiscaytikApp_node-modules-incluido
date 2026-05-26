@@ -1,0 +1,63 @@
+:root {
+    //default font
+    --font-family: 'Roboto';
+    //icon font
+    --fontawesome-pro: 'Font Awesome 5 Pro';
+
+    //default colors
+    --custom-white: #FFFFFF;
+    --primary-color:#B11016;
+    --active-color: #8E0D12;
+    --hover-color: #F7E7E8;
+    --error-input-border: #E09FA2;
+    --error-input-bg: #F7E7E8;
+    --focus-input-border: #474448;
+
+    --soft-grey-color: #F0F0F0;
+    --dark-grey-color: #474448;
+    --home-bg-section-soft-grey-color: #F9F9F9;
+    --home-bg-second-section-soft-grey-color: var(--soft-grey-color);
+
+    --box-shadow-color: #00000029;
+
+    --dialog-close-icon-color: #5E5D5E;
+    --dialog-advise-color: #D73619;
+    --dialog-advide-bg-color: #ffebe2;
+    --dialog-success-color: #33AA44;
+    --dialog-info-bg-color: #1665D81A;
+    --dialog-info-border-color: #1665D8;
+
+    --tag-success-bg-color: #E9F8E9;
+    --tag-success-border-color: #33AA44;
+    --tag-danger-bg-color: #F0F0F0;
+    --tag-danger-border-color: #767476;
+
+    --home-card-icon-color: #13689C;
+
+    --disabled-bg-color: #F0F0F0;
+    --disabled-text-color: #767476;
+    --disabled-label-color: #D1D1D1;
+    --dialog-border-color: #D1D1D1;
+    --dialog-footer-bg-color: #F9F9F9;
+
+    --table-icon-color: #5E5D5E;
+
+    --login-password-border-color: #ededed;
+    --login-show-password-btn-colo: #808080;
+
+    //scroll bg color
+    --scroll-bg-color: #969696;
+
+    //form dropdown search color
+    --dropdown-search-border-color: #A8A8A8;
+
+    //text default color
+    --text-custom-color: #212121;
+    --text-secondary-color: #5E5D5E;
+
+    //btn crear colors (opcion en desuso)
+    --crear-btn-color: #1F97E8;
+    --crear-btn-hover-color: #13689C;
+
+    
+}

@@ -1,0 +1,43 @@
+.p-toast{
+    max-width: 1296px;
+    margin-top: 60px;
+    @media (max-width: 1340px){
+        max-width: calc(100vw - 32px);
+    }
+    &.login-toast{
+        margin-top: 50px;
+    }
+    &.inner-toast{
+        margin-top: 55px;
+    }
+}
+
+.p-toast-message-error{
+    .p-toast-message-icon{
+        display: none;
+    }
+    .p-toast-message-content{
+        &:before{
+            font-family: var(--fontawesome-pro);
+            content: "\f071";
+            color: var(--dialog-advise-color);
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+}
+
+.p-toast-message-success{
+    .p-toast-message-icon{
+        display: none;
+    }
+    .p-toast-message-content{
+        &:before{
+            font-family: var(--fontawesome-pro);
+            content: "\f058";
+            color: var(--dialog-success-color);
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+}

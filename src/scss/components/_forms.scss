@@ -1,0 +1,264 @@
+label {
+    font-size: 0.813rem;
+    color: var(--disabled-text-color);
+    font-weight: 700;
+    margin-bottom: .2rem;
+}
+
+//button focus
+.p-button-primary:focus {
+    background-color: var(--active-color);
+    border-color: var(--active-color);
+}
+
+.p-button-outlined:focus {
+    background-color: var(--hover-color);
+    border-color: var(--active-color);
+    color: var(--active-color);
+}
+
+//disabled
+.p-autocomplete,
+.p-inputtext,
+.p-dropdown,
+.p-calendar,
+.p-multiselect,
+.p-treeselect {
+    &.p-disabled {
+        background-color: var(--disabled-bg-color);
+
+        +label {
+            color: var(--disabled-label-color);
+        }
+    }
+}
+
+label {
+    &.p-disabled {
+        color: var(--disabled-label-color);
+        opacity: 1;
+    }
+}
+
+//autocomplete dropdown
+.p-autocomplete-dd {
+    .p-button {
+        width: 35.5px;
+        padding: 0.53rem 0;
+        border-radius: 0px 4px 4px 0px;
+        width: 25px;
+        height: 25px;
+        top: 7.5px;
+        right: 10px;
+        position: absolute;
+        border-radius: 2px;
+        background-color: #5E5D5E;
+        border-color: #5E5D5E;
+
+        .p-icon {
+            width: .75rem;
+            height: .75rem;
+        }
+
+        &.p-disabled {
+            border: 1px solid var(--dropdown-search-border-color);
+            border-left: none;
+        }
+    }
+
+    .p-autocomplete-input,
+    .p-autocomplete-multiple-container {
+        border-radius: 4px;
+    }
+}
+
+//autocomplete second version smaller
+.p-autocomplete-dd {
+    .p-button {
+        width: 35.5px;
+        padding: 0rem 0;
+        border-radius: 0px 4px 4px 0px;
+        width: 25px;
+        height: 25px;
+        top: 8px;
+        right: 10px;
+        position: absolute;
+        border-radius: 2px;
+        background-color: var(--text-secondary-color);
+        border-color: var(--text-secondary-color);
+
+        .p-icon {
+            width: .75rem;
+            height: .75rem;
+        }
+    }
+}
+
+//invalid
+.errorMsg {
+    margin: 0px;
+    display: none;
+}
+
+.p-autocomplete,
+.p-inputtext,
+.p-dropdown,
+.p-calendar,
+.p-multiselect,
+.p-treeselect {
+    .p-inputtext {
+        width: 100%;
+    }
+
+    &.p-invalid {
+        color: var(--primary-color);
+
+        .p-inputtext {
+            color: var(--primary-color);
+        }
+
+        +label {
+            // color: var(--primary-color);
+        }
+
+        ~.errorMsg {
+            display: block;
+            color: var(--primary-color);
+            margin-top: 3px;
+            margin-left: 4px;
+            font-size: 13px;
+        }
+    }
+}
+
+
+
+//radio buttons
+.p-radiobutton {
+    align-items: center;
+
+    &.p-radiobutton-checked {
+        .p-radiobutton-box {
+            border: 1px solid var(--disabled-text-color);
+            background-color: var(--custom-white);
+
+            .p-radiobutton-icon {
+                background-color: var(--primary-color);
+                width: 10px;
+                height: 10px;
+            }
+
+            &.p-highlight {
+                &:hover {
+                    background-color: var(--custom-white);
+
+                    .p-radiobutton-icon {
+                        background-color: var(--primary-color);
+                        visibility: visible;
+                        transform: none;
+                        width: 10px;
+                        height: 10px;
+                        transition: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.p-radiobutton-focused {
+        .p-radiobutton-box {
+            position: relative;
+            background: var(--custom-white);
+
+            &.p-focus {
+                border-color: var(--disabled-text-color);
+
+                .p-radiobutton-icon {
+                    background-color: var(--primary-color);
+                    visibility: visible;
+                    transform: none;
+                    width: 10px;
+                    height: 10px;
+                    transition: none;
+                }
+            }
+        }
+    }
+
+    +label {
+        cursor: pointer;
+        margin-bottom: 0px;
+        font-weight: 400;
+    }
+
+    &.p-radiobutton-disabled {
+        +label {
+            opacity: .6;
+        }
+
+        .p-radiobutton-box {
+            background-color: var(--disabled-bg-color);
+            ;
+
+            .p-radiobutton-icon {
+                background-color: var(--dark-grey-color);
+            }
+
+        }
+    }
+}
+
+//form dropdown
+form {
+    .p-dropdown {
+        border: 1px solid var(--dropdown-search-border-color);
+    }
+}
+
+
+//calendar
+//input
+.p-calendar {
+    position: relative;
+
+    .p-inputtext {
+        padding-right: 3rem;
+        border-radius: 4px;
+    }
+
+    .p-button.p-button-icon-only {
+        width: inherit;
+        padding: 3px 10px;
+        position: absolute;
+        height: 100%;
+        background-color: transparent;
+        color: var(--disabled-text-color);
+        border: none;
+        right: 0px;
+    }
+}
+
+
+//checkbox dentro de los forms
+.form-checkbox {
+    .p-checkbox .p-checkbox-box {
+        border-color: var(--dropdown-search-border-color);
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: var(--focus-input-border);
+        }
+
+        &.p-highlight {
+            border-color: var(--primary-color);
+        }
+    }
+
+    label {
+        color: var(--text-custom-color);
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}

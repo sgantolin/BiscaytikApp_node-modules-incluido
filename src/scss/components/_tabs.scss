@@ -1,0 +1,45 @@
+@media (max-width: 992px){
+    .p-tabview-nav-container{
+        .p-tabview-nav-content{
+            .p-tabview-nav{
+                li{
+                    .p-tabview-nav-link{
+                        min-width: 160px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .p-tabview-nav-container{
+        .p-tabview-nav-content{
+            .p-tabview-nav{
+                li{
+                    .p-tabview-nav-link{
+                        min-width: 110px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 555px){
+    .p-tabview-nav-container{
+        .p-tabview-nav-content{
+            overflow-x: auto;
+            .p-tabview-nav{
+                li{
+                    .p-tabview-nav-link{
+                        min-width: 100px;
+
+                    }
+                }
+            }
+        }
+    }
+}

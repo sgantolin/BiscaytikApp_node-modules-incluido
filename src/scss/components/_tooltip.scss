@@ -1,0 +1,11 @@
+.p-tooltip{
+    .p-tooltip-arrow{
+        border-bottom-color: var(--dark-grey-color);
+    }
+    .p-tooltip-text{
+        font-size: 13px;
+        padding: .2rem .65rem;
+        font-weight: 400;
+        background-color: var(--dark-grey-color);
+    }
+}
