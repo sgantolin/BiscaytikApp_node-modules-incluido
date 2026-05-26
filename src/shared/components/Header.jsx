@@ -25,15 +25,15 @@ function Header() {
     //   url: "/inicio",
     // },
     {
-      label: "Tablas Maestras",
+      label: "Layouts",
       // icon: "fa-regular fa-pen-to-square",
       items: [
         {
-          label: "Catálogo de aplicaciones",
+          label: "Listado",
           url: "/catalogo-aplicaciones",
         },
         {
-          label: "Catálogo de entidades",
+          label: "Detalle",
           url: "/catalogo-entidades",
         },
         {
@@ -43,7 +43,7 @@ function Header() {
       ],
     },
     {
-      label: "Permisos, grupos y perfiles",
+      label: "Temas",
       // icon: "fa-light fa-rectangle-list",
       items: [
         {
@@ -78,7 +78,7 @@ function Header() {
       ],
     },
     {
-      label: "Usuarios",
+      label: "Design System",
       // icon: "fa-light fa-users",
       items: [
         {
@@ -163,7 +163,7 @@ function Header() {
 
   return (
     <>
-      <header>
+      <header className="fixed-top">
         <Menubar model={items} start={logo} end={end} activeitem={window.location.pathname}/>
       </header>
     </>
