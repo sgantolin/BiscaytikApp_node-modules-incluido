@@ -1,14 +1,24 @@
-:root {
+/*resolver tema variable fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/*end resolver tema variable fuentes*/
+:root {
+    //default font
+    --font-family: 'Poppins', sans-serif;
     //icon font
-    --fontawesome-pro: 'Font Awesome 5 Pro';
 
     //default colors
     --custom-white: #FFFFFF;
+    --primary-color: #2196F3;
+    --active-color: #171718;
+    --hover-color: #171718;
+    --error-input-border: #E09FA2;
+    --error-input-bg: #F7E7E8;
     --focus-input-border: #474448;
 
     --soft-grey-color: #F0F0F0;
     --dark-grey-color: #474448;
+    --home-bg-section-soft-grey-color: #F9F9F9;
     --home-bg-second-section-soft-grey-color: var(--soft-grey-color);
 
     --box-shadow-color: #00000029;
@@ -52,5 +62,5 @@
     --crear-btn-color: #1F97E8;
     --crear-btn-hover-color: #13689C;
 
-    
+
 }
