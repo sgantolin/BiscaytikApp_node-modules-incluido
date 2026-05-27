@@ -6,7 +6,7 @@ import { Button } from "primereact/button";
 import { Dropdown } from 'primereact/dropdown';
 import { Menu } from 'primereact/menu';
 
-import logoBiscaytik from "../../assets/images/biscaytik-logo.svg";
+import logoHERRIZ from "../../assets/themes/default/logo.png";
 
 function Header() {
 
@@ -132,7 +132,7 @@ function Header() {
   const logo = 
     <div className="logo">
       <Link to="/inicio">
-        <img src={logoBiscaytik} alt="Biscaytik logo" />
+        <img src={logoHERRIZ} alt="Biscaytik logo" />
       </Link>
     </div>
   ;
@@ -141,22 +141,6 @@ function Header() {
     <div className="header-right d-flex align-items-center">
         <Dropdown value={selectedLanguage} onChange={(e) => setSelectedLanguage(e.value)} options={languages} optionLabel="name" 
                     defaultValue={languages[0]} className="ms-2" />
-        <div className="user-login">
-            <Menu model={menuLoginItems} popup ref={menuLogin}>
-              {menuLoginItems.map((item, index) => (
-                <Link key={index} to={item.url}>
-                  {item.label}
-                </Link>
-              ))}
-            </Menu>
-            <div className="d-flex user-login-button-block">
-                <Button rounded icon="fa-regular fa-circle-user" onClick={(e) => menuLogin.current.toggle(e)} />
-                <p onClick={(e) => menuLogin.current.toggle(e)}>
-                  <span>Amaia Ruiz Costa</span>
-                </p>
-            </div>
-            
-        </div>
     </div>
     ;
 
@@ -164,7 +148,9 @@ function Header() {
   return (
     <>
       <header className="fixed-top">
-        <Menubar model={items} start={logo} end={end} activeitem={window.location.pathname}/>
+        <div className="container">
+          <Menubar model={items} start={logo} end={end} activeitem={window.location.pathname}/>
+        </div>
       </header>
     </>
   );

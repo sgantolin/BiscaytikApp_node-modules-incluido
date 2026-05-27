@@ -5249,7 +5249,7 @@ ul.p-tree-container li.p-treenode ul.p-treenode-children li.p-treenode ul.p-tree
   margin: 0.25rem 0;
 }
 
-.p-menubar {
+header.fixed-top {
   padding: 0px 15px;
   background: #FFFFFF;
   color: #495057;

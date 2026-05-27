@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoBiscaytik from "../../assets/images/biscaytik-logo-small.svg";
+import logoHERRIZ from "../../assets/images/biscaytik-logo-small.svg";
 
 function Footer() {
 
@@ -9,7 +9,7 @@ function Footer() {
         <div className="container">
           <div className="row d-flex">
             <div className="first-block col-lg-3 order-5 order-lg-0 mt-4 mt-lg-0 text-center text-lg-start">
-              <img src={logoBiscaytik} alt="Biscaytik" className="logo-biscaytik" />
+              <img src={logoHERRIZ} alt="Biscaytik" className="logo-biscaytik" />
               <p className="mt-2 mt-md-0 order-1 order-md-0">
                 ©2023 Biscaytik. <span>Todos los derechos reservados</span>
               </p>
