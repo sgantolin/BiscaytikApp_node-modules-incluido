@@ -43,7 +43,7 @@
     font-size: 14px;
     line-height: 19px;
    }
-   & > .p-submenu-icon {
+   .p-menuitem-icon, & > .p-submenu-icon {
     color: var(--link-color-light);
    }
   }

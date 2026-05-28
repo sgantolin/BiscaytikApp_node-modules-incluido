@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import 'bootstrap/dist/css/bootstrap-utilities.min.css';
 
 import "primereact/resources/primereact.min.css";
-import "./themePrimeReact/theme.css";
+/*import "./themePrimeReact/theme.css";*/
 
 import './index.scss';
 

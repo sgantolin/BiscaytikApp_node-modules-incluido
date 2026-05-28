@@ -26,6 +26,7 @@ function Header() {
   // },
   {
    label: "Layouts",
+   className: "BKTT-Link",
    // icon: "fa-regular fa-pen-to-square",
    items: [
     {
@@ -44,6 +45,7 @@ function Header() {
   },
   {
    label: "Temas",
+   className: "BKTT-Link",
    // icon: "fa-light fa-rectangle-list",
    items: [
     {
@@ -79,27 +81,33 @@ function Header() {
   },
   {
    label: "Design System",
-   // icon: "fa-light fa-users",
+   className: "BKTT-Link",
+   icon: "fa-light fa-newspaper",//habrá que defiir una variable o configuración de sharepoint
    items: [
     {
      label: "Gestión de usuarios",
      url: "/gestion-de-usuarios",
+     icon: "fa-light fa-user",
     },
     {
      label: "Asignación de permisos",
      url: "/asignacion-de-permisos",
+     icon: "fa-light fa-key",
     },
     {
      label: "Usuarios administradores",
      url: "/usuarios-administradores",
+     icon: "fa-light fa-user-shield",
     },
     {
      label: "Listados",
      url: "/listados",
+     icon: "fa-light fa-list",
     },
 
     {
      label: "Acciones masivas",
+     icon: "fa-light fa-rectangle-list",
      items: [
       {
        label: "Baja masiva de usuarios",
@@ -143,6 +151,7 @@ function Header() {
  );
  const end =
   <div className="header-right d-flex align-items-center">
+   <span class="p-menuitem-icon fa-light fa-globe"></span>
    <Dropdown value={selectedLanguage} onChange={(e) => setSelectedLanguage(e.value)} options={languages} optionLabel="name"
     defaultValue={languages[0]} className="ms-2" />
   </div>
