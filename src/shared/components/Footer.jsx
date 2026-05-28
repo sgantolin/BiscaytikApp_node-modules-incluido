@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <>
-      <footer className="container-fluid main-footer">
+      <footer className="BKTT-footer container-fluid main-footer">
         <div className="container">
           <div className="row d-flex">
             <div className="first-block col-lg-3 order-5 order-lg-0 mt-4 mt-lg-0 text-center text-lg-start">

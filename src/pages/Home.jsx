@@ -213,7 +213,7 @@ function Home() {
       {loading ? (
         ""
         ) : (
-          <Dialog visible={visible} onHide={onHide} className='system-dialog' footer={footerContent}>
+          <Dialog visible={visible} onHide={onHide} className='BKTT-ModalAlert system-dialog' footer={footerContent}>
             <div className="dialog-advise d-flex align-items-center mb-4">
               <i className="fa-regular fa-circle-info me-3"></i>
               Aviso a los usuarios del sistema
