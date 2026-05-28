@@ -1,6 +1,3 @@
-//css variables (no sass variables)
-@use 'scss/variables';
-
 //global styles
 @use 'scss/global';
 @use 'scss/components/scrolls';
@@ -23,3 +20,5 @@
 
 //custom theme HERRIZ
 @use 'scss/themes/default';
+//css variables (no sass variables)
+@use 'scss/variables';
