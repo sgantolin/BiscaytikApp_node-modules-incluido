@@ -1,3 +1,4 @@
+@use './../variables';
 .system-dialog{
     max-width: 768px;
     box-shadow: 0px 0px 16px var(--box-shadow-color);
@@ -115,6 +116,11 @@
         }
     }
 }
+
 .p-component-overlay {
-    background-color: var(--dialog-overlay-bg-color);
+    background-color: rgb(var(--dialog-overlay-bg-color)) / 0.9;
+    backdrop-filter: blur(25px);
+    .BKTT-ModalAlert.p-dialog-default {
+        background-color: var(--theme-white);
+    }
 }

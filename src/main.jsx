@@ -4,12 +4,8 @@ import App from './App.jsx';
 
 import '@fortawesome/fontawesome-pro/css/all.css';
 
-import 'bootstrap/dist/css/bootstrap-reboot.min.css';
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
-import 'bootstrap/dist/css/bootstrap-utilities.min.css';
-
-import "primereact/resources/primereact.min.css";
-/*import "./themePrimeReact/theme.css";*/
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import './index.scss';
 
