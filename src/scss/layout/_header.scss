@@ -1,6 +1,5 @@
 .BKTT-Header {
  background-color: var(--header-bg-color);
- padding: 0px 15px;
  color: var(--text-custom-color);
  border-bottom-width: 1px;
  border-bottom-style: solid;
@@ -8,9 +7,7 @@
  box-shadow: none;
  border-radius: 0px;
  min-height: 60px;
-
  .logo {
-  margin-right: 3rem;
   margin-left: 1rem;
 
   img {
@@ -18,190 +15,204 @@
    max-height: 35px;
   }
  }
-
- //faq button
- .p-button.p-button-icon-only.faqs-icon {
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-  border-radius: 0px;
-  color: var(--text-custom-color);
-  width: inherit;
-  height: inherit;
-  padding: 0px;
-  margin-right: 1rem;
-  min-width: 28px;
-
-  &:hover,
-  &:focus {
-   background-color: transparent;
-   color: var(--primary-color);
-  }
- }
-
- //language dropdown
- .p-dropdown {
-  align-items: center;
-  min-width: 62px;
-
-  .p-dropdown-label.p-placeholder {
-   color: var(--text-custom-color);
-  }
-
-  .p-inputtext {
-   color: var(--text-custom-color);
-   font-size: 14px;
-  }
-
-  &:not(.p-disabled) {
-   &:hover {
-    background-color: var(--hover-color);
-    border-color: var(--hover-color);
-
-    .p-dropdown-trigger .p-icon path {
-     stroke: var(--primary-color);
-     color: var(--primary-color);
-    }
+}
+.BKTT-Search{
+ .input-group{
+  width:160px;
+  input{
+  position: absolute;
+  padding-right: 35px;
+  border-color: transparent;
+  width:164px!important;
+  background-color:transparent;
+  right: -4px;
+  transition: all 0.3s ease-out;
+   &::placeholder{
+    font-style: italic;
    }
-
-   &.p-focus {
-    box-shadow: none;
-    background-color: var(--hover-color);
-    border-color: var(--hover-color);
-
-    .p-dropdown-trigger .p-icon path {
-     stroke: var(--primary-color);
-     color: var(--primary-color);
-    }
+   &:focus{
+    border-radius: 20px!important;
+    width:250px!important;
    }
   }
  }
-
- //user login dropdown
- .user-login {
-  margin-right: 1rem;
-  margin-left: 2rem;
-
-  .user-login-button-block {
-   display: flex;
-
-   .p-button.p-button-icon-only.p-button-rounded {
-    color: var(--primary-color);
-    background-color: transparent;
-    border: none;
-    width: 20px;
-    min-width: inherit;
-    height: 20px;
-    padding: 0px;
-    font-size: 20px;
-
-    &:focus {
-     border-color: var(--active-color);
-    }
-   }
-
-   >p {
-    margin: 0px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    min-width: 135px;
-
-    span {
-     margin-left: .5rem;
-     font-size: 15px;
-     line-height: 16px;
-     font-weight: 400;
-
-    }
-   }
+ button{
+  position: absolute!important;
+  right: 0;
+  z-index:999!important;
+  border-radius: 50%!important;
+  padding: 3px 7px;
+  background-color: var(--primary-color)!important;
+  border-color: var(--primary-color);
+  transition: all 0.3s ease-out;
+  &:hover{
+   background-color: var(--secondary-color)!important;
   }
  }
-
+ 
+}
+.BKTT-Nav{
+ & + .BKTT-LangSelect {
+  display: none;
+ }
+}
+.BKTT-LangSelect{
+ margin-left:1rem;
+ position: relative;
+ .BKTT-Icon{
+  position: absolute;
+  left: 10px;
+  z-index:999;
+ }
+ select{
+  border:transparent;
+  background-color:transparent;
+  font-size: medium;
+  padding: 11.1px 2rem 11.1px 2rem;
+  &:focus{}
+ }
 }
 
 @media (max-width: 1255px) {
- .BKTT-Header {
-  BKTT-Nav .p-menubar {
-   .p-menubar-button {
-    margin-left: 1.5rem;
-    margin-right: .5rem;
-    order: 4;
-
-    .p-icon {
-     color: var(--text-custom-color);
-     width: 30px;
-     height: 27px;
+ .BKTT-Header .container{
+  .d-flex{
+   .BKTT-Logo{
+    margin:0;
+   }
+   .BKTT-Search {
+    input{
+     width: 0!important;
     }
-
-    &:hover,
-    &:focus {
-     background-color: transparent;
-     box-shadow: none;
-
-     .p-icon {
-      color: var(--primary-color);
+   }  
+   .BKTT-Nav{
+    .container-fluid{
+     padding: 0;
+     .navbar-toggler{
+      border:none;
+      padding-right:0;
+      padding-left:0;
      }
     }
-   }
-
-   .p-menubar-custom,
-   .p-menubar-end {
-    margin-left: auto;
-   }
-  }
- }
-}
-
-@media (max-width: 600px) {
- .BKTT-Header {
-  .p-menubar {
-   flex-wrap: wrap;
-   padding: 0px;
-
-   .p-menubar-start {
-    padding: 7px 10px;
-   }
-
-   .logo {
-    width: 90px;
-    margin-right: 0rem;
-    margin-left: 0rem;
-   }
-
-   .p-menubar-button {
-    margin-left: auto;
-    margin-right: .75rem;
-   }
-
-   .p-menubar-end {
-    width: 100%;
-    order: 4;
-    background-color: var(--soft-grey-color);
-
-    .header-right {
-     justify-content: space-between;
-     padding: 7px 0px 7px 5px;
-
-     .faqs-icon {
-      position: absolute;
-      top: 11px;
-      right: 44px;
-     }
-
-     .user-login {
-      .user-login-button-block {
-       .p-button.p-button-icon-only.p-button-rounded {
-        width: 30px;
-        min-width: 30px;
-        height: 30px;
+    .navbar-collapse{
+     position: absolute;
+     width: 400px;
+     left: -360px;
+     top: 55px;
+     background-color: var(--custom-white);
+     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+     .nav-item .row{
+      flex-direction: column;
+      .col{
+       &:first-child{
+        display:none;
+       }
+       ul{
+        padding-left: 0;
+        a{
+         padding-left: 0;
+        }
        }
       }
      }
     }
    }
+  }
+ }
+}
 
-   &.p-menubar-mobile-active .p-menubar-root-list {
-    top: 63px !important;
+@media (max-width: 991px) {
+ .BKTT-Header {
+  min-height: fit-content;
+  .container{
+   .BKTT-Search {
+    .input-group{
+     width: fit-content !important;
+     button{
+      display: none;
+     }
+     .BKTT-Button{
+      background-color: transparent!important;
+      border-color: transparent;
+      padding-top: 5px;
+      .BKTT-Icon{
+       margin-top:4px;
+      }
+      &[aria-expanded='true']{
+       .BKTT-Icon{
+        &:before{
+         content: "\f05e";
+        }
+       }
+      }
+     }
+     .BKTT-Icon:before{
+      color: var(--text-color);
+      font-size: 1.3rem;
+     }
+     
+    }
+   }
+   .BKTT-Search--mobile{
+    position: absolute;
+    width: 400px;
+    top: 48px;
+    left:0;
+    background-color: var(--custom-white);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 888;
+    .container{
+     padding:2rem 1rem ;
+     background-color: var(--primary-color);    
+     .input-group{
+      background-color: var(--custom-white);
+      border-radius: 8px;
+      .form-control{
+       height:44px;
+       border-color: transparent;
+       &::placeholder{
+        font-style: italic;
+       }
+      }
+      .BKTT-Button{
+       border-radius: 50%;
+       background-color: var(--primary-color);
+       margin: 5px 8px 0 0;
+       padding: 4px 7px;
+       .BKTT-Icon{
+        font-size: larger;
+       }
+      }
+     }
+    }
+   }
+   .BKTT-Nav{
+    .navbar-collapse{
+     top: 48px!important;
+     left: -349px!important;
+    }
+    .BKTT-Icon{
+     padding: 0 12px;
+    }
+    .navbar-toggler[aria-expanded="true"] .BKTT-Icon:before {
+     content: '\f00d';
+     font-size: 1.5rem;
+    }
+    .BKTT-LangSelect {
+     display: block;
+    }
+    & + .BKTT-LangSelect {
+     display: none;
+    }
+   }
+   .BKTT-LangSelect{
+    padding-right:15px;
+    .BKTT-Icon{
+     left:0;
+    }
+    select{
+     padding-left:2rem;
+     padding-right:0;
+    }
    }
   }
  }

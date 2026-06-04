@@ -135,33 +135,41 @@ function Header() {
  );
  const search = (
   <>
-   <form className="BKTT-Search d-flex" role="search">
+   <form className="BKTT-Search" role="search">
     <label htmlFor="BKTTSearch" className="visually-hidden">Buscador web</label>
-    <div className="input-group">
+    <div className="input-group d-flex align-items-center">
      <input type="search" id="BKTTSearch" className="form-control" placeholder="Búsqueda..." aria-label="Search" name="q" autoComplete="off"
      />
-     <button className="btn btn-primary" type="submit" aria-label="Submit search">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-      </svg>
+     <button className="BKTT-Button btn btn-primary" type="submit" aria-label="Submit search">
+      <span className="BKTT-Icon fa-light fa-search"></span>
      </button>
+     <a href="#toggle-search" class="BKTT-Button btn btn-primary d-lg-none" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="toggle-search">
+      <span className="BKTT-Icon fa-light fa-search"></span>
+     </a>
     </div>
    </form>
+
+   <div class="BKTT-Search--mobile navbar-collapse collapse" id="toggle-search">
+    <div class="container">
+     <form action="" method="GET" role="search">
+      <div class="input-group">
+       <input type="text" class="form-control" name="q" placeholder="Búsqueda..." />
+       <span class="input-group-btn">
+        <button class="BKTT-Button btn btn-primary" type="reset"><span class="BKTT-Icon fa-light fa-search"></span></button>
+       </span>
+      </div>
+     </form>
+    </div>
+   </div>
   </>
  );
  const end =
   <div className="header-right d-flex align-items-center">
    <span class="BKTT-Icon fa-light fa-globe"></span>
-   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-     Dropdown button
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-     <li><a class="dropdown-item" href="#">Action</a></li>
-     <li><a class="dropdown-item" href="#">Another action</a></li>
-     <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-   </div>
+   <select class="form-select form-select-lg" aria-label="selector de idioma">
+    <option selected>ES</option>
+    <option value="1">EU</option>
+   </select>
   </div>
   ;
 
@@ -173,45 +181,73 @@ function Header() {
      <div className="d-flex align-items-center justify-content-between">
       {/* Logo izquierda */}
       {logo}
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-           <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-           <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-           </a>
-           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-           </ul>
-          </li>
-          <li class="nav-item">
-           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-         </ul>
-         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-         </form>
+      <div class="d-flex align-items-center">
+       {search}
+       <nav class="BKTT-Nav navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="BKTT-Icon fa-regular fa-bars"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item dropdown">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Agenda
+             <span class="BKTT-Icon fa fa-chevron-down ms-2"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+             <div class="row">
+              <div class="col">
+               <h2>Agenda</h2>
+              </div>
+              <li class="col">
+               <ul>
+                <li>
+                 <a class="dropdown-item" href="#">
+                  <span class="BKTT-Icon fa-light fa-music me-2"></span>
+                  Action</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                 <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+               </ul>
+              </li>
+             </div>
+            </ul>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Qué ver</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">Gastronomía</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">Alojamientos</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">Planifica</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">
+             <span class="BKTT-Icon far fa-newspaper me-2"></span>Noticias
+            </a>
+           </li>
+           <div className="BKTT-LangSelect">
+            {end}
+           </div>
+          </ul>
+         </div>
         </div>
+       </nav>
+       {/* Dropdown derecha */}
+       <div className="BKTT-LangSelect header-end">
+        {end}
        </div>
-      </nav>
-      {/* Dropdown derecha */}
-      <div className="BKTT-LangSelect header-end">
-       {end}
       </div>
+
      </div>
     </div>
    </header>
