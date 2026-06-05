@@ -120,6 +120,27 @@ function Home() {
        </li>
        <li role="none" class="p-menuitem BKTT-Link"><a href="#" role="menuitem" class="p-menuitem-link" aria-haspopup="true"><span class="p-menuitem-text">Temas</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-submenu-icon" aria-hidden="true"><path d="M3.58659 4.5007C3.68513 4.50023 3.78277 4.51945 3.87379 4.55723C3.9648 4.59501 4.04735 4.65058 4.11659 4.7207L7.11659 7.7207L10.1166 4.7207C10.2619 4.65055 10.4259 4.62911 10.5843 4.65956C10.7427 4.69002 10.8871 4.77074 10.996 4.88976C11.1049 5.00877 11.1726 5.15973 11.1889 5.32022C11.2052 5.48072 11.1693 5.6422 11.0866 5.7807L7.58659 9.2807C7.44597 9.42115 7.25534 9.50004 7.05659 9.50004C6.85784 9.50004 6.66722 9.42115 6.52659 9.2807L3.02659 5.7807C2.88614 5.64007 2.80725 5.44945 2.80725 5.2507C2.80725 5.05195 2.88614 4.86132 3.02659 4.7207C3.09932 4.64685 3.18675 4.58911 3.28322 4.55121C3.37969 4.51331 3.48305 4.4961 3.58659 4.5007Z" fill="currentColor"></path></svg></a>
        </li><li role="none" class="p-menuitem BKTT-Link"><a href="#" role="menuitem" class="p-menuitem-link" aria-haspopup="true"><span class="p-menuitem-icon BKTT-Icon fa-light fa-newspaper"></span><span class="p-menuitem-text">Design System</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-submenu-icon" aria-hidden="true"><path d="M3.58659 4.5007C3.68513 4.50023 3.78277 4.51945 3.87379 4.55723C3.9648 4.59501 4.04735 4.65058 4.11659 4.7207L7.11659 7.7207L10.1166 4.7207C10.2619 4.65055 10.4259 4.62911 10.5843 4.65956C10.7427 4.69002 10.8871 4.77074 10.996 4.88976C11.1049 5.00877 11.1726 5.15973 11.1889 5.32022C11.2052 5.48072 11.1693 5.6422 11.0866 5.7807L7.58659 9.2807C7.44597 9.42115 7.25534 9.50004 7.05659 9.50004C6.85784 9.50004 6.66722 9.42115 6.52659 9.2807L3.02659 5.7807C2.88614 5.64007 2.80725 5.44945 2.80725 5.2507C2.80725 5.05195 2.88614 4.86132 3.02659 4.7207C3.09932 4.64685 3.18675 4.58911 3.28322 4.55121C3.37969 4.51331 3.48305 4.4961 3.58659 4.5007Z" fill="currentColor"></path></svg></a></li></ul></div></nav>
+    <h2>BKTT-Badge</h2>
+    <h3>Simple</h3>
+    <h4>Sin icono</h4>
+    <span class="BKTT-Badge badge bg-primary me-2">Ejemplo</span>
+    <span class="BKTT-Badge badge bg-info">Ejemplo</span>
+    <h4>Con icono</h4>
+    <span class="BKTT-Badge badge bg-info">
+     <span class="BKTT-Icon fa-light fa-lightbulb me-1"></span>
+     Ejemplo
+    </span>
+    <h3>Filtros</h3>
+    <h4>Default</h4>
+    <div class="BKTT-Badge_chip chip chip-outline btn-outline-primary" data-mdb-chip-init="" data-mdb-chip-initialized="true">
+      <span class="BKTT-Icon fa-light fa-lightbulb me-1"></span>
+      Filtro
+      <span class="BKTT-Icon fas fa-times ms-1"></span>
+    </div>
+    <h4>Seleccionado</h4>
+    <h2>BKTT-Card</h2>
+    <h2>BKTT-Progress</h2>
+    <h2>BKTT-Wrapper</h2>
     <h2>Form</h2>
     <form action="">
      <h3>BKTT-Input</h3>

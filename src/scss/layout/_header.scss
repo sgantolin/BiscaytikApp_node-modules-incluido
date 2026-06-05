@@ -134,6 +134,8 @@
       background-color: transparent!important;
       border-color: transparent;
       padding-top: 5px;
+      border-radius: 10px!important;
+      height: 44px;
       .BKTT-Icon{
        margin-top:4px;
       }
@@ -188,17 +190,30 @@
    .BKTT-Nav{
     .navbar-collapse{
      top: 48px!important;
-     left: -349px!important;
+     left: -346px!important;
     }
     .BKTT-Icon{
-     padding: 0 12px;
+     padding: 0;
     }
-    .navbar-toggler[aria-expanded="true"] .BKTT-Icon:before {
-     content: '\f00d';
-     font-size: 1.5rem;
+    .navbar-toggler{
+     height: 40px;
+     .BKTT-Icon{
+      padding: 0 12px;
+     }
+     &[aria-expanded="true"] .BKTT-Icon:before {
+      content: '\f00d';
+      font-size: 1.5rem;
+     }
+     &:focus{
+      box-shadow: none;
+      outline: 3px solid var(--primary-color)!important;
+     }
     }
     .BKTT-LangSelect {
      display: block;
+     .BKTT-Icon{
+      padding: 0 12px 0 0;
+     }
     }
     & + .BKTT-LangSelect {
      display: none;
@@ -207,7 +222,7 @@
    .BKTT-LangSelect{
     padding-right:15px;
     .BKTT-Icon{
-     left:0;
+     left:0;;
     }
     select{
      padding-left:2rem;

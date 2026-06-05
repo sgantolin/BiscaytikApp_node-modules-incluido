@@ -1,49 +1,38 @@
 .BKTT-footer {
+ margin-top: auto;
+ background-color: var(--footer-bg-color);
+ padding: 2.5rem 2rem;
+ color: var(--text-color);
  .BKTT-BackTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: none;
   border-radius: 50%;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease-out;
+  &:active, &:hover{
+   background-color: var(--secondary-color);
+   border-color: var(--secondary-color);
+  }
  }
-
- &.main-footer {
-  margin-top: auto;
-  background-color: var(--footer-bg-color);
-  padding: 2.5rem 2rem;
-  color: var(--text-color);
-
-  .first-block {
-   img {
-    width: 20px;
-    margin-bottom: 25px;
-
-    @media (max-width: 992px) {
-     margin-bottom: .5rem;
-    }
-   }
-
-   p {
-    font-size: 11px;
-
-    span {
-     color: var(--dropdown-search-border-color);
-    }
-
-    @media (max-width: 992px) {
-     margin-bottom: 0px;
-    }
+ .BKTT-RRSS{
+  a{
+   transition: all 0.3s ease-out;
+   &:hover{
+    color: var(--primary-color);
    }
   }
-
-  .contact-block {
+ }
+ .BKTT-Icon.logo-biscaytik{
+  width: fit-content;
+ }
+ .justify-content-end{
+  justify-content: center!important;
+ }
+ .contact-block {
    p {
-    i {
-     font-size: 14px;
-     margin-right: .5rem;
-
-    }
-
     a {
      font-weight: 400;
     }
@@ -52,7 +41,7 @@
 
   h4 {
    font-size: 13px;
-   color: var(--dropdown-search-border-color);
+   color: var(--text-color);
    font-weight: 400;
    margin-bottom: 1.5rem;
    text-transform: uppercase;
@@ -79,7 +68,6 @@
    }
 
    li {
-    margin-bottom: 12px;
     line-height: 13px;
 
     a {
@@ -95,6 +83,10 @@
     }
    }
   }
- }
-
+   @media (max-width: 991px) {
+    .BKTT-RRSS{
+      display: flex;
+      justify-content: center;
+    }
+   }
 }

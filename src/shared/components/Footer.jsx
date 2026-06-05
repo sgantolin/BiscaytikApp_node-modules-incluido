@@ -36,18 +36,10 @@ function Footer() {
 
  return (
   <>
-   <footer className="BKTT-footer container-fluid main-footer">
+   <footer className="BKTT-footer container-fluid">
     <div className="container">
-     <div class="row">
-      <ul className="list-group list-group-horizontal">
-        <li><a href="#" target="_blank" rel="">Contacto</a></li>
-        <li><a href="#" target="_blank" rel="">Ayuda</a></li>
-        <li><a href="#" target="_blank" rel="">Mapa del sitio</a></li>
-        <li><a href="#" target="_blank" rel="">Accesibilidad</a></li>
-       </ul>
-     </div>
      <div className="row d-flex">
-      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center text-sm-start">
+      <div className="col-xs-12 col-lg-6 text-center text-sm-start">
        <h4>Legal</h4>
        <ul className="column-list">
         <li><Link to="">Accesibilidad</Link></li>
@@ -57,49 +49,77 @@ function Footer() {
         <li><Link to="">Aviso Legal</Link></li>
        </ul>
       </div>
-      <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
+      <div className="col-xs-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
        <h4>Ayuda</h4>
        <ul>
         <li><Link to="">Preguntas frecuentes</Link></li>
        </ul>
       </div>
-      <div className="contact-block col-xs-12 col-sm-3 col-md-3 col-lg-2 mt-4 mt-sm-0 text-center text-sm-start">
+      <div className="contact-block col-xs-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
+        <ul className="BKTT-RRSS list-group list-group-horizontal mb-5">
+        <li>
+         <a href="#" target="_blank" rel="">
+          <span class="BKTT-Icon fa-brands fa-facebook fs-3 me-3"></span>
+         </a>
+         </li>
+        <li>
+         <a href="#" target="_blank" rel="">
+          <span class="BKTT-Icon fa-brands fa-instagram fs-3 me-3"></span>
+         </a>
+         </li>
+        <li>
+         <a href="#" target="_blank" rel="">
+          <span class="BKTT-Icon fa-brands fa-whatsapp fs-3 me-3"></span>
+         </a>
+        </li>
+        <li>
+         <a href="#" target="_blank" rel="">
+          <span class="BKTT-Icon fa-sharp fa-light fa-messages fs-3"></span>
+         </a>
+         </li>
+      </ul>
        <h4>Contacto</h4>
        <ul>
         <li>
          <p>
-          <i className="fa-light fa-phone"></i>
+          <span className="BKTT-Icon fa-light fa-phone me-2"></span>
           <a href="tel:+34946000022"><span>94 600 00 22</span></a>
          </p>
         </li>
         <li>
          <p>
-          <i className="fa-light fa-envelope"></i>
+          <span className="BKTT-Icon fa-light fa-envelope me-2"></span>
           <a href="mailto:udalak@biscaytik.eus">udalak@biscaytik.eus</a>
          </p>
         </li>
        </ul>
       </div>
      </div>
-     <div className="row mt-3 text-center">
+     <div className="row d-flex">
+      <div class="col-12 d-flex justify-content-end mt-3 ">
+       <img src={logoHERRIZ} alt="Biscaytik" className="BKTT-Icon logo-biscaytik me-3" />
+       <img src={logoHERRIZ} alt="Biscaytik" className="BKTT-Icon logo-biscaytik" />
+      </div>
+      
+     </div>
+     <div className="row mt-4 d-flex justify-content-between align-items-center">
       <div className="col-md-6">
-       <img src={logoHERRIZ} alt="Biscaytik" className="logo-biscaytik" />
        <small className="mt-2 mt-md-0 order-1 order-md-0">
         ©2026 Theme Portales turismo Biscaytik. <span>Todos los derechos reservados</span>
        </small>
       </div>
       <div className="col-md-6">
-       <ul className="list-group list-group-horizontal">
-        <li><a href="#" target="_blank" rel="">Contacto</a></li>
-        <li><a href="#" target="_blank" rel="">Ayuda</a></li>
-        <li><a href="#" target="_blank" rel="">Mapa del sitio</a></li>
+       <ul className="list-group list-group-horizontal justify-content-center justify-content-md-end">
+        <li class="me-2"><a href="#" target="_blank" rel="">Contacto</a></li>
+        <li class="me-2"><a href="#" target="_blank" rel="">Ayuda</a></li>
+        <li class="me-2"><a href="#" target="_blank" rel="">Sitemap</a></li>
         <li><a href="#" target="_blank" rel="">Accesibilidad</a></li>
        </ul>
       </div>
      </div>
     </div>
     <button type="button" className="BKTT-BackTop btn btn-primary btn-floating btn-lg" id="btn-back-to-top" ref={backToTopRef}>
-     <i className="fas fa-arrow-up"></i>
+     <span className="fas fa-arrow-up"></span>
     </button>
    </footer>
   </>
