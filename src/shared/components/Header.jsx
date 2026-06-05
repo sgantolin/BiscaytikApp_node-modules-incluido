@@ -196,20 +196,45 @@ function Header() {
              <span class="BKTT-Icon fa fa-chevron-down ms-2"></span>
             </a>
 
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu ps-0">
              <div class="row">
-              <div class="col">
+              <div class="col-lg-3 d-none d-lg-block">
                <h2>Agenda</h2>
               </div>
-              <li class="col">
-               <ul>
+              <li class="col-lg-3">
+               <ul class="list-unstyled ps-0">
                 <li>
                  <a class="dropdown-item" href="#">
                   <span class="BKTT-Icon fa-light fa-music me-2"></span>
                   Action</a>
                 </li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
+                <li>
+                 <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+               </ul>
+              </li>
+              <li class="col-lg-3">
+               <ul class="list-unstyled ps-0">
+                <li>
+                 <a class="dropdown-item" href="#">
+                  <span class="BKTT-Icon fa-light fa-music me-2"></span>
+                  Action</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                 <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+               </ul>
+              </li>
+              <li class="col-lg-3">
+               <ul class="list-unstyled ps-0">
+                <li>
+                 <a class="dropdown-item" href="#">
+                  <span class="BKTT-Icon fa-light fa-music me-2"></span>
+                  Action</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                  <a class="dropdown-item" href="#">Something else here</a>
                 </li>

@@ -52,6 +52,9 @@
  
 }
 .BKTT-Nav{
+ h2{
+  padding-left: 1rem;
+ }
  & + .BKTT-LangSelect {
   display: none;
  }
@@ -191,6 +194,11 @@
     .navbar-collapse{
      top: 48px!important;
      left: -346px!important;
+     .nav-link.show{
+      .BKTT-Icon.fa-chevron-down:before{
+       content: "\f077";
+      }
+     }
     }
     .BKTT-Icon{
      padding: 0;
