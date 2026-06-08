@@ -1,0 +1,210 @@
+.BKTT-Header {
+	 background-color: var(--header-bg-color);
+	 color: var(--text-custom-color);
+	 border-bottom-width: 1px;
+	 border-bottom-style: solid;
+	 border-bottom-color: var(--border-color);
+	 box-shadow: none;
+	 border-radius: 0px;
+	 min-height: 60px;
+}
+ .BKTT-Header .logo {
+	 margin-left: 1rem;
+}
+ .BKTT-Header .logo img {
+	 max-height: 35px;
+}
+ .BKTT-Search .input-group {
+	 width: 160px;
+}
+ .BKTT-Search .input-group input {
+	 position: absolute;
+	 padding-right: 35px;
+	 border-color: transparent;
+	 width: 164px !important;
+	 background-color: transparent;
+	 right: -4px;
+	 transition: all 0.3s ease-out;
+}
+ .BKTT-Search .input-group input::placeholder {
+	 font-style: italic;
+}
+ .BKTT-Search .input-group input:focus {
+	 border-radius: 20px !important;
+	 width: 250px !important;
+}
+ .BKTT-Search button {
+	 position: absolute !important;
+	 right: 0;
+	 z-index: 999 !important;
+	 border-radius: 50% !important;
+	 padding: 3px 7px;
+	 background-color: var(--primary-color) !important;
+	 border-color: var(--primary-color);
+	 transition: all 0.3s ease-out;
+}
+ .BKTT-Search button:hover {
+	 background-color: var(--secondary-color) !important;
+}
+ .BKTT-Nav h2 {
+	 padding-left: 1rem;
+}
+ .BKTT-Nav + .BKTT-LangSelect {
+	 display: none;
+}
+ .BKTT-LangSelect {
+	 margin-left: 1rem;
+	 position: relative;
+}
+ .BKTT-LangSelect .BKTT-Icon {
+	 position: absolute;
+	 left: 10px;
+	 z-index: 999;
+}
+ .BKTT-LangSelect select {
+	 border: transparent;
+	 background-color: transparent;
+	 font-size: medium;
+	 padding: 11.1px 2rem 11.1px 2rem;
+}
+ @media (max-width: 1255px) {
+	 .BKTT-Header .container .d-flex .BKTT-Logo {
+		 margin: 0;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Search input {
+		 width: 0 !important;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .container-fluid {
+		 padding: 0;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .container-fluid .navbar-toggler {
+		 border: none;
+		 padding-right: 0;
+		 padding-left: 0;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .navbar-collapse {
+		 position: absolute;
+		 width: 400px;
+		 left: -360px;
+		 top: 55px;
+		 background-color: var(--custom-white);
+		 box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .navbar-collapse .nav-item .row {
+		 flex-direction: column;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .navbar-collapse .nav-item .row .col:first-child {
+		 display: none;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .navbar-collapse .nav-item .row .col ul {
+		 padding-left: 0;
+	}
+	 .BKTT-Header .container .d-flex .BKTT-Nav .navbar-collapse .nav-item .row .col ul a {
+		 padding-left: 0;
+	}
+}
+ @media (max-width: 991px) {
+	 .BKTT-Header {
+		 min-height: fit-content;
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group {
+		 width: fit-content !important;
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group button {
+		 display: none;
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group .BKTT-Button {
+		 background-color: transparent !important;
+		 border-color: transparent;
+		 padding-top: 5px;
+		 border-radius: 10px !important;
+		 height: 44px;
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group .BKTT-Button .BKTT-Icon {
+		 margin-top: 4px;
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group .BKTT-Button[aria-expanded='true'] .BKTT-Icon:before {
+		 content: "\f05e";
+	}
+	 .BKTT-Header .container .BKTT-Search .input-group .BKTT-Icon:before {
+		 color: var(--text-color);
+		 font-size: 1.3rem;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile {
+		 position: absolute;
+		 width: 400px;
+		 top: 48px;
+		 left: 0;
+		 background-color: var(--custom-white);
+		 box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+		 z-index: 888;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container {
+		 padding: 2rem 1rem;
+		 background-color: var(--primary-color);
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container .input-group {
+		 background-color: var(--custom-white);
+		 border-radius: 8px;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container .input-group .form-control {
+		 height: 44px;
+		 border-color: transparent;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container .input-group .form-control::placeholder {
+		 font-style: italic;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container .input-group .BKTT-Button {
+		 border-radius: 50%;
+		 background-color: var(--primary-color);
+		 margin: 5px 8px 0 0;
+		 padding: 4px 7px;
+	}
+	 .BKTT-Header .container .BKTT-Search--mobile .container .input-group .BKTT-Button .BKTT-Icon {
+		 font-size: larger;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-collapse {
+		 top: 48px !important;
+		 left: -346px !important;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-collapse .nav-link.show .BKTT-Icon.fa-chevron-down:before {
+		 content: "\f077";
+	}
+	 .BKTT-Header .container .BKTT-Nav .BKTT-Icon {
+		 padding: 0;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-toggler {
+		 height: 40px;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-toggler .BKTT-Icon {
+		 padding: 0 12px;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-toggler[aria-expanded="true"] .BKTT-Icon:before {
+		 content: '\f00d';
+		 font-size: 1.5rem;
+	}
+	 .BKTT-Header .container .BKTT-Nav .navbar-toggler:focus {
+		 box-shadow: none;
+		 outline: 3px solid var(--primary-color) !important;
+	}
+	 .BKTT-Header .container .BKTT-Nav .BKTT-LangSelect {
+		 display: block;
+	}
+	 .BKTT-Header .container .BKTT-Nav .BKTT-LangSelect .BKTT-Icon {
+		 padding: 0 12px 0 0;
+	}
+	 .BKTT-Header .container .BKTT-Nav + .BKTT-LangSelect {
+		 display: none;
+	}
+	 .BKTT-Header .container .BKTT-LangSelect {
+		 padding-right: 15px;
+	}
+	 .BKTT-Header .container .BKTT-LangSelect .BKTT-Icon {
+		 left: 0;
+	}
+	 .BKTT-Header .container .BKTT-LangSelect select {
+		 padding-left: 2rem;
+		 padding-right: 0;
+	}
+}
+ 

@@ -1,0 +1,25 @@
+/*custom theme HERRIZ*/
+:root {
+    --font-family: var(--theme-font-family);
+    --font-family-secondary: var(--theme-font-family-secondary);
+    /*icon font*/
+    --fontawesome-pro: 'Font Awesome 5 Pro';
+
+    /*default colors*/
+    --primary-color: var(--theme-primary-color);
+    --primary-color--100: var(--theme-primary-color--100);
+    --secondary-color: var(--theme-secondary-color);
+    --custom-white: var(--theme-white);
+    --text-color: var(--theme-black);
+    --link-color: var(--theme-secondary-color);
+    --link-color-light: var(--theme-white);
+    --border-color: var(--theme-border-color);
+    --dialog-overlay-bg-color: var(--theme-white);
+
+    /*Header & Footer colors*/
+    --header-bg-color: var(--theme-white);
+    --footer-bg-color: var(--theme-beige);
+
+    /*images*/
+    --menu-image: var(--theme-menu-image);
+}
