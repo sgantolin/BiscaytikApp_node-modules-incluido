@@ -1,7 +1,23 @@
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('woff2'),
+         url('./fonts/Poppins/Poppins-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('./fonts/Poppins/Poppins-Bold.ttf') format('woff2'),
+         url('./fonts/Poppins/Poppins-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
     /*default font*/
-    --theme-font-family: 'Poppins', sans-serif;
+    --theme-font-family: 'Poppins Bold', sans-serif;
     --theme-font-family-secondary: 'Poppins', sans-serif;
     /*icon font*/
 
