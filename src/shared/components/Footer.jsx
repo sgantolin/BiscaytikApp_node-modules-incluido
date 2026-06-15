@@ -39,8 +39,8 @@ function Footer() {
    <footer className="BKTT-footer container-fluid">
     <div className="container">
      <div className="row d-flex">
-      <div className="col-xs-12 col-lg-6 text-center text-sm-start">
-       <h4>Legal</h4>
+      <div className="col-12 col-lg-6 text-center text-sm-start">
+       <h3>Legal</h3>
        <ul className="column-list">
         <li><Link to="">Accesibilidad</Link></li>
         <li><Link to="">Cookies</Link></li>
@@ -49,13 +49,13 @@ function Footer() {
         <li><Link to="">Aviso Legal</Link></li>
        </ul>
       </div>
-      <div className="col-xs-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
-       <h4>Ayuda</h4>
+      <div className="col-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
+       <h3>Ayuda</h3>
        <ul>
         <li><Link to="">Preguntas frecuentes</Link></li>
        </ul>
       </div>
-      <div className="contact-block col-xs-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
+      <div className="contact-block col-12 col-lg-3 mt-4 mt-sm-0 text-center text-sm-start">
         <ul className="BKTT-RRSS list-group list-group-horizontal mb-5">
         <li>
          <a href="#" target="_blank" rel="">
@@ -78,7 +78,7 @@ function Footer() {
          </a>
          </li>
       </ul>
-       <h4>Contacto</h4>
+       <h3>Contacto</h3>
        <ul>
         <li>
          <p>

@@ -1,36 +1,41 @@
-
 @font-face {
-    font-family: 'Poppins';
-    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('woff2'),
-         url('./fonts/Poppins/Poppins-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+ font-family: 'Poppins';
+ src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+ font-weight: 400;
+ font-style: normal;
 }
 
 @font-face {
-    font-family: 'Poppins Bold';
-    src: url('./fonts/Poppins/Poppins-Bold.ttf') format('woff2'),
-         url('./fonts/Poppins/Poppins-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
+ font-family: 'Poppins Italic';
+ src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Italic.ttf') format('woff2');
+ font-weight: 400;
+ font-style: italic;
 }
+
+/*@font-face {
+ font-family: 'Poppins Bold';
+ src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
+ font-weight: 700;
+ font-style: normal;
+}*/
 
 :root {
-    /*default font*/
-    --theme-font-family: 'Poppins Bold', sans-serif;
-    --theme-font-family-secondary: 'Poppins', sans-serif;
-    /*icon font*/
+ /*default font*/
+ --theme-font-family: 'Poppins', sans-serif;
+ --theme-font-family-secondary: 'Poppins', sans-serif;
+ --theme-font-family-italic: 'Poppins Italic', sans-serif;
+ /*icon font*/
 
-    /*default colors*/
-    --theme-white: #fff;
-    --theme-beige: #FAF8F2;
-    --theme-primary-color: #2196F3;
-    --theme-primary-color--100: #E9F5FE;
-    --theme-secondary-color: #145A92;
+ /*default colors*/
+ --theme-white: #fff;
+ --theme-beige: #FAF8F2;
+ --theme-primary-color: #2196F3;
+ --theme-primary-color--100: #E9F5FE;
+ --theme-secondary-color: #145A92;
 
-    --theme-black: #2D2D31;
-    --theme-border-color: #ddd;
+ --theme-black: #2D2D31;
+ --theme-border-color: #ddd;
 
-    --theme-menu-image: url('./assets/themes/default/menu-bg.png');
-    
+ --theme-menu-image: url('./assets/themes/default/menu-bg.png');
+
 }

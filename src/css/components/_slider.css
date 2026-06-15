@@ -1,0 +1,88 @@
+.BKTT-FigureSlider--container {
+   position: relative;
+   width: 100%;
+   display: block;
+   overflow: hidden;
+   height: 500px;
+}
+
+.BKTT-FigureSlider {
+   position: absolute;
+   width: 100%;
+   overflow: hidden;
+}
+
+.BKTT-FigureSlider ul {
+   list-style: none;
+   padding-left: 0;
+   margin-left: 0;
+   display: block;
+   overflow: hidden;
+}
+
+.BKTT-FigureSlider .carousel-item {
+   position: relative;
+}
+
+.BKTT-FigureSlider .carousel-item-next,
+.BKTT-FigureSlider .carousel-item-prev,
+.BKTT-FigureSlider .carousel-item.active {
+   display: block;
+}
+
+
+.BKTT-FigureSlider .tp-bgimg {
+   background-size: cover;
+   height: 500px;
+}
+
+.BKTT-FigureSlider #BKTT-slider1 {
+   background-image: url('http://localhost:5173/src/assets/themes/default/media/slider1.jpg');
+}
+
+.BKTT-CarrouselControl {
+   position: absolute;
+   bottom: 40px;
+   left: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 999;
+   background-color: var(--primary-color);
+   color: var(--custom-white);
+   padding: 12px 8px;
+   border-radius: 25px;
+   width: 160px;
+   height: 51px;
+}
+
+.BKTT-CarrouselControl>div {
+   width: 60px;
+   position: relative;
+}
+
+.BKTT-CarrouselControl .BKTT-Button {
+   width: 25px;
+   height: 25px;
+   top: -12px;
+}
+
+
+.BKTT-FigureSlider--container .tp-leftarrow,
+.BKTT-FigureSlider--container .tp-rightarrow {
+   position: absolute;
+   top: 225px;
+   z-index: 100;
+   cursor: pointer;
+   background-color: red;
+   width: 39px;
+   height: 46px;
+}
+
+.BKTT-FigureSlider--container .tp-leftarrow {
+   left: 16px;
+}
+
+.BKTT-FigureSlider--container .tp-rightarrow {
+   right: 16px;
+}

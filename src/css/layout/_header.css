@@ -23,16 +23,30 @@
 
 .BKTT-Search .input-group {
 	width: 160px;
+	height: 35px;
+}
+
+.BKTT-Search .input-group .form-control {
+	margin-bottom: 0;
+	float: none;
 }
 
 .BKTT-Search .input-group input {
 	position: absolute;
-	padding-right: 35px;
+	padding: 0.5rem 35px 0.5rem 1rem;
 	border-color: transparent;
 	width: 164px !important;
 	background-color: transparent;
 	right: -4px;
+	top: 3px;
 	transition: all 0.3s ease-out;
+	margin-left: 0;
+	height: 35px;
+	line-height: 35px;
+}
+
+.BKTT-Search .input-group input[value="Búsqueda..."] {
+	font-family: var(--font-family-italic);
 }
 
 .BKTT-Search .input-group input::placeholder {
@@ -49,46 +63,56 @@
 	right: 0;
 	z-index: 999 !important;
 	border-radius: 50% !important;
-	padding: 3px 7px;
+	padding: 13px 14px;
 	background-color: var(--primary-color) !important;
 	border-color: var(--primary-color);
 	transition: all 0.3s ease-out;
+	top: 5px;
+}
+
+.BKTT-Search .ms-srch-sb-searchLink .ms-srch-sb-searchImg {
+	left: -31px;
+	top: -55px;
 }
 
 .BKTT-Search .ms-srch-sb-searchLink:hover {
 	background-color: var(--secondary-color) !important;
 }
 
-/*.BKTT-Nav h2 {
-	padding-left: 1rem;
-}*/
-
 .BKTT-Nav+.BKTT-LangSelect {
-	display: none;
-}
-
-.BKTT-LangSelect {
-	margin-left: 1rem;
 	position: relative;
+	padding-left: 20px;
 }
 
-.BKTT-LangSelect .BKTT-Icon {
+.BKTT-Nav+.BKTT-LangSelect::before {
+	content: "\f0ac";
 	position: absolute;
-	left: 10px;
+	left: -4px;
 	z-index: 999;
+	font-family: 'Font Awesome 6 Pro';
+	display: block;
+	font-weight: 300;
 }
 
-.BKTT-LangSelect select {
-	border: transparent;
-	background-color: transparent;
-	font-size: medium;
-	padding: 11.1px 2rem 11.1px 2rem;
+.BKTT-Nav+.BKTT-LangSelect ul {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.BKTT-Nav+.BKTT-LangSelect ul li {
+	font-family: var(--font-family-secondary);
+}
+
+.BKTT-Nav+.BKTT-LangSelect ul a {
+	display: none;
 }
 
 @media (max-width: 1255px) {
 	.BKTT-Header .container .d-flex .BKTT-Logo {
 		margin: 0;
 	}
+
 	/*.BKTT-Header .container .d-flex .BKTT-Logo + .d-flex.align-items-center{
 		width:50%;
 	}*/
@@ -103,84 +127,77 @@
 		min-height: fit-content;
 	}
 
-	.BKTT-Header .container .BKTT-Search .input-group {
-		width: fit-content !important;
-	}
-
-	.BKTT-Header .container .BKTT-Search .input-group .ms-srch-sb-searchLink {
+	.BKTT-Search {
 		display: none;
 	}
 
-	.BKTT-Header .container .BKTT-Search .input-group .ms-srch-sb-searchLink {
-		background-color: transparent !important;
-		border-color: transparent;
-		padding-top: 5px;
-		border-radius: 10px !important;
-		height: 44px;
+	.BKTT-Search--mobile {
+		position: relative;
+		display: block !important;
 	}
 
-	.BKTT-Header .container .BKTT-Search .input-group .ms-srch-sb-searchLink .BKTT-Icon {
-		margin-top: 4px;
-	}
-
-	.BKTT-Header .container .BKTT-Search .input-group .ms-srch-sb-searchLink[aria-expanded='true'] .BKTT-Icon:before {
-		content: "\f05e";
-	}
-
-	.BKTT-Header .container .BKTT-Search .input-group .BKTT-Icon:before {
-		color: var(--text-color);
-		font-size: 1.3rem;
-	}
-
-	.BKTT-Header .container .BKTT-Search--mobile {
-		position: absolute;
-		width: 400px;
-		top: 48px;
-		left: 0;
-		background-color: var(--custom-white);
-		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-		z-index: 888;
-	}
-
-	.BKTT-Header .container .BKTT-Search--mobile .container {
+	.BKTT-Search--mobile .container {
+		display: none;
 		padding: 2rem 1rem;
 		background-color: var(--primary-color);
 	}
 
-	.BKTT-Header .container .BKTT-Search--mobile .container .input-group {
+	.BKTT-Search--mobile:has(.BKTT-Button:hover) .container {
+		display: block;
+		position: absolute;
+		width: 400px;
+		top: 48px;
+		left: -200px;
+		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+		z-index: 888;
+	}
+
+	.BKTT-Search--mobile .BKTT-Button {
+		border-color:transparent;
+		background-color: transparent;
+		padding: 4px 7px;
+	}
+
+	.BKTT-Search--mobile .BKTT-Button .BKTT-Icon:before {
+		color: var(--text-color);
+		font-size: 1.3rem;
+		content: "\f002";
+	}
+
+	.BKTT-Search--mobile .BKTT-Button[aria-expanded=true] .BKTT-Icon:before {
+		content: "\f05e";
+	}
+
+	.BKTT-Search--mobile .container .input-group {
 		background-color: var(--custom-white);
 		border-radius: 8px;
 	}
 
-	.BKTT-Header .container .BKTT-Search--mobile .container .input-group .form-control {
+	.BKTT-Search--mobile .container .input-group .form-control {
 		height: 44px;
 		border-color: transparent;
 	}
 
-	.BKTT-Header .container .BKTT-Search--mobile .container .input-group .form-control::placeholder {
-		font-style: italic;
-	}
-
-	.BKTT-Header .container .BKTT-Search--mobile .container .input-group .BKTT-Button {
+	.BKTT-Search--mobile .container .input-group .BKTT-Button {
 		border-radius: 50%;
 		background-color: var(--primary-color);
 		margin: 5px 8px 0 0;
 		padding: 4px 7px;
 	}
 
-	.BKTT-Header .container .BKTT-Search--mobile .container .input-group .BKTT-Button .BKTT-Icon {
+	.BKTT-Search--mobile .container .input-group .BKTT-Button .BKTT-Icon {
 		font-size: larger;
 	}
 
-	.BKTT-Header .container .BKTT-LangSelect {
+	.BKTT-LangSelect {
 		padding-right: 15px;
 	}
 
-	.BKTT-Header .container .BKTT-LangSelect .BKTT-Icon {
+	.BKTT-LangSelect .BKTT-Icon {
 		left: 0;
 	}
 
-	.BKTT-Header .container .BKTT-LangSelect select {
+	.BKTT-LangSelect select {
 		padding-left: 2rem;
 		padding-right: 0;
 	}

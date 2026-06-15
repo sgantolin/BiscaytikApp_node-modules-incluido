@@ -50,44 +50,200 @@ function Home() {
 
  return (
   <>
-   <div id="carouselExampleDark" class="carousel carousel-dark slide">
-    <div class="carousel-indicators">
-     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+   <div class="row">
+    <div class="BKTT-WebPartZone-fullWidth--Top col-12">
+     <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="carousel-indicators">
+       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+       <div class="carousel-item active" data-bs-interval="10000">
+        <img src="./src/assets/themes/default/media/slider1.jpg" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+         <h5>First slide label</h5>
+         <p>Some representative placeholder content for the first slide.</p>
+        </div>
+       </div>
+       <div class="carousel-item" data-bs-interval="2000">
+        <img src="./src/assets/themes/default/media/slider2.jpg" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+         <h5>Second slide label</h5>
+         <p>Some representative placeholder content for the second slide.</p>
+        </div>
+       </div>
+       <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+         <h5>Third slide label</h5>
+         <p>Some representative placeholder content for the third slide.</p>
+        </div>
+       </div>
+      </div>
+      <div class="BKTT-CarrouselControl">
+       <span class="BKTT-Icon fa-sharp fa-light fa-circle-info"></span>
+       <div >
+        <button class="BKTT-Button carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="BKTT-Button carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+        </button>
+       </div>
+      </div>
+     </div>
+     {/* código sharepoint */}
+     <div class="BKTT-FigureSlider--container tp-banner-container">
+      <div class="BKTT-FigureSlider tp-banner revslider-initialised tp-simpleresponsive hovered" >
+       <ul>
+        <li class="carousel-item active">
+         <div class="slotholder">
+          <div id="BKTT-slider1" class="d-block w-100 tp-bgimg defaultimg"></div>
+         </div>
+        </li>
+        <li class="carousel-item">
+         <div className="slotholder">
+          <div id="BKTT-slider2" className="d-block w-100 tp-bgimg defaultimg"></div>
+         </div>
+        </li>
+       </ul>
+       <div className="tp-loader"></div>
+       <div className="tp-bannertimer"></div>
+      </div>
+      <div class="tp-leftarrow tparrows default hidearrows"></div>
+      <div class="tp-rightarrow tparrows default hidearrows"></div>
+     </div>
+     {/* end código sharepoint */}
     </div>
-    <div class="carousel-inner">
-     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="./src/assets/themes/default/media/slider1.jpg" class="d-block w-100" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-       <h5>First slide label</h5>
-       <p>Some representative placeholder content for the first slide.</p>
+
+    {/* TÍTULO Y "DESTACADOS" */}
+    <div class="features_sec29">
+     <div class="container">
+      <div class="ms-webpart-zone ms-fullWidth">
+       <div id="MSOZoneCell_WebPartWPQ6" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+        <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+         {/*<div webpartid="35fbbb64-a2ac-488a-bebd-86ef9a932dfd" haspers="false" id="WebPartWPQ6" width="100%" class="ms-WPBody " allowdelete="false" style="">
+            <div class="ms-rtestate-field">
+             <h2 class="section_title_drakgray">destacADOS</h2>
+            </div>
+            <div class="ms-clear"></div>
+           </div>*/}
+        </div>
+       </div>
       </div>
-     </div>
-     <div class="carousel-item" data-bs-interval="2000">
-      <img src="./src/assets/themes/default/media/slider2.jpg" class="d-block w-100" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-       <h5>Second slide label</h5>
-       <p>Some representative placeholder content for the second slide.</p>
-      </div>
-     </div>
-     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-       <h5>Third slide label</h5>
-       <p>Some representative placeholder content for the third slide.</p>
-      </div>
+      {/* <div class="one_third">
+         <div class="ms-webpart-zone ms-fullWidth">
+          <div id="MSOZoneCell_WebPartWPQ3" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+           <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+            <div webpartid="65287b3e-0960-46d7-9059-acccc7d965ab" haspers="false" id="WebPartWPQ3" width="100%" class="ms-WPBody " allowdelete="false" style="">
+             <div class="ms-rtestate-field">
+              <div class="box">
+               <a href="/es-es/surf">
+                <img alt="Surf" src="/PublishingImages/HOME/DESTACADOS/destacado1.png"/>
+                <h3>Surf</h3>
+               </a>
+               <p align="left">Mundaka presume con orgullo de su ola izquierda, y no es para menos ya que está considerada como la mejor ola de Europa en esta categoría.</p><br/>
+               <a class="readmore_but11" href="/es-es/surf">
+                <i class="fa fa-location-arrow"></i>MÁS INFO</a>
+              </div>
+             </div>
+             <div class="ms-clear"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="one_third">
+         <div class="ms-webpart-zone ms-fullWidth">
+          <div id="MSOZoneCell_WebPartWPQ4" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+           <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+            <div webpartid="2f37ed18-024d-4c3a-87e7-2d48dfa6b02e" haspers="false" id="WebPartWPQ4" width="100%" class="ms-WPBody " allowdelete="false" style="">
+             <div class="ms-rtestate-field">
+              <div class="box"> 
+               <a href="/es-es/quehacer/agenda">
+                <img alt="Agenda" src="/PublishingImages/HOME/DESTACADOS/destacado2.png"/>
+                <h3>Mundaka Cultural</h3>
+               </a>
+               <p align="left">Mundaka&nbsp;tiene un amplio programa de actividades culturales, deportivas y de ocio dirigidas &ZeroWidthSpace;a todos los públicos. Consulta aquí los eventos programados.</p>
+               <br/>
+               <a class="readmore_but11" href="/es-es/quehacer/agenda">
+                <i class="fa fa-location-arrow"></i>MÁS INFO
+               </a>
+              </div>
+             </div>
+             <div class="ms-clear"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="one_third last">
+         <div class="ms-webpart-zone ms-fullWidth">
+          <div id="MSOZoneCell_WebPartWPQ5" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+           <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+            <div webpartid="a8048dc2-8573-41e7-87b0-2821ed8ebf53" haspers="false" id="WebPartWPQ5" width="100%" class="ms-WPBody " allowdelete="false" style="">
+             <div class="ms-rtestate-field">
+              <div class="box"> 
+               <a href="/es-es/dormir"> 
+                <img alt="Hoteles" src="/PublishingImages/HOME/DESTACADOS/destacado3.png"/>
+                <h3>Historia en ruta</h3>
+               </a> 
+               <p align="left">Mundaka cuenta con una oferta hotelera que se adapta a todas las necesidades y bolsillos. Consulta aquí nuestra oferta de alojamiento.</p>
+               <br/>
+               <a class="readmore_but11" href="/es-es/dormir">
+                <i class="fa fa-location-arrow"></i>MÁS INFO
+               </a> 
+              </div>
+             </div>
+             <div class="ms-clear"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div> */}
      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-     <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-     <span class="visually-hidden">Next</span>
-    </button>
    </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12"></div>
+    <div class="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12"></div>
+    <div class="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-H50--L col-md-6"></div>
+    <div class="BKTT-WebPartZone-H50--R col-md-6"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-fullWidth--Middle col-12"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-H33--L col-md-4"></div>
+    <div class="BKTT-WebPartZone-H33--M col-md-4"></div>
+    <div class="BKTT-WebPartZone-H33--R col-md-4"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6"></div>
+    <div class="BKTT-WebPartZone-H25--2 col-md-3 col-xs-6"></div>
+    <div class="BKTT-WebPartZone-H25--3 col-md-3 col-xs-6"></div>
+    <div class="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6"></div>
+   </div>
+
+   <div class="row">
+    <div class="BKTT-WebPartZone-fullWidth--Botton col-12"></div>
+   </div>
+
 
    <section className="container py-4 py-md-5">
     <h1>H1 Bienvenido a la aplicación</h1>
@@ -133,9 +289,9 @@ function Home() {
     <h3>Filtros</h3>
     <h4>Default</h4>
     <div class="BKTT-Badge_chip chip chip-outline btn-outline-primary" data-mdb-chip-init="" data-mdb-chip-initialized="true">
-      <span class="BKTT-Icon fa-light fa-lightbulb me-1"></span>
-      Filtro
-      <span class="BKTT-Icon fas fa-times ms-1"></span>
+     <span class="BKTT-Icon fa-light fa-lightbulb me-1"></span>
+     Filtro
+     <span class="BKTT-Icon fas fa-times ms-1"></span>
     </div>
     <h4>Seleccionado</h4>
     <h2>BKTT-Card</h2>

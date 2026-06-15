@@ -1,14 +1,15 @@
 //global styles
-@use 'scss/global';
+@use 'css/global';
 @use 'scss/components/scrolls';
 @use 'scss/components/breadcrumb';
 
 //layout
-@use 'scss/layout/header';
-@use 'scss/layout/footer';
+@use 'css/layout/header';
+@use 'css/layout/footer';
 
 //custom components
-@use 'scss/components/nav';
+@use 'css/components/nav';
+@use 'css/components/slider';
 @use 'scss/components/toast';
 @use 'scss/components/dialog';
 @use 'scss/components/accordions';
@@ -19,8 +20,9 @@
 @use 'scss/components/tabs';
 @use 'scss/components/tooltip';
 
-//custom theme HERRIZ
-@use 'scss/themes/default';
-//@use 'scss/themes/artea';
 //css variables (no sass variables)
-@use 'scss/variables';
+@use 'css/variables';
+//custom theme HERRIZ
+@use 'css/themes/default';
+//@use 'scss/themes/artea';
+
