@@ -1,0 +1,428 @@
+﻿<%@Master language="C#"%>
+<%@Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="wssucmui" TagName="MUISelector" Src="~/_controltemplates/15/MUISelector.ascx"%>
+<%@Register TagPrefix="wssucw" TagName="Welcome" Src="~/_controltemplates/15/Welcome.ascx"%>
+<%@Register TagPrefix="PublishingRibbon" TagName="PublishingRibbon" Src="~/_controltemplates/15/Ribbon.ascx"%>
+<%@Register TagPrefix="SharePointWebControls" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="SearchWC" Namespace="Microsoft.Office.Server.Search.WebControls" Assembly="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="biscaytik" Namespace="Turismo2013.WebParts" Assembly="Turismo2013.WebParts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f2cc5471da6bb42" %>
+<!DOCTYPE html >
+
+
+<!DOCTYPE html >
+<SharePointWebControls:SPHtmlTag lang="en" runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
+    <head id="Head1" runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Expires" content="0" />
+        <SharePoint:RobotsMetaTag ID="RobotsMetaTag1" runat="server">
+        </SharePoint:RobotsMetaTag>
+        <SharePoint:PageTitle ID="PageTitle1" runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server">
+                <SharePoint:ProjectProperty ID="ProjectProperty1" Property="Title" runat="server">
+                </SharePoint:ProjectProperty>
+            </asp:ContentPlaceHolder>
+        </SharePoint:PageTitle>
+        <SharePoint:SPShortcutIcon ID="SPShortcutIcon1" runat="server" IconUrl="/Style Library/Images/favicon.ico"/>
+
+        <SharePoint:StartScript ID="StartScript1" runat="server">
+        </SharePoint:StartScript>
+        <SharePoint:CssLink ID="CssLink1" runat="server" Version="15">
+        </SharePoint:CssLink>
+        <SharePoint:CacheManifestLink ID="CacheManifestLink1" runat="server">
+        </SharePoint:CacheManifestLink>
+        <SharePoint:PageRenderMode ID="PageRenderMode1" runat="server" RenderModeType="Standard">
+        </SharePoint:PageRenderMode>
+        <SharePoint:ScriptLink ID="ScriptLink1" language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink ID="ScriptLink2" language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink ID="ScriptLink3" language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink ID="ScriptLink4" language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:ScriptLink ID="ScriptLink5" language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false">
+        </SharePoint:ScriptLink>
+        <SharePoint:CustomJSUrl ID="CustomJSUrl1" runat="server">
+        </SharePoint:CustomJSUrl>
+        <SharePoint:SoapDiscoveryLink ID="SoapDiscoveryLink1" runat="server">
+        </SharePoint:SoapDiscoveryLink>
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server">
+            </asp:ContentPlaceHolder>
+            <SharePoint:DelegateControl ID="DelegateControl1" runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true">
+            </SharePoint:DelegateControl>
+            <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server">
+            </asp:ContentPlaceHolder>
+        </SharePoint:AjaxDelta>
+        <!--<SharePoint:CssRegistration ID="CssRegistration1" Name="Themable/corev15.css" runat="server">-->
+        </SharePoint:CssRegistration>
+        <SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server">
+            <WebPartPages:SPWebPartManager ID="SPWebPartManager1" runat="server">
+            </WebPartPages:SPWebPartManager>
+        </SharePoint:AjaxDelta>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+		<!-- Favicon --> 
+	<link rel="shortcut icon" href="/sites/mundaka/_catalogs/masterpage/Prueba/images/favicon.ico" />
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">//<![CDATA[//]]></script>
+	<![endif]-->
+    
+    <SharePoint:ScriptLink ID="ScriptLink6" name="~sitecollection/_catalogs/masterpage/bootstrap/scripts/jquery-1.8.3.min.js" runat="server" Language="javascript" OnDemand="false"  Localizable="false"/> 
+    
+    		
+
+
+    
+    <!-- ######### CSS STYLES ######### -->
+	
+    <!--<link rel="stylesheet" href="/_layouts/15/Turismo2013.Files/Styles/common/css/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Style Library/css/font-awesome/css/font-awesome.min.css">-->
+
+    <!-- responsive devices styles -->
+   
+    <!-- mega menu -->
+    <!--<link href="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/sticky.css" rel="stylesheet" />
+    <link href="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/bootstrap.css" rel="stylesheet" />
+    <link href="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/fhmm.css" rel="stylesheet" />-->
+    
+	<!-- REVOLUTION SLIDER -->
+   	<SharePoint:CssRegistration ID="CssRegistration6" name="/_layouts/15/Turismo2013.Files/Styles/common/js/revolutionslider/rs-plugin/css/settings.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration7" name="/_layouts/15/Turismo2013.Files/Styles/common/js/revolutionslider/css/slider_main.css" runat="server" after="SharepointCssFile"/>
+
+    
+    <!-- cubeportfolio -->
+	<SharePoint:CssRegistration ID="CssRegistration8" name="/_layouts/15/Turismo2013.Files/Styles/common/js/cubeportfolio/cubeportfolio.min.css" runat="server" after="SharepointCssFile"/>
+    <!-- cubeportfolio -->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/cubeportfolio/jquery.cubeportfolio.min.js">//<![CDATA[//]]></script>
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/cubeportfolio/main.js">//<![CDATA[//]]></script>
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/cubeportfolio/main4.js">//<![CDATA[//]]></script>
+
+	<!-- carousel -->
+    <SharePoint:CssRegistration ID="CssRegistration9" name="/_layouts/15/Turismo2013.Files/Styles/common/js/carousel/flexslider.css" runat="server" after="SharepointCssFile"/>
+ 	<SharePoint:CssRegistration ID="CssRegistration10" name="/_layouts/15/Turismo2013.Files/Styles/common/js/carousel/skin.css" runat="server" after="SharepointCssFile"/>
+
+       
+ 
+    <!-- Lightbox -->
+    <SharePoint:CssRegistration ID="CssRegistration11" name="/_layouts/15/Turismo2013.Files/Styles/common/js/lightbox/jquery.fancybox.css" runat="server" after="SharepointCssFile"/>
+    
+    <!--SS--> 
+    <SharePoint:CssRegistration ID="CssRegistration18" name="/_layouts/15/Turismo2013.Files/custom_web/assets/icons/fontawesome-pro/all.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration12" name="/_layouts/15/Turismo2013.Files/custom_web/node_modules/bootstrap/css/bootstrap.min.css" runat="server" after="SharepointCssFile"/>
+    <script type="text/javascript" src="/_layouts/15/Turismo2013.Files/custom_web/node_modules/bootstrap/js/bootstrap.bundle.min.js">//<![CDATA[//]]></script>
+    <SharePoint:CssRegistration ID="CssRegistration13" name="/_layouts/15/Turismo2013.Files/custom_web/css/_global.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration14" name="/_layouts/15/Turismo2013.Files/custom_web/css/_variables.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration15" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_header.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration19" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_footer.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration17" name="/_layouts/15/Turismo2013.Files/custom_web/css/themes/_default.css" runat="server" after="SharepointCssFile"/>
+    <!--end SS--> 
+ 	<script type="text/javascript" src="/Style Library/JS/controlCookies.js"></script>
+<noscript>
+            <style type="text/css">
+                .cookiesms{display:none !important;}
+            </style>
+        </noscript>
+		
+		
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-RZW5Q6JJBQ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZW5Q6JJBQ');
+    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->	
+    </head>
+    <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
+    <div class="BKTT-cookies cookiesms" id="cookie1">
+	    <asp:Label ID="cookiesText" runat="server">PRUEBA COOKIES</asp:Label> <a id="linkCookies" href="/eu-ES/Orriak/Politicadecookies.aspx">
+		<asp:Label ID="cookiesLink" runat="server"> ENLACE </asp:Label></a>
+	    <button class="botonCookies" onclick="controlcookies()"> 
+		<asp:Label ID="cookiesBoton" runat="server">BOTON</asp:Label></button>
+	    <div  class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">
+			<asp:Label ID="cookiesHead" runat="server">COOKIES</asp:Label></div>
+    </div>
+    <script type="text/javascript">
+        if (localStorage.controlcookie > 0) {
+            document.getElementById('cookie1').style.display = 'none';
+        }
+        
+        if (document.URL.toLowerCase().indexOf('es-es') > -1) {
+            document.getElementById('linkCookies').href = '/es-ES/Paginas/politica-cookies.aspx';
+            document.getElementById('ctl00_cookiesHead').innerHTML = 'Política de Cookies';
+            document.getElementById('ctl00_cookiesText').innerHTML = 'En este sitio utilizamos cookies de terceros para facilitar la navegación, obtener información estadísticas de uso de nuestros visitantes y personalizar los contenidos que se muestran a los visitantes. Si continúa navegando en la web, accediendo a diferentes áreas y menús o utilizando la barra de desplazamiento, consideramos que acepta su uso. Más información en la política de cookies ';
+            document.getElementById('ctl00_cookiesLink').innerHTML = 'aquí';
+            document.getElementById('ctl00_cookiesBoton').innerHTML = 'Aceptar';
+        }
+        else if (document.URL.toLowerCase().indexOf('en-us') > -1) {
+            document.getElementById('linkCookies').href = '/en-US/Pages/politica-cookies.aspx';
+            document.getElementById('ctl00_cookiesHead').innerHTML = 'Cookie policy';
+            document.getElementById('ctl00_cookiesText').innerHTML = 'On this site we use third party cookies to ease navigation, obtain statistics from our visitors and customize the contents shown to visitors. If you continue navigating this web, accessing to different areas and menus or using the scrollbar, we consider that you accept their use. More information on cookie policy ';
+            document.getElementById('ctl00_cookiesLink').innerHTML = 'here';
+            document.getElementById('ctl00_cookiesBoton').innerHTML = 'Accept';
+
+        }
+        else if (document.URL.toLowerCase().indexOf('fr-fr') > -1) {
+            document.getElementById('linkCookies').href = '/fr-fr/Pages/politica-cookies.aspx';
+            document.getElementById('ctl00_cookiesHead').innerHTML = 'Politique liée aux cookies';
+            document.getElementById('ctl00_cookiesText').innerHTML = 'Sur ce site, nous utilisons les cookies de tiers afin de faciliter la navigation de l`ilisateur, de faire des mesures et des statistiques d`tilisation et de personnaliser le contenu affiché aux visiteurs. En poursuivant la navigation sur ce site, vous acceptez l`utilisation de ces cookies. Pour obtenir plus d`informations sur la politique liée aux cookies ';
+            document.getElementById('ctl00_cookiesLink').innerHTML = 'Cliquez ici';
+            document.getElementById('ctl00_cookiesBoton').innerHTML = 'Accepter';
+            
+        }
+
+        else {
+            document.getElementById('linkCookies').href = '/eu-ES/Orriak/politica-cookies.aspx';
+            document.getElementById('ctl00_cookiesHead').innerHTML = 'Cookie politika';
+            document.getElementById('ctl00_cookiesText').innerHTML =  'Gune honetan hirugarrenen cookie-ak erabiltzen ditugu, nabigazioa errazteko, gure bisitariek erabil dezaten estatistika informazioa jasotzeko eta bisitariei erakusten dieten edukiak pertsonalizatzeko. Webgunean nabigatzen jarraitzen baduzu, sail eta menu desberdinetara sartzen edo korritze barra erabiltzen, horien erabilpena onartzen duzula ulertuko dugu. Informazio gehiago cookie politikan ';
+            document.getElementById('ctl00_cookiesLink').innerHTML = 'hemen';
+            document.getElementById('ctl00_cookiesBoton').innerHTML = 'Onartu';
+        }
+    </script>
+    
+	<SharePointWebControls:SPClientIDGenerator ID="SPClientIDGenerator1" runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent"/>
+    <!--imgs theme edición?-->
+	<SharePointWebControls:ImageLink ID="ImageLink1" runat="server"/>
+
+    <SharePointWebControls:SharePointForm ID="SharePointForm1" onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server"><asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+        <!--modo edicion-->
+        <div id="ms-designer-ribbon">
+         <PublishingRibbon:PublishingRibbon runat="server" />
+        </div>
+        <!--end modo edicion-->
+        <div id="s4-workspace" class="ms-core-overlay">
+            <div id="s4-bodyContainer" class="BKTT-ThemeTurismo">
+            			<header id="header" class="BKTT-Header fixed-top">
+                <div class="container">
+                 <div class="d-flex align-items-center justify-content-between">
+                  <div class="BKTT-Logo logo">
+                   <!--<biscaytik:LocalizedLogoWebControl ID="LocalizedLogo2" Src="<% $SPUrl:~sitecollection/Style Library/Images/logotxiki.png %>"
+				                        			ATitle="Home" AltText="Home" Href="<% $SPUrl:~sitecollection/ %>"
+				                        			runat="server" />-->
+                   <!-- Logo -->
+                   <SharePoint:AjaxDelta ID="AjaxDelta1" runat="server" BlockElement="True">
+                   <!--<SharePoint:SiteLogoImage name="onetidHeadbnnr0" runat="server" CssClass="ms-siteicon-img" ID="x74bbee6762f840edad4fe46f496d8c78" LogoImageUrl="/_layouts/15/images/siteIcon.png">
+                   </SharePoint:SiteLogoImage>-->
+                   <biscaytik:LocalizedLogoWebControl ID="LocalizedLogo1" Src="<% $SPUrl:~sitecollection/Style Library/Images/logo.png %>"
+			                ATitle="Home" AltText="Home" Href="<% $SPUrl:~sitecollection/ %>"
+			                runat="server" />
+                   </SharePoint:AjaxDelta>
+                   <!-- End Logo -->
+                  </div>
+                  <div class="d-flex align-items-center">
+                   <!--form-->
+                   <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" BlockElement="true" CssClass="BKTT-Search " runat="server">
+                    <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
+                     <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
+                     <div class="input-group d-flex align-items-center">
+                      <div id="searchInputBox" CssClass="form-control">
+                       <SharePoint:DelegateControl ID="DelegateControl2" runat="server" ControlId="SmallSearchInputBox" />
+                      </div>
+                     </div>
+                    </asp:ContentPlaceHolder>
+                   </SharePoint:AjaxDelta>
+                   <div class="BKTT-Search--mobile" id="toggle-search" type="button" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="BKTT-Button btn btn-primary" type="reset">
+                         <span class="BKTT-Icon fa-light fa-search"></span>
+                        </button>
+                    <div class="container" id="BKTT-Search--mobileCollap">
+                     <form action="" method="GET" role="search">
+                      <div class="input-group">
+                       <input type="text" class="form-control" name="q" placeholder="Búsqueda..."/>
+                       <span class="input-group-btn">
+                        <button class="BKTT-Button btn btn-primary" type="submit" aria-label="Submit search"><span class="BKTT-Icon fa-light fa-search"></span></button>
+                       </span>
+                      </div>
+                     </form>
+                    </div>
+                   </div>
+                   <!--end form-->
+                   <!--BKTT-Nav-->
+                   <nav class="BKTT-Nav navbar navbar-expand-lg" role="navigation">
+                    <div class="container-fluid">
+                     <button type="button" data-bs-toggle="collapse" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle d-sm-block d-md-none" aria-label="Toggle navigation">  
+                      <span class="BKTT-Icon fa-regular fa-bars"></span>
+                     </button>
+                     <div id="defaultmenu" class="navbar-collapse collapse">
+                      <biscaytik:TopMenuWebControl ID="TopMenuWebControl1" runat="server"></biscaytik:TopMenuWebControl >
+                      <!--lang mob-->
+                      <div class="BKTT-LangSelect d-sm-block d-md-none">
+                        <button class="btn btn-line dropdown-toggle" type="button" id="dropdownMenuLangButtonM" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="BKTT-Icon fa-light fa-globe me-1"></span> ES
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLangButtonM">
+                        <biscaytik:VariationsMenu ID="LanguageSelector2" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu>
+                        </div>
+                        </div>
+                        <!--end lang mob-->
+                     </div>
+                    </div>
+                    
+                   </nav>
+                   <!--End BKTT-Nav-->
+                   <div class="BKTT-LangSelect header-end">
+                    <button class="btn btn-line dropdown-toggle" type="button" id="dropdownMenuLangButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="BKTT-Icon fa-light fa-globe me-1"></span> ES
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLangButton">
+                     <biscaytik:VariationsMenu ID="LanguageSelector1" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu>
+                    </div>
+                   </div>
+                   <!--end BKTT-LangSelect-->
+                  </div>
+                 </div>
+                 <biscaytik:PortalContentWebControl id="contentsuperior3" runat="server" zone="superior"/>
+                <!-- end top navigation -->
+               </header>
+      <!--page title-->
+	     <!--
+      <div class="headtitle pull-left">
+       <h1 id="pageTitle" class="ms-core-pageTitle">
+        <SharePoint:AjaxDelta id="DeltaPlaceHolderPageTitleInTitleArea" runat="server">
+         <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server">
+         </asp:ContentPlaceHolder>
+        </SharePoint:AjaxDelta>
+       </h1>
+      </div>-->
+      <main class="BKTT-Main">
+							<SharePoint:AjaxDelta ID="DeltaPlaceHolderMain" IsMainContent="true" runat="server">
+        <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server"> </asp:ContentPlaceHolder>
+		     </SharePoint:AjaxDelta>
+    </main>
+		    <footer class="BKTT-footer container-fluid">
+		     <div class="container">
+        <div class="row">
+         <div class="col-12 col-md-3 text-center text-sm-start">
+          <biscaytik:FooterWebControl id="pieizq" runat="server" zone="Izquierda"></biscaytik:FooterWebControl>
+         </div>
+         <div class="col-12 col-md-3 text-center text-sm-start">
+          <biscaytik:FooterWebControl id="piecentro" runat="server" zone="Centro"></biscaytik:FooterWebControl>
+         </div>
+         <div class="col-12 col-md-3 text-center text-sm-start">
+          <biscaytik:FooterWebControl id="piedch" runat="server" zone="Derecha"></biscaytik:FooterWebControl> 
+         </div>
+         <div class="col-12 col-md-3 text-center text-sm-start">
+          <ul class="BKTT-RRSS list-group list-group-horizontal mb-5">
+           <li class="list-group-item">
+            <a href="#" target="_blank" rel="">
+            <span class="BKTT-Icon fa-brands fa-facebook fs-3 me-3"></span>
+            </a>
+           </li>
+           <li class="list-group-item">
+            <a href="#" target="_blank" rel="">
+            <span class="BKTT-Icon fa-brands fa-instagram fs-3 me-3"></span>
+            </a>
+           </li>
+           <li class="list-group-item">
+            <a href="#" target="_blank" rel="">
+            <span class="BKTT-Icon fa-brands fa-whatsapp fs-3 me-3"></span>
+            </a>
+           </li>
+           <li class="list-group-item">
+            <a href="#" target="_blank" rel="">
+            <span class="BKTT-Icon fa-sharp fa-light fa-messages fs-3"></span>
+            </a>
+           </li>
+          </ul>
+          <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
+         </div>
+        </div>
+        <div class="row mt-4">
+         <div class="col-12 text-center">
+          <biscaytik:PortalContentWebControl id="contentrightbotton" CssClass="text-center" runat="server" zone="bottonright"/>						
+         </div>        						        
+        </div> 
+							</div>
+       <a href="#" class="BKTT-BackTop btn btn-primary btn-floating btn-lg scrollup" style="display: inline;">
+        <span class="fas fa-arrow-up"></span>
+       </a>
+						</footer>
+					</div>
+            	</div>
+    <SharePointWebControls:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server"><asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server"><SharePointWebControls:formdigest ID="Formdigest1" runat="server" /></asp:ContentPlaceHolder></SharePointWebControls:AjaxDelta></SharePointWebControls:SharePointForm><SharePointWebControls:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server"><asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" /></SharePointWebControls:AjaxDelta><asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" Visible="False" runat="server" />
+	<asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" Visible="False" runat="server" >
+	</asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder id="PlaceHolderSiteName" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageDescription" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderPageImage" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderMiniConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderNavSpacer" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyLeftBorder" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" Visible="False" runat="server" /><asp:ContentPlaceHolder id="WSSDesignConsole" Visible="False" runat="server" /><asp:ContentPlaceHolder id="SPNavigation" Visible="False" runat="server" /></body>
+	
+	
+	
+    
+<!-- ######### JS FILES ######### -->
+<!-- get jQuery from the google apis -->
+<!--<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/universal/jquery.js">//<![CDATA[//]]></script>-->
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/revolutionslider/rs-plugin/js/jquery.themepunch.plugins.min.js">//<![CDATA[//]]></script>
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/revolutionslider/rs-plugin/js/jquery.themepunch.revolution.min.js">//<![CDATA[//]]></script>
+
+<!-- jQuery UI para la animacion -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.js">//<![CDATA[//]]></script>
+
+
+<!-- mega menu -->
+<script src="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/bootstrap.min.js">//<![CDATA[//]]></script>
+<script src="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/fhmm.js">//<![CDATA[//]]></script>
+
+<!-- jquery jcarousel -->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/carousel/jquery.jcarousel.min.js">//<![CDATA[//]]></script>
+
+<!-- scroll up -->
+<script src="/_layouts/15/Turismo2013.Files/Styles/common/js/scrolltotop/totop.js" type="text/javascript">//<![CDATA[//]]></script>
+
+<!-- tabs -->
+<script src="/_layouts/15/Turismo2013.Files/Styles/common/js/tabs/assets/js/responsive-tabs.min.js" type="text/javascript">//<![CDATA[//]]></script>
+
+<!-- jquery jcarousel -->
+<script type="text/javascript">//<![CDATA[
+    jQuery(document).ready(function () {
+        jQuery('#mycarouselthree').jcarousel();
+    });
+    //]]></script>
+
+<!-- accordion 
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/accordion/custom.js">//<![CDATA[//]]></script>
+  <script type="text/javascript">//<![CDATA[
+      jQuery(document).ready(function () {
+          jQuery("#s4-workspace").css("overflow-x", "hidden");
+      });
+      //]]></script>-->
+
+
+<!-- REVOLUTION SLIDER -->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/revolutionslider/rs-plugin/js/custom2.js">//<![CDATA[//]]></script>
+
+<!-- sticky menu -->
+<!--<script type="text/javascript" src="/sites/mundaka/_catalogs/masterpage/Prueba/js/mainmenu/sticky.js">//<![CDATA[//]]></script>-->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/mainmenu/modernizr.custom.75180.js">//<![CDATA[//]]></script>
+
+
+<!-- carousel -->
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/carousel/jquery.flexslider.js">//<![CDATA[//]]></script>
+<script type="text/javascript" src="/_layouts/15/Turismo2013.Files/Styles/common/js/carousel/custom.js">//<![CDATA[//]]></script>
+
+
+
+<script type="text/javascript">//<![CDATA[
+    // Menu drop down effect
+    $('.dropdown-toggle').dropdownHover().dropdown();
+    $(document).on('click', '.fhmm .dropdown-menu', function (e) {
+        e.stopPropagation()
+    })
+    //]]></script>
+
+
+
+
+
+</SharePointWebControls:SPHtmlTag>

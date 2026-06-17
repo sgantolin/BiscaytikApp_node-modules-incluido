@@ -8,7 +8,7 @@
 	border-bottom-color: var(--border-color);
 	box-shadow: none;
 	border-radius: 0px;
-	min-height: 60px;
+	/*min-height: 60px;*/
 }
 
 .BKTT-Header .logo {
@@ -38,10 +38,10 @@
 	width: 164px !important;
 	background-color: transparent;
 	right: -4px;
-	top: 3px;
+	top: 0;
 	transition: all 0.3s ease-out;
 	margin-left: 0;
-	height: 35px;
+	height: 37px;
 	line-height: 35px;
 }
 
@@ -63,62 +63,58 @@
 	right: 0;
 	z-index: 999 !important;
 	border-radius: 50% !important;
-	padding: 13px 14px;
 	background-color: var(--primary-color) !important;
 	border-color: var(--primary-color);
 	transition: all 0.3s ease-out;
-	top: 5px;
+	padding: 14px 15px;
+	top: 3px;
 }
 
 .BKTT-Search .ms-srch-sb-searchLink .ms-srch-sb-searchImg {
-	left: -31px;
-	top: -55px;
+	display: none;
 }
 
 .BKTT-Search .ms-srch-sb-searchLink:hover {
-	background-color: var(--secondary-color) !important;
-}
-
-.BKTT-Nav+.BKTT-LangSelect {
-	position: relative;
-	padding-left: 20px;
-}
-
-.BKTT-Nav+.BKTT-LangSelect::before {
-	content: "\f0ac";
-	position: absolute;
-	left: -4px;
-	z-index: 999;
-	font-family: 'Font Awesome 6 Pro';
-	display: block;
-	font-weight: 300;
+	border-color: var(--secondary-color);
 }
 
 .BKTT-Nav+.BKTT-LangSelect ul {
-	margin-bottom: 0;
-	padding-left: 0;
+	margin-bottom: 8px;
+	padding: 0 16px;
 	list-style: none;
 }
 
 .BKTT-Nav+.BKTT-LangSelect ul li {
 	font-family: var(--font-family-secondary);
 }
+.BKTT-Search .ms-srch-sb-searchLink:before {
+		content: "\f002";
+		font-family: 'Font Awesome 6 Pro';
+		position: absolute;
+		top: 2px;
+		left: 7px;
+		color: var(--link-color-light);
+	}
 
-.BKTT-Nav+.BKTT-LangSelect ul a {
-	display: none;
-}
 
 @media (max-width: 1255px) {
 	.BKTT-Header .container .d-flex .BKTT-Logo {
 		margin: 0;
 	}
 
-	/*.BKTT-Header .container .d-flex .BKTT-Logo + .d-flex.align-items-center{
-		width:50%;
-	}*/
-
 	.BKTT-Header .container .d-flex .BKTT-Search input {
 		width: 0 !important;
+	}
+
+	.BKTT-Nav .container-fluid .navbar-toggle {
+		background: transparent;
+	}
+}
+
+@media (min-width: 992px) {
+
+	.BKTT-Search--mobile {
+		display: none;
 	}
 }
 
@@ -142,30 +138,42 @@
 		background-color: var(--primary-color);
 	}
 
-	.BKTT-Search--mobile:has(.BKTT-Button:hover) .container {
+	.BKTT-Search--mobile:has(.BKTT-Button:hover) .container.show {
 		display: block;
 		position: absolute;
 		width: 400px;
-		top: 48px;
-		left: -200px;
+		top: 45px;
+		left: -196px;
 		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 		z-index: 888;
 	}
 
 	.BKTT-Search--mobile .BKTT-Button {
-		border-color:transparent;
+		border-color: transparent;
 		background-color: transparent;
 		padding: 4px 7px;
 	}
 
+	.BKTT-Search--mobile .BKTT-Button:hover,
+	.BKTT-Search--mobile .BKTT-Button:focus {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.BKTT-Search--mobile[aria-expanded="true"]>.BKTT-Button>.BKTT-Icon:before {
+		content: "\f05e";
+		color: var(--primary-color);
+	}
+
 	.BKTT-Search--mobile .BKTT-Button .BKTT-Icon:before {
-		color: var(--text-color);
+		color: var(--link-color);
 		font-size: 1.3rem;
 		content: "\f002";
 	}
 
-	.BKTT-Search--mobile .BKTT-Button[aria-expanded=true] .BKTT-Icon:before {
+	.BKTT-Search--mobile[aria-expanded="true"]>.BKTT-Button>.BKTT-Icon:before {
 		content: "\f05e";
+		color: var(--primary-color);
 	}
 
 	.BKTT-Search--mobile .container .input-group {
@@ -176,17 +184,6 @@
 	.BKTT-Search--mobile .container .input-group .form-control {
 		height: 44px;
 		border-color: transparent;
-	}
-
-	.BKTT-Search--mobile .container .input-group .BKTT-Button {
-		border-radius: 50%;
-		background-color: var(--primary-color);
-		margin: 5px 8px 0 0;
-		padding: 4px 7px;
-	}
-
-	.BKTT-Search--mobile .container .input-group .BKTT-Button .BKTT-Icon {
-		font-size: larger;
 	}
 
 	.BKTT-LangSelect {
@@ -209,5 +206,32 @@
 		display: block;
 		clear: both;
 		margin-top: 57px;
+	}
+
+	.BKTT-Search--mobile:has(.BKTT-Button:hover) .container {
+		top: 45px;
+	}
+
+	.BKTT-Search--mobile .container .input-group .form-control {
+		padding-left: 20px;
+	}
+
+	.BKTT-Search--mobile .container .input-group .BKTT-Button {
+		background-color: transparent;
+		margin: 5px 8px 0 0;
+	}
+
+	.BKTT-Search--mobile .container .BKTT-Icon {
+		right: 0;
+		position: absolute;
+		top: -5px;
+		background-color: var(--primary-color);
+		padding: 7px 9px 8px;
+		border-radius: 50%;
+	}
+
+	.BKTT-Search--mobile .container .BKTT-Icon:before {
+		color: var(--link-color-light);
+		font-size: 0.9rem;
 	}
 }

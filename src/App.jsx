@@ -26,7 +26,7 @@ function MainLayout() {
     <>
       {showHeader && <Header />}
       <BreadCrumb/>
-      <main>
+      <main class="BKTT-Main">
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />

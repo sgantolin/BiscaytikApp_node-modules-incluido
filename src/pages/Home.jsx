@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
+import { Tooltip } from 'bootstrap';
 
 
 function Home() {
@@ -48,41 +49,53 @@ function Home() {
 
  const navigate = useNavigate();
 
+ useEffect(() => {
+  try {
+   const triggers = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+   const instances = triggers.map((el) => new Tooltip(el));
+   return () => instances.forEach((i) => i.dispose());
+  } catch (e) {
+   // bootstrap Tooltip not available
+  }
+ }, []);
+
  return (
   <>
    <div class="row">
     <div class="BKTT-WebPartZone-fullWidth--Top col-12">
-     <div id="carouselExampleDark" class="carousel carousel-dark slide">
+     <figure id="carouselExampleDark" class="BKTT-FigureSlider carousel carousel-dark slide">
       <div class="carousel-indicators">
        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-inner">
-       <div class="carousel-item active" data-bs-interval="10000">
+      <ul class="carousel-inner">
+       <li class="carousel-item active" data-bs-interval="10000">
         <img src="./src/assets/themes/default/media/slider1.jpg" class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
+        <figcaption class="carousel-caption d-none d-md-block">
          <h5>First slide label</h5>
          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-       </div>
-       <div class="carousel-item" data-bs-interval="2000">
+        </figcaption>
+       </li>
+       <li class="carousel-item" data-bs-interval="2000">
         <img src="./src/assets/themes/default/media/slider2.jpg" class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
+        <figcaption class="carousel-caption d-none d-md-block">
          <h5>Second slide label</h5>
          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-       </div>
-       <div class="carousel-item">
+        </figcaption>
+       </li>
+       <li class="carousel-item">
         <img src="..." class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
+        <figcaption class="carousel-caption d-none d-md-block">
          <h5>Third slide label</h5>
          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-       </div>
-      </div>
+        </figcaption>
+       </li>
+      </ul>
       <div class="BKTT-CarrouselControl">
-       <span class="BKTT-Icon fa-sharp fa-light fa-circle-info"></span>
+       <button type="button" class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+        <span class="BKTT-Icon fa-sharp fa-light fa-circle-info"></span>
+       </button>
        <div >
         <button class="BKTT-Button carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -94,7 +107,7 @@ function Home() {
         </button>
        </div>
       </div>
-     </div>
+     </figure>
      {/* código sharepoint */}
      <div class="BKTT-FigureSlider--container tp-banner-container">
       <div class="BKTT-FigureSlider tp-banner revslider-initialised tp-simpleresponsive hovered" >
@@ -218,10 +231,131 @@ function Home() {
     <div class="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12"></div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-H50--L col-md-6"></div>
-    <div class="BKTT-WebPartZone-H50--R col-md-6"></div>
+   <div class="container">
+    <div class="row">
+     <div class="BKTT-WebPartZone-H50--L col-md-6">
+      {/*inicio auto-layout*/}
+      <section id="BKTT-carousel" class="BKTT-carousel carousel ">
+       <ul class="carousel-inner ps-0">
+        <li class="carousel-item active" data-bs-interval="10000">
+         <div class="row">
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+         </div>
+        </li>
+        <li class="carousel-item" data-bs-interval="2000">
+         <div class="row">
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+         </div>
+        </li>
+        <li class="carousel-item">
+         <div class="row">
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+          <div class="col">
+           <article class="card" >
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+             <h5 class="card-title">Card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+           </article>
+          </div>
+         </div>
+        </li>
+       </ul>
+       <div class="BKTT-CarrouselControl">
+
+        <button class="BKTT-Button carousel-control-prev" type="button" data-bs-target="#BKTT-carousel" data-bs-slide="prev">
+         <span class="BKTT-Icon fa-light fa-angle-left" aria-hidden="true" aria-label="anterior"></span>
+        </button>
+        <button class="BKTT-Button carousel-control-next" type="button" data-bs-target="#BKTT-carousel" data-bs-slide="next">
+         <span class="BKTT-Icon fa-light fa-angle-right" aria-hidden="true" aria-label="posterior"></span>
+        </button>
+       </div>
+      </section>
+      {/*end auto-layout*/}
+     </div>
+     <div class="BKTT-WebPartZone-H50--R col-md-6"></div>
+    </div>
    </div>
+
 
    <div class="row">
     <div class="BKTT-WebPartZone-fullWidth--Middle col-12"></div>
