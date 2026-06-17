@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CardGrid from '../shared/components/CardGrid';
+
+import destacado1 from '../assets/themes/default/media/destacados1.png';
+import destacado2 from '../assets/themes/default/media/destacados2.png';
+import destacado3 from '../assets/themes/default/media/destacados3.png';
 
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
@@ -47,6 +52,24 @@ function Home() {
  );
 
  const navigate = useNavigate();
+
+ const bottomCards = [
+  {
+    image: destacado1,
+    title: 'Cómo llegar',
+    link: '/catalogo-aplicaciones'
+  },
+  {
+    image: destacado2,
+    title: 'La bahía en directo',
+    link: '/catalogo-entidades'
+  },
+  {
+    image: destacado3,
+    title: 'Folletos y planos',
+    link: '/gestion-de-usuarios'
+  },
+];
 
  return (
   <>
@@ -240,9 +263,12 @@ function Home() {
     <div class="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6"></div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-fullWidth--Botton col-12"></div>
-   </div>
+   <section className="py-4 py-md-5" style={{ backgroundColor: '#f5f5f5' }}>
+    <div className="container">
+     <h2 className="section-title" style={{ fontWeight: 'bold' }}>Destacados</h2>
+     <CardGrid cards={bottomCards} />
+    </div>
+   </section>
 
 
    <section className="container py-4 py-md-5">
