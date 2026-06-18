@@ -8,7 +8,7 @@ function CardGrid({ cards }) {
     <div className="BKTT-CardGrid row g-3">
       {cards.map((card, i) => (
         <div key={i} className="BKTT-CardGrid__item col">
-          <div
+          <a
             className="BKTT-CardGrid__card card h-100"
             style={{ cursor: card.link ? 'pointer' : 'default' }}
             onClick={() => card.link && navigate(card.link)}
@@ -19,7 +19,7 @@ function CardGrid({ cards }) {
             <div className="BKTT-CardGrid__header">
               <h5 className="BKTT-CardGrid__title">{card.title}</h5>
             </div>
-          </div>
+          </a>
         </div>
       ))}
     </div>

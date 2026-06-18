@@ -1,0 +1,4 @@
+.BKTT-CardContainer{}
+.BKTT-CardContainer--C { /* Variant: Columna cards */ }
+.BKTT-CardContainer--CI { /* Variant: Columna cards inverse */ }
+.BKTT-CardContainer__item { /* Internal Element */ }

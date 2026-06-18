@@ -12,6 +12,7 @@ import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
 import { Tooltip } from 'bootstrap';
+import CardContainer from '../shared/components/CardContainer';
 
 
 function Home() {
@@ -54,23 +55,41 @@ function Home() {
 
  const navigate = useNavigate();
 
+ const AgendaCards = [
+  {
+   image: destacado1,
+   title: 'Cómo llegar',
+   link: '/catalogo-aplicaciones'
+  },
+  {
+   image: destacado2,
+   title: 'La bahía en directo',
+   link: '/catalogo-entidades'
+  },
+  {
+   image: destacado3,
+   title: 'Folletos y planos',
+   link: '/gestion-de-usuarios'
+  },
+ ];
+
  const bottomCards = [
   {
-    image: destacado1,
-    title: 'Cómo llegar',
-    link: '/catalogo-aplicaciones'
+   image: destacado1,
+   title: 'Cómo llegar',
+   link: '/catalogo-aplicaciones'
   },
   {
-    image: destacado2,
-    title: 'La bahía en directo',
-    link: '/catalogo-entidades'
+   image: destacado2,
+   title: 'La bahía en directo',
+   link: '/catalogo-entidades'
   },
   {
-    image: destacado3,
-    title: 'Folletos y planos',
-    link: '/gestion-de-usuarios'
+   image: destacado3,
+   title: 'Folletos y planos',
+   link: '/gestion-de-usuarios'
   },
-];
+ ];
 
  return (
   <>
@@ -249,40 +268,10 @@ function Home() {
      <div class="BKTT-WebPartZone-H50--L col-md-6">
       {/*inicio auto-layout*/}
       <section id="BKTT-carousel" class="BKTT-carousel carousel ">
+       <h2>Título</h2>
        <ul class="carousel-inner ps-0">
         <li class="carousel-item active" data-bs-interval="10000">
-         <div class="row">
-          <div class="col">
-           <article class="card" >
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-             <h5 class="card-title">Card title</h5>
-             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-           </article>
-          </div>
-          <div class="col">
-           <article class="card" >
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-             <h5 class="card-title">Card title</h5>
-             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-           </article>
-          </div>
-          <div class="col">
-           <article class="card" >
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-             <h5 class="card-title">Card title</h5>
-             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-             <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-           </article>
-          </div>
-         </div>
+         <CardContainer cards={bottomCards} />
         </li>
         <li class="carousel-item" data-bs-interval="2000">
          <div class="row">
@@ -290,7 +279,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -300,7 +289,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -310,7 +299,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -324,7 +313,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -334,7 +323,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -344,7 +333,7 @@ function Home() {
            <article class="card" >
             <img src="..." class="card-img-top" alt="..." />
             <div class="card-body">
-             <h5 class="card-title">Card title</h5>
+             <h3 class="card-title">Card title</h3>
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
@@ -390,7 +379,7 @@ function Home() {
    <section className="py-4 py-md-5" style={{ backgroundColor: '#f5f5f5' }}>
     <div className="container">
      <h2 className="section-title" style={{ fontWeight: 'bold' }}>Destacados</h2>
-     <CardGrid cards={bottomCards} />
+     <CardGrid cards={AgendaCards} />
     </div>
    </section>
 
