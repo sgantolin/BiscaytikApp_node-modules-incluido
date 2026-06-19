@@ -1,12 +1,40 @@
 /* ABEM Syntax Pattern 
 .[atomic-prefix]-[block]__[element]--[modifier]*/
+
+
+.BKTT-CardContainer__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.BKTT-Card__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.BKTT-Card__Body {
+  flex: 1;
+}
+
+.BKTT-Card__Footer {
+  margin-top: auto;
+}
+
 .BKTT-CardContainer{
   list-style: none;
   padding: 0;
 }
-.BKTT-Card__figure{
+.BKTT-Card__figure {
   margin-bottom: 0;
-  height: 150px;
+  height: 200px;
+  position: relative;
+}
+.BKTT-Card__figure .BKTT-Badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
 }
 .BKTT-Card__figure img{
   height: 100%;

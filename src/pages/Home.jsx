@@ -57,12 +57,14 @@ function Home() {
 
  const AgendaCards = [
   {
-   badgeClass:'badge bg-info',
+  
    badgeIcon: 'fa-solid fa-globe',
    badgeText: 'Casco',
    image: destacado1,
    headerBadge: { icon: 'fa-solid fa-star', text: 'Destacado' },
    title: 'Casco histórico',
+   date: '15/03/2026',
+   price: '29.99',
    description: 'Recorre las calles del casco histórico y descubre su patrimonio y oferta gastronómica.',
    tags: [{ label: 'Gastronomía', icon: 'fa-solid fa-utensils' }, { label: 'Cultura' }],
    progress: 65,
@@ -73,17 +75,19 @@ function Home() {
    footerLabel: 'Ver',
   },
   {
+
    badgeIcon: 'fa-solid fa-video',
    badgeText: 'En vivo',
    image: destacado2,
    headerBadge: { icon: 'fa-solid fa-tv', text: 'Directo' },
    title: 'La bahía en directo',
+   date: '20/06/2026',
    description: 'Stream en tiempo real desde la bahía para ver el estado del mar y eventos.',
    tags: [{ label: 'Naturaleza' }, { label: 'Eventos' }],
    progress: 45,
    progressLabel: 'Visitas hoy',
    progressClass: 'bg-info',
-   link: '/bahia-en-directo'
+   link: '/bahia-en-directo',
   },
   {
    badgeIcon: 'fa-solid fa-file-lines',
@@ -91,12 +95,12 @@ function Home() {
    image: destacado3,
    headerBadge: { icon: 'fa-solid fa-download', text: 'Folletos' },
    title: 'Folletos y planos',
+   price: '50 - 100',
    description: 'Descarga folletos y planos turísticos actualizados de la localidad.',
    tags: [{ label: 'Turismo' }, { label: 'Descargas' }],
-   progress: 25,
    progressLabel: 'Descargas',
    progressClass: 'bg-warning',
-   link: '/folletos-planos'
+   link: '/folletos-planos',
   },
  ];
 
@@ -115,6 +119,27 @@ function Home() {
    image: destacado3,
    title: 'Folletos y planos',
    link: '/gestion-de-usuarios'
+  },
+ ];
+
+ const SimpleCards = [
+  {
+   badgeIcon: 'fa-solid fa-utensils',
+   badgeText: 'Gastronomía',
+   title: 'Menú degustación',
+   price: '45.00',
+  },
+  {
+   badgeIcon: 'fa-solid fa-ship',
+   badgeText: 'Paseo marítimo',
+   title: 'Ruta en barco',
+   price: '25.00',
+  },
+  {
+   badgeIcon: 'fa-solid fa-person-hiking',
+   badgeText: 'Senderismo',
+   title: 'Ruta por los acantilados',
+   price: '0.00',
   },
  ];
 
@@ -298,7 +323,7 @@ function Home() {
        <h2>Título</h2>
        <ul class="carousel-inner ps-0">
         <li class="carousel-item active" data-bs-interval="10000">
-         <CardContainer cards={bottomCards} />
+         <CardContainer cards={AgendaCards} />
         </li>
         <li class="carousel-item" data-bs-interval="2000">
          <div class="row">
@@ -409,7 +434,6 @@ function Home() {
      <CardGrid cards={AgendaCards} />
     </div>
    </section>
-
 
    <section className="container py-4 py-md-5">
     <h1>H1 Bienvenido a la aplicación</h1>
