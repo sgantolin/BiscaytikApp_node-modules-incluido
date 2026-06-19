@@ -1,65 +1,134 @@
 /* ABEM Syntax Pattern 
 .[atomic-prefix]-[block]__[element]--[modifier]*/
 
+/* === CONTAINER === */
+.BKTT-CardContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.BKTT-CardContainer__item {
+  display: flex;
+}
+
+/* === CARD === */
 .BKTT-CardContainer__card {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.BKTT-Card__main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.BKTT-Card__Body {
-  flex: 1;
-}
-
-.BKTT-Card__Footer {
-  margin-top: auto;
-}
-
-.BKTT-CardContainer{
-  list-style: none;
-  padding: 0;
-}
+/* === FIGURE (imagen + badge) === */
 .BKTT-Card__figure {
-  margin-bottom: 0;
+  margin: 0;
   height: 200px;
   position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
 }
+
 .BKTT-Card__figure .BKTT-Badge {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   z-index: 1;
 }
-.BKTT-Card__figure img{
+
+.BKTT-Card__figure img {
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* Comporta igual que background-size: cover */
-  object-position: center; /* Centra la imagen */
+  object-fit: cover;
+  object-position: center;
 }
-.BKTT-Card__main{
-  padding: 0.5rem 1rem;
+
+/* === MAIN (todo el contenido debajo de la imagen) === */
+.BKTT-Card__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.75rem 1rem;
 }
-.BKTT-Card__main .BKTT-Link{
-  text-decoration:none ;
+
+/* === HEADER (headerBadge + título) === */
+.BKTT-Card__header {
+  margin-bottom: 0.5rem;
 }
-.BKTT-Card__main .BKTT-Tags{
+
+.BKTT-Card__title {
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+}
+
+.BKTT-Card__main .BKTT-Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.BKTT-Card__main .BKTT-Link:hover {
+  text-decoration: underline;
+}
+
+/* === BODY (date, price, tags, description, progress) === */
+.BKTT-Card__Body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.BKTT-Card__Body p {
+  margin-bottom: 0.75rem;
+}
+
+/* Date y Price */
+.BKTT-Card__Data {
+  font-size: 0.9rem;
+}
+
+/* Tags */
+.BKTT-Card__main .BKTT-Tags {
   padding-left: 0;
-      display: flex;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
-.BKTT-Card__main .BKTT-Tags li{
+
+.BKTT-Card__main .BKTT-Tags li {
   list-style: none;
-  color:var(--text-color__grey);
+  color: var(--text-color__grey, #6c757d);
+  font-size: 0.85rem;
 }
-.BKTT-Card__Footer .BKTT-Button{
+
+/* Progress */
+.BKTT-progress__Container {
+  margin-top: auto;
+}
+
+/* === FOOTER (botón) === */
+.BKTT-Card__Footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.BKTT-Card__Footer .BKTT-Button {
   background-color: var(--primary-color);
 }
 
-.BKTT-CardContainer--C { /* Variant: Columna cards */ }
-.BKTT-CardContainer--CI { /* Variant: Columna cards inverse */ }
-.BKTT-CardContainer__item { /* Internal Element */ }
+.BKTT-Card__TagsProgress {
+  gap: 1rem;
+}
+
+.BKTT-Card__TagsProgress .BKTT-Tags {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+/* === VARIANTES === */
+.BKTT-CardContainer--C { /* Columna cards */ }
+.BKTT-CardContainer--CI { /* Columna cards inverse */ }
+
