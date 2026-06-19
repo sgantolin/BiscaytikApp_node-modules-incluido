@@ -57,19 +57,46 @@ function Home() {
 
  const AgendaCards = [
   {
+   badgeClass:'badge bg-info',
+   badgeIcon: 'fa-solid fa-globe',
+   badgeText: 'Casco',
    image: destacado1,
-   title: 'Cómo llegar',
-   link: '/catalogo-aplicaciones'
+   headerBadge: { icon: 'fa-solid fa-star', text: 'Destacado' },
+   title: 'Casco histórico',
+   description: 'Recorre las calles del casco histórico y descubre su patrimonio y oferta gastronómica.',
+   tags: [{ label: 'Gastronomía', icon: 'fa-solid fa-utensils' }, { label: 'Cultura' }],
+   progress: 65,
+   progressLabel: 'Popularidad',
+   progressClass: 'bg-success',
+   link: '/casco-historico',
+   footerIcon: 'fa-regular fa-circle-arrow-right',
+   footerLabel: 'Ver',
   },
   {
+   badgeIcon: 'fa-solid fa-video',
+   badgeText: 'En vivo',
    image: destacado2,
+   headerBadge: { icon: 'fa-solid fa-tv', text: 'Directo' },
    title: 'La bahía en directo',
-   link: '/catalogo-entidades'
+   description: 'Stream en tiempo real desde la bahía para ver el estado del mar y eventos.',
+   tags: [{ label: 'Naturaleza' }, { label: 'Eventos' }],
+   progress: 45,
+   progressLabel: 'Visitas hoy',
+   progressClass: 'bg-info',
+   link: '/bahia-en-directo'
   },
   {
+   badgeIcon: 'fa-solid fa-file-lines',
+   badgeText: 'Documentos',
    image: destacado3,
+   headerBadge: { icon: 'fa-solid fa-download', text: 'Folletos' },
    title: 'Folletos y planos',
-   link: '/gestion-de-usuarios'
+   description: 'Descarga folletos y planos turísticos actualizados de la localidad.',
+   tags: [{ label: 'Turismo' }, { label: 'Descargas' }],
+   progress: 25,
+   progressLabel: 'Descargas',
+   progressClass: 'bg-warning',
+   link: '/folletos-planos'
   },
  ];
 

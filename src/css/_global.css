@@ -46,13 +46,36 @@ body main .BKTT-Badge.bg-primary {
 	background-color: var(--custom-white);
 }
 
+.BKTT-Link {
+	color: var(--primary-color) !important;
+}
+
+h3,
+.h3 {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 600;
+}
+
+p,
+time, li {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.BKTT-Data {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+}
+
 /*dropdown*/
 .BKTT-ThemeTurismo .dropdown-toggle:after {
 	border: none;
 	font-family: 'Font Awesome 6 Pro';
 	content: "\f078";
 	color: var(--primary-color);
-	position:absolute;
+	position: absolute;
 }
 
 @media (min-width: 1400px) {
