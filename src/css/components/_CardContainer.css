@@ -1,37 +1,65 @@
 /* ABEM Syntax Pattern 
 .[atomic-prefix]-[block]__[element]--[modifier]*/
-.BKTT-CardContainer{
+.BKTT-CardContainer {
   list-style: none;
   padding: 0;
 }
-.BKTT-Card__figure{
+
+.BKTT-Card__figure {
   margin-bottom: 0;
   height: 150px;
 }
-.BKTT-Card__figure img{
+
+.BKTT-Card__figure img {
   height: 100%;
-  object-fit: cover; /* Comporta igual que background-size: cover */
-  object-position: center; /* Centra la imagen */
+  object-fit: cover;
+  /* Comporta igual que background-size: cover */
+  object-position: center;
+  /* Centra la imagen */
 }
-.BKTT-Card__main{
+
+.BKTT-Card__main {
   padding: 0.5rem 1rem;
 }
-.BKTT-Card__main .BKTT-Link{
-  text-decoration:none ;
+
+.BKTT-Card__main .BKTT-Link {
+  text-decoration: none;
 }
-.BKTT-Card__main .BKTT-Tags{
+
+.BKTT-Card__main .BKTT-Tags {
   padding-left: 0;
-      display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-.BKTT-Card__main .BKTT-Tags li{
+
+.BKTT-Card__main .BKTT-Tags li {
   list-style: none;
-  color:var(--text-color__grey);
+  color: var(--text-color__grey);
+  display: flex;
+  align-items: center;
+  margin-left:0.5rem;
 }
-.BKTT-Card__Footer .BKTT-Button{
+.BKTT-Card__main .BKTT-Tags li:first-child {
+  margin-left:0;
+}
+
+.BKTT-Card__Footer .BKTT-Button {
   background-color: var(--primary-color);
 }
 
-.BKTT-CardContainer--C { /* Variant: Columna cards */ }
-.BKTT-CardContainer--CI { /* Variant: Columna cards inverse */ }
-.BKTT-CardContainer__item { /* Internal Element */ }
+.BKTT-CardContainer--C {
+  /* Variant: Columna cards */
+}
+
+.BKTT-CardContainer--CI {
+  /* Variant: Columna cards inverse */
+}
+/*ajustes según WPZ*/
+.BKTT-WebPartZone-H50--L .col{
+  max-width:33%;
+  width:33%;
+}
+
+.BKTT-CardContainer__item {
+  /* Internal Element */
+}
