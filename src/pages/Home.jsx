@@ -91,12 +91,14 @@ useEffect(() => {
 
  const AgendaCards = [
   {
-   badgeClass:'badge bg-info',
+  
    badgeIcon: 'fa-solid fa-globe',
    badgeText: 'Casco',
    image: destacado1,
    headerBadge: { icon: 'fa-solid fa-star', text: 'Destacado' },
    title: 'Casco histórico',
+   date: '15/03/2026',
+   price: '29.99',
    description: 'Recorre las calles del casco histórico y descubre su patrimonio y oferta gastronómica.',
    tags: [{ label: 'Gastronomía', icon: 'fa-solid fa-utensils' }, { label: 'Cultura' }],
    progress: 65,
@@ -107,17 +109,19 @@ useEffect(() => {
    footerLabel: 'Ver',
   },
   {
+
    badgeIcon: 'fa-solid fa-video',
    badgeText: 'En vivo',
    image: '',
    headerBadge: { icon: 'fa-solid fa-tv', text: 'Directo' },
    title: 'La bahía en directo',
+   date: '20/06/2026',
    description: 'Stream en tiempo real desde la bahía para ver el estado del mar y eventos.',
    tags: [{ label: 'Naturaleza' }, { label: 'Eventos' }],
    progress: 45,
    progressLabel: 'Visitas hoy',
    progressClass: 'bg-info',
-   link: '/bahia-en-directo'
+   link: '/bahia-en-directo',
   },
   {
    badgeIcon: 'fa-solid fa-file-lines',
@@ -125,12 +129,12 @@ useEffect(() => {
    image: destacado3,
    headerBadge: { icon: 'fa-solid fa-download', text: 'Folletos' },
    title: 'Folletos y planos',
+   price: '50 - 100',
    description: 'Descarga folletos y planos turísticos actualizados de la localidad.',
    tags: [{ label: 'Turismo' }, { label: 'Descargas' }],
-   progress: 25,
    progressLabel: 'Descargas',
    progressClass: 'bg-warning',
-   link: '/folletos-planos'
+   link: '/folletos-planos',
   },
  ];
 
@@ -149,6 +153,27 @@ useEffect(() => {
    image: destacado3,
    title: 'Folletos y planos',
    link: '/gestion-de-usuarios'
+  },
+ ];
+
+ const SimpleCards = [
+  {
+   badgeIcon: 'fa-solid fa-utensils',
+   badgeText: 'Gastronomía',
+   title: 'Menú degustación',
+   price: '45.00',
+  },
+  {
+   badgeIcon: 'fa-solid fa-ship',
+   badgeText: 'Paseo marítimo',
+   title: 'Ruta en barco',
+   price: '25.00',
+  },
+  {
+   badgeIcon: 'fa-solid fa-person-hiking',
+   badgeText: 'Senderismo',
+   title: 'Ruta por los acantilados',
+   price: '0.00',
   },
  ];
 
@@ -270,14 +295,28 @@ useEffect(() => {
     </div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12"></div>
-    <div class="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12"></div>
+   {/* Layout 25-75 */}
+   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+    <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
+    <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
+     <h6 className="text-muted">75%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12"></div>
-    <div class="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12"></div>
+   {/* Layout 75-25 */}
+   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+    <div className="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
+     <h6 className="text-muted">75%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
+    <div className="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
    </div>
 
    <div class="container">
@@ -371,26 +410,56 @@ useEffect(() => {
          </section>
          {/*end auto-layout*/}
      </div>
-     <div class="BKTT-WebPartZone-H50--R col-md-6"></div>
+     <div className="BKTT-WebPartZone-H50--R col-md-6" style={{ border: '1px solid green' }}>
+      <h6 className="text-muted">50%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
     </div>
    </div>
 
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-fullWidth--Middle col-12"></div>
+   {/* Layout fullWidth */}
+   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+    <div className="BKTT-WebPartZone-fullWidth--Middle col-12" style={{ border: '1px solid purple' }}>
+     <h6 className="text-muted">100%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-H33--L col-md-4"></div>
-    <div class="BKTT-WebPartZone-H33--M col-md-4"></div>
-    <div class="BKTT-WebPartZone-H33--R col-md-4"></div>
+   {/* Layout 33-33-33 */}
+   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+    <div className="BKTT-WebPartZone-H33--L col-md-4" style={{ border: '1px solid orange' }}>
+     <h6 className="text-muted">33%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
+    <div className="BKTT-WebPartZone-H33--M col-md-4" style={{ border: '1px solid orange' }}>
+     <h6 className="text-muted">33%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
+    <div className="BKTT-WebPartZone-H33--R col-md-4" style={{ border: '1px solid orange' }}>
+     <h6 className="text-muted">33%</h6>
+     <CardContainer cards={AgendaCards} />
+    </div>
    </div>
 
-   <div class="row">
-    <div class="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6"></div>
-    <div class="BKTT-WebPartZone-H25--2 col-md-3 col-xs-6"></div>
-    <div class="BKTT-WebPartZone-H25--3 col-md-3 col-xs-6"></div>
-    <div class="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6"></div>
+   {/* Layout 25-25-25-25 */}
+   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+    <div className="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
+    <div className="BKTT-WebPartZone-H25--2 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
+    <div className="BKTT-WebPartZone-H25--3 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
+    <div className="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
+     <h6 className="text-muted">25%</h6>
+     <CardContainer cards={AgendaCards} direction="column" />
+    </div>
    </div>
 
    <section className="py-4 py-md-5" style={{ backgroundColor: '#f5f5f5' }}>
@@ -399,7 +468,6 @@ useEffect(() => {
      <CardGrid cards={AgendaCards} />
     </div>
    </section>
-
 
    <section className="container py-4 py-md-5">
     <h1>H1 Bienvenido a la aplicación</h1>
