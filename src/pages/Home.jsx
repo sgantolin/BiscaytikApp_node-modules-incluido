@@ -294,28 +294,30 @@ useEffect(() => {
      </div>
     </div>
    </div>
-
-   {/* Layout 25-75 */}
-   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-    <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
-     <h6 className="text-muted">25%</h6>
-     <CardContainer cards={AgendaCards} direction="column" />
-    </div>
-    <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
-     <h6 className="text-muted">75%</h6>
-     <CardContainer cards={AgendaCards} />
+   <div class="container">
+    {/* Layout 25-75 */}
+    <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+     <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
+      <h6 className="text-muted">25%</h6>
+      <CardContainer cards={AgendaCards} direction="column" />
+     </div>
+     <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
+      <h6 className="text-muted">75%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
     </div>
    </div>
-
-   {/* Layout 75-25 */}
-   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-    <div className="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
-     <h6 className="text-muted">75%</h6>
-     <CardContainer cards={AgendaCards} />
-    </div>
-    <div className="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
-     <h6 className="text-muted">25%</h6>
-     <CardContainer cards={AgendaCards} direction="column" />
+   <div class="container">
+    {/* Layout 75-25 */}
+    <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+     <div className="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
+      <h6 className="text-muted">75%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
+     <div className="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
+      <h6 className="text-muted">25%</h6>
+      <CardContainer cards={AgendaCards} direction="column" />
+     </div>
     </div>
    </div>
 
@@ -427,23 +429,26 @@ useEffect(() => {
    </div>
 
    {/* Layout 33-33-33 */}
-   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-    <div className="BKTT-WebPartZone-H33--L col-md-4" style={{ border: '1px solid orange' }}>
-     <h6 className="text-muted">33%</h6>
-     <CardContainer cards={AgendaCards} />
-    </div>
-    <div className="BKTT-WebPartZone-H33--M col-md-4" style={{ border: '1px solid orange' }}>
-     <h6 className="text-muted">33%</h6>
-     <CardContainer cards={AgendaCards} />
-    </div>
-    <div className="BKTT-WebPartZone-H33--R col-md-4" style={{ border: '1px solid orange' }}>
-     <h6 className="text-muted">33%</h6>
-     <CardContainer cards={AgendaCards} />
+   <div class="container">
+    <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+     <div className="BKTT-WebPartZone-H33--L col-md-4" style={{ border: '1px solid orange' }}>
+      <h6 className="text-muted">33%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
+     <div className="BKTT-WebPartZone-H33--M col-md-4" style={{ border: '1px solid orange' }}>
+      <h6 className="text-muted">33%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
+     <div className="BKTT-WebPartZone-H33--R col-md-4" style={{ border: '1px solid orange' }}>
+      <h6 className="text-muted">33%</h6>
+      <CardContainer cards={AgendaCards} />
+     </div>
     </div>
    </div>
 
    {/* Layout 25-25-25-25 */}
-   <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
+   <div class="container">
+    <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
     <div className="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
      <h6 className="text-muted">25%</h6>
      <CardContainer cards={AgendaCards} direction="column" />
@@ -460,6 +465,7 @@ useEffect(() => {
      <h6 className="text-muted">25%</h6>
      <CardContainer cards={AgendaCards} direction="column" />
     </div>
+   </div>
    </div>
 
    <section className="py-4 py-md-5" style={{ backgroundColor: '#f5f5f5' }}>
