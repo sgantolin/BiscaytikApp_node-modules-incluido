@@ -2,7 +2,7 @@
 .[atomic-prefix]-[block]__[element]--[modifier]*/
 
 /* === CONTAINER === */
-.BKTT-CardContainer {
+.BKTT-CardContainer  {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -56,8 +56,8 @@
 .BKTT-Card__figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* Comporta igual que background-size: cover */
+  object-position: center; /* Centra la imagen */
 }
 
 /* === MAIN === */
@@ -108,16 +108,13 @@
 
 .BKTT-Card__main .BKTT-Tags {
   padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+      display: flex;
+    align-items: center;
 }
 
 .BKTT-Card__main .BKTT-Tags li {
   list-style: none;
-  color: var(--text-color__grey, #6c757d);
-  font-size: 0.85rem;
+  color:var(--text-color__grey);
 }
 
 .BKTT-progress__Container {
@@ -176,5 +173,5 @@
 }
 
 /* === VARIANTES === */
-.BKTT-CardContainer--C { }
-.BKTT-CardContainer--CI { }
+.BKTT-CardContainer--C { /* Variant: Columna cards */ }
+.BKTT-CardContainer--CI { /* Variant: Columna cards inverse */ }

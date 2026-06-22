@@ -7,9 +7,9 @@
 }
 
 .BKTT-FigureSlider {
-   /*position: absolute;*/
    width: 100%;
    overflow: hidden;
+   margin-bottom:0;
 }
 
 .BKTT-FigureSlider ul {
@@ -23,7 +23,24 @@
 .BKTT-FigureSlider .carousel-item {
    position: relative;
 }
-
+.BKTT-FigureSlider figcaption{
+   text-align: left;
+   left: 2.8%;
+   bottom:7.25rem;
+}
+.BKTT-FigureSlider .bg-info{
+   background-color: var(--text-color__grey)!important;
+   margin-bottom: 12px;
+   font-weight: 400;
+}
+.BKTT-FigureSlider figcaption h2{
+   color:var(--custom-white);
+   font-size: 48px;
+   line-height:64px;
+   font-weight:700;
+   max-width: 50%;
+   margin-bottom: 0;
+}
 .BKTT-FigureSlider .carousel-item-next,
 .BKTT-FigureSlider .carousel-item-prev,
 .BKTT-FigureSlider .carousel-item.active {
@@ -52,19 +69,28 @@
    color: var(--custom-white);
    padding: 12px 8px;
    border-radius: 25px;
-   width: 160px;
    height: 51px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl>div {
    width: 60px;
    position: relative;
+   top: -13px;
+   margin-left:12px;
 }
 
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon {
+   border: none;
+   background-color: transparent;
+   color: var(--custom-white);
+   font-size: 1.5rem;
+}
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {
    width: 25px;
    height: 25px;
-   top: -12px;
+}
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button span{
+   filter:none;
 }
 
 
