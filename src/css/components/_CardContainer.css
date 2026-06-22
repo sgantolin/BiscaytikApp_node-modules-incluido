@@ -56,7 +56,7 @@
 }
 
 .BKTT-Card__title {
-  margin: 0.25rem 0 0;
+  margin: 0.25rem 0 0.5rem;
   font-size: 1.1rem;
 }
 
@@ -103,6 +103,14 @@
 /* Progress */
 .BKTT-progress__Container {
   margin-top: auto;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.BKTT-progress__Container .BKTT-progress {
+  flex: 1;
 }
 
 /* === FOOTER (botón) === */
@@ -117,6 +125,7 @@
 
 .BKTT-Card__TagsProgress {
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .BKTT-Card__TagsProgress .BKTT-Tags {
@@ -126,6 +135,24 @@
   align-items: center;
   gap: 0.5rem;
   margin: 0;
+}
+
+
+/* === VARIANTE HORIZONTAL (imagen izquierda, contenido derecha) === */
+.BKTT-CardContainer__card--horizontal {
+  flex-direction: row;
+}
+
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
+  height: auto;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* === VARIANTES === */
