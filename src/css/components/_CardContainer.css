@@ -6,10 +6,26 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.BKTT-CardContainer.flex-column {
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .BKTT-CardContainer__item {
   display: flex;
+  width: var(--card-width, auto);
+  height: var(--card-height, auto);
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.BKTT-CardContainer.flex-column .BKTT-CardContainer__item {
+  width: 100%;
 }
 
 /* === CARD === */
@@ -17,12 +33,14 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 
 /* === FIGURE (imagen + badge) === */
 .BKTT-Card__figure {
   margin: 0;
-  height: 200px;
+  height: 40%;
+  min-height: 120px;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
@@ -42,7 +60,7 @@
   object-position: center;
 }
 
-/* === MAIN (todo el contenido debajo de la imagen) === */
+/* === MAIN === */
 .BKTT-Card__main {
   display: flex;
   flex-direction: column;
@@ -50,7 +68,6 @@
   padding: 0.75rem 1rem;
 }
 
-/* === HEADER (headerBadge + título) === */
 .BKTT-Card__header {
   margin-bottom: 0.5rem;
 }
@@ -69,23 +86,26 @@
   text-decoration: underline;
 }
 
-/* === BODY (date, price, tags, description, progress) === */
+/* === BODY === */
 .BKTT-Card__Body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .BKTT-Card__Body p {
   margin-bottom: 0.75rem;
 }
 
-/* Date y Price */
 .BKTT-Card__Data {
   font-size: 0.9rem;
 }
 
-/* Tags */
 .BKTT-Card__main .BKTT-Tags {
   padding-left: 0;
   display: flex;
@@ -100,7 +120,6 @@
   font-size: 0.85rem;
 }
 
-/* Progress */
 .BKTT-progress__Container {
   margin-top: auto;
   min-width: 120px;
@@ -113,7 +132,7 @@
   flex: 1;
 }
 
-/* === FOOTER (botón) === */
+/* === FOOTER === */
 .BKTT-Card__Footer {
   margin-top: auto;
   padding-top: 0.5rem;
@@ -124,7 +143,7 @@
 }
 
 .BKTT-Card__TagsProgress {
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -137,16 +156,17 @@
   margin: 0;
 }
 
-
 /* === VARIANTE HORIZONTAL (imagen izquierda, contenido derecha) === */
-.BKTT-CardContainer__card--horizontal {
+.BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
   flex-direction: row;
 }
 
 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
   height: auto;
-  width: 200px;
+  min-height: unset;
+  width: 250px;
   flex-shrink: 0;
+  align-self: stretch;
 }
 
 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
@@ -156,6 +176,5 @@
 }
 
 /* === VARIANTES === */
-.BKTT-CardContainer--C { /* Columna cards */ }
-.BKTT-CardContainer--CI { /* Columna cards inverse */ }
-
+.BKTT-CardContainer--C { }
+.BKTT-CardContainer--CI { }

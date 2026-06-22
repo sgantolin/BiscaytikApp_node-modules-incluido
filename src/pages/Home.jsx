@@ -95,7 +95,7 @@ function Home() {
    image: destacado3,
    headerBadge: { icon: 'fa-solid fa-download', text: 'Folletos' },
    title: 'Folletos y planos',
-   price: '50 - 100',
+   price: 'GRATUITO $',
    description: 'Descarga folletos y planos turísticos actualizados de la localidad.',
    tags: [{ label: 'Turismo' }, { label: 'Descargas' }],
    progressLabel: 'Descargas',
@@ -309,11 +309,24 @@ function Home() {
    <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
     <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
      <h6 className="text-muted">25%</h6>
-     <CardContainer cards={AgendaCards} direction="column" />
+     <CardContainer 
+      cards={AgendaCards} 
+      direction="column"
+      layout="horizontal"
+      cardWidth="100%"
+      cardHeight="250px"
+      />
+
     </div>
     <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
      <h6 className="text-muted">75%</h6>
-     <CardContainer cards={AgendaCards} />
+     <CardContainer 
+      cards={AgendaCards} 
+      direction="row"
+      layout="vertical"
+      cardWidth="300px"
+      cardHeight="400px"
+      />
     </div>
    </div>
 
