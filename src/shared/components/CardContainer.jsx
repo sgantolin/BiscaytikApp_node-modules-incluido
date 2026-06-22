@@ -1,14 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import '../../css/components/_CardContainer.css';
 
-function CardContainer({ cards = [], direction = 'row' }) {
+function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight }) {
  const navigate = useNavigate();
-
  return (
-  <ul className={`BKTT-CardContainer ${direction === 'column' ? 'flex-column' : 'row'} g-3`}>
+  <ul 
+   className={`BKTT-CardContainer ${direction === 'column' ? 'BKTT-CardContainer--column' : ''}`}
+
+   style={{
+    '--card-width': cardWidth || 'auto',
+    '--card-height': cardHeight || 'auto'
+   }}
+  >
    {cards.map((card, i) => (
-    <li key={i} className={`BKTT-CardContainer__item ${direction === 'column' ? 'col-12 mb-3' : 'col'}`}>
-     <div className="BKTT-CardContainer__card card h-100">
+    <li key={i} className={`BKTT-CardContainer__item ${direction === 'column' ? 'col-12 mb-3' : ''}`}>
+     <div className={`BKTT-CardContainer__card card h-100 ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''}`}>
+
       {(card.image || card.badgeText) && (
        <figure className="BKTT-Card__figure">
         {card.badgeText && (
@@ -36,7 +43,7 @@ function CardContainer({ cards = [], direction = 'row' }) {
            <ul className="BKTT-Tags">
             {card.tags.map((t, idx) => (
              <li key={idx}>
-              {t.icon && <span className={`BKTT-Icon ${t.icon} me-1`} />}
+              {t.icon && <span className={`BKTT-Icon ${t.icon} me-2`} />}
               <span className="BKTT-Label">{t.label || t}</span>
              </li>
             ))}
@@ -71,7 +78,7 @@ function CardContainer({ cards = [], direction = 'row' }) {
            <div className="BKTT-Data">
             <data value={card.price}>
              <strong>{card.price}</strong>
-             <span className="BKTT-Icon fa-regular fa-euro-sign ms-1"></span>
+             <span className="BKTT-Icon fa-regular ms-1"></span>
             </data>
            </div>
           )}
