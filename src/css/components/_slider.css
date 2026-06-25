@@ -1,3 +1,39 @@
+/*SHAREPINT OLD*/
+.BKTT-Main .tp-loader {
+   border-radius: 50%;
+}
+
+.BKTT-Main .tparrows {
+   background: none !important;
+   background-color: var(--primary-color) !important;
+}
+
+.BKTT-Main .tp-leftarrow {
+   border-radius: 0 10px 10px 0;
+}
+
+.BKTT-Main .tp-rightarrow {
+   border-radius: 10px 0 0 10px;
+}
+
+.BKTT-Main .tparrows:before {
+   font-family: 'Font Awesome 6 Pro';
+   color: var(--custom-white);
+   top: 0;
+   left: 10px;
+   font-size: 2rem;
+   position: absolute;
+}
+
+.BKTT-Main .tp-leftarrow:before {
+   content: "\f104";
+}
+
+.BKTT-Main .tp-rightarrow:before {
+   content: "\f105";
+}
+
+/*end SHAREPINT OLD*/
 .BKTT-FigureSlider--container {
    position: relative;
    width: 100%;
@@ -9,7 +45,7 @@
 .BKTT-FigureSlider {
    width: 100%;
    overflow: hidden;
-   margin-bottom:0;
+   margin-bottom: 0;
 }
 
 .BKTT-FigureSlider ul {
@@ -23,24 +59,28 @@
 .BKTT-FigureSlider .carousel-item {
    position: relative;
 }
-.BKTT-FigureSlider figcaption{
+
+.BKTT-FigureSlider figcaption {
    text-align: left;
    left: 2.8%;
-   bottom:7.25rem;
+   bottom: 7.25rem;
 }
-.BKTT-FigureSlider .bg-info{
-   background-color: var(--text-color__grey)!important;
+
+.BKTT-FigureSlider .bg-info {
+   background-color: var(--text-color__grey) !important;
    margin-bottom: 12px;
    font-weight: 400;
 }
-.BKTT-FigureSlider figcaption h2{
-   color:var(--custom-white);
+
+.BKTT-FigureSlider figcaption h2 {
+   color: var(--custom-white);
    font-size: 48px;
-   line-height:64px;
-   font-weight:700;
+   line-height: 64px;
+   font-weight: 700;
    max-width: 50%;
    margin-bottom: 0;
 }
+
 .BKTT-FigureSlider .carousel-item-next,
 .BKTT-FigureSlider .carousel-item-prev,
 .BKTT-FigureSlider .carousel-item.active {
@@ -76,7 +116,7 @@
    width: 60px;
    position: relative;
    top: -13px;
-   margin-left:12px;
+   margin-left: 12px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon {
@@ -85,12 +125,14 @@
    color: var(--custom-white);
    font-size: 1.5rem;
 }
+
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {
    width: 25px;
    height: 25px;
 }
-.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button span{
-   filter:none;
+
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button span {
+   filter: none;
 }
 
 
@@ -112,21 +154,23 @@
 .BKTT-FigureSlider--container .tp-rightarrow {
    right: 16px;
 }
-/*ideal LOCAL*/
-.BKTT-FigureSlider ul{
 
-}
+/*ideal LOCAL*/
+.BKTT-FigureSlider ul {}
+
 /*carrusel lista*/
-.BKTT-carousel .BKTT-CarrouselControl{
+.BKTT-carousel .BKTT-CarrouselControl {
    position: absolute;
    left: 0;
-   bottom:-20px;
+   bottom: -20px;
 }
+
 .BKTT-carousel .BKTT-CarrouselControl .BKTT-Icon {
    color: var(--primary-color);
    font-size: 2rem;
 }
-.fa-angle-right{
-   left:30px;
+
+.fa-angle-right {
+   left: 30px;
    position: absolute;
 }
