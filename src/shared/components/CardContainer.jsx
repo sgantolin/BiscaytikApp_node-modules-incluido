@@ -1,15 +1,14 @@
-import { useNavigate } from 'react-router-dom';
 import '../../css/components/_CardContainer.css';
 
-function CardContainer({ cards = [], direction = 'row', layout = 'vertical' }) {
- const navigate = useNavigate();
+function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight }) {
  return (
   <ul 
    className={`BKTT-CardContainer ${direction === 'column' ? 'BKTT-CardContainer--column' : ''}`}
+
   >
    {cards.map((card, i) => (
     <li key={i} className={`BKTT-CardContainer__item ${direction === 'column' ? 'col-12 mb-3' : ''}`}>
-     <div className={`BKTT-CardContainer__card card h-100 ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}`}>
+     <div className={`BKTT-CardContainer__card card ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}`}>
 
       {(card.image || card.badgeText) && (
        <figure className="BKTT-Card__figure">
@@ -25,6 +24,9 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical' }) {
        </figure>
       )}
       <div className="BKTT-Card__main">
+       <data value={card.note}>
+        <small className="BKTT-Card__note">{card.note}</small>
+       </data>
        <h3 className="BKTT-Card__title">
         {card.link
          ? <a className="BKTT-Link" href={card.link}>{card.title}</a>
@@ -32,6 +34,24 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical' }) {
         }
        </h3>
        <div className="BKTT-Card__Body">
+        {(card.date || card.price) && (
+         <div className="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
+          {card.date && (
+           <div className="BKTT-Date">
+            <span className="BKTT-Icon fa-light fa-calendar me-2"></span>
+            <span>{card.date}</span>
+           </div>
+          )}
+          {card.price && (
+           <div className="BKTT-Data">
+            <data value={card.price}>
+             <strong>{card.price}</strong>
+             <span className="BKTT-Icon fa-regular ms-1"></span>
+            </data>
+           </div>
+          )}
+         </div>
+        )}
         {(card.tags?.length > 0 || card.progress != null) && (
          <div className="BKTT-Card__TagsProgress d-flex align-items-center mb-2">
           {card.tags && card.tags.length > 0 && (
@@ -61,24 +81,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical' }) {
           )}
          </div>
         )}
-        {(card.date || card.price) && (
-         <div className="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
-          {card.date && (
-           <div className="BKTT-Date">
-            <span className="BKTT-Icon fa-light fa-calendar me-2"></span>
-            <span>{card.date}</span>
-           </div>
-          )}
-          {card.price && (
-           <div className="BKTT-Data">
-            <data value={card.price}>
-             <strong>{card.price}</strong>
-             <span className="BKTT-Icon fa-regular ms-1"></span>
-            </data>
-           </div>
-          )}
-         </div>
-        )}
+        
         {card.description && <p>{card.description}</p>}
        </div>
        {card.footerLabel && (
