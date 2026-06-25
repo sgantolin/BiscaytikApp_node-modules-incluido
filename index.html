@@ -5,6 +5,99 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/ico" href="/biscaytik-tab-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Leaflet CSS/JS for maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!--start map-->
+  <script>
+    (function () {
+      // Expose a function to initialize the Leaflet map when the container exists.
+      const mapBoxToken = '';
+
+      function createTileLayers() {
+        const MapBox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 13,
+          id: 'mapbox.mapbox-terrain-v2',
+          accessToken: mapBoxToken,
+          noWrap: true
+        });
+
+        const OpenStreet = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'openstreetmap', noWrap: true });
+
+        const Google = L.tileLayer('https://www.google.cn/maps/vt?lyrs=s@189&gl=tr&x={x}&y={y}&z={z}', { attribution: 'google', noWrap: true });
+
+        const gridDivLayer = L.GridLayer.extend({
+          createTile: function (coords) {
+            const tile = document.createElement('div');
+            var size = this.getTileSize();
+            tile.style.outline = '1px dashed green';
+            tile.style.fontSize = '10px';
+            tile.innerHTML = `<p class="gridTileCoordinates">( x: ${coords.x}, y: ${coords.y} )</p><div class="gridTileZoom">zoom: ${coords.z}</div>`;
+            return tile;
+          }
+        });
+        const gridDiv = new gridDivLayer({ noWrap: true, bounds: [[-90, -180], [90, 180]] });
+
+        const gridCanvasLayer = L.GridLayer.extend({
+          createTile: function (coords) {
+            var tile = L.DomUtil.create('canvas', 'leaflet-tile');
+            var size = this.getTileSize();
+            tile.width = size.x;
+            tile.height = size.y;
+            var ctx = tile.getContext('2d');
+            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = "black";
+            ctx.rect(0, 0, tile.width, tile.height);
+            ctx.stroke();
+            ctx.fillText(`( x: ${coords.x}, y: ${coords.y} )`, 5, 20);
+            ctx.textAlign = "center";
+            ctx.fillText(`zoom: ${coords.z}`, size.x / 2, size.y / 2);
+            return tile;
+          }
+        });
+        const gridCanvas = new gridCanvasLayer({ noWrap: true, bounds: [[-90, -180], [90, 180]] });
+
+        return { MapBox, OpenStreet, Google, gridDiv, gridCanvas };
+      }
+
+      window.initLeafletMap = function initLeafletMap(mapId) {
+        if (typeof L === 'undefined') return null;
+        const { MapBox, OpenStreet, Google, gridDiv, gridCanvas } = createTileLayers();
+
+        // custom control
+        let zoomDivRef;
+        const ZoomView = L.Control.extend({
+          onAdd: function (map) {
+            var div = L.DomUtil.create('div', "leaflet-zoom-control leaflet-bar-part leaflet-bar");
+            div.innerHTML = 'zoom: ' + map.getZoom();
+            zoomDivRef = div;
+            return div;
+          },
+          onRemove: function () { }
+        });
+
+        L.control.zoomview = (opts) => new ZoomView(opts);
+        const zoom = L.control.zoomview({ position: 'topleft' });
+
+        const gridsAsOverLay = { gridDiv, gridCanvas };
+        const baseMaps = { MapBox, Google, OpenStreet };
+        const layers = L.control.layers(baseMaps, gridsAsOverLay, { position: 'topleft' });
+
+        const scale = L.control.scale();
+
+        const map = L.map(mapId, { maxBounds: [[-90, -180], [90, 180]], layers: [OpenStreet] }).setView([0, 0], 0);
+        map.fitBounds([[42.293564, 25.268555], [36.527295, 45.703125]]);
+        zoom.addTo(map);
+        setTimeout(() => { layers.addTo(map); }, 2000);
+        scale.addTo(map);
+        map.on('zoomend', () => { if (zoomDivRef) zoomDivRef.innerHTML = `zoom: ${map.getZoom()}`; });
+
+        return map;
+      };
+    })();
+  </script>
+  <!--end map-->
   <title>HERRIZ Theme</title>
 </head>
 
