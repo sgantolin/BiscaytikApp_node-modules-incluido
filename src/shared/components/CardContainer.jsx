@@ -1,20 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import '../../css/components/_CardContainer.css';
 
-function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight }) {
+function CardContainer({ cards = [], direction = 'row', layout = 'vertical' }) {
  const navigate = useNavigate();
  return (
   <ul 
    className={`BKTT-CardContainer ${direction === 'column' ? 'BKTT-CardContainer--column' : ''}`}
-
-   style={{
-    '--card-width': cardWidth || 'auto',
-    '--card-height': cardHeight || 'auto'
-   }}
   >
    {cards.map((card, i) => (
     <li key={i} className={`BKTT-CardContainer__item ${direction === 'column' ? 'col-12 mb-3' : ''}`}>
-     <div className={`BKTT-CardContainer__card card h-100 ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''}`}>
+     <div className={`BKTT-CardContainer__card card h-100 ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}`}>
 
       {(card.image || card.badgeText) && (
        <figure className="BKTT-Card__figure">

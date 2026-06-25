@@ -304,8 +304,7 @@ useEffect(() => {
       cards={AgendaCards} 
       direction="column"
       layout="horizontal"
-      cardWidth="100%"
-      cardHeight="250px"
+
       />
 
     </div>
@@ -315,8 +314,6 @@ useEffect(() => {
       cards={AgendaCards} 
       direction="row"
       layout="vertical"
-      cardWidth="300px"
-      cardHeight="400px"
       />
 
     </div>

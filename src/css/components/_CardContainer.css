@@ -18,11 +18,9 @@
 
 .BKTT-CardContainer__item {
   display: flex;
-  width: var(--card-width, auto);
-  height: var(--card-height, auto);
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0 0 300px;
 }
+
 
 .BKTT-CardContainer.flex-column .BKTT-CardContainer__item {
   width: 100%;
@@ -33,13 +31,16 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: auto;
+}
+
+.BKTT-CardContainer.flex-column .BKTT-CardContainer__card {
   height: 100%;
 }
 
 /* === FIGURE (imagen + badge) === */
 .BKTT-Card__figure {
   margin: 0;
-  height: 40%;
   min-height: 120px;
   position: relative;
   flex-shrink: 0;
@@ -51,6 +52,10 @@
   top: 0.5rem;
   left: 0.5rem;
   z-index: 1;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .BKTT-Card__figure img {
@@ -92,14 +97,16 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 0.75rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .BKTT-Card__Body p {
   margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .BKTT-Card__Data {
@@ -170,6 +177,36 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* Figure sin imagen con clase condicional */
+.BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal.BKTT-CardContainer__card--no-image {
+  flex-direction: column;
+  height: auto;
+}
+
+.BKTT-CardContainer__card--no-image .BKTT-Card__figure {
+  position: static;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge {
+  position: static;
+  display: inline-block;
+  margin: 0.75rem 1rem;
+}
+
+.BKTT-CardContainer__card--no-image .BKTT-Card__main {
+  padding-top: 0;
+}
+
+/* Font precio */
+
+.BKTT-Card__Data strong {
+  font-weight: 650;
 }
 
 /* === VARIANTES === */
