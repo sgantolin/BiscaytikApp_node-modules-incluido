@@ -124,6 +124,7 @@
     <SharePoint:CssRegistration ID="CssRegistration14" name="/_layouts/15/Turismo2013.Files/custom_web/css/_variables.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration15" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_header.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration19" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_footer.css" runat="server" after="SharepointCssFile"/>
+    <SharePoint:CssRegistration ID="CssRegistration20" name="/_layouts/15/Turismo2013.Files/custom_web/css/themes/_components.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration17" name="/_layouts/15/Turismo2013.Files/custom_web/css/themes/_default.css" runat="server" after="SharepointCssFile"/>
     <!--end SS--> 
  	<script type="text/javascript" src="/Style Library/JS/controlCookies.js"></script>
