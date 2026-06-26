@@ -107,3 +107,19 @@ time, li {
 }
 
 /*end modo edición*/
+
+/* Map container styles: ensure Leaflet map is visible */
+.BKTT-Map {
+	width: 100%;
+	/* a sensible minimum height so the map is visible on most screens */
+	min-height: 360px;
+	height: 100%;
+}
+
+/* Ensure leaflet's container stretches to the parent */
+.BKTT-Map .leaflet-container,
+.BKTT-Map .leaflet-pane,
+.BKTT-Map .leaflet-pane > canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
