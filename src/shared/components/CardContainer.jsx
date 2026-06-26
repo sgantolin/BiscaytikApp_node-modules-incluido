@@ -8,8 +8,10 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
   >
    {cards.map((card, i) => (
     <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`}>
-     <div className={`BKTT-CardContainer__card card ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}`}>
-
+  <div className={`BKTT-CardContainer__card card 
+    ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} 
+    ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}
+    ${direction === 'column' && i % 2 !== 0 ? 'BKTT-CardContainer__card--alt' : ''}`}>
       {(card.image || card.badgeText) && (
        <figure className="BKTT-Card__figure">
         {card.badgeText && (

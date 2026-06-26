@@ -2,10 +2,19 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardGrid from '../shared/components/CardGrid';
 
+import barca from '../assets/themes/default/media/barca.jpg';
+import canoa from '../assets/themes/default/media/canoa.jpg';
 import destacado1 from '../assets/themes/default/media/destacados1.png';
 import destacado2 from '../assets/themes/default/media/destacados2.png';
 import destacado3 from '../assets/themes/default/media/destacados3.png';
+import iglesia from '../assets/themes/default/media/iglesia.jpg';
+import puente from '../assets/themes/default/media/puente.jpg';
+import slider1 from '../assets/themes/default/media/slider1.jpg';
+import slider2 from '../assets/themes/default/media/slider2.jpg';
+import summerFest from '../assets/themes/default/media/summerFest.jpg';
 import teatro from '../assets/themes/default/media/teatro.jpg';
+import paseoCasco from '../assets/themes/default/media/paseoCasco.jpg';
+import rio from '../assets/themes/default/media/rio.jpg';
 
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
@@ -115,7 +124,7 @@ function Home() {
     }
   }, []);
 
-  const AgendaCards = [
+  const AgendaCardss = [
     {
       badgeIcon: 'fa-solid fa-globe',
       badgeText: 'Casco',
@@ -210,6 +219,146 @@ function Home() {
     }
   ];
 
+  const AgendaCards = [
+  {
+    badgeIcon: 'fa-solid fa-masks-theater',
+    badgeText: 'Cultura',
+    image: teatro,
+    title: 'Obra de teatro “Naturaleza en las calles”',
+    date: '12/01/2026',
+    price: 'GRATUITO',
+    tags: [
+      { label: 'Teatro', icon: 'fa-solid fa-masks-theater' },
+      { label: 'Familia', icon: 'fa-solid fa-children' },
+    ],
+    link: '/obra-teatro-naturaleza',
+  },
+  {
+    badgeIcon: 'fa-solid fa-person-running',
+    badgeText: 'Deporte',
+    image: barca,
+    title: 'Berdel eguna',
+    date: '12/05/2026',
+    price: 'GRATUITO',
+    tags: [
+      { label: 'Gastronomía', icon: 'fa-solid fa-martini-glass' },
+    ],
+    link: '/berdel-eguna',
+  },
+  {
+    badgeIcon: 'fa-solid fa-wand-magic-sparkles',
+    badgeText: 'Ocio',
+    image: summerFest,
+    title: 'SummerFest',
+    date: '12/01/2026',
+    price: '15€',
+    tags: [
+      { label: 'Música', icon: 'fa-solid fa-music' },
+      { label: 'Mar', icon: 'fa-solid fa-water' },
+    ],
+    link: '/summerfest',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reservar',
+  },
+  {
+    badgeIcon: 'fa-solid fa-person-running',
+    badgeText: 'Deporte',
+    image: canoa,
+    title: 'Ruta acuática por el río Butrón',
+    date: '12/01/2026',
+    price: '10€',
+    tags: [],
+    link: '/ruta-acuatica-rio-butron',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reservar',
+  },
+  {
+    badgeIcon: 'fa-solid fa-masks-theater',
+    badgeText: 'Cultura',
+    image: iglesia,
+    title: 'Plan cultural de un día',
+    date: '12/01/2026',
+    price: 'FREETOUR',
+    tags: [
+      { label: 'Gastronomía', icon: 'fa-solid fa-martini-glass' },
+      { label: 'Patrimonio', icon: 'fa-solid fa-landmark' },
+    ],
+    link: '/plan-cultural-un-dia',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reservar',
+  },
+  {
+    badgeIcon: 'fa-solid fa-wand-magic-sparkles',
+    badgeText: 'Ocio',
+    image: puente,
+    title: 'Inauguración iluminación',
+    date: '12/01/2026',
+    price: 'GRATUITO',
+    tags: [],
+    link: '/inauguracion-iluminacion',
+  },
+];
+
+
+const rutasCards = [
+  {
+    badgeIcon: 'fa-solid fa-map-location-dot',
+    badgeText: 'Casco antiguo',
+    image: paseoCasco,
+    title: 'Ruta cultural',
+    tags: [
+      { label: '2 h', icon: 'fa-regular fa-clock' },
+      { label: '5 Km', icon: 'fa-solid fa-person-hiking' },
+    ],
+    progress: 30,
+    progressClass: 'bg-success',
+    progressLabel: 'Dif. baja',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus...',
+    link: '/ruta-cultural',
+  },
+  {
+    badgeIcon: 'fa-solid fa-mountain',
+    badgeText: 'Txipio',
+    image: rio,
+    title: 'Ruta por el monte Txipio',
+    tags: [
+      { label: '2 h', icon: 'fa-regular fa-clock' },
+      { label: '19 Km', icon: 'fa-solid fa-person-hiking' },
+    ],
+    progress: 55,
+    progressClass: 'bg-warning',
+    progressLabel: 'Dif. media',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus...',
+    link: '/ruta-txipio',
+  },
+  {
+    title: 'Plan cultural de un día',
+    tags: [
+      { label: '1 h 30 m', icon: 'fa-regular fa-clock' },
+      { label: '5 Km', icon: 'fa-solid fa-person-hiking' },
+    ],
+    progress: 30,
+    progressClass: 'bg-success',
+    progressLabel: 'Dif. baja',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel. Nulla vitae massa lobortis, rhoncus leo ac,...',
+    link: '/plan-cultural',
+  },
+  {
+    badgeIcon: 'fa-solid fa-map-location-dot',
+    badgeText: 'Casco antiguo',
+    image: iglesia,
+    title: 'Plan cultural de un día',
+    tags: [
+      { label: '2 h', icon: 'fa-regular fa-clock' },
+      { label: '5 Km', icon: 'fa-solid fa-person-hiking' },
+    ],
+    progress: 30,
+    progressClass: 'bg-success',
+    progressLabel: 'Dif. baja',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus...',
+    link: '/plan-cultural',
+  },
+];
   const bottomCards = [
     {
       image: destacado1,
@@ -510,7 +659,7 @@ function Home() {
           <div className="BKTT-WebPartZone-H50--R col-md-6" style={{ border: '1px solid green' }}>
             <h6 className="text-muted">50%</h6>
             <CardContainer
-              cards={AgendaCards}
+              cards={rutasCards}
               direction="column"
               layout="horizontal"
             />
