@@ -82,6 +82,11 @@
 .BKTT-Card__title {
   margin: 0.25rem 0 0.5rem;
   font-size: 1.1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .BKTT-Card__main .BKTT-Link {
@@ -114,8 +119,17 @@
 .BKTT-Card__Data {
   font-size: 0.9rem;
 }
-.BKTT-Card__Data strong{
-  font-weight: 700;
+.BKTT-Card__Data data{
+  display: flex;
+  align-items: center;
+}
+
+.BKTT-Card__Data strong {
+  font-weight: 600;
+}
+
+.BKTT-Date{
+  min-width: 112px;
 }
 
 .BKTT-Card__main .BKTT-Tags {
@@ -127,6 +141,9 @@
 .BKTT-Card__main .BKTT-Tags li {
   list-style: none;
   color: var(--text-color__grey);
+}
+.BKTT-Card__main .BKTT-Tags li .BKTT-Label{
+  font-weight:600;
 }
 
 .BKTT-progress__Container {
@@ -258,7 +275,15 @@
   max-width: 120px;
   flex-shrink: 0;
 }
-
+/*carrusel*/
+.BKTT-carousel .BKTT-CarrouselControl{
+  margin-left: 8px;
+  bottom: -25px;
+}
+.BKTT-carousel .BKTT-Button.carousel-control-next{
+  left:30px;
+}
+/*end carrusel*/
 /*WPZ*/
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {

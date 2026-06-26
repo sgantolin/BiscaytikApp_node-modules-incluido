@@ -48,7 +48,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
            <div className="BKTT-Data">
             <data value={card.price}>
              <strong>{card.price}</strong>
-             <span className="BKTT-Icon fa-regular ms-1"></span>
+             <span className="BKTT-Icon fa-regular"></span>
             </data>
            </div>
           )}
