@@ -100,14 +100,7 @@ time, li {
 }
 
 @import './components/_slider.css';
-
-/*modo edición*/
-#suiteBarDelta {
-	margin-top: 60px;
-}
-
-/*end modo edición*/
-
+/*mapa*/
 /* Map container styles: ensure Leaflet map is visible */
 .BKTT-Map {
 	width: 100%;
@@ -121,5 +114,13 @@ time, li {
 .BKTT-Map .leaflet-pane,
 .BKTT-Map .leaflet-pane > canvas {
 	width: 100% !important;
-	height: 100% !important;
+	height: 98% !important;
 }
+/*mapa end*/
+
+/*modo edición*/
+#suiteBarDelta {
+	margin-top: 60px;
+}
+
+/*end modo edición*/
