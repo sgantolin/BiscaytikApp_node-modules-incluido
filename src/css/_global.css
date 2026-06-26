@@ -106,7 +106,7 @@ time, li {
 	width: 100%;
 	/* a sensible minimum height so the map is visible on most screens */
 	min-height: 360px;
-	height: 100%;
+	height: 98%;
 }
 
 /* Ensure leaflet's container stretches to the parent */
@@ -114,7 +114,7 @@ time, li {
 .BKTT-Map .leaflet-pane,
 .BKTT-Map .leaflet-pane > canvas {
 	width: 100% !important;
-	height: 98% !important;
+	height: 100% !important;
 }
 /*mapa end*/
 

@@ -247,7 +247,15 @@
   width: 100%;
   object-fit: cover;
 }
-
+/*carrusel*/
+.BKTT-carousel .BKTT-CarrouselControl{
+  margin-left: 8px;
+  bottom: -25px;
+}
+.BKTT-carousel .BKTT-Button.carousel-control-next{
+  left:30px;
+}
+/*end carrusel*/
 /*WPZ*/
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {

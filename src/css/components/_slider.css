@@ -113,28 +113,55 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl>div {
-   width: 60px;
+   width: 80px;
    position: relative;
-   top: -13px;
+   top: 0;
+   justify-content: flex-end;
    margin-left: 12px;
+   margin-right: 5px;
+   display: flex;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon {
    border: none;
    background-color: transparent;
    color: var(--custom-white);
-   font-size: 1.5rem;
+   font-size: 1.6rem;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {
-   width: 25px;
-   height: 25px;
+   width: 26px;
+   height: 26px;
+   position: relative;
+   opacity: 1;
+   border: 2px solid;
+   border-radius: 100%;
+}
+
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon:before {
+   font-size: 1.2rem;
+   position: absolute;
+}
+
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button.carousel-control-prev {
+   margin-right: 10px;
+}
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-right:before {
+   top: -9px;
+   left: -6px;
+}
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-left:before {
+   top: 2px;
+   left: 5px;
+}
+
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button:hover {
+   opacity: 0.8;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button span {
    filter: none;
 }
-
 
 .BKTT-FigureSlider--container .tp-leftarrow,
 .BKTT-FigureSlider--container .tp-rightarrow {
@@ -156,7 +183,6 @@
 }
 
 /*ideal LOCAL*/
-.BKTT-FigureSlider ul {}
 
 /*carrusel lista*/
 .BKTT-carousel .BKTT-CarrouselControl {
@@ -171,6 +197,19 @@
 }
 
 .fa-angle-right {
-   left: 30px;
    position: absolute;
+}
+
+.carousel-indicators {
+   top: 20px;
+   justify-content: right;
+   margin-right: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+   width: 10px;
+   height: 10px;
+   background-color: var(--custom-white) !important;
+   border-radius: 50%;
+   display: inline-block;
 }
