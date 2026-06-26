@@ -7,7 +7,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
 
   >
    {cards.map((card, i) => (
-    <li key={i} className={`BKTT-CardContainer__item ${direction === 'column' ? 'col-12 mb-3' : ''}`}>
+    <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12 mb-3' : ''}`}>
      <div className={`BKTT-CardContainer__card card ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}`}>
 
       {(card.image || card.badgeText) && (
@@ -76,7 +76,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
               aria-valuemax={100}
              />
             </div>
-            {card.progressLabel && <span className="BKTT-Label">{card.progressLabel}</span>}
+            {card.progressLabel && <small className="BKTT-Label">{card.progressLabel}</small>}
            </div>
           )}
          </div>

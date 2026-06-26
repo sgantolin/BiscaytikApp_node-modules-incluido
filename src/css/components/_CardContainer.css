@@ -2,7 +2,7 @@
 .[atomic-prefix]-[block]__[element]--[modifier]*/
 
 /* === CONTAINER === */
-.BKTT-CardContainer  {
+.BKTT-CardContainer {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -61,8 +61,10 @@
 .BKTT-Card__figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Comporta igual que background-size: cover */
-  object-position: center; /* Centra la imagen */
+  object-fit: cover;
+  /* Comporta igual que background-size: cover */
+  object-position: center;
+  /* Centra la imagen */
 }
 
 /* === MAIN === */
@@ -112,16 +114,19 @@
 .BKTT-Card__Data {
   font-size: 0.9rem;
 }
+.BKTT-Card__Data strong{
+  font-weight: 700;
+}
 
 .BKTT-Card__main .BKTT-Tags {
   padding-left: 0;
-      display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .BKTT-Card__main .BKTT-Tags li {
   list-style: none;
-  color:var(--text-color__grey);
+  color: var(--text-color__grey);
 }
 
 .BKTT-progress__Container {
@@ -203,6 +208,54 @@
   padding-top: 0;
 }
 
+/* === VARIANTE HORIZONTAL (imagen izquierda, contenido derecha) === */
+.BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
+  flex-direction: row;
+}
+
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
+  max-height: 100%;
+}
+
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
+  height: auto;
+  min-height: unset;
+  max-width: 250px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*WPZ*/
+.BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
+.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
+  max-width: 100px;
+}
+
+.BKTT-WebPartZone-H75--L .BKTT-CardContainer__card,
+.BKTT-WebPartZone-H75--R .BKTT-CardContainer__card {
+  min-width: 20%;
+}
+
+.BKTT-WebPartZone-H50--L .BKTT-carousel .BKTT-CardContainer__card {
+  max-width: 31%;
+}
+
+.BKTT-WebPartZone-H33--L .BKTT-CardContainer__card,
+.BKTT-WebPartZone-H33--M .BKTT-CardContainer__card,
+.BKTT-WebPartZone-H33--R .BKTT-CardContainer__card {
+  min-width: 31%;
+}
+
+.BKTT-WebPartZone-H50--L .BKTT-CardContainer__card,
+.BKTT-WebPartZone-H50--R .BKTT-CardContainer__card {
+  min-width: 25%;
+}
 
 /* === VARIANTES === */
   {
@@ -217,4 +270,3 @@
 .BKTT-CardContainer--CI {
   /* Variant: Columna cards inverse */
 }
- 
