@@ -182,7 +182,7 @@ function Home() {
       headerBadge: { icon: 'fa-solid fa-star', text: 'Destacado' },
       note: 'Parejas',
       title: 'Casco histórico',
-      date: '15/03/2026',
+      date: '15/03/2026 - 15/03/2026',
       price: '29.99',
       description: 'Recorre las calles del casco histórico y descubre su patrimonio y oferta gastronómica.',
       tags: [{ label: 'Gastronomía', icon: 'fa-solid fa-utensils' }, { label: 'Cultura' }],
@@ -190,8 +190,8 @@ function Home() {
       progressLabel: 'Dif. Alta',
       progressClass: 'bg-danger',
       link: '/casco-historico',
-      footerIcon: 'fa-regular fa-circle-arrow-right',
-      footerLabel: 'Ver',
+      footerIcon: 'fa-jelly fa-regular fa-link',
+      footerLabel: 'Reservar',
     },
     {
 

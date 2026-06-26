@@ -98,6 +98,11 @@ time, li {
 		max-width: 1400px;
 	}
 }
+/*Botones*/
+.BKTT-Button{
+	border: transparent
+}
+/*end Botones*/
 
 @import './components/_slider.css';
 /*mapa*/
