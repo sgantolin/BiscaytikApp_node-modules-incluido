@@ -1,4 +1,10 @@
 import Home from "./pages/Home";
+import Listado from "./pages/Listado";
+import Detalle from "./pages/Detalle";
+import Patrimonio from "./pages/Patrimonio";
+import ObraListado from "./pages/ObraListado";
+import ObraDetalle from "./pages/ObraDetalle";
+import BKTTBlockDemo from "./pages/BKTTBlockDemo";
 
 import CatalogoAplicaciones from "./pages/catalogoAplicaciones/CatalogoAplicaciones";
 import AsignacionPermisos from "./pages/asignacionPermisos/AsignacionPermisos";
@@ -101,6 +107,12 @@ const routes = [
     { path: '/listados', element: GenerarListados, label: 'Listados'},
     { path: '/baja-masiva-de-usuarios', element: BajaMasivaUsuarios, label: 'Baja masiva de usuarios'},
     { path: '/reactivacion-masiva-de-usuarios', element: ReactivacionMasivaUsuarios, label: 'Reactivación masiva de usuarios'},
+    { path: '/listado', element: Listado, label: 'Listado'},
+    { path: '/detalle', element: Detalle, label: 'Detalle'},
+    { path: '/patrimonio', element: Patrimonio, label: 'Patrimonio'},
+    { path: '/obra-listado', element: ObraListado, label: 'Obras'},
+    { path: '/obra-detalle', element: ObraDetalle, label: 'Detalle obra'},
+    { path: '/bkttblock-demo', element: BKTTBlockDemo, label: 'BKTTBlock Demo'},
     // no funciona con rutas hijas con lo cual se han puesto en el mismo nivel todas las rutas
     // { path: '/asignacion-de-permisos/*', element: AsignacionPermisos, label: 'Asignación de Permisos',
     //     children: [

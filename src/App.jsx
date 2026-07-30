@@ -25,7 +25,6 @@ function MainLayout() {
   return (
     <>
       {showHeader && <Header />}
-      <BreadCrumb/>
       <main class="BKTT-Main">
         <Routes>
           {routes.map((route, index) => (

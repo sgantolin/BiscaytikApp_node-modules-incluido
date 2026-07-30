@@ -17,6 +17,16 @@ body *:focus {
 	margin-top:60px;
 }
 
+main.BKTT-Main {
+	padding-top: 40px;
+}
+
+@media (max-width: 991px) {
+	main.BKTT-Main {
+		padding-top: 36px;
+	}
+}
+
 .BKTT-ThemeTurismo a {
 	color: var(--link-color);
 }
@@ -117,6 +127,46 @@ time, li {
 	height: 100% !important;
 }
 /*mapa end*/
+
+/* Override Bootstrap btn-primary to use theme variables */
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--secondary-color);
+  --bs-btn-hover-border-color: var(--secondary-color);
+  --bs-btn-active-bg: var(--secondary-color);
+  --bs-btn-active-border-color: var(--secondary-color);
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: #fff !important;
+}
+.BKTT-AgendaListadoHero {
+	width: 100%;
+}
+.BKTT-AgendaListado__titleImg {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-bottom: 2rem;
+}
+
+/* Separación estándar entre secciones de página */
+.BKTT-ThemeTurismo .container + .container,
+.BKTT-ThemeTurismo .container + .row,
+.BKTT-ThemeTurismo section + section {
+	margin-top: 3rem;
+}
+
+.WPZB-HTML {
+	margin-top: 3rem;
+}
 
 /*modo edición*/
 #suiteBarDelta {

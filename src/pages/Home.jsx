@@ -15,6 +15,12 @@ import summerFest from '../assets/themes/default/media/summerFest.jpg';
 import teatro from '../assets/themes/default/media/teatro.jpg';
 import paseoCasco from '../assets/themes/default/media/paseoCasco.jpg';
 import rio from '../assets/themes/default/media/rio.jpg';
+import hotel1 from '../assets/themes/default/media/hotel1.jpg';
+import hotel2 from '../assets/themes/default/media/hotel2.jpg';
+import hotel3 from '../assets/themes/default/media/hotel3.jpg';
+import hotel4 from '../assets/themes/default/media/hotel4.jpg';
+import playa from '../assets/themes/default/media/playa.png';
+
 
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
@@ -24,7 +30,8 @@ import { Dropdown } from 'primereact/dropdown';
 import { Tooltip } from 'bootstrap';
 import CardContainer from '../shared/components/CardContainer';
 import BKTTFigureSlider from '../shared/components/BKTTFigureSlider';
-
+import Banner from '../shared/components/Banner'
+import BKTTBlock from '../shared/components/BKTTBlock'
 
 function Home() {
 
@@ -126,52 +133,6 @@ function Home() {
 
   const AgendaCardss = [
     {
-      badgeIcon: 'fa-solid fa-globe',
-      badgeText: 'Casco',
-      image: teatro,
-      headerBadge: { icon: 'fa-solid fa-star', text: 'Destacado' },
-      note: 'Parejas',
-      title: 'Casco histórico',
-      date: '15/03/2026',
-      price: '29,99€',
-      description: 'Recorre las calles del casco histórico y descubre su patrimonio y oferta gastronómica.',
-      tags: [{ label: 'Teatro', icon: 'fa-light fa-masks-theater' }, { label: 'Familia', icon: 'fa-light fa-family' }, { label: 'Gastronomía', icon: 'fa-light fa-wine-glass' }],
-      progress: 65,
-      progressLabel: 'Dif. media',
-      progressClass: 'bg-warning',
-      link: '/casco-historico',
-      footerIcon: 'fa-regular fa-circle-arrow-right',
-      footerLabel: 'Ver',
-    },
-    {
-
-      badgeIcon: 'fa-solid fa-video',
-      badgeText: 'En vivo',
-      image: '',
-      headerBadge: { icon: 'fa-solid fa-tv', text: 'Directo' },
-      title: 'La bahía en directo para probar el alto del texto del título',
-      date: '20/06/2026',
-      description: 'Stream en tiempo real desde la bahía para ver el estado del mar y eventos.',
-      tags: [{ label: '2h', icon: 'fa-light fa-clock' }, { label: '5km', icon: ' fa-light fa-person-hiking'}],
-      progress: 45,
-      progressLabel: 'Dif. baja',
-      progressClass: 'bg-success',
-      link: '/bahia-en-directo',
-    },
-    {
-      badgeIcon: 'fa-solid fa-file-lines',
-      badgeText: 'Documentos',
-      image: destacado3,
-      headerBadge: { icon: 'fa-solid fa-download', text: 'Folletos' },
-      title: 'Folletos y planos',
-      price: 'GRATUITO $',
-      description: 'Descarga folletos y planos turísticos actualizados de la localidad.',
-      tags: [{ label: 'Turismo' }, { label: 'Descargas' }],
-      progressLabel: 'Descargas',
-      progressClass: 'bg-warning',
-      link: '/folletos-planos',
-    },
-    {
       badgeIcon: 'fa-solid fa-file-lines',
       badgeText: 'Documentos',
       image: destacado3,
@@ -206,7 +167,7 @@ function Home() {
 
       badgeIcon: 'fa-solid fa-video',
       badgeText: 'En vivo',
-      image: '',
+      image: destacado2,
       headerBadge: { icon: 'fa-solid fa-tv', text: 'Directo' },
       title: 'La bahía en directo',
       date: '20/06/2026',
@@ -358,7 +319,148 @@ const rutasCards = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus...',
     link: '/plan-cultural',
   },
+  {
+    badgeIcon: 'fa-solid fa-map-location-dot',
+    badgeText: 'Casco antiguo',
+    image: iglesia,
+    title: 'Plan cultural de un día',
+    tags: [
+      { label: '2 h', icon: 'fa-regular fa-clock' },
+      { label: '5 Km', icon: 'fa-solid fa-person-hiking' },
+    ],
+    progress: 30,
+    progressClass: 'bg-success',
+    progressLabel: 'Dif. baja',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisque luctus aliquet lectus...',
+    link: '/plan-cultural',
+  },
 ];
+
+const AlojamientoCards = [
+  {
+    badgeIcon: 'fa-solid fa-bed',
+    badgeText: 'Hotel',
+    image: hotel1,
+    title: 'Hotel Boutique Bahía de Plentzia',
+    price: '50 - 100€ noche',
+    description: '3 estrellas',
+    tags: [
+      { label: 'Accesible', icon: 'fa-solid fa-wheelchair' },
+    ],
+    link: '/hotel-boutique-bahia-plentzia',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reserva',
+  },
+  {
+    badgeIcon: 'fa-solid fa-building',
+    badgeText: 'Apartamento',
+    image: hotel2,
+    title: 'Apartamento en Plentzia',
+    price: '35 - 55€ noche',
+    description: 'CERTIFICADO',
+    tags: [
+      { label: 'Mascotas', icon: 'fa-solid fa-paw' },
+    ],
+    link: '/apartamento-plentzia',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reserva',
+  },
+  {
+    badgeIcon: 'fa-solid fa-bed',
+    badgeText: 'Hotel',
+    image: hotel3,
+    title: 'Hotel Artetxe',
+    price: '45 - 95€ noche',
+    description: '2 estrellas',
+    tags: [
+      { label: 'Familias', icon: 'fa-solid fa-people-group' },
+    ],
+    link: '/hotel-artetxe',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reserva',
+  },
+  {
+    badgeIcon: 'fa-solid fa-building',
+    badgeText: 'Apartamento',
+    image: hotel4,
+    title: 'Apartamento X',
+    price: '15€ noche',
+    description: 'CERTIFICADO',
+    tags: [
+      { label: 'Gastronomía', icon: 'fa-solid fa-utensils' },
+    ],
+    link: '/apartamento-x',
+    footerIcon: 'fa-solid fa-link',
+    footerLabel: 'Reserva',
+  },
+  
+];
+
+const NoticiasCards = [
+  {
+    badgeText: 'Parejas',
+    title: 'Plan cultural de un día',
+    date: '22/01/2026 - 24/01/2026',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel. Nulla vitae massa lobortis, rhoncus leo ac, vulputate dolor. Maecenas posuere facilisis pretium. Quisque felis ante, tempor ac mi sit amet, tincidunt aliquam arcu. Vivamus neque neque, efficitur sit amet magna ut, pretium laoreet ipsum. Aliquam dictum purus in convallis tempor. Aenean porta eget arcu in luctus.',
+    link: '/noticia-plan-cultural-1',
+  },
+  {
+    badgeText: 'Parejas',
+    title: 'Plan cultural de un día',
+    date: '12/01/2026',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel. Nulla vitae massa lobortis, rhoncus leo ac, vulputate dolor. Maecenas posuere facilisis pretium. Quisque felis ante, tempor ac mi sit amet, tincidunt aliquam arcu. Vivamus neque neque, efficitur sit amet magna ut, pretium laoreet ipsum. Aliquam dictum purus in convallis tempor. Aenean porta eget arcu in luctus.',
+    link: '/noticia-plan-cultural-2',
+  },
+  {
+    badgeText: 'Parejas',
+    title: 'Plan cultural de un día',
+    date: '12/01/2026',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel. Nulla vitae massa lobortis, rhoncus leo ac, vulputate dolor. Maecenas posuere facilisis pretium. Quisque felis ante, tempor ac mi sit amet, tincidunt aliquam arcu. Vivamus neque neque, efficitur sit amet magna ut, pretium laoreet ipsum. Aliquam dictum purus in convallis tempor. Aenean porta eget arcu in luctus.',
+    link: '/noticia-plan-cultural-3',
+  },
+  {
+    badgeText: 'Parejas',
+    title: 'Plan cultural de un día',
+    date: '12/01/2026',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel. Nulla vitae massa lobortis, rhoncus leo ac, vulputate dolor. Maecenas posuere facilisis pretium. Quisque felis ante, tempor ac mi sit amet, tincidunt aliquam arcu. Vivamus neque neque, efficitur sit amet magna ut, pretium laoreet ipsum. Aliquam dictum purus in convallis tempor. Aenean porta eget arcu in luctus.',
+    link: '/noticia-plan-cultural-4',
+  },
+];
+
+
+const BannerData = {
+   layout: 'text-cards', // 'text-cards' | 'text-image' | 'image-text'
+  title: 'Visita Plentzia en 1, 2 días 1 semana o quédate aquí...',
+  subtitle: '',
+  description: '',
+  backgroundColor: 'linear-gradient(90deg, #1e5b90 0%, #2f92e5 100%)',
+  image: playa,
+  backgroundImage: '',
+  button: {
+    label: 'Planificar viaje',
+    icon: 'fa-light fa-calendar',
+    link: '/planificar',
+  },
+  injectedCards: [
+    {
+      image: barca,
+      title: 'Plan cultural de un día',
+    },
+    {
+      image: summerFest,
+      title: 'Summer Plentzia',
+    },
+    {
+      image: canoa,
+      title: 'Plan cultural de un día',
+    },
+  ],
+};
+
   const bottomCards = [
     {
       image: destacado1,
@@ -518,13 +620,13 @@ const rutasCards = [
 
       {/* Layout fullWidth top container */}
       <div class="container">
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-fullWidth--TopContainer col-12" style={{ border: '1px solid purple' }}>
+        <div className="row">
+          <div className="BKTT-WebPartZone-fullWidth--TopContainer col-12">
             <h2>Agenda</h2>
             <section id="BKTT-carousel" class="BKTT-carousel carousel ">
               <ul class="carousel-inner ps-0">
                 <li class="carousel-item active" data-bs-interval="10000">
-                  <CardContainer cards={AgendaCards} />
+                  <CardContainer cards={AgendaCards} columns={6} />
                 </li>
                 <li class="carousel-item" data-bs-interval="2000">
                   <div class="row">
@@ -608,23 +710,17 @@ const rutasCards = [
           </div>
         </div>
       </div>
-      {/* Layout 25-75 */}
+      {/* Layout 25-75
       <div class="container">
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
-            <h6 className="text-muted">25%</h6>
+        <div className="row">
+          <div className="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12">
             <CardContainer
               cards={AgendaCards}
               direction="column"
               layout="horizontal"
-            /*cardWidth="100%"
-            cardHeight="250px"*/
             />
-            {/*<CardContainer cards={AgendaCards} direction="column" />*/}
-
           </div>
-          <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
-            <h6 className="text-muted">75%</h6>
+          <div className="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12">
             <CardContainer
               cards={AgendaCards}
               direction="row"
@@ -635,33 +731,30 @@ const rutasCards = [
 
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div class="container">
         {/* Layout 75-25 */}
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12" style={{ border: '1px solid blue' }}>
-            <h6 className="text-muted">75%</h6>
+        <div className="row">
+          <div className="BKTT-WebPartZone-H75--L col-md-9 col-sm-6 col-xs-12">
             <h2>Rutas</h2>
           </div>
-          <div className="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12" style={{ border: '1px solid red' }}>
-            <h6 className="text-muted">25%</h6>
+          <div className="BKTT-WebPartZone-H25--R col-md-3 col-sm-6 col-xs-12">
           </div>
         </div>
       </div>
 
       <div class="container">
-        <div class="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div class="BKTT-WebPartZone-H50--L col-md-6" style={{ border: '1px solid green' }}>
-            <h6 className="text-muted">50%</h6>
+        <div className="row">
+          <div className="BKTT-WebPartZone-H50--L col-md-6">
             <div id="map" className="BKTT-Map"></div>
           </div>
-          <div className="BKTT-WebPartZone-H50--R col-md-6" style={{ border: '1px solid green' }}>
-            <h6 className="text-muted">50%</h6>
+          <div className="BKTT-WebPartZone-H50--R col-md-6">
             <CardContainer
               cards={rutasCards}
               direction="column"
               layout="horizontal"
+              visibleCards={4}
             />
           </div>
         </div>
@@ -669,67 +762,91 @@ const rutasCards = [
 
 
       {/* Layout fullWidth middle*/}
-      <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-        <div className="BKTT-WebPartZone-fullWidth--Middle col-12" style={{ border: '1px solid purple' }}>
-          <h6 className="text-muted">100%</h6>
-          <CardContainer cards={AgendaCards} />
+      {/* Alojamientos */}
+      <div className="container">
+      <div className="row" style={{ paddingBottom: '8rem' }}>
+         <div className="BKTT-WebPartZone-fullWidth--Middle col-12">
+            <h2>Alojamientos</h2>
+            <CardContainer cards={AlojamientoCards}/>
+         </div>
+      </div>
+      </div>
+
+      <div className="row" style={{ margin: '5rem 0' }}>
+        <div className="BKTT-WebPartZone-fullWidth--Middle col-12">
+          {/* ANTIGUO: <Banner banner={BannerData} /> */}
+          <BKTTBlock
+            layout={BannerData.layout}
+            backgroundColor={BannerData.backgroundColor}
+            title={BannerData.title}
+            button={BannerData.button}
+            injectedCards={BannerData.injectedCards}
+          />
+        </div>
+      </div>
+
+      <div className="container" style={{ margin: '5rem auto' }}>
+        <div className="row">
+          <div className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12">
+            {/* ANTIGUO: <Banner banner={BannerData} /> */}
+            <BKTTBlock
+              layout={BannerData.layout}
+              backgroundColor={BannerData.backgroundColor}
+              title={BannerData.title}
+              button={BannerData.button}
+              injectedCards={BannerData.injectedCards}
+            />
+          </div>
         </div>
       </div>
 
       {/* Layout fullWidth middle container */}
-      <div class="container">
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12" style={{ border: '1px solid purple' }}></div>
-        </div>
+      <div className="container">
+      <div className="row">
+         <div className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12">
+            <h2>Noticias</h2>
+            <CardContainer cards={NoticiasCards} direction="row" layout="horizontal" />
+         </div>
+      </div>
       </div>
 
 
-      {/* Layout 33-33-33 */}
+      {/* Layout 33-33-33
       <div class="container">
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-H33--L col-md-4" style={{ border: '1px solid orange' }}>
-            <h6 className="text-muted">33%</h6>
+        <div className="row">
+          <div className="BKTT-WebPartZone-H33--L col-md-4">
             <CardContainer cards={AgendaCards} />
           </div>
-          <div className="BKTT-WebPartZone-H33--M col-md-4" style={{ border: '1px solid orange' }}>
-            <h6 className="text-muted">33%</h6>
+          <div className="BKTT-WebPartZone-H33--M col-md-4">
             <CardContainer cards={AgendaCards} />
           </div>
-          <div className="BKTT-WebPartZone-H33--R col-md-4" style={{ border: '1px solid orange' }}>
-            <h6 className="text-muted">33%</h6>
+          <div className="BKTT-WebPartZone-H33--R col-md-4">
             <CardContainer cards={AgendaCards} />
           </div>
         </div>
       </div>
 
-      {/* Layout 25-25-25-25 */}
+      {/* Layout 25-25-25-25 
       <div class="container">
         <h2>Noticias</h2>
-        <div className="row" style={{ border: '2px dashed #ccc', margin: '1rem 0', padding: '0.5rem' }}>
-          <div className="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
-            <h6 className="text-muted">25%</h6>
+        <div className="row">
+          <div className="BKTT-WebPartZone-H25--1 col-md-3 col-xs-6">
             <CardContainer cards={AgendaCards} direction="column" />
           </div>
-          <div className="BKTT-WebPartZone-H25--2 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
-            <h6 className="text-muted">25%</h6>
+          <div className="BKTT-WebPartZone-H25--2 col-md-3 col-xs-6">
             <CardContainer cards={AgendaCards} direction="column" />
           </div>
-          <div className="BKTT-WebPartZone-H25--3 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
-            <h6 className="text-muted">25%</h6>
+          <div className="BKTT-WebPartZone-H25--3 col-md-3 col-xs-6">
             <CardContainer cards={AgendaCards} direction="column" />
           </div>
-          <div className="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6" style={{ border: '1px solid teal' }}>
-            <h6 className="text-muted">25%</h6>
+          <div className="BKTT-WebPartZone-H25--4 col-md-3 col-xs-6">
             <CardContainer cards={AgendaCards} direction="column" />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <section className="py-4 py-md-5" style={{ backgroundColor: '#f5f5f5' }}>
-        <div className="container">
-          <h2 className="section-title" style={{ fontWeight: 'bold' }}>Destacados</h2>
-          <CardGrid cards={AgendaCards} />
-        </div>
+      <section className="py-4 py-md-5">
+        <CardGrid cards={AgendaCardss} bgColor="#f5f5f5" title="Destacados" columns={3}/>
       </section>
 
       <section className="container py-4 py-md-5">

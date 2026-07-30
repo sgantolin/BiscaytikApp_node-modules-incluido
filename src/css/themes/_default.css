@@ -29,11 +29,14 @@
  /*default colors*/
  --theme-white: #fff;
  --theme-beige: #FAF8F2;
- --theme-primary-color: #2196F3;
- --theme-primary-color--100: #E9F5FE;
- --theme-secondary-color: #145A92;
+ --theme-primary-color: #E53935;
+ --theme-primary-color--100: #FFEBEE;
+ --theme-secondary-color: #B71C1C; 
+/* 
+--theme-primary-color: #2196F3;  
+ --theme-secondary-color: #145A92; azul oscuro */
 
- --theme-black: #2D2D31;
+ --theme-black: #2D2D31; 
  --theme-grey__text:#71717A;
  --theme-border-color: #ddd;
 
