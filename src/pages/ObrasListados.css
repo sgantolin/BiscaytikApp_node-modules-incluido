@@ -1,0 +1,415 @@
+.obras-listado-page {
+  background: #faf7f0;
+}
+
+.BKTT-ObrasListado__top {
+  padding-bottom: 2rem;
+}
+
+.BKTT-ObrasListado {
+  padding-top: 2rem;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  background: #faf7f0;
+  color: #181818;
+}
+
+/* CABECERA */
+
+.BKTT-ObrasListado__header {
+  display: grid;
+  grid-template-columns: minmax(240px, 42%) minmax(0, 58%);
+  align-items: end;
+  gap: 2rem;
+
+  width: 100%;
+  min-height: 0;
+  height: 76px;
+  margin: 0.75rem 0 1.75rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.BKTT-ObrasListado__headerContent {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 0.15rem;
+}
+
+.BKTT-ObrasListado__pageTitle {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.65rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #242424;
+}
+
+.BKTT-ObrasListado__headerDecoration {
+  align-self: end;
+
+  width: 100%;
+  height: 64px;
+  min-height: 0;
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 0;
+  opacity: 0.68;
+}
+
+.BKTT-ObrasListado__headerDecoration img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  object-fit: cover;
+  object-position: center 52%;
+  filter: grayscale(1);
+}
+
+/* INTRODUCCIÓN */
+
+.BKTT-ObrasListado__intro {
+  padding: 1.25rem 0 2rem;
+}
+
+.BKTT-ObrasListado__intro h2 {
+  margin: 0 0 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.BKTT-ObrasListado__intro p {
+  max-width: 100%;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #313131;
+}
+
+/* LAYOUT */
+
+.BKTT-ObrasListado__layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+/* PANEL DE FILTROS */
+
+.BKTT-ObrasFilters {
+  padding: 1rem 1rem 1.25rem;
+  background: #fff;
+}
+
+.BKTT-ObrasFilters__header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+  color: #272727;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.BKTT-ObrasFilters__add {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.15rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d62f0d;
+  cursor: pointer;
+}
+
+.BKTT-ObrasFilters__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+
+.BKTT-ObrasFilters__chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  min-height: 1.9rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid #d62f0d;
+  border-radius: 999px;
+  background: #fff;
+  color: #d62f0d;
+  font-family: inherit;
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.BKTT-ObrasFilters__chip:hover {
+  background: #fceeea;
+}
+
+.BKTT-ObrasFilters__chip.is-selected {
+  background: #d62f0d;
+  color: #fff;
+}
+
+.BKTT-ObrasFilters__order {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #333;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.BKTT-ObrasFilters__order .fa-angle-down {
+  margin-left: 0.3rem;
+  color: #d62f0d;
+}
+
+/* RESULTADOS */
+
+.BKTT-ObrasResults {
+  min-width: 0;
+}
+
+.BKTT-ObraListCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  gap: 1.5rem;
+  align-items: center;
+  min-height: 180px;
+  padding: 1rem 0 1.6rem;
+  border-bottom: 1px solid #d7d3cc;
+}
+
+.BKTT-ObraListCard:first-of-type {
+  padding-top: 0.65rem;
+}
+
+.BKTT-ObraListCard__content {
+  min-width: 0;
+}
+
+.BKTT-ObraListCard__category {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #8b8176;
+  font-size: 0.72rem;
+}
+
+.BKTT-ObraListCard__title {
+  margin: 0 0 0.8rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.BKTT-ObraListCard__title a {
+  color: #d62f0d;
+  text-decoration: none;
+}
+
+.BKTT-ObraListCard__title a:hover {
+  text-decoration: underline;
+}
+
+.BKTT-ObraListCard__information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.BKTT-ObraListCard__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #3d3d3d;
+  font-size: 0.75rem;
+}
+
+.BKTT-ObraListCard__price {
+  color: #151515;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.BKTT-ObraListCard__description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: #333;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.BKTT-ObraListCard__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.9rem;
+}
+
+.BKTT-ObraListCard__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.15rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.2rem;
+  background: #d62f0d;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.BKTT-ObraListCard__button:hover {
+  background: #b92508;
+  color: #fff;
+}
+
+/* IMÁGENES */
+
+.BKTT-ObraListCard__imageLink {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.BKTT-ObraListCard__image {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.BKTT-ObraListCard__imageLink:hover
+  .BKTT-ObraListCard__image {
+  transform: scale(1.02);
+  filter: grayscale(0.7);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991.98px) {
+  .BKTT-ObrasListado__header {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+
+  .BKTT-ObrasListado__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .BKTT-ObrasFilters {
+    width: 100%;
+  }
+
+  .BKTT-ObrasFilters__chips {
+    margin-bottom: 1rem;
+  }
+
+  .BKTT-ObraListCard {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .BKTT-ObrasListado__header {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+    overflow: visible;
+  }
+
+  .BKTT-ObrasListado__headerContent {
+    height: auto;
+  }
+
+  .BKTT-ObrasListado__headerDecoration {
+    height: 70px;
+  }
+
+  .BKTT-ObrasListado__pageTitle {
+    font-size: 2.25rem;
+  }
+
+  .BKTT-ObraListCard {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .BKTT-ObraListCard__imageLink {
+    grid-row: 1;
+  }
+
+  .BKTT-ObraListCard__image {
+    height: 220px;
+  }
+
+  .BKTT-ObraListCard__content {
+    grid-row: 2;
+  }
+
+  .BKTT-ObraListCard__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .BKTT-ObrasListado__pageTitle {
+    font-size: 2.25rem;
+  }
+
+  .BKTT-ObrasListado__intro {
+    padding-bottom: 1.5rem;
+  }
+
+  .BKTT-ObrasFilters {
+    padding: 1rem;
+  }
+
+  .BKTT-ObraListCard__information {
+    align-items: flex-start;
+  }
+
+  .BKTT-ObraListCard__image {
+    height: 170px;
+  }
+}

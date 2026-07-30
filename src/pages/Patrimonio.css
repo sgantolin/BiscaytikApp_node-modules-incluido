@@ -1,0 +1,329 @@
+.patrimonio-page {
+  background: #fbf8f1;
+}
+
+/* HERO */
+
+.BKTT-PatrimonioHero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 405px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  overflow: hidden;
+}
+
+.BKTT-PatrimonioHero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.22) 60%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+.BKTT-PatrimonioHero__container {
+  position: relative;
+  z-index: 2;
+}
+
+.BKTT-PatrimonioHero__title {
+  max-width: 650px;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.BKTT-PatrimonioHero__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 5rem;
+}
+
+.BKTT-PatrimonioHero__control {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #d52b0b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.BKTT-PatrimonioHero__dots {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  right: 4rem;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.BKTT-PatrimonioHero__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.BKTT-PatrimonioHero__dots span.is-active {
+  background: #fff;
+}
+
+/* FEATURE PRINCIPAL */
+
+.BKTT-PatrimonioPage__mainFeature {
+  margin-top: 3rem;
+  background: #f8f5ef;
+}
+
+.BKTT-PatrimonioPage__mainFeature .BKTT-FeatureBanner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.BKTT-PatrimonioPage__mainFeature
+  .BKTT-FeatureBanner__section {
+  min-height: 510px;
+}
+
+.BKTT-PatrimonioPage__mainFeature
+  .BKTT-FeatureBanner__image {
+  object-fit: contain;
+}
+
+.BKTT-PatrimonioPage__mainFeature
+  .BKTT-FeatureBanner__title {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* SECCIONES */
+
+.BKTT-PatrimonioSection {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.BKTT-PatrimonioSection__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.BKTT-PatrimonioSection__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #171717;
+}
+
+.BKTT-PatrimonioSection__title .BKTT-Icon {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* FILTROS */
+
+.BKTT-PatrimonioFilters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.BKTT-PatrimonioFilters__chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid #d52b0b;
+  border-radius: 999px;
+  background: transparent;
+  color: #d52b0b;
+  font-family: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.BKTT-PatrimonioFilters__chip:hover {
+  background: #d52b0b;
+  color: #fff;
+}
+
+/* CONTROLES CAROUSEL */
+
+.BKTT-PatrimonioSection__controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.BKTT-PatrimonioSection__control {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border: 1px solid #c8c8c8;
+  border-radius: 50%;
+  background: transparent;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+
+.BKTT-PatrimonioSection__control.is-active {
+  border-color: #d52b0b;
+  color: #d52b0b;
+}
+
+/* BANNER EXPOSICIÓN */
+
+.BKTT-PatrimonioPage__exhibition {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+.BKTT-PatrimonioPage__exhibition .BKTT-Banner {
+  min-height: 260px;
+}
+
+.BKTT-PatrimonioPage__exhibition .BKTT-Banner__title {
+  max-width: 650px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #fff;
+}
+
+/* SERVICIOS */
+
+.BKTT-PatrimonioPage__services {
+  padding: 3.5rem 0;
+  margin-bottom: 3rem;
+  background: #fff;
+}
+
+.BKTT-PatrimonioPage__services .BKTT-FeatureBanner {
+  padding: 0;
+}
+
+.BKTT-PatrimonioPage__services
+  .BKTT-FeatureBanner__title {
+  color: #d52b0b;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* AGENDA */
+
+.BKTT-PatrimonioPage__agenda {
+  padding: 2.5rem 0 3rem;
+  background: #f8f5ef;
+}
+
+/* ALOJAMIENTOS */
+
+.BKTT-PatrimonioPage__accommodation {
+  background: #fbf8f1;
+}
+
+/* ESTILOS DE CARDS DENTRO DE ESTA PÁGINA */
+
+.patrimonio-page .BKTT-CardGrid__card,
+.patrimonio-page .BKTT-Card {
+  background: #fff;
+}
+
+.patrimonio-page .BKTT-CardGrid__card h3,
+.patrimonio-page .BKTT-Card__title {
+  color: #d52b0b;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.patrimonio-page .BKTT-Card__footer .btn,
+.patrimonio-page .BKTT-CardGrid__footer .btn {
+  background: #d52b0b;
+  border-color: #d52b0b;
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 991.98px) {
+  .BKTT-PatrimonioHero {
+    min-height: 330px;
+  }
+
+  .BKTT-PatrimonioHero__controls {
+    margin-top: 3rem;
+  }
+
+  .BKTT-PatrimonioPage__mainFeature
+    .BKTT-FeatureBanner__section {
+    min-height: auto;
+  }
+
+  .BKTT-PatrimonioSection__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .BKTT-PatrimonioFilters {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .BKTT-PatrimonioHero {
+    min-height: 270px;
+  }
+
+  .BKTT-PatrimonioHero__title {
+    font-size: 2rem;
+  }
+
+  .BKTT-PatrimonioHero__controls {
+    margin-top: 2rem;
+  }
+
+  .BKTT-PatrimonioHero__dots {
+    right: 1rem;
+  }
+
+  .BKTT-PatrimonioSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .BKTT-PatrimonioSection__title {
+    font-size: 1.65rem;
+  }
+
+  .BKTT-PatrimonioPage__services {
+    padding: 2rem 0;
+  }
+}
