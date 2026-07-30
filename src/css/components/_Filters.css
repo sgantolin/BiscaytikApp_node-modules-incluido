@@ -1,0 +1,51 @@
+.BKTT-AgendaFilters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.BKTT-AgendaFilters--vertical {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.BKTT-AgendaFilters button {
+  border: 1px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.BKTT-AgendaFilters__filterBtn,
+.BKTT-AgendaFilters__order {
+  border-color: transparent !important;
+  color: var(--text-color) !important;
+}
+
+.BKTT-AgendaFilters__date {
+  border-radius: 0.35rem !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.BKTT-AgendaFilters__chips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.BKTT-AgendaFilters__chip.is-selected {
+  background: var(--primary-color);
+  color: var(--custom-white);
+}
