@@ -1,32 +1,84 @@
 .BKTT-CardGrid {
   margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+}
 
-  .BKTT-CardGrid__card {
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    text-decoration:none;
+.BKTT-CardGrid__sectionTitle {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
 
-    &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-    }
+.BKTT-CardGrid .row {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.BKTT-CardGrid__item {
+  flex: 1 1 0;
+  min-width: 200px;
+  padding: 0;
+}
+
+.BKTT-CardGrid__card {
+  border: none !important;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.BKTT-CardGrid__card .card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.BKTT-CardGrid__header {
+  background-color: var(--primary-color);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+}
+
+
+.BKTT-CardGrid__card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.BKTT-CardGrid__title {
+  color: var(--custom-white);
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 767.98px) {
+  .BKTT-CardGrid {
+    padding: 1rem;
   }
 
-  .BKTT-CardGrid__header {
-    background-color: var(--primary-color);
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .BKTT-CardGrid .row > [class*='col'] {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
+}
 
-  .BKTT-CardGrid__title {
-    color: var(--custom-white);
-    margin: 0;
-    text-align: center;
-    font-weight: 600;
-    text-decoration: none;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .BKTT-CardGrid .row > [class*='col'] {
+    flex: 1 1 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
   }
 }

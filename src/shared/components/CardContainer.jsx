@@ -1,13 +1,37 @@
+import { useRef, useLayoutEffect, useState } from 'react';
 import '../../css/components/_CardContainer.css';
 
-function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight }) {
- return (
-  <ul 
-   className={`BKTT-CardContainer ${direction === 'column' ? 'BKTT-CardContainer--column' : ''}`}
+function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight, cardSize, scroll, columns, visibleCards, imageFilter }) {
+  const itemStyle = columns && direction !== 'column'
+    ? { flex: `0 0 calc(${100 / columns}% - 1rem)`, maxWidth: `calc(${100 / columns}% - 1rem)` }
+    : undefined;
 
-  >
+  const listRef = useRef(null);
+  const [scrollHeight, setScrollHeight] = useState(null);
+
+  useLayoutEffect(() => {
+    if (!visibleCards || !listRef.current) return;
+    const items = listRef.current.querySelectorAll(':scope > .BKTT-CardContainer__item');
+    if (items.length < visibleCards) return;
+    let totalHeight = 0;
+    for (let i = 0; i < visibleCards; i++) {
+      totalHeight += items[i].getBoundingClientRect().height;
+    }
+    const gap = parseFloat(getComputedStyle(listRef.current).gap) || 16;
+    setScrollHeight(totalHeight + gap * (visibleCards - 1));
+  }, [visibleCards, cards]);
+
+  return (
+    <ul
+      ref={listRef}
+      className={`BKTT-CardContainer 
+      ${direction === 'column' ? 'BKTT-CardContainer--column' : ''} 
+      ${cardSize === 'small' ? 'BKTT-CardContainer--small' : ''}
+      ${scroll ? 'BKTT-CardContainer--scroll' : ''}`}
+      style={scrollHeight ? { maxHeight: `${scrollHeight}px`, overflowY: 'auto' } : undefined}>
+        
    {cards.map((card, i) => (
-    <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`}>
+    <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`} style={itemStyle}>
   <div className={`BKTT-CardContainer__card card 
     ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} 
     ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}
@@ -21,7 +45,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
          </span>
         )}
         {card.image && (
-         <img src={card.image} className="card-img-top" alt={card.title || ''} />
+         <img src={card.image} className="card-img-top" alt={card.title || ''} style={imageFilter ? { filter: imageFilter } : undefined} />
         )}
        </figure>
       )}
