@@ -1,0 +1,431 @@
+/* ─── Contenedor principal ────────────────────────────────────────────────── */
+
+.BKTT-Block {
+  position: relative;
+  width: 100%;
+}
+
+.BKTT-Block__overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.BKTT-Block__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--BKTT-block-columns, 2), minmax(0, 1fr));
+  gap: var(--BKTT-block-gap, 0);
+  align-items: var(--BKTT-block-align, center);
+}
+
+/* ─── Layouts: text-image / image-text / text-cards (replica Banner) ──────── */
+
+.BKTT-Block--text-image,
+.BKTT-Block--image-text,
+.BKTT-Block--text-cards {
+  height: 324px;
+  overflow: visible;
+}
+
+.BKTT-Block--text-image .BKTT-Block__grid,
+.BKTT-Block--image-text .BKTT-Block__grid,
+.BKTT-Block--text-cards .BKTT-Block__grid {
+  height: 100%;
+  align-items: center;
+  grid-template-columns: 7fr 5fr;
+}
+
+/* Columna de imagen: posición absoluta igual que Banner original */
+.BKTT-Block--text-image .BKTT-Block__section:last-child,
+.BKTT-Block--image-text .BKTT-Block__section:first-child {
+  position: relative;
+  height: 324px;
+  overflow: hidden;
+}
+
+.BKTT-Block--text-image .BKTT-Block__imageWrapper,
+.BKTT-Block--image-text .BKTT-Block__imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  overflow: hidden;
+}
+
+.BKTT-Block--text-image .BKTT-Block__image,
+.BKTT-Block--image-text .BKTT-Block__image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Texto con padding equivalente a px-5 py-5 de Bootstrap */
+.BKTT-Block--text-image .BKTT-Block__content,
+.BKTT-Block--image-text .BKTT-Block__content,
+.BKTT-Block--text-cards .BKTT-Block__content {
+  padding: 3rem;
+  justify-content: center;
+  height: 100%;
+}
+
+/* image-text: columnas invertidas */
+.BKTT-Block--image-text .BKTT-Block__grid {
+  grid-template-columns: 5fr 7fr;
+}
+
+/* Sección de tarjetas flotantes */
+.BKTT-Block__section--cards {
+  position: relative;
+  height: 100%;
+  overflow: visible;
+}
+
+.BKTT-Block__cards {
+  position: relative;
+  width: 100%;
+  height: 324px;
+  overflow: visible;
+}
+
+/* ─── Layout: split ───────────────────────────────────────────────────────── */
+
+.BKTT-Block--split .BKTT-Block__grid {
+  gap: 0;
+}
+
+.BKTT-Block--split .BKTT-Block__section {
+  min-height: 360px;
+}
+
+.BKTT-Block--split .BKTT-Block__section:has(.BKTT-Block__imageWrapper) {
+  overflow: hidden;
+}
+
+.BKTT-Block--split .BKTT-Block__imageWrapper {
+  height: 100%;
+}
+
+.BKTT-Block--split .BKTT-Block__image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.BKTT-Block--split .BKTT-Block__content {
+  justify-content: center;
+  height: 100%;
+  padding: clamp(2rem, 5vw, 5rem);
+}
+
+/* ─── Layout: cards ───────────────────────────────────────────────────────── */
+
+.BKTT-Block--cards {
+  padding: 3rem;
+}
+
+.BKTT-Block--cards .BKTT-Block__section {
+  align-items: flex-start;
+}
+
+.BKTT-Block--cards .BKTT-Block__imageWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.BKTT-Block--cards .BKTT-Block__image {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+
+.BKTT-Block--cards .BKTT-Block__title {
+  color: var(--primary-color);
+}
+
+/* ─── Layout: single ──────────────────────────────────────────────────────── */
+
+.BKTT-Block--single .BKTT-Block__grid {
+  grid-template-columns: 1fr;
+}
+
+/* ─── Sección genérica ────────────────────────────────────────────────────── */
+
+.BKTT-Block__section {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ─── Imagen genérica ─────────────────────────────────────────────────────── */
+
+.BKTT-Block__imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.BKTT-Block__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.BKTT-Block__decoration {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ─── Texto ───────────────────────────────────────────────────────────────── */
+
+.BKTT-Block__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 2.5rem;
+}
+
+.BKTT-Block__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.BKTT-Block__subtitle {
+  color: white;
+  max-width: 520px;
+  margin: 0 0 0.5rem;
+}
+
+.BKTT-Block__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #171717;
+  max-width: 700px;
+}
+
+.BKTT-Block--text-image .BKTT-Block__title,
+.BKTT-Block--image-text .BKTT-Block__title,
+.BKTT-Block--text-cards .BKTT-Block__title {
+  color: #fff;
+}
+
+.BKTT-Block__description {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #2f2f2f;
+}
+
+.BKTT-Block--text-image .BKTT-Block__description,
+.BKTT-Block--image-text .BKTT-Block__description,
+.BKTT-Block--text-cards .BKTT-Block__description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Acciones ────────────────────────────────────────────────────────────── */
+
+.BKTT-Block__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.BKTT-Block__button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 0.9rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background: var(--primary-color);
+  color: #fff !important;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.BKTT-Block__button:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.BKTT-Block__extra {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* ─── Tarjetas flotantes ──────────────────────────────────────────────────── */
+
+.BKTT-BlockCard {
+  position: absolute;
+  width: 180px;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.BKTT-BlockCard img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.BKTT-BlockCard span {
+  background: white;
+  display: block;
+  padding: 12px;
+  color: #1885f2;
+  font-weight: 400;
+  line-height: 1.2;
+  height: 90px;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.BKTT-BlockCard--1 { left: 2%;   top: -10px;  transform: rotate(-8deg);  z-index: 1; }
+.BKTT-BlockCard--2 { left: 33%;  top: -10px;  transform: rotate(-3deg);  z-index: 2; }
+.BKTT-BlockCard--3 { left: 62%;  top: -10px;  transform: rotate(6deg);   z-index: 3; }
+
+/* ─── Utilidades ──────────────────────────────────────────────────────────── */
+
+.BKTT-Block__section.is-reversed {
+  flex-direction: column-reverse;
+}
+
+.BKTT-Block__section.is-centered {
+  align-items: center;
+  text-align: center;
+}
+
+.BKTT-Block__section.is-centered .BKTT-Block__content {
+  align-items: center;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 991.98px) {
+  .BKTT-Block--split .BKTT-Block__section {
+    min-height: auto;
+  }
+
+  .BKTT-Block--split .BKTT-Block__imageWrapper {
+    height: 320px;
+  }
+
+  .BKTT-Block--cards {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .BKTT-Block--text-image,
+  .BKTT-Block--image-text,
+  .BKTT-Block--text-cards {
+    height: auto;
+  }
+
+  .BKTT-Block--text-image .BKTT-Block__grid,
+  .BKTT-Block--image-text .BKTT-Block__grid,
+  .BKTT-Block--text-cards .BKTT-Block__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .BKTT-Block--text-image .BKTT-Block__imageWrapper,
+  .BKTT-Block--image-text .BKTT-Block__imageWrapper {
+    position: relative;
+    height: 200px;
+    width: 100%;
+  }
+
+  .BKTT-Block--text-image .BKTT-Block__section:last-child,
+  .BKTT-Block--image-text .BKTT-Block__section:first-child {
+    height: 200px;
+  }
+
+  .BKTT-Block__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .BKTT-Block__title {
+    font-size: 1.5rem;
+  }
+
+  .BKTT-Block__content {
+    padding: 1.5rem;
+  }
+
+  .BKTT-Block__section--cards {
+    height: 220px;
+  }
+
+  .BKTT-Block__cards {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .BKTT-BlockCard {
+    width: 120px;
+    height: 200px;
+  }
+
+  .BKTT-BlockCard img {
+    height: 140px;
+  }
+
+  .BKTT-BlockCard span {
+    height: 60px;
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .BKTT-BlockCard--1 { left: 10%; top: 20px; }
+  .BKTT-BlockCard--2 { left: 35%; top: 10px; }
+  .BKTT-BlockCard--3 { left: 60%; top: 25px; }
+}
+
+@media (max-width: 575.98px) {
+  .BKTT-Block--split .BKTT-Block__content {
+    padding: 1.5rem;
+  }
+
+  .BKTT-Block--split .BKTT-Block__imageWrapper {
+    height: 230px;
+  }
+
+  .BKTT-Block--cards {
+    padding: 1.25rem;
+  }
+
+  .BKTT-Block--cards .BKTT-Block__image {
+    height: 210px;
+  }
+}
