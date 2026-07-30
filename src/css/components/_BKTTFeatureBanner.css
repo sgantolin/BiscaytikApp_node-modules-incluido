@@ -1,0 +1,263 @@
+.BKTT-FeatureBanner {
+  width: 100%;
+  padding: 2rem;
+  background: var(--BKTT-feature-banner-bg);
+}
+
+.BKTT-FeatureBanner__grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--BKTT-feature-banner-columns, 2),
+    minmax(0, 1fr)
+  );
+  gap: var(--BKTT-feature-banner-gap);
+  align-items: var(--BKTT-feature-banner-align);
+}
+
+/* Variantes generales */
+
+.BKTT-FeatureBanner--split {
+  --BKTT-feature-banner-columns: 2;
+}
+
+.BKTT-FeatureBanner--cards {
+  --BKTT-feature-banner-columns: 2;
+  background: #fff;
+}
+
+.BKTT-FeatureBanner--single {
+  --BKTT-feature-banner-columns: 1;
+}
+
+/* Cada bloque */
+
+.BKTT-FeatureBanner__section {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__section {
+  justify-content: center;
+}
+
+.BKTT-FeatureBanner__imageWrapper {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.BKTT-FeatureBanner__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.BKTT-FeatureBanner__decoration {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Texto */
+
+.BKTT-FeatureBanner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.BKTT-FeatureBanner__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.BKTT-FeatureBanner__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: #171717;
+}
+
+.BKTT-FeatureBanner__description {
+  max-width: 42rem;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #2f2f2f;
+}
+
+/* Acciones */
+
+.BKTT-FeatureBanner__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.BKTT-FeatureBanner__button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.4rem;
+  padding: 0.55rem 0.9rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background: var(--primary-color);
+  color: #fff !important;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.BKTT-FeatureBanner__button:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.BKTT-FeatureBanner__extra {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Variante principal: imagen/texto */
+
+.BKTT-FeatureBanner--split {
+  padding: 0;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__grid {
+  gap: 0;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__section {
+  min-height: 360px;
+}
+
+.BKTT-FeatureBanner--split
+  .BKTT-FeatureBanner__section:has(.BKTT-FeatureBanner__imageWrapper) {
+  overflow: hidden;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__imageWrapper {
+  height: 100%;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.BKTT-FeatureBanner--split .BKTT-FeatureBanner__content {
+  justify-content: center;
+  height: 100%;
+  padding: clamp(2rem, 5vw, 5rem);
+}
+
+/* Variante de tarjetas dobles */
+
+.BKTT-FeatureBanner--cards {
+  padding: 3rem;
+}
+
+.BKTT-FeatureBanner--cards .BKTT-FeatureBanner__section {
+  align-items: flex-start;
+}
+
+.BKTT-FeatureBanner--cards .BKTT-FeatureBanner__imageWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.BKTT-FeatureBanner--cards .BKTT-FeatureBanner__image {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+}
+
+.BKTT-FeatureBanner--cards .BKTT-FeatureBanner__title {
+  color: var(--primary-color);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+}
+
+.BKTT-FeatureBanner--cards .BKTT-FeatureBanner__description {
+  margin-bottom: 1rem;
+}
+
+/* Utilidades opcionales */
+
+.BKTT-FeatureBanner__section.is-reversed {
+  flex-direction: column-reverse;
+}
+
+.BKTT-FeatureBanner__section.is-centered {
+  align-items: center;
+  text-align: center;
+}
+
+.BKTT-FeatureBanner__section.is-centered
+  .BKTT-FeatureBanner__content {
+  align-items: center;
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+  .BKTT-FeatureBanner__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .BKTT-FeatureBanner--split .BKTT-FeatureBanner__section {
+    min-height: auto;
+  }
+
+  .BKTT-FeatureBanner--split .BKTT-FeatureBanner__imageWrapper {
+    height: 320px;
+  }
+
+  .BKTT-FeatureBanner--cards {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .BKTT-FeatureBanner {
+    padding: 1.25rem;
+  }
+
+  .BKTT-FeatureBanner--split {
+    padding: 0;
+  }
+
+  .BKTT-FeatureBanner--split .BKTT-FeatureBanner__content {
+    padding: 1.5rem;
+  }
+
+  .BKTT-FeatureBanner--split .BKTT-FeatureBanner__imageWrapper {
+    height: 230px;
+  }
+
+  .BKTT-FeatureBanner--cards {
+    padding: 1.25rem;
+  }
+
+  .BKTT-FeatureBanner--cards .BKTT-FeatureBanner__image {
+    height: 210px;
+  }
+}

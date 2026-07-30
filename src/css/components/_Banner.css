@@ -1,0 +1,190 @@
+.BKTT-Banner {
+    position: relative;
+  height: 324px;
+  overflow: visible;
+}
+
+.BKTT-Banner__title {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 700px;
+
+
+}
+
+.BKTT-Banner__subtitle,
+.BKTT-Banner__description {
+  color: white;
+  max-width: 520px;
+}
+
+
+.BKTT-Banner .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+.BKTT-BannerCard {
+  position: absolute;
+   width: 180px;
+   height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0,0,0,.18);
+  
+}
+
+.BKTT-BannerCard img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.BKTT-BannerCard span {
+  background: white;
+  display: block;
+  padding: 12px;
+  color: #1885f2;
+  font-weight: 400;
+  line-height: 1.2;
+  height: 90px;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.BKTT-Banner .col-lg-6:last-child {
+  max-width: 500px;
+  margin-right: -50;
+  margin-left: auto;
+}
+.BKTT-Banner--text-image .col-lg-6:last-child,
+.BKTT-Banner--image-text .col-lg-6:last-child {
+  height: 324px;
+  overflow: hidden;
+}
+
+
+.BKTT-BannerCard--1 {
+  left: -5%;
+  top: -170px;
+  transform: rotate(-22deg);
+  z-index: 1;
+}
+
+.BKTT-BannerCard--2 {
+  left: 20%;
+  top: -180px;
+  transform: rotate(-22deg);
+  z-index: 2;
+}
+
+.BKTT-BannerCard--3 {
+  left: 44%;
+  top: -165px;
+  transform: rotate(8deg);
+  z-index: 3;
+}
+
+.BKTT-Banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  overflow: hidden;
+}
+
+.BKTT-Banner__image img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.BKTT-Banner--image-text .BKTT-Banner__text,
+.BKTT-Banner--text-image .BKTT-Banner__text {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+  .BKTT-Banner {
+    height: auto;
+  }
+
+  .BKTT-Banner .row {
+    flex-direction: column !important;
+  }
+
+  .BKTT-Banner .col-lg-6 {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .BKTT-Banner__title {
+    font-size: 1.5rem;
+  }
+
+  .BKTT-Banner__text {
+    padding: 1.5rem !important;
+  }
+
+  /* Image layout en móvil */
+  .BKTT-Banner__image {
+    position: relative;
+    height: 200px;
+    width: 100%;
+  }
+
+  .BKTT-Banner--text-image .col-lg-6:last-child,
+  .BKTT-Banner--image-text .col-lg-6:last-child {
+    height: 200px;
+    max-width: 100%;
+  }
+
+  /* Cards layout en móvil - mantener rotación */
+  .BKTT-Banner__cards {
+    position: relative;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .BKTT-BannerCard {
+    position: absolute;
+    width: 120px;
+    height: 200px;
+  }
+
+  .BKTT-BannerCard img {
+    height: 140px;
+  }
+
+  .BKTT-BannerCard span {
+    height: 60px;
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .BKTT-BannerCard--1 {
+    left: 10%;
+    top: 20px;
+  }
+
+  .BKTT-BannerCard--2 {
+    left: 35%;
+    top: 10px;
+  }
+
+  .BKTT-BannerCard--3 {
+    left: 60%;
+    top: 25px;
+  }
+}
