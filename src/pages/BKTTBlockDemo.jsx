@@ -4,8 +4,6 @@ import playa from '../assets/themes/default/media/playa.png';
 import barca from '../assets/themes/default/media/barca.jpg';
 import canoa from '../assets/themes/default/media/canoa.jpg';
 import summerFest from '../assets/themes/default/media/summerFest.jpg';
-import iglesia from '../assets/themes/default/media/iglesia.jpg';
-import rio from '../assets/themes/default/media/rio.jpg';
 import patrimonioArbolConexiones
   from '../assets/themes/default/media/patrimonio/patrimonio-arbol-conexiones.png';
 import patrimonioEntradasGrupos
@@ -42,20 +40,7 @@ function BKTTBlockDemo() {
         />
       </Section>
 
-      {/* ── 2. image-text ─────────────────────────────────────────────── */}
-      <Section label='layout="image-text" — imagen a la izquierda'>
-        <BKTTBlock
-          layout="image-text"
-          backgroundColor="linear-gradient(90deg, #2f92e5 0%, #1e5b90 100%)"
-          title="Descubre la bahía en directo"
-          description="Consulta el estado del mar y los eventos en tiempo real desde cualquier dispositivo."
-          button={{ label: 'Ver más', endIcon: 'fa-light fa-arrow-right', link: '/listado' }}
-          image={barca}
-          alt="Barca en la bahía"
-        />
-      </Section>
-
-      {/* ── 3. text-cards ─────────────────────────────────────────────── */}
+      {/* ── 2. text-cards ─────────────────────────────────────────────── */}
       <Section label='layout="text-cards" — título + botón + tarjetas flotantes'>
         <BKTTBlock
           layout="text-cards"
@@ -70,8 +55,8 @@ function BKTTBlockDemo() {
         />
       </Section>
 
-      {/* ── 4. split ──────────────────────────────────────────────────── */}
-      <Section label='layout="split" — imagen izquierda + texto derecha (align stretch)'>
+      {/* ── 3. split — imagen izquierda + texto derecha ───────────────── */}
+      <Section label='layout="split" — imagen izquierda + texto derecha'>
         <BKTTBlock
           layout="split"
           backgroundColor="#f8f5ef"
@@ -98,7 +83,7 @@ function BKTTBlockDemo() {
         />
       </Section>
 
-      {/* ── 5. split invertido ────────────────────────────────────────── */}
+      {/* ── 4. split — texto izquierda + imagen derecha ───────────────── */}
       <Section label='layout="split" — texto izquierda + imagen derecha'>
         <BKTTBlock
           layout="split"
@@ -125,8 +110,8 @@ function BKTTBlockDemo() {
         />
       </Section>
 
-      {/* ── 6. cards ──────────────────────────────────────────────────── */}
-      <Section label='layout="cards" — columnas de imagen + texto + botón'>
+      {/* ── 5. cards — 2 columnas ─────────────────────────────────────── */}
+      <Section label='layout="cards" — 2 columnas con imagen + texto + botón'>
         <div className="container">
           <BKTTBlock
             layout="cards"
@@ -155,45 +140,7 @@ function BKTTBlockDemo() {
         </div>
       </Section>
 
-      {/* ── 7. cards — 3 columnas ─────────────────────────────────────── */}
-      <Section label='layout="cards" — 3 columnas'>
-        <div className="container">
-          <BKTTBlock
-            layout="cards"
-            backgroundColor="#f5f5f5"
-            gap="2rem"
-            align="start"
-            sections={[
-              {
-                id: 'c1',
-                image: barca,
-                alt: 'Barca',
-                title: 'Ruta en barca',
-                description: 'Recorre la bahía a bordo de una embarcación tradicional.',
-                button: { label: 'Ver ruta', href: '/listado', endIcon: 'fa-light fa-arrow-right' },
-              },
-              {
-                id: 'c2',
-                image: iglesia,
-                alt: 'Iglesia',
-                title: 'Casco histórico',
-                description: 'Pasea por las calles del casco histórico y descubre su patrimonio.',
-                button: { label: 'Ver ruta', href: '/listado', endIcon: 'fa-light fa-arrow-right' },
-              },
-              {
-                id: 'c3',
-                image: rio,
-                alt: 'Río',
-                title: 'Ruta por el río',
-                description: 'Sigue el curso del río Butrón entre bosques y caseríos.',
-                button: { label: 'Ver ruta', href: '/listado', endIcon: 'fa-light fa-arrow-right' },
-              },
-            ]}
-          />
-        </div>
-      </Section>
-
-      {/* ── 8. text-image con backgroundImage + overlay ───────────────── */}
+      {/* ── 6. text-image con backgroundImage + overlay ───────────────── */}
       <Section label='layout="text-image" — backgroundImage + overlayColor'>
         <BKTTBlock
           layout="text-image"
@@ -204,51 +151,7 @@ function BKTTBlockDemo() {
         />
       </Section>
 
-      {/* ── 9. split con eyebrow ──────────────────────────────────────── */}
-      <Section label='layout="split" — con eyebrow y sin botón'>
-        <BKTTBlock
-          layout="split"
-          backgroundColor="#1a1a2e"
-          gap="0"
-          align="stretch"
-          sections={[
-            {
-              id: 'dark-img',
-              image: summerFest,
-              alt: 'SummerFest',
-            },
-            {
-              id: 'dark-text',
-              eyebrow: 'Próximamente',
-              title: 'SummerFest 2026',
-              description: 'Tres días de música, gastronomía y cultura frente al mar. No te lo pierdas.',
-              contentClassName: 'BKTT-Block__content--dark',
-            },
-          ]}
-        />
-      </Section>
-
-      {/* ── 10. single — una sola columna centrada ────────────────────── */}
-      <Section label='layout="single" — bloque centrado de texto'>
-        <div className="container">
-          <BKTTBlock
-            layout="single"
-            backgroundColor="#f0f7ff"
-            sections={[
-              {
-                id: 'single',
-                eyebrow: 'Bienvenido',
-                title: 'Descubre todo lo que Plentzia tiene para ti',
-                description: 'Agenda cultural, rutas, alojamientos y mucho más en un solo lugar.',
-                button: { label: 'Explorar', link: '/listado', endIcon: 'fa-light fa-arrow-right' },
-                className: 'is-centered',
-              },
-            ]}
-          />
-        </div>
-      </Section>
-
-      {/* ── 11. imageFilter ───────────────────────────────────────────── */}
+      {/* ── 7. split con imageFilter ──────────────────────────────────── */}
       <Section label='layout="split" — imageFilter="grayscale(1)"'>
         <BKTTBlock
           layout="split"
