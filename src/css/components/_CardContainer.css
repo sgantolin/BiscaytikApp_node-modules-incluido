@@ -192,7 +192,6 @@
   margin: 0;
 }
 
-/* === VARIANTE HORIZONTAL (imagen izquierda, contenido derecha) === */
 
 /* Sin bordes en horizontal */
 .BKTT-CardContainer__card--horizontal {
@@ -207,6 +206,7 @@
 .BKTT-CardContainer--column .BKTT-CardContainer__card--alt {
   background-color: #F1F1F2;
 }
+
 
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
   flex-direction: row;
