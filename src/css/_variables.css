@@ -106,4 +106,8 @@
 
     /*images*/
     --menu-image: var(--theme-menu-image);
+
+    /*border*/
+     --border-radius: var(--theme-border-radius);
+     --border-color: var(--theme-border-color);
 }

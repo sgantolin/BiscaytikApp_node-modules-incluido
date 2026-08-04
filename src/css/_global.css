@@ -17,9 +17,9 @@ body *:focus {
 	margin-top:60px;
 }
 
-main.BKTT-Main {
+/*main.BKTT-Main {
 	padding-top: 40px;
-}
+}*/
 
 @media (max-width: 991px) {
 	main.BKTT-Main {
@@ -115,6 +115,10 @@ time, li {
 /*end Botones*/
 
 @import './components/_slider.css';
+.BKTT-TitleBar + section	{
+	margin-top: 1rem!important;
+}
+
 /*mapa*/
 /* Map container styles: ensure Leaflet map is visible */
 .BKTT-Map {
@@ -132,25 +136,27 @@ time, li {
 	height: 100% !important;
 }
 /*mapa end*/
-
+.BKTT-TitleBar{
+	margin-bottom: 1.5rem;
+}
 /* Override Bootstrap btn-primary to use theme variables */
 .btn-primary {
-  --bs-btn-bg: var(--primary-color);
+  /*--bs-btn-bg: var(--primary-color);
   --bs-btn-border-color: var(--primary-color);
   --bs-btn-hover-bg: var(--secondary-color);
   --bs-btn-hover-border-color: var(--secondary-color);
   --bs-btn-active-bg: var(--secondary-color);
-  --bs-btn-active-border-color: var(--secondary-color);
+  --bs-btn-active-border-color: var(--secondary-color);*/
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
-  color: #fff !important;
+  color: var(--custom-white) !important;
 }
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
-  color: #fff !important;
+  color: var(--custom-white) !important;
 }
 .BKTT-AgendaListadoHero {
 	width: 100%;
@@ -162,7 +168,7 @@ time, li {
 	margin-bottom: 2rem;
 }
 
-/* Separación estándar entre secciones de página */
+/* Separación estándar entre secciones de página *
 .BKTT-ThemeTurismo .container + .container,
 .BKTT-ThemeTurismo .container + .row,
 .BKTT-ThemeTurismo section + section {
@@ -171,7 +177,7 @@ time, li {
 
 .WPZB-HTML {
 	margin-top: 3rem;
-}
+}*/
 
 /*modo edición*/
 #suiteBarDelta {

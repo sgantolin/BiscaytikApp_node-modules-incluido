@@ -4,11 +4,6 @@
   border-radius: 8px;
 }
 
-.BKTT-CardGrid__sectionTitle {
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
-
 .BKTT-CardGrid .row {
   justify-content: center;
   display: flex;
