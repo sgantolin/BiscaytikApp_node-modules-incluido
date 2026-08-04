@@ -346,14 +346,20 @@
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 991px) {
-  .BKTT-Block .row{
+  .BKTT-Block .row {
     flex-direction: column;
   }
-  .BKTT-Block .row .col{
+
+  .BKTT-Block .row .col {
     padding-right: 0;
     padding-left: 0;
   }
+
+  .BKTT-Block__cards {
+    overflow-x: hidden;
+  }
 }
+
 @media (max-width: 991.98px) {
   .BKTT-Block--split .BKTT-Block__section {
     min-height: auto;
