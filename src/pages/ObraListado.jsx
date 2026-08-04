@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import BKTTBreadcrumb from '../shared/components/Breadcrumb';
 import AgendaFilters from '../shared/components/Filters';
+import CardContainer from '../shared/components/CardContainer';
 
 import obraEscalerasMuro
   from '../assets/themes/default/media/patrimonio/patrimonio-obra-escaleras-muro.png';
@@ -59,56 +60,46 @@ function ObrasListado() {
 
   const Obras = [
     {
-      id: 'todo-esta-conectado',
-      category: 'Patrimonio',
+      note: 'Patrimonio',
       title: 'Todo está conectado',
       date: '12/01/2026',
       price: '10€',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel.',
       image: obraEscalerasMuro,
-      imageAlt: 'Escaleras de piedra de la obra Todo está conectado',
       link: '/obras/todo-esta-conectado',
-      reservable: true,
+      footerLabel: 'Reservar',
+      footerIcon: 'fa-light fa-link',
     },
     {
-      id: 'arte-los-origenes',
-      category: 'Historia',
+      note: 'Historia',
       title: 'Arte, los orígenes',
       date: 'PERMANENTE',
       price: 'GRATUITO',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel.',
       image: obraEscaleraInterior,
-      imageAlt: 'Escalera interior de la exposición Arte, los orígenes',
       link: '/obras/arte-los-origenes',
-      reservable: false,
     },
     {
-      id: 'mar-planos-marineros',
-      category: 'Historia',
+      note: 'Historia',
       title: 'Mar, planos y marineros',
       date: 'PERMANENTE',
       price: 'GRATUITO',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel.',
       image: obraTejidoMetalico,
-      imageAlt: 'Representación gráfica de planos y patrimonio marítimo',
       link: '/obras/mar-planos-marineros',
-      reservable: false,
     },
     {
-      id: 'instalacion-respira',
-      category: 'Patrimonio',
-      title: 'Instalación, “Respira”',
+      note: 'Patrimonio',
+      title: 'Instalación, "Respira"',
       date: 'PERMANENTE',
       price: 'GRATUITO',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus aliquet lectus, pellentesque elementum nunc pellentesque vel.',
       image: obraSalaExposicion,
-      imageAlt: 'Sala de la instalación Respira',
       link: '/obras/instalacion-respira',
-      reservable: false,
     },
   ];
 
@@ -224,77 +215,16 @@ function ObrasListado() {
           {/* LISTADO: 75 % */}
 
           <section className="BKTT-WebPartZone-H75--R col-lg-9">
-            <div className="BKTT-ObrasResults">
-              <h2 className="visually-hidden">
-                Listado de obras
-              </h2>
+            <h2 className="visually-hidden">
+              Listado de obras
+            </h2>
 
-              {Obras.map((obra) => (
-                <article
-                  key={obra.id}
-                  className="BKTT-ObraListCard"
-                >
-                  <div className="BKTT-ObraListCard__content">
-                    <span className="BKTT-ObraListCard__category">
-                      {obra.category}
-                    </span>
-
-                    <h3 className="BKTT-ObraListCard__title">
-                      <a href={obra.link}>
-                        {obra.title}
-                      </a>
-                    </h3>
-
-                    <div className="BKTT-ObraListCard__information">
-                      <div className="BKTT-ObraListCard__date">
-                        <span
-                          className="BKTT-Icon fa-light fa-calendar"
-                          aria-hidden="true"
-                        />
-
-                        <span>{obra.date}</span>
-                      </div>
-
-                      <strong className="BKTT-ObraListCard__price">
-                        {obra.price}
-                      </strong>
-                    </div>
-
-                    <p className="BKTT-ObraListCard__description">
-                      {obra.description}
-                    </p>
-
-                    {obra.reservable && (
-                      <div className="BKTT-ObraListCard__actions">
-                        <a
-                          href={`${obra.link}/reservar`}
-                          className="BKTT-ObraListCard__button"
-                        >
-                          <span
-                            className="BKTT-Icon fa-light fa-link"
-                            aria-hidden="true"
-                          />
-
-                          <span>Reservar</span>
-                        </a>
-                      </div>
-                    )}
-                  </div>
-
-                  <a
-                    href={obra.link}
-                    className="BKTT-ObraListCard__imageLink"
-                    aria-label={`Ver ${obra.title}`}
-                  >
-                    <img
-                      src={obra.image}
-                      alt={obra.imageAlt}
-                      className="BKTT-ObraListCard__image"
-                    />
-                  </a>
-                </article>
-              ))}
-            </div>
+            <CardContainer
+              cards={Obras}
+              layout="horizontal"
+              direction="column"
+              imagePosition="right"
+            />
           </section>
         </div>
       </div>

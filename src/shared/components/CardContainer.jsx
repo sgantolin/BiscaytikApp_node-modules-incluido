@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect, useState } from 'react';
 import '../../css/components/_CardContainer.css';
 
-function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight, cardSize, scroll, columns, visibleCards, imageFilter }) {
+function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight, cardSize, scroll, columns, visibleCards, imageFilter, imagePosition }) {
   const itemStyle = columns && direction !== 'column'
     ? { flex: `0 0 calc(${100 / columns}% - 1rem)`, maxWidth: `calc(${100 / columns}% - 1rem)` }
     : undefined;
@@ -32,10 +32,12 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
         
    {cards.map((card, i) => (
     <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`} style={itemStyle}>
-  <div className={`BKTT-CardContainer__card card 
+  <div
+    className={`BKTT-CardContainer__card card 
     ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} 
     ${!card.image ? 'BKTT-CardContainer__card--no-image' : ''}
-    ${direction === 'column' && i % 2 !== 0 ? 'BKTT-CardContainer__card--alt' : ''}`}>
+    ${direction === 'column' && i % 2 !== 0 ? 'BKTT-CardContainer__card--alt' : ''}`}
+    style={layout === 'horizontal' && imagePosition === 'right' ? { flexDirection: 'row-reverse' } : undefined}>
       {(card.image || card.badgeText) && (
        <figure className="BKTT-Card__figure">
         {card.badgeText && (
