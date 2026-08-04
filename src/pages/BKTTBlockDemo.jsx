@@ -14,13 +14,13 @@ import patrimonioExposicionTextura
   from '../assets/themes/default/media/patrimonio/patrimonio-exposicion-textura.jpg';
 
 const Section = ({ label, children }) => (
-  <section style={{ marginBottom: '3rem' }}>
-    <div className="container" style={{ marginBottom: '0.75rem' }}>
-      <h2 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', margin: 0 }}>
-        {label}
-      </h2>
-    </div>
-    {children}
+  //<div className="container" style={{ marginBottom: '0.75rem' }}>
+    //<h2 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', margin: 0 }}>
+    //</h2>
+  //</div>
+  <section class="BKTT-Wrapper mt-5">
+    {label}
+    { children }
   </section>
 );
 
@@ -48,9 +48,9 @@ function BKTTBlockDemo() {
           title="Planes para todos los gustos"
           button={{ label: 'Ver agenda', icon: 'fa-light fa-calendar', link: '/listado' }}
           injectedCards={[
-            { image: barca,      title: 'Plan cultural de un día' },
+            { image: barca, title: 'Plan cultural de un día' },
             { image: summerFest, title: 'Summer Plentzia' },
-            { image: canoa,      title: 'Ruta acuática' },
+            { image: canoa, title: 'Ruta acuática' },
           ]}
         />
       </Section>

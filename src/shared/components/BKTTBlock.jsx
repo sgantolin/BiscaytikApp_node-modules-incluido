@@ -115,7 +115,7 @@ function BKTTBlock({
     : {};
 
   return (
-    <section
+    <div
       className={`BKTT-Block BKTT-Block--${layout} ${className}`}
       style={{
         '--BKTT-block-gap': gap,
@@ -128,11 +128,11 @@ function BKTTBlock({
       {backgroundImage && overlayColor && (
         <div className="BKTT-Block__overlay" style={{ backgroundColor: overlayColor }} />
       )}
-      <div className="BKTT-Block__grid">
+      <div className="BKTT-Block__grid row">
         {resolvedSections.map((section, i) => {
           if (section._cards) {
             return (
-              <div key={i} className="BKTT-Block__section BKTT-Block__section--cards">
+              <div key={i} className="BKTT-Block__section col BKTT-Block__section--cards">
                 <BlockCards cards={section._cards} imageFilter={imageFilter} />
               </div>
             );
@@ -142,7 +142,7 @@ function BKTTBlock({
           return (
             <div
               key={section.id || i}
-              className={`BKTT-Block__section ${section.className || ''}`}
+              className={`BKTT-Block__section col ${section.className || ''}`}
               style={{ backgroundColor: section.backgroundColor, textAlign: section.textAlign }}
             >
               {order === 'text-image' ? (
@@ -154,8 +154,9 @@ function BKTTBlock({
           );
         })}
       </div>
-    </section>
+    </div>
   );
+
 }
 
 export default BKTTBlock;

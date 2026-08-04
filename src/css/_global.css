@@ -14,7 +14,8 @@ body *:focus {
 	box-shadow: inset 0 0 0 0.15rem var(--primary-color);
 }
 .BKTT-ThemeTurismo {
-	margin-top:60px;
+	/*margin-top:60px;*/
+	margin-top:47px;
 }
 
 /*main.BKTT-Main {
@@ -22,8 +23,20 @@ body *:focus {
 }*/
 
 @media (max-width: 991px) {
-	main.BKTT-Main {
+	/*main.BKTT-Main {
 		padding-top: 36px;
+	}*/
+.BKTT-Main .row{
+	margin-right: 0;
+	margin-left: 0;
+}
+	.BKTT-Main .row>*[class*=" col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	/*map*/
+	.BKTT-Map{
+		display: none;
 	}
 }
 

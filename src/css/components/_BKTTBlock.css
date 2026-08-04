@@ -145,8 +145,14 @@
   object-fit: contain;
 }
 
-.BKTT-Block--cards .BKTT-Block__title {
+.BKTT-Block__title {
   color: var(--primary-color);
+  margin: 0 0 2rem;
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #171717;
+  max-width: 700px;
 }
 
 /* ─── Layout: single ──────────────────────────────────────────────────────── */
@@ -208,14 +214,7 @@
   margin: 0 0 0.5rem;
 }
 
-.BKTT-Block__title {
-  margin: 0 0 1rem;
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  line-height: 1.2;
-  font-weight: 700;
-  color: #171717;
-  max-width: 700px;
-}
+
 
 .BKTT-Block--text-image .BKTT-Block__title,
 .BKTT-Block--image-text .BKTT-Block__title,
@@ -309,9 +308,26 @@
   overflow: hidden;
 }
 
-.BKTT-BlockCard--1 { left: 2%;   top: -10px;  transform: rotate(-8deg);  z-index: 1; }
-.BKTT-BlockCard--2 { left: 33%;  top: -10px;  transform: rotate(-3deg);  z-index: 2; }
-.BKTT-BlockCard--3 { left: 62%;  top: -10px;  transform: rotate(6deg);   z-index: 3; }
+.BKTT-BlockCard--1 {
+  left: 13%;
+  top: -10px;
+  transform: rotate(-12deg);
+  z-index: 1;
+}
+
+.BKTT-BlockCard--2 {
+  left: 34%;
+  top: -22px;
+  transform: rotate(4deg);
+  z-index: 2;
+}
+
+.BKTT-BlockCard--3 {
+  left: 57%;
+  top: 2px;
+  transform: rotate(12deg);
+  z-index: 3;
+}
 
 /* ─── Utilidades ──────────────────────────────────────────────────────────── */
 
@@ -329,7 +345,15 @@
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
-
+@media (max-width: 991px) {
+  .BKTT-Block .row{
+    flex-direction: column;
+  }
+  .BKTT-Block .row .col{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 @media (max-width: 991.98px) {
   .BKTT-Block--split .BKTT-Block__section {
     min-height: auto;
@@ -345,6 +369,7 @@
 }
 
 @media (max-width: 767.98px) {
+
   .BKTT-Block--text-image,
   .BKTT-Block--image-text,
   .BKTT-Block--text-cards {
@@ -382,11 +407,11 @@
   }
 
   .BKTT-Block__section--cards {
-    height: 220px;
+    min-height: 220px;
   }
 
   .BKTT-Block__cards {
-    height: 220px;
+    min-height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -407,9 +432,20 @@
     padding: 8px;
   }
 
-  .BKTT-BlockCard--1 { left: 10%; top: 20px; }
-  .BKTT-BlockCard--2 { left: 35%; top: 10px; }
-  .BKTT-BlockCard--3 { left: 60%; top: 25px; }
+  .BKTT-BlockCard--1 {
+    left: 10%;
+    top: 20px;
+  }
+
+  .BKTT-BlockCard--2 {
+    left: 35%;
+    top: 10px;
+  }
+
+  .BKTT-BlockCard--3 {
+    left: 60%;
+    top: 25px;
+  }
 }
 
 @media (max-width: 575.98px) {

@@ -506,7 +506,7 @@ function Home() {
     <div class="BKTT-WebPartZone-fullWidth--Top col-12">
      <BKTTFigureSlider />
      {/* código sharepoint */}
-     <div class="BKTT-FigureSlider--container tp-banner-container">
+     {/*<div class="BKTT-FigureSlider--container tp-banner-container">
       <div class="BKTT-FigureSlider tp-banner revslider-initialised tp-simpleresponsive hovered" >
        <ul>
         <li class="carousel-item active">
