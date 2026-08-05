@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import CardContainer from '../shared/components/CardContainer';
-import Banner from '../shared/components/Banner';
+import Banner from '../shared/components/BKTT-Banner';
 import BKTTBlock from '../shared/components/BKTTBlock';
 import AgendaFilters from '../shared/components/Filters';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';

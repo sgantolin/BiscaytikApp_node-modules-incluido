@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 import CardContainer from '../shared/components/CardContainer';
-import Banner from '../shared/components/Banner';
+import Banner from '../shared/components/BKTT-Banner';
 import BKTTFeatureBanner from '../shared/components/BKTTFeatureBanner';
-import BKTTBlock from '../shared/components/BKTTBlock';
+import Wrapper from '../shared/components/BKTT-Wrapper';
 
 import './Patrimonio.css';
 

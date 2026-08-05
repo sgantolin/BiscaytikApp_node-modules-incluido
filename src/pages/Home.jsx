@@ -30,8 +30,8 @@ import { Dropdown } from 'primereact/dropdown';
 import { Tooltip } from 'bootstrap';
 import CardContainer from '../shared/components/CardContainer';
 import BKTTFigureSlider from '../shared/components/BKTTFigureSlider';
-import Banner from '../shared/components/Banner'
-import BKTTBlock from '../shared/components/BKTTBlock'
+import Banner from '../shared/components/BKTT-Banner';
+import BKTTBlock from '../shared/components/BKTTBlock';
 
 function Home() {
 

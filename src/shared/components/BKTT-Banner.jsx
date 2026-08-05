@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../../css/components/_Banner.css';
+import '../../css/components/_BKTT-Banner.css';
 
 const BannerText = ({ banner }) => (
   <div className="BKTT-Banner__text px-5 py-5">

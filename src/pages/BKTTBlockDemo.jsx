@@ -1,4 +1,4 @@
-import Wrapper from '../shared/components/Wrapper';
+import Wrapper from '../shared/components/BKTT-Wrapper';
 
 import playa from '../assets/themes/default/media/playa.png';
 import barca from '../assets/themes/default/media/barca.jpg';

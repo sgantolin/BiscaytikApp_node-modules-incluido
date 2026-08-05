@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../../css/components/_Wrapper.css';
+import '../../css/components/_BKTT-Wrapper.css';
 
 const BlockImage = ({ section, imageFilter }) => {
   if (!section.image) return null;
