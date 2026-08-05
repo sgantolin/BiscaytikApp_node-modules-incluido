@@ -1,19 +1,19 @@
-.BKTT-AgendaFilters {
+.BKTT-Filters {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 8px;
   margin-bottom: 1.5rem;
 }
 
-.BKTT-AgendaFilters--vertical {
+.BKTT-Filters--vertical {
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
 }
 
-.BKTT-AgendaFilters button {
+.BKTT-Filters button {
   border: 1px solid var(--primary-color);
   background: #fff;
   color: var(--primary-color);
@@ -22,30 +22,85 @@
   font-size: 0.875rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 8px;
 }
 
-.BKTT-AgendaFilters__filterBtn,
-.BKTT-AgendaFilters__order {
+.BKTT-Filters__filterBtn,
+.BKTT-Filters__order {
   border-color: transparent !important;
   color: var(--text-color) !important;
 }
 
-.BKTT-AgendaFilters__date {
+.BKTT-Filters__date {
   border-radius: 0.35rem !important;
   color: var(--text-color) !important;
   border-color: var(--border-color) !important;
 }
 
-.BKTT-AgendaFilters__chips {
+.BKTT-Filters__chips {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   flex: 1;
+  transition: all .2s ease;
 }
 
-.BKTT-AgendaFilters__chip.is-selected {
+.BKTT-Filters__chips.is-selected, .BKTT-Filters__chips[aria-pressed="true"] {
   background: var(--primary-color);
   color: var(--custom-white);
 }
+/**/
+/*categorias*
+.BKTT-Filters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 12px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.BKTT-Filters input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.BKTT-Filters label {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	border-radius: 999px;
+	border: 2px solid #2f92ea;
+	background: #fff;
+	color: #1267b1;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+/* Hover *
+.BKTT-Filters label:hover {
+	background: #f4f9ff;
+}
+
+/* Estado seleccionado *
+.BKTT-Filters .BKTT-Filters__chips[aria-pressed="true"] {
+	background: var(--primary-color);
+	border-color: var(--primary-color);
+	color: var(--custom-white);
+}
+/* Focus accesible *
+.BKTT-Filters input:focus-visible+label {
+	outline: 3px solid #000;
+	outline-offset: 3px;
+}
+
+/* Cruz de deselección *
+.BKTT-close {
+	font-size: 18px;
+	line-height: 1;
+}*/

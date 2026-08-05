@@ -2,21 +2,21 @@ import '../../css/components/_Filters.css';
 
 function AgendaFilters({ filters = [], selectedFilters = [], onToggleFilter, layout = 'horizontal', showDate = true }) {
   return (
-    <div className={`BKTT-AgendaFilters BKTT-AgendaFilters--${layout}`}>
-      <button className="BKTT-AgendaFilters__filterBtn" type="button">
+    <div className={`BKTT-Filters BKTT-Filters--${layout}`}>
+      <button className="BKTT-Filters__filterBtn" type="button">
         <span className="BKTT-Icon fa-light fa-sliders" />
         <span>Filtros</span>
         <span className="BKTT-Icon fa-light fa-plus" />
       </button>
 
       {showDate && (
-        <button className="BKTT-AgendaFilters__date" type="button">
+        <button className="BKTT-Filters__date" type="button">
           <span className="BKTT-Icon fa-light fa-calendar" />
           <span>DD / MM / YYYY - DD / MM / YYYY</span>
         </button>
       )}
 
-      <div className="BKTT-AgendaFilters__chips">
+      <div className="BKTT-BKTT-Filters__chips">
         {filters.map((filter) => {
           const isSelected = selectedFilters.includes(filter.id);
 
@@ -24,7 +24,7 @@ function AgendaFilters({ filters = [], selectedFilters = [], onToggleFilter, lay
             <button
               key={filter.id}
               type="button"
-              className={`BKTT-AgendaFilters__chip ${isSelected ? 'is-selected' : ''}`}
+              className={`BKTT-Filters__chips ${isSelected ? 'is-selected' : ''}`}
               onClick={() => onToggleFilter?.(filter.id)}
             >
               {filter.icon && (
@@ -39,7 +39,7 @@ function AgendaFilters({ filters = [], selectedFilters = [], onToggleFilter, lay
         })}
       </div>
 
-      <button className="BKTT-AgendaFilters__order" type="button">
+      <button className="BKTT-Filters__order" type="button">
         <span className="BKTT-Icon fa-light fa-arrow-down-arrow-up" />
         <span>Ordenar</span>
         <span className="BKTT-Icon fa-light fa-angle-down" />

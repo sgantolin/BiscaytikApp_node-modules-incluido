@@ -139,7 +139,7 @@
   cursor: pointer;
 }
 
-.BKTT-ObrasFilters__chips {
+.BKTT-ObrasBKTT-Filters__chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
@@ -341,7 +341,7 @@
     width: 100%;
   }
 
-  .BKTT-ObrasFilters__chips {
+  .BKTT-ObrasBKTT-Filters__chips {
     margin-bottom: 1rem;
   }
 

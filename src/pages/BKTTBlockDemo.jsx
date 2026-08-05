@@ -15,19 +15,29 @@ import patrimonioExposicionTextura
 
 const Section = ({ label, children }) => (
   //<div className="container" style={{ marginBottom: '0.75rem' }}>
-    //<h2 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', margin: 0 }}>
-    //</h2>
+  //<h2 style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', margin: 0 }}>
+  //</h2>
   //</div>
   <section class="BKTT-Wrapper mt-5">
     {label}
-    { children }
+    {children}
   </section>
 );
 
 function BKTTBlockDemo() {
   return (
     <div style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
-
+      {/* ── ejem 1 ─────────────────────────────────────────────── */}
+      {/* injectedCards={BannerData.injectedCards} */}
+      <Section label='ejem 1'>
+        <BKTTBlock
+          layout="text-image"
+          backgroundColor="linear-gradient(90deg, #1e5b90 0%, #2f92e5 100%)"
+          title="Visita Plentzia en 1, 2 días o quédate aquí"
+          button={{ label: 'Planificar viaje', icon: 'fa-light fa-calendar', link: '/listado' }}
+          
+        />
+      </Section>
       {/* ── 1. text-image ─────────────────────────────────────────────── */}
       <Section label='layout="text-image" — título + botón + imagen'>
         <BKTTBlock

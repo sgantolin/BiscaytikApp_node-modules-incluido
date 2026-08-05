@@ -1,0 +1,24 @@
+/*importación ojas estilos componentes*/
+@import url('./components/_slider.css');
+@import url('./components/_CardContainer.css');
+
+/*cookies*/
+.BKTT-cookies {
+ position: absolute;
+ bottom: 0px;
+ padding: 0.5rem 1rem;
+ z-index: 999;
+ background-color: var(--custom-white);
+}
+/*carousel*/
+.BKTT-carousel {
+ margin-bottom: 60px;
+}
+/*dropdown*/
+.BKTT-ThemeTurismo .dropdown-toggle:after {
+  display: none;
+  font-family: "Font Awesome 6 Pro";
+  content: "\f078";
+  color: var(--primary-color);
+  position: absolute;
+}

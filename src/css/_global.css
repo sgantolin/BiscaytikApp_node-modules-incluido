@@ -13,29 +13,32 @@ body *:focus {
 	outline-offset: 0;
 	box-shadow: inset 0 0 0 0.15rem var(--primary-color);
 }
+
 .BKTT-ThemeTurismo {
 	/*margin-top:60px;*/
-	margin-top:47px;
+	margin-top: 47px;
 }
 
-/*main.BKTT-Main {
-	padding-top: 40px;
-}*/
+main.BKTT-Main {
+	padding-top: 28px;
+}
 
 @media (max-width: 991px) {
-	/*main.BKTT-Main {
-		padding-top: 36px;
-	}*/
-.BKTT-Main .row{
-	margin-right: 0;
-	margin-left: 0;
-}
+	main.BKTT-Main {
+		padding-top: 0;
+	}
+	.BKTT-Main .row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
 	.BKTT-Main .row>*[class*=" col-"] {
 		padding-right: 0;
 		padding-left: 0;
 	}
+
 	/*map*/
-	.BKTT-Map{
+	.BKTT-Map {
 		display: none;
 	}
 }
@@ -64,9 +67,10 @@ body main .BKTT-Badge.bg-primary {
 	font-weight: 100;
 }
 
-.BKTT-Badge{
+.BKTT-Badge {
 	padding: 4px 8px;
 }
+
 .BKTT-cookies {
 	position: absolute;
 	bottom: 0px;
@@ -87,7 +91,8 @@ h3,
 }
 
 p,
-time, li {
+time,
+li {
 	font-size: 14px;
 	line-height: 21px;
 }
@@ -97,8 +102,9 @@ time, li {
 	line-height: 24px;
 	font-weight: 600;
 }
-.BKTT-carousel{
-	margin-bottom:60px;
+
+.BKTT-carousel {
+	margin-bottom: 60px;
 }
 
 /*dropdown*/
@@ -109,6 +115,7 @@ time, li {
 	color: var(--primary-color);
 	position: absolute;
 }
+
 /*layout*/
 @media (min-width: 1400px) {
 
@@ -121,15 +128,18 @@ time, li {
 		max-width: 1400px;
 	}
 }
+
 /*Botones*/
-.BKTT-Button{
+.BKTT-Button {
 	border: transparent
 }
+
 /*end Botones*/
 
 @import './components/_slider.css';
-.BKTT-TitleBar + section	{
-	margin-top: 1rem!important;
+
+.BKTT-TitleBar+section {
+	margin-top: 1rem !important;
 }
 
 /*mapa*/
@@ -144,36 +154,41 @@ time, li {
 /* Ensure leaflet's container stretches to the parent */
 .BKTT-Map .leaflet-container,
 .BKTT-Map .leaflet-pane,
-.BKTT-Map .leaflet-pane > canvas {
+.BKTT-Map .leaflet-pane>canvas {
 	width: 100% !important;
 	height: 100% !important;
 }
+
 /*mapa end*/
-.BKTT-TitleBar{
+.BKTT-TitleBar {
 	margin-bottom: 1.5rem;
 }
+
 /* Override Bootstrap btn-primary to use theme variables */
 .btn-primary {
-  /*--bs-btn-bg: var(--primary-color);
+	/*--bs-btn-bg: var(--primary-color);
   --bs-btn-border-color: var(--primary-color);
   --bs-btn-hover-bg: var(--secondary-color);
   --bs-btn-hover-border-color: var(--secondary-color);
   --bs-btn-active-bg: var(--secondary-color);
   --bs-btn-active-border-color: var(--secondary-color);*/
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-  color: var(--custom-white) !important;
+	background-color: var(--primary-color) !important;
+	border-color: var(--primary-color) !important;
+	color: var(--custom-white) !important;
 }
+
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color) !important;
-  color: var(--custom-white) !important;
+	background-color: var(--secondary-color) !important;
+	border-color: var(--secondary-color) !important;
+	color: var(--custom-white) !important;
 }
+
 .BKTT-AgendaListadoHero {
 	width: 100%;
 }
+
 .BKTT-AgendaListado__titleImg {
 	width: 100%;
 	height: auto;

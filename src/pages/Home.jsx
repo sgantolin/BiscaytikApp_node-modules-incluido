@@ -629,28 +629,24 @@ function Home() {
          <span class="BKTT-Icon fa-regular fa-chevron-right"></span>
         </a>
        </h2>
-       <fieldset class="BKTT-tag-semantic-Filter d-flex flex-wrap align-items-center justify-content-end" aria-label="Categorías">
+       <fieldset class="BKTT-Filters d-flex flex-wrap align-items-center justify-content-end" aria-label="Categorías">
         <legend class="d-none">Categorías</legend>
-        <input type="checkbox" id="cultura" checked aria-pressed="true" />
-        <label for="cultura">
-         <span class="BKTT-Icon fa-solid fa-masks-theater me-2"></span>
-         <span>Cultura</span>
-         </label>
-        <input type="checkbox" id="deporte" checked aria-pressed="true" />
-        <label for="deporte">
-         <span class="BKTT-Icon fa-solid fa-person-hiking me-2"></span>
-         <span>Deporte</span>
-         </label>
-        <input type="checkbox" id="gastronomia" />
-        <label for="gastronomia">
-         <span class="BKTT-Icon fa-light fa-hat-chef me-2"></span>
-         <span>Gastronimía</span>
-         </label>
-        <input type="checkbox" id="ocio" checked aria-pressed="true" />
-        <label for="ocio">
-         <span class="BKTT-Icon fa-sharp fa-solid fa-party-horn me-2"></span>
-         <span>Ocio</span>
-         </label>
+        <button type="button" class="BKTT-Filters__chips" aria-pressed="true" >
+         <span class="BKTT-Icon fa-solid fa-masks-theater"></span>
+         <span class="BKTT-Label">Cultura</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" aria-pressed="true" >
+          <span class="BKTT-Icon fa-solid fa-person-hiking"></span>
+          <span class="BKTT-Label">Deporte</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" id="gastronomia" aria-pressed="false">
+          <span class="BKTT-Icon fa-light fa-hat-chef"></span>
+          <span class="BKTT-Label">Gastronimía</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" id="ocio" aria-pressed="true">
+          <span class="BKTT-Icon fa-sharp fa-solid fa-party-horn"></span>
+          <span class="BKTT-Label">Ocio</span>
+        </button>
        </fieldset>
       </section>
       <section id="BKTT-carousel" class="BKTT-carousel carousel ">
@@ -812,21 +808,6 @@ function Home() {
       button={BannerData.button}
       injectedCards={BannerData.injectedCards}
      />
-    </div>
-   </div>
-
-   <div className="container" style={{ margin: '5rem auto' }}>
-    <div className="row">
-     <div className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12">
-      {/* ANTIGUO: <Banner banner={BannerData} /> */}
-      <BKTTBlock
-       layout={BannerData.layout}
-       backgroundColor={BannerData.backgroundColor}
-       title={BannerData.title}
-       button={BannerData.button}
-       injectedCards={BannerData.injectedCards}
-      />
-     </div>
     </div>
    </div>
 
