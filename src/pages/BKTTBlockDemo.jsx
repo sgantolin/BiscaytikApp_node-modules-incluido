@@ -1,4 +1,4 @@
-import BKTTBlock from '../shared/components/BKTTBlock';
+import Wrapper from '../shared/components/Wrapper';
 
 import playa from '../assets/themes/default/media/playa.png';
 import barca from '../assets/themes/default/media/barca.jpg';
@@ -30,7 +30,7 @@ function BKTTBlockDemo() {
 
       {/* ── 1. text-image ─────────────────────────────────────────────── */}
       <Section label='layout="text-image" — título + botón + imagen'>
-        <BKTTBlock
+        <Wrapper
           layout="text-image"
           backgroundColor="linear-gradient(90deg, #1e5b90 0%, #2f92e5 100%)"
           title="Visita Plentzia en 1, 2 días o quédate aquí"
@@ -42,7 +42,7 @@ function BKTTBlockDemo() {
 
       {/* ── 2. text-cards ─────────────────────────────────────────────── */}
       <Section label='layout="text-cards" — título + botón + tarjetas flotantes'>
-        <BKTTBlock
+        <Wrapper
           layout="text-cards"
           backgroundColor="linear-gradient(90deg, #1e5b90 0%, #2f92e5 100%)"
           title="Planes para todos los gustos"
@@ -57,7 +57,7 @@ function BKTTBlockDemo() {
 
       {/* ── 3. split — imagen izquierda + texto derecha ───────────────── */}
       <Section label='layout="split" — imagen izquierda + texto derecha'>
-        <BKTTBlock
+        <Wrapper
           layout="split"
           backgroundColor="#f8f5ef"
           gap="0"
@@ -85,7 +85,7 @@ function BKTTBlockDemo() {
 
       {/* ── 4. split — texto izquierda + imagen derecha ───────────────── */}
       <Section label='layout="split" — texto izquierda + imagen derecha'>
-        <BKTTBlock
+        <Wrapper
           layout="split"
           backgroundColor="#eef4fb"
           gap="0"
@@ -113,7 +113,7 @@ function BKTTBlockDemo() {
       {/* ── 5. cards — 2 columnas ─────────────────────────────────────── */}
       <Section label='layout="cards" — 2 columnas con imagen + texto + botón'>
         <div className="container">
-          <BKTTBlock
+          <Wrapper
             layout="cards"
             backgroundColor="#ffffff"
             gap="4rem"
@@ -142,7 +142,7 @@ function BKTTBlockDemo() {
 
       {/* ── 6. text-image con backgroundImage + overlay ───────────────── */}
       <Section label='layout="text-image" — backgroundImage + overlayColor'>
-        <BKTTBlock
+        <Wrapper
           layout="text-image"
           backgroundImage={patrimonioExposicionTextura}
           overlayColor="rgba(100, 5, 5, 0.90)"
@@ -153,7 +153,7 @@ function BKTTBlockDemo() {
 
       {/* ── 7. split con imageFilter ──────────────────────────────────── */}
       <Section label='layout="split" — imageFilter="grayscale(1)"'>
-        <BKTTBlock
+        <Wrapper
           layout="split"
           backgroundColor="#fbf8f1"
           gap="0"

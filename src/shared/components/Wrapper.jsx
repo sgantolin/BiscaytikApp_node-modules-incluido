@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../../css/components/_BKTTBlock.css';
+import '../../css/components/_Wrapper.css';
 
 const BlockImage = ({ section, imageFilter }) => {
   if (!section.image) return null;
@@ -71,7 +71,7 @@ const BlockCards = ({ cards, imageFilter }) => (
   </div>
 );
 
-function BKTTBlock({
+function Wrapper({
   layout = 'text-image',
   backgroundColor,
   backgroundImage,
@@ -103,7 +103,6 @@ function BKTTBlock({
 
   const colCount = columns || resolvedSections.length || 1;
 
-  // Construimos el estilo de fondo sin mezclar background shorthand con backgroundImage
   const bgStyle = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage})`,
@@ -156,7 +155,6 @@ function BKTTBlock({
       </div>
     </div>
   );
-
 }
 
-export default BKTTBlock;
+export default Wrapper;

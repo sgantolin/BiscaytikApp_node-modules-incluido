@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import BKTTBreadcrumb from '../shared/components/Breadcrumb';
-import BKTTGallery from '../shared/components/BKTTGallery';
+import BKTTFigureGaleria from '../shared/components/BKTTFigureGaleria';
 import CardContainer from '../shared/components/CardContainer';
 import CardGrid from '../shared/components/CardGrid';
 
@@ -353,7 +353,7 @@ function ObraDetalle() {
               </section>
 
               <section className="BKTT-ObraDetalle__gallery">
-                <BKTTGallery
+                <BKTTFigureGaleria
                   variant="masonry"
                   columns={3}
                   gap="0.5rem"

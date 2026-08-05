@@ -214,8 +214,6 @@
   margin: 0 0 0.5rem;
 }
 
-
-
 .BKTT-Block--text-image .BKTT-Block__title,
 .BKTT-Block--image-text .BKTT-Block__title,
 .BKTT-Block--text-cards .BKTT-Block__title {
@@ -375,7 +373,6 @@
 }
 
 @media (max-width: 767.98px) {
-
   .BKTT-Block--text-image,
   .BKTT-Block--image-text,
   .BKTT-Block--text-cards {
