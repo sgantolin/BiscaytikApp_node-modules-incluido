@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../../css/components/_BKTTGallery.css';
+import '../../css/components/_BKTTFigureGaleria.css';
 
-function BKTTGallery({
+function BKTTFigureGaleria({
   images = [],
   variant = 'featured',
   showDots = true,
@@ -121,4 +121,4 @@ function BKTTGallery({
   );
 }
 
-export default BKTTGallery;
+export default BKTTFigureGaleria;

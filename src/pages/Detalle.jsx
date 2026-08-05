@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import CardContainer from '../shared/components/CardContainer';
 import CardGrid from '../shared/components/CardGrid';
-import BKTTGallery from '../shared/components/BKTTGallery';
+import BKTTFigureGaleria from '../shared/components/BKTTFigureGaleria';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';
 import '../css/components/_Detalle.css';
 
@@ -272,8 +272,8 @@ function EventoDetalle() {
                 viverra tortor.
               </p>
 
-              <BKTTGallery
-                variant="featured"
+              <BKTTFigureGaleria
+                variant="masonry"
                 images={galleryImages}
                 showDots
                 showThumbs
