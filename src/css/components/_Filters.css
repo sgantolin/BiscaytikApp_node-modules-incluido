@@ -4,7 +4,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 1.5rem;
 }
 
 .BKTT-Filters--vertical {
@@ -49,6 +48,12 @@
 .BKTT-Filters__chips.is-selected, .BKTT-Filters__chips[aria-pressed="true"] {
   background: var(--primary-color);
   color: var(--custom-white);
+}
+@media (max-width: 991px) {
+  .BKTT-Filters{
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+  }
 }
 /**/
 /*categorias*

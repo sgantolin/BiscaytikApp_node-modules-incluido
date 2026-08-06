@@ -108,55 +108,53 @@ function EventoDetalle() {
         ===================================================== */}
 
     <section className="PL-Evento--T">
-      <div className="container">
-        <div className="row">
-          <div className="BKTT-WebPartZone-fullWidth--TopContainer col-12">
+      <div className="row">
+        <div className="BKTT-WebPartZone-fullWidth--TopContainer col-12">
 
-            <BreadCrumbComponent
-              items={[
-                {
-                  label: 'Agenda',
-                  url: '/listado',
-                },
-                {
-                  label: 'Plentzia SummerFest',
-                  url: '/detalle',
-                },
-              ]}
+          <BreadCrumbComponent 
+            items={[
+              {
+                label: 'Agenda',
+                url: '/listado',
+              },
+              {
+                label: 'Plentzia SummerFest',
+                url: '/detalle',
+              },
+            ]}
+          />
+
+          <div className="BKTT-FigureImg">
+            <img
+              src={titleDatepicker2}
+              alt="Plentzia SummerFest"
+              className="BKTT-EventoDetalleHero__image"
             />
+          </div>
 
-            <div className="BKTT-EventoDetalleHero">
-              <img
-                src={titleDatepicker2}
-                alt="Plentzia SummerFest"
-                className="BKTT-EventoDetalleHero__image"
+          <div className="BKTT-EventoDetalle__header container mt-5">
+            <div className="BKTT-EventoDetalle__heading ">
+              <h1 className="BKTT-EventoDetalle__title">
+                Plentzia SummerFest
+              </h1>
+
+              {/*
+              <p className="BKTT-EventoDetalle__subtitle">
+                Subtítulo opcional del evento
+              </p>
+              */}
+            </div>
+
+            <button
+              className="BKTT-EventoDetalle__share"
+              type="button"
+              aria-label="Compartir evento"
+            >
+              <span
+                className="BKTT-Icon fa-light fa-arrow-up-from-bracket"
+                aria-hidden="true"
               />
-            </div>
-
-            <div className="BKTT-EventoDetalle__header">
-              <div className="BKTT-EventoDetalle__heading">
-                <h1 className="BKTT-EventoDetalle__title">
-                  Plentzia SummerFest
-                </h1>
-
-                {/*
-                <p className="BKTT-EventoDetalle__subtitle">
-                  Subtítulo opcional del evento
-                </p>
-                */}
-              </div>
-
-              <button
-                className="BKTT-EventoDetalle__share"
-                type="button"
-                aria-label="Compartir evento"
-              >
-                <span
-                  className="BKTT-Icon fa-light fa-arrow-up-from-bracket"
-                  aria-hidden="true"
-                />
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -359,7 +357,7 @@ function EventoDetalle() {
         ===================================================== */}
 
     <section className="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
-      <div className="container">
+      <div className="">
         <CardGrid
           cards={interesCards}
           bgColor="#145A92"

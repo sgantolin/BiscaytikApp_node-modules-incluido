@@ -1,9 +1,9 @@
-.BKTT-Breadcrumb {
+/*.BKTT-Breadcrumb {
     width: 100%;
     padding: .75rem 0;
     font-size: .875rem;
     margin-top: 0;
-}
+}*/
 
 .BKTT-Breadcrumb__list {
     display: flex;
@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     gap: .5rem;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
     list-style: none;
 }
 

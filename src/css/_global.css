@@ -136,7 +136,7 @@ li {
 
 /*end Botones*/
 
-@import './components/_slider.css';
+/*@import './components/_slider.css';*/
 
 .BKTT-TitleBar+section {
 	margin-top: 1rem !important;
@@ -162,6 +162,7 @@ li {
 /*mapa end*/
 .BKTT-TitleBar {
 	margin-bottom: 1.5rem;
+	gap: 16px;
 }
 
 /* Override Bootstrap btn-primary to use theme variables */

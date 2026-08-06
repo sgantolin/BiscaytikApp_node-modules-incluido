@@ -629,7 +629,7 @@ function Home() {
          <span class="BKTT-Icon fa-regular fa-chevron-right"></span>
         </a>
        </h2>
-       <fieldset class="BKTT-Filters d-flex flex-wrap align-items-center justify-content-end" aria-label="Categorías">
+       <fieldset class="BKTT-Filters d-flex" aria-label="Categorías">
         <legend class="d-none">Categorías</legend>
         <button type="button" class="BKTT-Filters__chips" aria-pressed="true" >
          <span class="BKTT-Icon fa-solid fa-masks-theater"></span>
@@ -790,7 +790,7 @@ function Home() {
    {/* Layout fullWidth middle*/}
    {/* Alojamientos */}
    <div className="container">
-    <div className="row" style={{ paddingBottom: '8rem' }}>
+    <div className="row" style={{ }}>
      <div className="BKTT-WebPartZone-fullWidth--Middle col-12">
       <h2>Alojamientos</h2>
       <CardContainer cards={AlojamientoCards} />

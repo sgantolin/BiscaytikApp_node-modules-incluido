@@ -1,6 +1,7 @@
 /*importación ojas estilos componentes*/
 @import url('./components/_slider.css');
 @import url('./components/_CardContainer.css');
+@import url('./components/_BKTTBreadcrumb.css');
 
 /*cookies*/
 .BKTT-cookies {

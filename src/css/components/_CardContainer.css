@@ -433,7 +433,7 @@
 /* === RESPONSIVE === */
 @media (max-width: 991px) {
  .BKTT-CardContainer {
-  gap: 3.5%;
+  gap: 16px;
  }
 
  .BKTT-CardContainer__card {
@@ -442,7 +442,7 @@
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal{
  flex-direction: column;
 }
-.BKTT-Card__figure .BKTT-Badge{
+.BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge, .BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge {
  position: relative;
 }
  .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img{
