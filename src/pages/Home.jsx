@@ -30,8 +30,7 @@ import { Dropdown } from 'primereact/dropdown';
 import { Tooltip } from 'bootstrap';
 import CardContainer from '../shared/components/CardContainer';
 import BKTTFigureSlider from '../shared/components/BKTTFigureSlider';
-import Banner from '../shared/components/BKTT-Banner';
-import BKTTBlock from '../shared/components/BKTTBlock';
+import Wrapper from '../shared/components/BKTT-Wrapper';
 
 function Home() {
 
@@ -801,7 +800,7 @@ function Home() {
    <div className="row">
     <div className="BKTT-WebPartZone-fullWidth--Middle col-12">
      {/* ANTIGUO: <Banner banner={BannerData} /> */}
-     <BKTTBlock
+     <Wrapper
       layout={BannerData.layout}
       backgroundColor={BannerData.backgroundColor}
       title={BannerData.title}

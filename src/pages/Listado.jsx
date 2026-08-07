@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import CardContainer from '../shared/components/CardContainer';
-import Banner from '../shared/components/BKTT-Banner';
-import BKTTBlock from '../shared/components/BKTTBlock';
+import Wrapper from '../shared/components/BKTT-Wrapper';
 import AgendaFilters from '../shared/components/Filters';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';
 
@@ -245,7 +244,7 @@ const filters = [
         ===================================================== */}
 
     <div className="WPZB-HTML BKTT-WebPartZone-fullWidth--Bottom">
-      <BKTTBlock
+      <Wrapper
         layout={BannerData.layout}
         backgroundColor={BannerData.backgroundColor}
         title={BannerData.title}

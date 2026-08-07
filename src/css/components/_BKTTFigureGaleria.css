@@ -170,7 +170,7 @@
   height: 150px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .BKTT-Gallery__mainImage {
     height: 260px;
   }

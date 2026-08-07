@@ -101,8 +101,6 @@ function Wrapper({
     return right ? [left, right] : [left];
   })();
 
-  const colCount = columns || resolvedSections.length || 1;
-
   const bgStyle = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage})`,
@@ -119,7 +117,6 @@ function Wrapper({
       style={{
         '--BKTT-block-gap': gap,
         '--BKTT-block-align': align,
-        '--BKTT-block-columns': colCount,
         ...(backgroundImage && backgroundColor ? { backgroundColor } : {}),
         ...bgStyle,
       }}
