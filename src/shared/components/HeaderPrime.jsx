@@ -44,42 +44,6 @@ function Header() {
    ],
   },
   {
-   label: "Temas",
-   className: "BKTT-Link",
-   // icon: "fa-light fa-rectangle-list",
-   items: [
-    {
-     label: "Permisos",
-     url: "/permisos",
-    },
-    {
-     label: "Grupos de permisos",
-     url: "/grupos-de-permisos",
-    },
-    {
-     label: "Perfiles",
-     url: "/perfiles",
-    },
-    {
-     label: "Acciones masivas",
-     items: [
-      {
-       label: "Asignar permisos a grupos de permisos",
-       url: "/asignar-permiso-a-grupos-de-permisos",
-      },
-      {
-       label: "Asignar grupo de permisos a perfiles",
-       url: "/asignar-grupo-de-permisos-a-perfiles",
-      },
-      {
-       label: "Crear permisos asociados a formularios",
-       url: "/crear-permisos-asociados-a-formularios",
-      },
-     ],
-    },
-   ],
-  },
-  {
    label: "Design System",
    className: "BKTT-Link",
    icon: "BKTT-Icon fa-light fa-newspaper",//habrá que defiir una variable o configuración de sharepoint
@@ -88,11 +52,6 @@ function Header() {
      label: "Gestión de usuarios",
      url: "/gestion-de-usuarios",
      icon: "BKTT-Icon fa-light fa-user",
-    },
-    {
-     label: "Asignación de permisos",
-     url: "/asignacion-de-permisos",
-     icon: "BKTT-Iconfa-light fa-key",
     },
     {
      label: "Usuarios administradores",

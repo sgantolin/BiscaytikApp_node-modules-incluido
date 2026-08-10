@@ -1,9 +1,18 @@
-.BKTT-Filters {
+.BKTT-Filters{
+  margin-bottom: 1rem;
+}
+.BKTT-Filters .card{
+  border-radius: 0;
+  border-right-color: var(--custom-white);
+  border-left-color: var(--custom-white);
+  border-top-color: var(--custom-white);
+}
+.BKTT-Filters .filtros-principales{
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: space-between;
 }
 
 .BKTT-Filters--vertical {
@@ -36,10 +45,56 @@
   border-color: var(--border-color) !important;
 }
 
+.BKTT-Filters__dateWrapper {
+  position: relative;
+}
+
+.BKTT-Filters__datePopover {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 30;
+  min-width: 320px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+}
+
+.BKTT-Filters__dateInputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.BKTT-Filters__dateInputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.BKTT-Filters__dateInputs input {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.BKTT-Filters__dateFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
 .BKTT-Filters__chips {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   /*flex-wrap: wrap;*/
   flex: 1;
   transition: all .2s ease;

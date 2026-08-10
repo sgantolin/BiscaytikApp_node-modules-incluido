@@ -7,10 +7,6 @@ import ObraDetalle from "./pages/ObraDetalle";
 import BKTTBlockDemo from "./pages/BKTTBlockDemo";
 
 import CatalogoAplicaciones from "./pages/catalogoAplicaciones/CatalogoAplicaciones";
-import AsignacionPermisos from "./pages/asignacionPermisos/AsignacionPermisos";
-import AsignarPermisosCrear from "./pages/asignacionPermisos/AsignarPermisosCrear";
-import AsignarPermisosEditar from "./pages/asignacionPermisos/AsignarPermisosEditar";
-import AsignarPermisosVer from "./pages/asignacionPermisos/AsignarPermisosVer";
 import GestionUsuarios from "./pages/gestionUsuarios/GestionUsuarios";
 import GestionUsuariosCrear from "./pages/gestionUsuarios/GestionUsuariosCrear";
 import GestionUsuariosEditar from "./pages/gestionUsuarios/GestionUsuariosEditar";
@@ -19,21 +15,6 @@ import UsuariosAdministradores from "./pages/UsuariosAdministradores/usuariosAdm
 import GenerarListados from "./pages/listados/GenerarListados";
 import BajaMasivaUsuarios from "./pages/bajaMasivaUsuarios/BajaMasivaUsuarios";
 import ReactivacionMasivaUsuarios from "./pages/reactivacionMasivaUsuarios/ReactivacionMasivaUsuarios";
-import Permisos from "./pages/permisos/Permisos";
-import PermisosCrear from "./pages/permisos/PermisosCrear";
-import PermisosEditar from "./pages/permisos/PermisosEditar";
-import PermisosVer from "./pages/permisos/PermisosVer";
-import GruposDePermisos from "./pages/gruposDePermisos/GruposDePermisos";
-import GruposDePermisosCrear from "./pages/gruposDePermisos/GruposDePermisosCrear";
-import GruposDePermisosEditar from "./pages/gruposDePermisos/GruposDePermisosEditar";
-import GruposDePermisosVer from "./pages/gruposDePermisos/GruposDePermisosVer";
-import PerfilesCrear from "./pages/perfiles/PerfilesCrear";
-import PerfilesEditar from "./pages/perfiles/PerfilesEditar";
-import PerfilesVer from "./pages/perfiles/PerfilesVer";
-import Perfiles from "./pages/perfiles/Perfiles";
-import PermisoAGrupos from "./pages/accionesMasivas/PermisoAGrupos";
-import GrupoAPerfiles from "./pages/accionesMasivas/GrupoAPerfiles";
-import PermisosAFormularios from "./pages/accionesMasivas/PermisosAFormularios";
 import RelacionAplicacionEntidad from "./pages/relacionAplicacionEntidad/RelacionAplicacionEntidad";
 import RelacionAplicacionEntidadCrear from "./pages/relacionAplicacionEntidad/RelacionAplicacionEntidadCrear";
 import RelacionAplicacionEntidadEditar from "./pages/relacionAplicacionEntidad/RelacionAplicacionEntidadEditar";
@@ -49,7 +30,6 @@ import CatalogoAplicacionesElementos from "./pages/catalogoAplicaciones/Catalogo
 import CatalogoAplicacionesElementosCrear from "./pages/catalogoAplicaciones/CatalogoAplicacionesElementosCrear";
 import CatalogoAplicacionesElementosEditar from "./pages/catalogoAplicaciones/CatalogoAplicacionesElementosEditar";
 import CatalogoAplicacionesElementosVer from "./pages/catalogoAplicaciones/CatalogoAplicacionesElementosVer";
-import AsignarPermisosClonar from "./pages/asignacionPermisos/AsignarPermisosClonar";
 
 const routes = [
     { path: '/', element: Home, exact: true, label: 'Inicio' },
@@ -73,31 +53,6 @@ const routes = [
         { path: '/relacion-aplicacion-entidad/editar-relacion', element: RelacionAplicacionEntidadEditar, label: 'Editar relación Aplicación-Entidad'},
         { path: '/relacion-aplicacion-entidad/ver-relacion', element: RelacionAplicacionEntidadVer, label: 'Ver relación Aplicación-Entidad'},
 
-    { path: '/permisos', element: Permisos, label: 'Permisos'},
-        { path: '/permisos/crear-permiso', element: PermisosCrear, label: 'Crear permiso'},
-        { path: '/permisos/editar-permiso', element: PermisosEditar, label: 'Editar permiso'},
-        { path: '/permisos/ver-permiso', element: PermisosVer, label: 'Ver permiso'},
-    
-    { path: '/grupos-de-permisos', element: GruposDePermisos, label: 'Grupos de permisos'},
-        { path: '/grupos-de-permisos/crear-grupo', element: GruposDePermisosCrear, label: 'Crear grupo'},
-        { path: '/grupos-de-permisos/editar-grupo', element: GruposDePermisosEditar, label: 'Editar grupo'},
-        { path: '/grupos-de-permisos/ver-grupo', element: GruposDePermisosVer, label: 'Ver grupo'},
-
-    { path: '/perfiles', element: Perfiles, label: 'Perfiles'},
-        { path: '/perfiles/crear-perfil', element: PerfilesCrear, label: 'Crear perfil'},
-        { path: '/perfiles/editar-perfil', element: PerfilesEditar, label: 'Editar perfil'},
-        { path: '/perfiles/ver-perfil', element: PerfilesVer, label: 'Ver perfil'},
-
-    { path: '/asignar-permiso-a-grupos-de-permisos', element: PermisoAGrupos, label: 'Asignar permiso a grupos de permisos'},
-    { path: '/asignar-grupo-de-permisos-a-perfiles', element: GrupoAPerfiles, label: 'Asignar grupo de permisos a perfiles'},
-    { path: '/crear-permisos-asociados-a-formularios', element: PermisosAFormularios, label: 'Crear permisos asociados a formularios'},
-
-    { path: '/asignacion-de-permisos', element: AsignacionPermisos, label: 'Asignación de permisos'},
-        { path: '/asignacion-de-permisos/crear-permisos', element: AsignarPermisosCrear, label: 'Crear permisos' },
-        { path: '/asignacion-de-permisos/editar-permisos', element: AsignarPermisosEditar, label: 'Editar permisos' },
-        { path: '/asignacion-de-permisos/ver-permisos', element: AsignarPermisosVer, label: 'Ver permisos' },
-        { path: '/asignacion-de-permisos/clonar-permisos', element: AsignarPermisosClonar, label: 'Clonar permisos' },
-    
     { path: '/gestion-de-usuarios', element: GestionUsuarios, label: 'Gestión de usuarios'},
         { path: '/gestion-de-usuarios/crear-usuario', element: GestionUsuariosCrear, label: 'Crear usuario'},
         { path: '/gestion-de-usuarios/editar-usuario', element: GestionUsuariosEditar, label: 'Editar usuario'},

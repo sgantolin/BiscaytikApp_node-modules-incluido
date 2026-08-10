@@ -106,6 +106,7 @@
 
     /*images*/
     --menu-image: var(--theme-menu-image);
+    --list-image: var(--theme-list-image);
 
     /*border*/
      --border-radius: var(--theme-border-radius);

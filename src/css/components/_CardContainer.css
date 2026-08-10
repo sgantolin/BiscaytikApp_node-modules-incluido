@@ -55,7 +55,7 @@
 /* === FIGURE (imagen + badge) === */
 .BKTT-Card__figure {
  margin: 0;
- /*height: 150px;*/
+ height: 150px;
  position: relative;
  flex-shrink: 0;
  overflow: hidden;
@@ -383,47 +383,15 @@
  overflow-y: auto;
 }
 
-.BKTT-WebPartZone-H50--R .BKTT-CardContainer--column::-webkit-scrollbar {
- width: 6px;
-}
-
-.BKTT-WebPartZone-H50--R .BKTT-CardContainer--column::-webkit-scrollbar-track {
- background: #f1f1f1;
- border-radius: 4px;
-}
-
-.BKTT-WebPartZone-H50--R .BKTT-CardContainer--column::-webkit-scrollbar-thumb {
- background: #ccc;
- border-radius: 4px;
-}
-
-.BKTT-WebPartZone-H50--R .BKTT-CardContainer--column::-webkit-scrollbar-thumb:hover {
- background: #999;
-}
-
 /* === VARIANTES === */
- {
- /* Variant: Columna cards */
-}
 
 .BKTT-CardContainer.BKTT-CardContainer--column {
  flex-direction: column;
  flex-wrap: nowrap;
 }
-
-
 .BKTT-CardContainer--scroll {
  max-height: 835px;
  overflow-y: auto;
-}
-
-.BKTT-CardContainer--scroll::-webkit-scrollbar {
- width: 6px;
-}
-
-.BKTT-CardContainer--scroll::-webkit-scrollbar-thumb {
- background: #ccc;
- border-radius: 4px;
 }
 
 .BKTT-CardContainer--CI {
@@ -442,15 +410,27 @@
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal{
  flex-direction: column;
 }
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure{
+ height: auto;
+ min-height: auto;
+ margin-top: 5px;
+}
 .BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge, .BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge {
  position: relative;
+}
+.BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge{
+ top:0;
 }
  .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img{
   display: none;
  }
+ .BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge{
+  margin-left: 3px;
+  margin-right: 3px;
+ }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
 
  /* Cards verticales: scroll horizontal con 2 visibles */
  .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal)) {
@@ -468,19 +448,6 @@
   scroll-snap-align: start;
  }
 
- .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar {
-  height: 4px;
- }
-
- .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
- }
-
- .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
- }
 
  /* Cards horizontales: se apilan en columna */
  .BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal) {
@@ -492,12 +459,12 @@
   width: 100%;
  }
 
- .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
+ /*.BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
   width: 120px !important;
   max-width: 120px !important;
   min-height: unset;
   padding: 0.5rem 0.5rem 0.5rem 0 !important;
- }
+ }*/
 
  .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
   position: absolute !important;

@@ -196,7 +196,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem 2.5rem;
+  /*padding: 2rem 2.5rem;*/
 }
 
 .BKTT-Block__eyebrow {
@@ -356,9 +356,6 @@
   .BKTT-Block__cards {
     overflow-x: hidden;
   }
-}
-
-@media (max-width: 991.98px) {
   .BKTT-Block--split .BKTT-Block__section {
     min-height: auto;
   }
@@ -370,9 +367,18 @@
   .BKTT-Block--cards {
     padding: 2rem;
   }
+  .BKTT-Block--text-image .BKTT-Block__content{
+    padding: 0 ;
+  }
+  .BKTT-Block--text-image .BKTT-Block__content > h2,.BKTT-Block--text-image .BKTT-Block__content > .BKTT-Block__actions{
+  padding:0 3rem;
+}
+.BKTT-Block--text-image .BKTT-Block__content > h2{
+  padding-top: 3rem;
+}
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .BKTT-Block--text-image,
   .BKTT-Block--image-text,
   .BKTT-Block--text-cards {
@@ -405,9 +411,9 @@
     font-size: 1.5rem;
   }
 
-  .BKTT-Block__content {
+  /*.BKTT-Block__content {
     padding: 1.5rem;
-  }
+  }*/
 
   .BKTT-Block__section--cards {
     min-height: 220px;
@@ -451,10 +457,10 @@
   }
 }
 
-@media (max-width: 575.98px) {
-  .BKTT-Block--split .BKTT-Block__content {
+@media (max-width: 576px) {
+  /*.BKTT-Block--split .BKTT-Block__content {
     padding: 1.5rem;
-  }
+  }*/
 
   .BKTT-Block--split .BKTT-Block__imageWrapper {
     height: 230px;

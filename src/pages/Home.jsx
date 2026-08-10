@@ -792,7 +792,33 @@ function Home() {
    <div className="container">
     <div className="row" style={{ }}>
      <div className="BKTT-WebPartZone-fullWidth--Middle col-12">
-      <h2>Alojamientos</h2>
+      <section class="BKTT-TitleBar d-flex justify-content-between align-items-center mt-5">
+       <h2>
+        <a href="./listado" class="d-flex align-items-center">
+         <span class="me-2">Alojamientos</span>
+         <span class="BKTT-Icon fa-regular fa-chevron-right"></span>
+        </a>
+       </h2>
+       <fieldset class="BKTT-Filters d-flex" aria-label="Categorías">
+        <legend class="d-none">Categorías</legend>
+        <button type="button" class="BKTT-Filters__chips" aria-pressed="true" >
+         <span class="BKTT-Icon fa-solid fa-masks-theater"></span>
+         <span class="BKTT-Label">Cultura</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" aria-pressed="true" >
+          <span class="BKTT-Icon fa-solid fa-person-hiking"></span>
+          <span class="BKTT-Label">Deporte</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" id="gastronomia" aria-pressed="false">
+          <span class="BKTT-Icon fa-light fa-hat-chef"></span>
+          <span class="BKTT-Label">Gastronimía</span>
+        </button>
+        <button type="button" class="BKTT-Filters__chips" id="ocio" aria-pressed="true">
+          <span class="BKTT-Icon fa-sharp fa-solid fa-party-horn"></span>
+          <span class="BKTT-Label">Ocio</span>
+        </button>
+       </fieldset>
+      </section>
       <CardContainer cards={AlojamientoCards} />
      </div>
     </div>
@@ -807,6 +833,7 @@ function Home() {
       title={BannerData.title}
       button={BannerData.button}
       injectedCards={BannerData.injectedCards}
+      className="mt-5"
      />
     </div>
    </div>
@@ -815,7 +842,14 @@ function Home() {
    <div className="container">
     <div className="row">
      <div className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12">
-      <h2>Noticias</h2>
+      <section class="BKTT-TitleBar d-flex justify-content-between align-items-center mt-5">
+       <h2>
+        <a href="./listado" class="d-flex align-items-center">
+         <span class="me-2">Noticias</span>
+         <span class="BKTT-Icon fa-regular fa-chevron-right"></span>
+        </a>
+       </h2>
+      </section>
       <CardContainer cards={NoticiasCards} direction="row" layout="horizontal" />
      </div>
     </div>
