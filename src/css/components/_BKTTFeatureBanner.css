@@ -22,7 +22,7 @@
 
 .BKTT-FeatureBanner--cards {
   --BKTT-feature-banner-columns: 2;
-  background: #fff;
+  background: var(--custom-white);
 }
 
 .BKTT-FeatureBanner--single {
@@ -82,7 +82,7 @@
   margin: 0 0 1rem;
   font-size: clamp(1.75rem, 3vw, 3rem);
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 600;
   color: #171717;
 }
 
@@ -114,7 +114,7 @@
   border: 0;
   border-radius: 0.2rem;
   background: var(--primary-color);
-  color: #fff !important;
+  color: var(--custom-white) !important;
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 600;
@@ -125,7 +125,7 @@
 
 .BKTT-FeatureBanner__button:hover {
   background: var(--secondary-color);
-  color: #fff;
+  color: var(--custom-white);
 }
 
 .BKTT-FeatureBanner__extra {

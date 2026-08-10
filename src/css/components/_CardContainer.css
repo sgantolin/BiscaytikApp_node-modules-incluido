@@ -152,21 +152,6 @@
  min-width: 112px;
 }
 
-.BKTT-Card__main .BKTT-Tags {
- padding-left: 0;
- display: flex;
- align-items: center;
-}
-
-.BKTT-Card__main .BKTT-Tags li {
- list-style: none;
- color: var(--text-color__grey);
-}
-
-.BKTT-Card__main .BKTT-Tags li .BKTT-Label {
- font-weight: 600;
-}
-
 .BKTT-progress__Container {
  margin-top: auto;
  min-width: 120px;

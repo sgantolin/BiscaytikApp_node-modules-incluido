@@ -99,6 +99,7 @@
     --border-color: var(--theme-border-color);
     --dialog-overlay-bg-color: var(--theme-white);
     --text-color__grey: var(--theme-grey__text);
+    --grey__background: var(--theme-grey__background);
 
     /*Header & Footer colors*/
     --header-bg-color: var(--theme-white);

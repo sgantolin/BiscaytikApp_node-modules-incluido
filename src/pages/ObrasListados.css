@@ -44,7 +44,7 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.65rem;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
   color: #242424;
 }
 
@@ -87,7 +87,7 @@
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.25rem, 2vw, 1.65rem);
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .BKTT-ObrasListado__intro p {
@@ -111,7 +111,7 @@
 
 .BKTT-ObrasFilters {
   padding: 1rem 1rem 1.25rem;
-  background: #fff;
+  background: var(--custom-white);
 }
 
 .BKTT-ObrasFilters__header {
@@ -156,7 +156,7 @@
   padding: 0.3rem 0.65rem;
   border: 1px solid #d62f0d;
   border-radius: 999px;
-  background: #fff;
+  background: var(--custom-white);
   color: #d62f0d;
   font-family: inherit;
   font-size: 0.72rem;
@@ -171,7 +171,7 @@
 
 .BKTT-ObrasFilters__chip.is-selected {
   background: #d62f0d;
-  color: #fff;
+  color: var(--custom-white);
 }
 
 .BKTT-ObrasFilters__order {
@@ -229,7 +229,7 @@
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(1.25rem, 2vw, 1.55rem);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .BKTT-ObraListCard__title a {
@@ -289,7 +289,7 @@
   padding: 0.45rem 1rem;
   border-radius: 0.2rem;
   background: #d62f0d;
-  color: #fff;
+  color: var(--custom-white);
   font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
@@ -297,7 +297,7 @@
 
 .BKTT-ObraListCard__button:hover {
   background: #b92508;
-  color: #fff;
+  color: var(--custom-white);
 }
 
 /* IMÁGENES */

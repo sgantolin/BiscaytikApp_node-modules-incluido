@@ -120,9 +120,10 @@ h3,
 	font-weight: 600;
 }
 
-p,
-time,
-li {
+.BKTT-ThemeTurismo p,
+.BKTT-ThemeTurismo time,
+.BKTT-ThemeTurismo li,
+.BKTT-ThemeTurismo span {
 	font-size: 14px;
 	line-height: 21px;
 }
@@ -158,10 +159,32 @@ li {
 		max-width: 1400px;
 	}
 }
-
+.BKTT-Main section{
+	margin-top:2rem;
+}
 /*Botones*/
-.BKTT-Button {
-	border: transparent
+.BKTT-Main .BKTT-Button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	min-height: 2.25rem;
+	padding: 0.5rem 0.75rem;
+	border: 0;
+	border-radius: 0.2rem;
+	background: var(--primary-color);
+	color: var(--custom-white);
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.BKTT-Main .BKTT-Button span {
+	color: inherit;
+}
+
+.BKTT-Main .BKTT-Button:hover {
+	background: var(--secondary-color);
 }
 
 /*end Botones*/
@@ -246,23 +269,28 @@ li {
 	position: relative;
 	overflow: hidden;
 }
-.BKTT-ListadoHero h1{
+
+.BKTT-ListadoHero h1 {
 	z-index: 999;
+	color: var(--custom-white);
 }
-.BKTT-ListadoHero:before ,
-.BKTT-ListadoHero:after{
+
+.BKTT-ListadoHero:before,
+.BKTT-ListadoHero:after {
 	content: "";
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 }
+
 .BKTT-ListadoHero:before {
 	background-color: var(--primary-color);
 	opacity: 0.4;
 	z-index: 2;
 	mix-blend-mode: multiply;
 }
+
 .BKTT-ListadoHero:after {
 	background: var(--list-image) no-repeat center center;
 	background-size: cover;
@@ -275,6 +303,159 @@ li {
 	display: block;
 	margin-bottom: 2rem;
 }
+/*end listado*/
+.BKTT-Tags {
+ padding-left: 0;
+ display: flex;
+ align-items: center;
+	gap:8px
+}
+
+.BKTT-Tags li {
+ list-style: none;
+ color: var(--text-color__grey);
+}
+
+.BKTT-Tags li .BKTT-Label {
+ font-weight: 600;
+}
+
+/*Detalle*/
+.BKTT-FigureImg img {
+	width: 100%;
+}
+
+/* Cabecera */
+
+.BKTT-EventoDetalle__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.BKTT-EventoDetalle__share {
+	appearance: none;
+	border: 0;
+	background: transparent;
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+/* Pestañas */
+
+.BKTT-EventoDetalle__tabsWrapper {
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.BKTT-EventoDetalle__tabs {
+	display: flex;
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+.BKTT-EventoDetalle__tabs li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.BKTT-EventoDetalle__tabs a {
+	position: relative;
+	display: block;
+	padding: 0.5rem 0 0.65rem;
+	line-height: 1;
+	text-decoration: none;
+	font-weight: 500;
+	color: var(--text-color__grey);
+}
+
+.BKTT-EventoDetalle__tabs a:hover {
+	color: var(--primary-color);
+}
+
+.BKTT-EventoDetalle__tabs a.is-active {
+	color: var(--text-color);
+}
+
+.BKTT-EventoDetalle__tabs a.is-active::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: -1px;
+	left: 0;
+	height: 2px;
+	background: var(--text-color);
+}
+
+/* Metadatos */
+
+.BKTT-EventoDetalle__meta dd {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Descripción */
+
+.BKTT-EventoDetalle__section {
+	margin-top: 2rem;
+}
+
+/* Tarjeta lateral */
+
+.BKTT-EventoDetalleAside {
+	padding: 1.25rem;
+	background: var(--grey__background);
+}
+
+.BKTT-EventoDetalleAside h2 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.BKTT-EventoDetalleAside__price {
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-bottom: 1rem;
+}
+
+.BKTT-EventoDetalleAside__price span {
+	font-size: 0.75rem;
+	color: var(--text-color__grey);
+}
+
+.BKTT-CardGrid__sectionTitle {/*buscar solución según pantalla? o configurable en el propio componente*/
+	color: var(--custom-white);
+}
+/* Responsive */
+
+@media (max-width: 991px) {
+	.BKTT-EventoDetalle__title {
+		font-size: 1.75rem;
+	}
+
+	.BKTT-EventoDetalleAside {
+		margin-top: 1rem;
+	}
+}
+
+@media (max-width: 575px) {
+	.BKTT-EventoDetalle {
+		padding-top: 1rem;
+	}
+
+	.BKTT-EventoDetalle__title {
+		font-size: 1.5rem;
+	}
+
+	.BKTT-EventoDetalle__tabs {
+		gap: 1.25rem;
+	}
+}
+/*end Detalle*/
 
 /*modo edición*/
 #suiteBarDelta {

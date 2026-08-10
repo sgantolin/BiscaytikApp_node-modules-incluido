@@ -429,7 +429,7 @@ function ObraDetalle() {
               cards={InteresCards}
               title="Podría interesarte"
               bgColor="transparent"
-              headerBgColor="#ffffff"
+              headerBgColor="var(--custom-white)fff"
               titleColor="#d62f0d"
               columns={3}
             />

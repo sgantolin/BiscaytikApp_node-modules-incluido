@@ -15,7 +15,7 @@
 /*@font-face {
  font-family: 'Poppins Bold';
  src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
- font-weight: 700;
+ font-weight: 600;
  font-style: normal;
 }*/
 
@@ -36,6 +36,7 @@
  --theme-black: #2D2D31; 
  --theme-grey__text:#71717A;
  --theme-border-color: #C6C6CA;
+ --theme-grey__background: #f1f1f1;
 
  --theme-menu-image: url('./assets/themes/default/menu-bg.png');
  --theme-list-image: url('./assets/themes/default/title & datepicker.png');

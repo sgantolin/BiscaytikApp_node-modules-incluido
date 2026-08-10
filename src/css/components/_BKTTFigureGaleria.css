@@ -43,7 +43,7 @@
 }
 
 .BKTT-Gallery__dot.is-active {
-  background: #fff !important;
+  background: var(--custom-white) !important;
 }
 
 .BKTT-Gallery__thumbs {
@@ -91,7 +91,7 @@
   height: 28px;
   border-radius: 999px;
   background: #0d8cff !important;
-  color: #fff;
+  color: var(--custom-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,7 +108,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  color: #fff;
+  color: var(--custom-white);
   font-size: 1rem;
   flex-shrink: 0;
 }

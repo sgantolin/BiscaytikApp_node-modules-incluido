@@ -24,7 +24,7 @@
 
 .BKTT-Filters button {
   border: 1px solid var(--primary-color);
-  background: #fff;
+  background: var(--custom-white);
   color: var(--primary-color);
   border-radius: 999px;
   padding: 0.45rem 0.75rem;
@@ -59,7 +59,7 @@
   padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  background: #fff;
+  background: var(--custom-white);
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
 }
 
@@ -136,7 +136,7 @@
 	padding: 12px 20px;
 	border-radius: 999px;
 	border: 2px solid #2f92ea;
-	background: #fff;
+	background: var(--custom-white);
 	color: #1267b1;
 	font-weight: 600;
 	cursor: pointer;

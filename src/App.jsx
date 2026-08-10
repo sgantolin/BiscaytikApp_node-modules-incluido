@@ -25,7 +25,7 @@ function MainLayout() {
   return (
     <>
       {showHeader && <Header />}
-      <main class="BKTT-Main">
+      <main className="BKTT-Main">
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={<route.element />} />

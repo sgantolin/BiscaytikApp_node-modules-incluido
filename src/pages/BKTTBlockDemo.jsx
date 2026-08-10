@@ -117,7 +117,7 @@ function BKTTBlockDemo() {
         <div className="container">
           <Wrapper
             layout="cards"
-            backgroundColor="#ffffff"
+            backgroundColor="var(--custom-white)fff"
             gap="4rem"
             align="start"
             sections={[

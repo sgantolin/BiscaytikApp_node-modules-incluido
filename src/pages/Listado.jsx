@@ -198,8 +198,49 @@ function AgendaListado() {
   },
  };
 
+ const listSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Agenda de eventos en Plentzia',
+  description: 'Listado de eventos, actividades y propuestas culturales para visitar Plentzia.',
+  url: 'https://example.com/listado',
+  mainEntity: {
+   '@type': 'ItemList',
+   numberOfItems: AgendaCards.length,
+   itemListElement: AgendaCards.map((event, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+     '@type': 'Event',
+     name: event.title,
+     description: event.description,
+     image: event.image,
+     startDate: event.date ? event.date.split('/').reverse().join('-') : undefined,
+     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+     eventStatus: 'https://schema.org/EventScheduled',
+     location: {
+      '@type': 'Place',
+      name: 'Plentzia',
+     },
+     offers: {
+      '@type': 'Offer',
+      price: event.price === 'GRATUITO' || event.price === 'FREETOUR' ? '0' : '15',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: event.link,
+     },
+     url: event.link,
+    },
+   })),
+  },
+ };
+
  return (
   <>
+   <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(listSchema) }}
+   />
    {/* =====================================================
         PL-LIST--T
         Breadcrumb + cabecera del listado

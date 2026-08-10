@@ -21,6 +21,25 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
     setScrollHeight(totalHeight + gap * (visibleCards - 1));
   }, [visibleCards, cards]);
 
+  const normalizeDateValue = (value) => {
+    if (!value) return null;
+    const trimmedValue = value.trim();
+    const [day, month, year] = trimmedValue.split('/').map((part) => part.trim());
+    if (!day || !month || !year) return null;
+    const normalizedDay = String(day).padStart(2, '0');
+    const normalizedMonth = String(month).padStart(2, '0');
+    return `${year}-${normalizedMonth}-${normalizedDay}`;
+  };
+
+  const normalizePrice = (value) => {
+    if (value == null || value === '') return null;
+    if (typeof value === 'number') return value;
+    const normalizedValue = String(value).trim();
+    if (/gratuito|free|freetour/i.test(normalizedValue)) return 0;
+    const parsedValue = Number(normalizedValue.replace(/[^\\d.,]/g, '').replace(',', '.'));
+    return Number.isNaN(parsedValue) ? null : parsedValue;
+  };
+
   return (
     <ul
       ref={listRef}
@@ -30,8 +49,14 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
       ${scroll ? 'BKTT-CardContainer--scroll' : ''}`}
       style={scrollHeight ? { maxHeight: `${scrollHeight}px`, overflowY: 'auto' } : undefined}>
         
-   {cards.map((card, i) => (
-    <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`} style={itemStyle}>
+   {cards.map((card, i) => {
+    const dateParts = card.date ? card.date.split(' - ') : [];
+    const startDate = dateParts[0] ? normalizeDateValue(dateParts[0]) : null;
+    const endDate = dateParts[1] ? normalizeDateValue(dateParts[1]) : null;
+    const priceValue = normalizePrice(card.price);
+
+    return (
+    <li key={i} className={`BKTT-CardContainer__item col ${direction === 'column' ? 'col-12' : ''}`} style={itemStyle} itemScope itemType="https://schema.org/Event">
   <div
     className={`BKTT-CardContainer__card card 
     ${layout === 'horizontal' ? 'BKTT-CardContainer__card--horizontal' : ''} 
@@ -39,7 +64,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
     ${direction === 'column' && i % 2 !== 0 ? 'BKTT-CardContainer__card--alt' : ''}`}
     style={layout === 'horizontal' && imagePosition === 'right' ? { flexDirection: 'row-reverse' } : undefined}>
       {(card.image || card.badgeText) && (
-       <figure className="BKTT-Card__figure">
+       <figure className="BKTT-Card__figure" itemProp="image">
         {card.badgeText && (
          <span className={`BKTT-Badge ${card.badgeClass || 'badge bg-light text-dark'}`}>
           {card.badgeIcon && <span className={`BKTT-Icon ${card.badgeIcon} me-2`} />}
@@ -47,7 +72,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
          </span>
         )}
         {card.image && (
-         <img src={card.image} className="card-img-top" alt={card.title || ''} style={imageFilter ? { filter: imageFilter } : undefined} />
+         <img src={card.image} className="card-img-top" alt={card.title || ''} style={imageFilter ? { filter: imageFilter } : undefined} itemProp="image" />
         )}
        </figure>
       )}
@@ -57,8 +82,8 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
        </data>
        <h3 className="BKTT-Card__title">
         {card.link
-         ? <a className="BKTT-Link" href={card.link}>{card.title}</a>
-         : card.title
+         ? <a className="BKTT-Link" href={card.link} itemProp="url"><span itemProp="name">{card.title}</span></a>
+         : <span itemProp="name">{card.title}</span>
         }
        </h3>
        <div className="BKTT-Card__Body">
@@ -67,15 +92,28 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
           {card.date && (
            <div className="BKTT-Date">
             <span className="BKTT-Icon fa-light fa-calendar me-2"></span>
-            <span>{card.date}</span>
+            {startDate ? (
+             <>
+              <time dateTime={startDate} itemProp="startDate">{dateParts[0]}</time>
+              {endDate && (
+               <>
+                <span> - </span>
+                <time dateTime={endDate} itemProp="endDate">{dateParts[1]}</time>
+               </>
+              )}
+             </>
+            ) : (
+             <span>{card.date}</span>
+            )}
            </div>
           )}
           {card.price && (
-           <div className="BKTT-Data">
-            <data value={card.price}>
-             <strong>{card.price}</strong>
-             <span className="BKTT-Icon fa-regular"></span>
-            </data>
+           <div className="BKTT-Data" itemScope itemType="https://schema.org/Offer">
+            <meta itemProp="priceCurrency" content="EUR" />
+            {priceValue != null && <meta itemProp="price" content={priceValue} />}
+            <meta itemProp="availability" content="https://schema.org/InStock" />
+            <strong itemProp="price">{card.price}</strong>
+            <span className="BKTT-Icon fa-regular"></span>
            </div>
           )}
          </div>
@@ -110,7 +148,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
          </div>
         )}
         
-        {card.description && <p>{card.description}</p>}
+        {card.description && <p itemProp="description">{card.description}</p>}
        </div>
        {card.footerLabel && (
         <div className="BKTT-Card__Footer d-flex justify-content-end">
@@ -123,7 +161,8 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
       </div>
      </div>
     </li>
-   ))}
+    );
+   })}
   </ul>
  );
 }

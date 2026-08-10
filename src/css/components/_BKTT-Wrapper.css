@@ -150,7 +150,7 @@
   margin: 0 0 2rem;
   font-size: clamp(1.75rem, 3vw, 3rem);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 600;
   color: #171717;
   max-width: 700px;
 }
@@ -217,7 +217,7 @@
 .BKTT-Block--text-image .BKTT-Block__title,
 .BKTT-Block--image-text .BKTT-Block__title,
 .BKTT-Block--text-cards .BKTT-Block__title {
-  color: #fff;
+  color: var(--custom-white);
 }
 
 .BKTT-Block__description {
@@ -254,7 +254,7 @@
   border: 0;
   border-radius: 0.2rem;
   background: var(--primary-color);
-  color: #fff !important;
+  color: var(--custom-white) !important;
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 600;
@@ -265,7 +265,7 @@
 
 .BKTT-Block__button:hover {
   background: var(--secondary-color);
-  color: #fff;
+  color: var(--custom-white);
 }
 
 .BKTT-Block__extra {
