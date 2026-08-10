@@ -209,7 +209,7 @@
 
 /* Responsive */
 
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
   .BKTT-EventoDetalle__title {
     font-size: 1.75rem;
   }
@@ -219,7 +219,7 @@
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 575px) {
   .BKTT-EventoDetalle {
     padding-top: 1rem;
   }

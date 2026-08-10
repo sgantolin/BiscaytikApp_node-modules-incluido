@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import CardContainer from '../shared/components/CardContainer';
-import Banner from '../shared/components/BKTT-Banner';
 import BKTTFeatureBanner from '../shared/components/BKTTFeatureBanner';
 import Wrapper from '../shared/components/BKTT-Wrapper';
 
@@ -442,7 +441,7 @@ function Patrimonio() {
           sections={PatrimonioFeatureData.sections}
         />
         */}
-        <BKTTBlock
+        <Wrapper
           layout={PatrimonioFeatureData.layout}
           backgroundColor={PatrimonioFeatureData.backgroundColor}
           gap={PatrimonioFeatureData.gap}
@@ -497,7 +496,7 @@ function Patrimonio() {
       {/* BANNER EXPOSICIÓN */}
       <section className="BKTT-PatrimonioPage__exhibition">
         {/* ANTIGUO: <Banner banner={ExposicionBannerData} /> */}
-        <BKTTBlock
+        <Wrapper
           layout={ExposicionBannerData.layout}
           backgroundImage={ExposicionBannerData.backgroundImage}
           backgroundColor={ExposicionBannerData.backgroundColor}
@@ -519,7 +518,7 @@ function Patrimonio() {
             sections={ServiciosFeatureData.sections}
           />
           */}
-          <BKTTBlock
+          <Wrapper
             layout={ServiciosFeatureData.layout}
             backgroundColor={ServiciosFeatureData.backgroundColor}
             gap={ServiciosFeatureData.gap}

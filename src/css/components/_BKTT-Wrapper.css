@@ -17,7 +17,7 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(var(--BKTT-block-columns, 2), minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--BKTT-block-gap, 0);
   align-items: var(--BKTT-block-align, center);
 }
@@ -356,6 +356,9 @@
   .BKTT-Block__cards {
     overflow-x: hidden;
   }
+}
+
+@media (max-width: 991px) {
   .BKTT-Block--split .BKTT-Block__section {
     min-height: auto;
   }
@@ -458,7 +461,7 @@
 }
 
 @media (max-width: 576px) {
-  /*.BKTT-Block--split .BKTT-Block__content {
+  .BKTT-Block--split .BKTT-Block__content {
     padding: 1.5rem;
   }*/
 

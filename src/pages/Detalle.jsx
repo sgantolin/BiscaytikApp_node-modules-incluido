@@ -271,7 +271,7 @@ function EventoDetalle() {
               </p>
 
               <BKTTFigureGaleria
-                variant="masonry"
+                variant="featured"
                 images={galleryImages}
                 showDots
                 showThumbs

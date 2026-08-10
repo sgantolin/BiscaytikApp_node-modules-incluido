@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import CardContainer from '../shared/components/CardContainer';
-import Banner from '../shared/components/BKTT-Banner';
-import BKTTBlock from '../shared/components/BKTTBlock';
+import Wrapper from '../shared/components/BKTT-Wrapper';
 import AgendaFilters from '../shared/components/Filters';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';
 
@@ -325,15 +324,15 @@ function AgendaListado() {
         Bloque inferior antes del footer
         ===================================================== */}
 
-   <div className="WPZB-HTML BKTT-WebPartZone-fullWidth--Bottom">
-    <BKTTBlock
-     layout={BannerData.layout}
-     backgroundColor={BannerData.backgroundColor}
-     title={BannerData.title}
-     image={BannerData.image}
-     button={BannerData.button}
-    />
-   </div>
+    <div className="WPZB-HTML BKTT-WebPartZone-fullWidth--Bottom">
+      <Wrapper
+        layout={BannerData.layout}
+        backgroundColor={BannerData.backgroundColor}
+        title={BannerData.title}
+        image={BannerData.image}
+        button={BannerData.button}
+      />
+    </div>
   </>
  );
 }
