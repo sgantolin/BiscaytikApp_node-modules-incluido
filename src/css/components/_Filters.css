@@ -1,5 +1,6 @@
 .BKTT-Filters{
   margin-bottom: 1rem;
+  gap: 8px;
 }
 .BKTT-Filters .card{
   border-radius: 0;
