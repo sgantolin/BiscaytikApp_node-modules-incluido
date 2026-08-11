@@ -3,7 +3,7 @@ import CardContainer from '../shared/components/CardContainer';
 import CardGrid from '../shared/components/CardGrid';
 import BKTTFigureGaleria from '../shared/components/BKTTFigureGaleria';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';
-import '../css/components/_Detalle.css';
+/*import '../css/components/_Detalle.css';*/
 
 import barca from '../assets/themes/default/media/barca.jpg';
 import canoa from '../assets/themes/default/media/canoa.jpg';
@@ -148,7 +148,7 @@ function EventoDetalle() {
         Breadcrumb + imagen + título + compartir
         ===================================================== */}
 
-   <section className="PL-Evento--T" itemscope itemtype="https://schema.org/Event">
+   <div className="PL-Evento--T" itemscope itemtype="https://schema.org/Event">
     <div className="row">
      <div className="BKTT-WebPartZone-fullWidth--TopContainer col-12">
       <BreadCrumbComponent
@@ -163,13 +163,13 @@ function EventoDetalle() {
         },
        ]}
       />
-      <div className="BKTT-FigureImg" itemprop="image">
+      <figure className="BKTT-FigureImg" itemprop="image">
        <img
         src={titleDatepicker2}
         alt="Plentzia SummerFest"
         className="BKTT-EventoDetalleHero__image"
        />
-      </div>
+      </figure>
 
       <div className="BKTT-EventoDetalle__header container mt-5">
        <div className="BKTT-EventoDetalle__heading">
@@ -181,7 +181,7 @@ function EventoDetalle() {
       </div>
      </div>
     </div>
-   </section>
+   </div>
 
    <main className="WPZT-DetCont--Default BKTT-EventoDetalle">
     <div className="container">

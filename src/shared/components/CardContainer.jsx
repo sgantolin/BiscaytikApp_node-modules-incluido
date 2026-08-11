@@ -1,5 +1,5 @@
 import { useRef, useLayoutEffect, useState } from 'react';
-import '../../css/components/_CardContainer.css';
+import '../../css/components/_BKTTCard.css';
 
 function CardContainer({ cards = [], direction = 'row', layout = 'vertical', cardWidth, cardHeight, cardSize, scroll, columns, visibleCards, imageFilter, imagePosition }) {
   const itemStyle = columns && direction !== 'column'
@@ -82,7 +82,7 @@ function CardContainer({ cards = [], direction = 'row', layout = 'vertical', car
        </data>
        <h3 className="BKTT-Card__title">
         {card.link
-         ? <a className="BKTT-Link" href={card.link} itemProp="url"><span itemProp="name">{card.title}</span></a>
+         ? <a className="BKTT-Link" href={card.link} itemProp="url"><span className='BKTT-Label' itemProp="name">{card.title}</span></a>
          : <span itemProp="name">{card.title}</span>
         }
        </h3>

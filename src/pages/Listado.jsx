@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CardContainer from '../shared/components/CardContainer';
 import Wrapper from '../shared/components/BKTT-Wrapper';
-import AgendaFilters from '../shared/components/Filters';
+import AgendaFilters from '../shared/components/BKTT-Filters';
 import BreadCrumbComponent from '../shared/components/Breadcrumb';
 
 

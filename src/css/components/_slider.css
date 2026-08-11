@@ -148,13 +148,13 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-right:before {
- top: -9px;
+ top: -10px;
  left: -6px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-left:before {
- top: 2px;
- left: 5px;
+ top: 1px;
+ left: 6px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button:hover {
@@ -165,7 +165,7 @@
  filter: none;
 }
 
-.BKTT-FigureSlider--container .tp-leftarrow,
+/*.BKTT-FigureSlider--container .tp-leftarrow,
 .BKTT-FigureSlider--container .tp-rightarrow {
  position: absolute;
  top: 225px;
@@ -174,7 +174,7 @@
  background-color: red;
  width: 39px;
  height: 46px;
-}
+}*/
 
 .BKTT-FigureSlider--container .tp-leftarrow {
  left: 16px;

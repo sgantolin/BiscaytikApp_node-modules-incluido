@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import BKTTBreadcrumb from '../shared/components/Breadcrumb';
-import AgendaFilters from '../shared/components/Filters';
+import AgendaFilters from '../shared/components/BKTT-Filters';
 import CardContainer from '../shared/components/CardContainer';
 
 import obraEscalerasMuro

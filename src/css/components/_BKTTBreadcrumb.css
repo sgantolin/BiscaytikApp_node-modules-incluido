@@ -1,10 +1,3 @@
-/*.BKTT-Breadcrumb {
-    width: 100%;
-    padding: .75rem 0;
-    font-size: .875rem;
-    margin-top: 0;
-}*/
-
 .BKTT-Breadcrumb__list {
     display: flex;
     align-items: center;
@@ -22,27 +15,27 @@
 }
 
 .BKTT-Breadcrumb__separator {
-    color: #0B7FE8;
+    color: var(--primary-color);
     font-size: .75rem;
     font-family: 'Font Awesome 6 Pro';
     content: "\f054";
 }
 
 .BKTT-Breadcrumb__link {
-    color: #0B7FE8;
+    color: var(--primary-color);
     text-decoration: none;
     transition: color .2s;
 }
 
 .BKTT-Breadcrumb__link:hover {
-    color: #0056b3;
+    color: var(--secondary-color)  ;
 }
 
 .BKTT-Breadcrumb__text {
-    color: #4B5563;
+    color: var(--text-color);
 }
 
 .BKTT-Breadcrumb__item.is-active .BKTT-Breadcrumb__text {
-    color: #4B5563;
+    color: var(--text-color);
     font-weight: 400;
 }

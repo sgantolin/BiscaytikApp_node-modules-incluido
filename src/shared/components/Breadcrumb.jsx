@@ -19,14 +19,14 @@ export default function BreadCrumbComponent({ items = null }) {
       <ol className="BKTT-Breadcrumb__list BKTT-Breadcrumb">
         <li className="BKTT-Breadcrumb__item">
           <Link to="/" className="BKTT-Breadcrumb__link">
-            <i className="BKTT-Icon fa-light fa-house" />
+            <span className="BKTT-Icon fa-light fa-house"></span>
           </Link>
         </li>
         {crumbs.map((crumb, i) => {
           const isLast = i === crumbs.length - 1;
           return (
             <li key={i} className={`BKTT-Breadcrumb__item${isLast ? ' is-active' : ''}`}>
-              <i className="BKTT-Icon fa-light fa-arrow-right BKTT-Breadcrumb__separator" />
+              <span className="BKTT-Icon fa-light fa-arrow-right BKTT-Breadcrumb__separator" ></span>
               {isLast
                 ? <span className="BKTT-Breadcrumb__text">{crumb.label}</span>
                 : <Link to={crumb.url} className="BKTT-Breadcrumb__link">{crumb.label}</Link>

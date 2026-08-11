@@ -844,7 +844,7 @@ function Home() {
       <section class="BKTT-TitleBar d-flex justify-content-between align-items-center mt-5">
        <h2>
         <a href="./listado" class="d-flex align-items-center">
-         <span class="me-2">Noticias</span>
+         <span class="BKTT-Label">Noticias</span>
          <span class="BKTT-Icon fa-regular fa-chevron-right"></span>
         </a>
        </h2>
@@ -889,7 +889,7 @@ function Home() {
         </div>
       </div> */}
 
-   <section className="py-4 py-md-5">
+   <section className="">
     <CardGrid cards={AgendaCardss} bgColor="#f5f5f5" title="Destacados" columns={3} />
    </section>
 

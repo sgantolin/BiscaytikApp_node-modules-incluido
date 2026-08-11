@@ -18,6 +18,9 @@ body *:focus {
 	/*margin-top:60px;*/
 	margin-top: 47px;
 }
+.BKTT-ThemeTurismo h2 *{
+	font-size: 2rem!important;
+}
 
 main.BKTT-Main {
 	padding-top: 28px;
@@ -120,10 +123,10 @@ h3,
 	font-weight: 600;
 }
 
-.BKTT-ThemeTurismo p,
-.BKTT-ThemeTurismo time,
-.BKTT-ThemeTurismo li,
-.BKTT-ThemeTurismo span {
+.BKTT-ThemeTurismo main p,
+.BKTT-ThemeTurismo main time,
+.BKTT-ThemeTurismo main li,
+.BKTT-ThemeTurismo main span {
 	font-size: 14px;
 	line-height: 21px;
 }
@@ -169,7 +172,7 @@ h3,
 	justify-content: center;
 	gap: 8px;
 	width: 100%;
-	min-height: 2.25rem;
+	/*min-height: 2.25rem;*/
 	padding: 0.5rem 0.75rem;
 	border: 0;
 	border-radius: 0.2rem;
@@ -237,6 +240,12 @@ h3,
 	margin-bottom: 1.5rem;
 	gap: 16px;
 }
+.BKTT-TitleBar h2, .BKTT-TitleBar .BKTT-Filters{
+	margin-bottom:0;
+}
+.BKTT-TitleBar h2 a{
+	text-decoration:none;
+}
 
 /* Override Bootstrap btn-primary to use theme variables */
 .btn-primary {
@@ -268,6 +277,7 @@ h3,
 	color: var(--custom-white);
 	position: relative;
 	overflow: hidden;
+	margin-top: 0!important;
 }
 
 .BKTT-ListadoHero h1 {

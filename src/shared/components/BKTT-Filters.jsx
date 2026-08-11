@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../css/components/_Filters.css';
+import '../../css/components/_BKTT-Filters.css';
 
 function formatDateLabel(value) {
  if (!value) return '';

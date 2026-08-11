@@ -117,9 +117,9 @@
     <SharePoint:CssRegistration ID="CssRegistration11" name="/_layouts/15/Turismo2013.Files/Styles/common/js/lightbox/jquery.fancybox.css" runat="server" after="SharepointCssFile"/>
     
     <!--SS--> 
-    <SharePoint:CssRegistration ID="CssRegistration18" name="/_layouts/15/Turismo2013.Files/custom_web/assets/icons/fontawesome-pro/all.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration12" name="/_layouts/15/Turismo2013.Files/custom_web/node_modules/bootstrap/css/bootstrap.min.css" runat="server" after="SharepointCssFile"/>
     <script type="text/javascript" src="/_layouts/15/Turismo2013.Files/custom_web/node_modules/bootstrap/js/bootstrap.bundle.min.js">//<![CDATA[//]]></script>
+    <SharePoint:CssRegistration ID="CssRegistration18" name="/_layouts/15/Turismo2013.Files/custom_web/assets/icons/fontawesome-pro/all.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration13" name="/_layouts/15/Turismo2013.Files/custom_web/css/_global.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration14" name="/_layouts/15/Turismo2013.Files/custom_web/css/_variables.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration15" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_header.css" runat="server" after="SharepointCssFile"/>
