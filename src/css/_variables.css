@@ -86,7 +86,7 @@
     --font-family-secondary: var(--theme-font-family-secondary);
     --font-family-italic: var(--theme-font-family-italic);
     /*icon font*/
-    --fontawesome-pro: 'Font Awesome 5 Pro';
+    --fontawesome-pro: 'Font Awesome 6 Pro';
 
     /*default colors*/
     --primary-color: var(--theme-primary-color);

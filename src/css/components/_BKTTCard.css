@@ -70,6 +70,7 @@
  overflow: hidden;
  text-overflow: ellipsis;
  white-space: nowrap;
+ font-weight: 500;
 }
 
 .BKTT-Card__figure img {
@@ -78,6 +79,8 @@
  object-fit: cover;
  /* Comporta igual que background-size: cover */
  object-position: center;
+ background-color: var(--border-color);
+ display: block;
  /* Centra la imagen */
 }
 
@@ -106,7 +109,7 @@
 
 .BKTT-Card__main .BKTT-Link {
  text-decoration: none;
- color: inherit;
+ /*color: inherit;*/
 }
 
 .BKTT-Card__main .BKTT-Link:hover {
@@ -332,7 +335,7 @@
 /*carrusel*/
 .BKTT-carousel .BKTT-CarrouselControl {
  margin-left: 8px;
- bottom: -25px;
+ /*bottom: -25px;*/
 }
 .BKTT-carousel .BKTT-Button.carousel-control-next, .BKTT-carousel .BKTT-Button.carousel-control-prev, .BKTT-carousel .BKTT-Button.carousel-control-next:hover, .BKTT-carousel .BKTT-Button.carousel-control-prev:hover {
  background-color: transparent;

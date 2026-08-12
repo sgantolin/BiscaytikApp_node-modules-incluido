@@ -13,9 +13,12 @@ body *:focus {
 	outline-offset: 0;
 	box-shadow: inset 0 0 0 0.15rem var(--primary-color);
 }
+.BKTT-Main .h1, .BKTT-Main .h2, .BKTT-Main .h3, .BKTT-Main .h4, .BKTT-Main .h5, .BKTT-Main .h6, .BKTT-Main h1, .BKTT-Main h2, .BKTT-Main h3, .BKTT-Main h4, .BKTT-Main h5, .BKTT-Main h6{
+	margin-left:0;
+	margin-right:0;
+}
 
 .BKTT-ThemeTurismo {
-	/*margin-top:60px;*/
 	margin-top: 47px;
 }
 .BKTT-ThemeTurismo h2 *{
@@ -173,13 +176,14 @@ h3,
 	gap: 8px;
 	width: 100%;
 	/*min-height: 2.25rem;*/
-	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 0;
 	border: 0;
 	border-radius: 0.2rem;
 	background: var(--primary-color);
 	color: var(--custom-white);
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
+	min-width:auto;
 }
 
 .BKTT-Main .BKTT-Button span {
@@ -203,8 +207,9 @@ h3,
 .BKTT-Map {
 	width: 100%;
 	/* a sensible minimum height so the map is visible on most screens */
-	min-height: 360px;
+	height: 652px!important;
 	height: 98%;
+	overflow: hidden;
 }
 
 /* Ensure leaflet's container stretches to the parent */
@@ -242,6 +247,8 @@ h3,
 }
 .BKTT-TitleBar h2, .BKTT-TitleBar .BKTT-Filters{
 	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
 }
 .BKTT-TitleBar h2 a{
 	text-decoration:none;
@@ -323,12 +330,14 @@ h3,
 
 .BKTT-Tags li {
  list-style: none;
- color: var(--text-color__grey);
+}
+.BKTT-Tags li span, .BKTT-Tags li span:before {
+	color: var(--text-color__grey);
 }
 
-.BKTT-Tags li .BKTT-Label {
+/*.BKTT-Tags li .BKTT-Label {
  font-weight: 600;
-}
+}*/
 
 /*Detalle*/
 .BKTT-FigureImg img {
