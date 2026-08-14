@@ -183,7 +183,7 @@ function EventoDetalle() {
     </div>
    </div>
 
-   <main className="WPZT-DetCont--Default BKTT-EventoDetalle">
+   <div className="WPZT-DetCont--Default BKTT-EventoDetalle">
     <div className="container">
 
      {/* CONTENIDO PRINCIPAL 75/25 */}
@@ -234,10 +234,10 @@ function EventoDetalle() {
          </dd>
         </div>
        </dl>
-        <ul className="BKTT-Tags">
-         <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-music me-2"></span><span>Música</span></span></li>
-         <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-water me-2"></span><span>Mar</span></span></li>
-        </ul>
+       <ul className="BKTT-Tags">
+        <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-music me-2"></span><span>Música</span></span></li>
+        <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-water me-2"></span><span>Mar</span></span></li>
+       </ul>
        <section className="BKTT-EventoDetalle__section" itemprop="description" >
         <h2>Descripción</h2>
         <h3>Acerca del evento</h3>
@@ -245,12 +245,25 @@ function EventoDetalle() {
          Quisque dictum luctus interdum. Nunc eget mauris eu urna
          varius varius. Duis ut leo euismod, aliquam purus eu,
          viverra tortor.</p>
-        <BKTTFigureGaleria
-         variant="featured"
-         images={galleryImages}
-         showDots
-         showThumbs
-        />
+        <a class="BKTT-Collapse" data-bs-toggle="collapse"
+         href="#collapseMenu" role="button" aria-expanded="false"
+         aria-controls="collapseMenu">Ver menú completo
+         <span class="BKTT-Icon fa-light fa-chevron-down ms-2"> </span>
+        </a>
+        <div class="collapse mt-3" id="collapseMenu">
+         <h3>Especialidades</h3>
+         <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+         </ul>
+        </div>
+         <BKTTFigureGaleria
+          variant="featured"
+          images={galleryImages}
+          showDots
+          showThumbs
+         />
        </section>
        <section id="localizacion" className="BKTT-EventoDetalle__section" itemprop="location" itemscope itemtype="https://schema.org/Place">
         <h2>Localización</h2>
@@ -261,8 +274,8 @@ function EventoDetalle() {
          <br />
          48980 Plentzia
         </address>
-        <meta itemprop="address" content="Playa Plentzia, Plentzia, Vizcaya"/>
-        <div id="map" className="BKTT-Map BKTT-EventoDetalle__map" itemprop="hasMap"  itemtype="https://schema.org/Map" />
+        <meta itemprop="address" content="Playa Plentzia, Plentzia, Vizcaya" />
+        <div id="map" className="BKTT-Map BKTT-EventoDetalle__map" itemprop="hasMap" itemtype="https://schema.org/Map" />
        </section>
       </div>
 
@@ -274,12 +287,12 @@ function EventoDetalle() {
         <p>Este SummerFest pretende rendir homenaje a nuestros antepasados mostrando al público la evolución, sacrificio y trabajo de quienes durante siglos supieron hacer del caserío vasco una institución autosuficiente.</p>
         <div className="BKTT-EventoDetalleAside__price">
          <span>por persona</span>
-         <meta itemprop="price" content="15"/>
+         <meta itemprop="price" content="15" />
          <meta itemprop="priceCurrency" content="EUR" />
          <strong>15€</strong>
         </div>
         <a href="/reservar-entradas" className="BKTT-Button" >
-        <link itemprop="availability" href="https://schema.org/InStock"/>
+         <link itemprop="availability" href="https://schema.org/InStock" />
          <span className="BKTT-Icon fa-light fa-link" aria-hidden="true" />
          <span>Reserva entradas</span>
         </a>
@@ -303,7 +316,7 @@ function EventoDetalle() {
       </div>
      </div>
     </div>
-   </main>
+   </div>
 
    {/* =====================================================
         WPZB-HTML--FOOTER

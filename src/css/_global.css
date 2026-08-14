@@ -4,6 +4,7 @@ body {
 	background-color: var(--home-bg-section-soft-grey-color);
 	height: 100%;
 	font-family: var(--font-family-secondary);
+	letter-spacing: 0.2px;
 }
 
 html *:focus,
@@ -13,16 +14,42 @@ body *:focus {
 	outline-offset: 0;
 	box-shadow: inset 0 0 0 0.15rem var(--primary-color);
 }
-.BKTT-Main .h1, .BKTT-Main .h2, .BKTT-Main .h3, .BKTT-Main .h4, .BKTT-Main .h5, .BKTT-Main .h6, .BKTT-Main h1, .BKTT-Main h2, .BKTT-Main h3, .BKTT-Main h4, .BKTT-Main h5, .BKTT-Main h6{
-	margin-left:0;
-	margin-right:0;
+
+.BKTT-Main .h1,
+.BKTT-Main .h2,
+.BKTT-Main .h3,
+.BKTT-Main .h4,
+.BKTT-Main .h5,
+.BKTT-Main .h6,
+.BKTT-Main h1,
+.BKTT-Main h2,
+.BKTT-Main h3,
+.BKTT-Main h4,
+.BKTT-Main h5,
+.BKTT-Main h6 {
+	margin-left: 0;
+	margin-right: 0;
+	font-family: var(--font-family);
+	color: var(--text-color);
+}
+
+.BKTT-Main h1,
+.BKTT-Main .h1 {
+	margin-bottom: 2rem;
+}
+
+.BKTT-Main h1 .BKTT-Icon,
+.BKTT-Main .h1 .BKTT-Icon {
+	font-size: inherit !important;
+	margin-right: 1rem !important;
 }
 
 .BKTT-ThemeTurismo {
 	margin-top: 47px;
 }
-.BKTT-ThemeTurismo h2 *{
-	font-size: 2rem!important;
+
+.BKTT-ThemeTurismo h2 * {
+	font-size: 2rem !important;
 }
 
 main.BKTT-Main {
@@ -132,6 +159,7 @@ h3,
 .BKTT-ThemeTurismo main span {
 	font-size: 14px;
 	line-height: 21px;
+	margin-right: 0;
 }
 
 .BKTT-Data {
@@ -165,9 +193,11 @@ h3,
 		max-width: 1400px;
 	}
 }
-.BKTT-Main section{
-	margin-top:2rem;
+
+.BKTT-Main section {
+	margin-top: 2rem;
 }
+
 /*Botones*/
 .BKTT-Main .BKTT-Button {
 	display: flex;
@@ -175,7 +205,6 @@ h3,
 	justify-content: center;
 	gap: 8px;
 	width: 100%;
-	/*min-height: 2.25rem;*/
 	padding: 0.5rem 0;
 	border: 0;
 	border-radius: 0.2rem;
@@ -183,7 +212,8 @@ h3,
 	color: var(--custom-white);
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
-	min-width:auto;
+	min-width: auto;
+	font-weight: 600;
 }
 
 .BKTT-Main .BKTT-Button span {
@@ -207,7 +237,7 @@ h3,
 .BKTT-Map {
 	width: 100%;
 	/* a sensible minimum height so the map is visible on most screens */
-	height: 652px!important;
+	height: 652px !important;
 	height: 98%;
 	overflow: hidden;
 }
@@ -245,13 +275,16 @@ h3,
 	margin-bottom: 1.5rem;
 	gap: 16px;
 }
-.BKTT-TitleBar h2, .BKTT-TitleBar .BKTT-Filters{
-	margin-bottom:0;
-	margin-left:0;
-	margin-right:0;
+
+.BKTT-TitleBar h2,
+.BKTT-TitleBar .BKTT-Filters {
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
-.BKTT-TitleBar h2 a{
-	text-decoration:none;
+
+.BKTT-TitleBar h2 a {
+	text-decoration: none;
 }
 
 /* Override Bootstrap btn-primary to use theme variables */
@@ -284,7 +317,7 @@ h3,
 	color: var(--custom-white);
 	position: relative;
 	overflow: hidden;
-	margin-top: 0!important;
+	margin-top: 0 !important;
 }
 
 .BKTT-ListadoHero h1 {
@@ -320,18 +353,21 @@ h3,
 	display: block;
 	margin-bottom: 2rem;
 }
+
 /*end listado*/
 .BKTT-Tags {
- padding-left: 0;
- display: flex;
- align-items: center;
-	gap:8px
+	padding-left: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px
 }
 
 .BKTT-Tags li {
- list-style: none;
+	list-style: none;
 }
-.BKTT-Tags li span, .BKTT-Tags li span:before {
+
+.BKTT-Tags li span,
+.BKTT-Tags li span:before {
 	color: var(--text-color__grey);
 }
 
@@ -340,8 +376,15 @@ h3,
 }*/
 
 /*Detalle*/
+.BKTT-FigureImg {
+	height: 383px;
+	overflow: hidden;
+}
+
 .BKTT-FigureImg img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 /* Cabecera */
@@ -382,7 +425,7 @@ h3,
 .BKTT-EventoDetalle__tabs a {
 	position: relative;
 	display: block;
-	padding: 0.5rem 0 0.65rem;
+	padding: 0.5rem 0.8rem 0.65rem;
 	line-height: 1;
 	text-decoration: none;
 	font-weight: 500;
@@ -421,6 +464,18 @@ h3,
 	margin-top: 2rem;
 }
 
+.BKTT-Collapse {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	background-color: var(--grey__background);
+	padding: 0.5rem 0.8rem;
+	margin-bottom: 2rem;
+}
+.BKTT-Collapse, .BKTT-Collapse *, .BKTT-Collapse:hover, .BKTT-Collapse *:hover{
+	text-decoration: none;
+}
+
 /* Tarjeta lateral */
 
 .BKTT-EventoDetalleAside {
@@ -446,9 +501,28 @@ h3,
 	color: var(--text-color__grey);
 }
 
-.BKTT-CardGrid__sectionTitle {/*buscar solución según pantalla? o configurable en el propio componente*/
+.BKTT-CardGrid__sectionTitle {
+	/*buscar solución según pantalla? o configurable en el propio componente*/
 	color: var(--custom-white);
 }
+
+/*reset sharepoint*/
+/*.BKTT-ThemeTurismo input[type=button],.BKTT-ThemeTurismo input[type=reset], .BKTT-ThemeTurismo input[type=submit], .BKTT-ThemeTurismo button*/
+.BKTT-Main input[type=button],
+.BKTT-Main input[type=reset],
+.BKTT-Main input[type=submit],
+.BKTT-Main button {
+	min-width: auto;
+}
+.BKTT-footer li .fa{
+	margin-right: 0.5rem;
+	position: relative;
+}
+.BKTT-Main .BKTT-Button *{
+	color: inherit !important;
+	text-decoration: none;
+}
+
 /* Responsive */
 
 @media (max-width: 991px) {
@@ -474,6 +548,7 @@ h3,
 		gap: 1.25rem;
 	}
 }
+
 /*end Detalle*/
 
 /*modo edición*/

@@ -127,6 +127,8 @@
  background-color: transparent;
  color: var(--custom-white);
  font-size: 1.6rem;
+ width: auto;
+ min-width: auto;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {

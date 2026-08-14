@@ -1,13 +1,13 @@
 @font-face {
  font-family: 'Poppins';
- src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+ src: url('./../../assets/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
  font-weight: 400;
  font-style: normal;
 }
 
 @font-face {
  font-family: 'Poppins Italic';
- src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Italic.ttf') format('woff2');
+ src: url('./../../assets/fonts/Poppins/Poppins-Italic.ttf') format('woff2');
  font-weight: 400;
  font-style: italic;
 }

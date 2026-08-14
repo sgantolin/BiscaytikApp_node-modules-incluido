@@ -4,6 +4,8 @@
 @import url('./components/_BKTTBreadcrumb.css');
 @import url('./components/_BKTT-Wrapper.css');
 @import url('./components/_BKTT-Filters.css');
+@import url('./components/_BKTTFigureGaleria.css');
+@import url('./components/_CardGrid.css');
 
 /*cookies*/
 .BKTT-cookies {
