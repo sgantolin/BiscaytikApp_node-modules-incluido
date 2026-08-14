@@ -235,4 +235,11 @@
   bottom: 30px;
   left: 12px;
  }
+
+ .carousel-dark .carousel-caption {
+  left: 1rem;
+  bottom: 4rem;
+  display: block !important;
+ }
+
 }

@@ -31,6 +31,7 @@ body *:focus {
 	margin-right: 0;
 	font-family: var(--font-family);
 	color: var(--text-color);
+	font-weight: 600;
 }
 
 .BKTT-Main h1,
@@ -45,16 +46,19 @@ body *:focus {
 }
 
 .BKTT-ThemeTurismo {
-	margin-top: 47px;
+	margin-top: 56px;
 }
 
 .BKTT-ThemeTurismo h2 * {
 	font-size: 2rem !important;
 }
-
-main.BKTT-Main {
-	padding-top: 28px;
+.BKTT-ThemeTurismo h2 .BKTT-Icon{
+	margin-left: 0.5rem;
 }
+
+/*en desa no necesario main.BKTT-Main {
+	padding-top: 28px;
+}*/
 
 /*lista layout*/
 .WPZT-ListCont--Default {
@@ -273,7 +277,7 @@ h3,
 /*scroll end*/
 .BKTT-TitleBar {
 	margin-bottom: 1.5rem;
-	gap: 16px;
+	/*gap: 16px;*/
 }
 
 .BKTT-TitleBar h2,
@@ -512,7 +516,7 @@ h3,
 .BKTT-Main input[type=reset],
 .BKTT-Main input[type=submit],
 .BKTT-Main button {
-	min-width: auto;
+	min-width: fit-content;
 }
 .BKTT-footer li .fa{
 	margin-right: 0.5rem;
@@ -526,6 +530,9 @@ h3,
 /* Responsive */
 
 @media (max-width: 991px) {
+	.BKTT-ThemeTurismo {
+		margin-top: 0;
+	}
 	.BKTT-EventoDetalle__title {
 		font-size: 1.75rem;
 	}

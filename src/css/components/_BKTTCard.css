@@ -397,6 +397,7 @@
 /* === RESPONSIVE === */
 @media (max-width: 991px) {
  .BKTT-CardContainer {
+  flex-wrap: wrap !important;
   gap: 16px;
  }
 
@@ -430,7 +431,7 @@
 
  /* Cards verticales: scroll horizontal con 2 visibles */
  .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal)) {
-  flex-wrap: nowrap;
+  /*flex-wrap: nowrap;*/
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;

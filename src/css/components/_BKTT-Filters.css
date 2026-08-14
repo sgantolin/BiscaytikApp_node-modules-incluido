@@ -32,7 +32,6 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-width: auto;
 }
 
 .BKTT-Filters__filterBtn,
@@ -108,7 +107,7 @@
 }
 @media (max-width: 991px) {
   .BKTT-Filters{
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     overflow-x: auto;
   }
 }

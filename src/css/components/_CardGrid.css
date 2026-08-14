@@ -13,8 +13,8 @@
 
 .BKTT-CardGrid__item {
   flex: 1 1 0;
-  min-width: 200px;
-  padding: 0;
+  /*min-width: 200px;
+  padding: 0;*/
 }
 
 .BKTT-CardGrid__card {
@@ -53,11 +53,19 @@
 }
 
 .BKTT-CardGrid__title {
-  color: var(--custom-white);
+  color: var(--custom-white)!important;
   margin: 0;
   text-align: center;
   font-weight: 600;
   text-decoration: none;
+}
+.BKTT-CardGrid__title:hover {
+  text-decoration:none;
+}
+@media (max-width: 991px) {
+  .BKTT-CardGrid .row{
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 767px) {
