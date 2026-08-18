@@ -44,7 +44,10 @@ body *:focus {
 	font-size: inherit !important;
 	margin-right: 1rem !important;
 }
-
+.BKTT-Main p{
+	font-size: 14px;
+	line-height: 21px;
+}
 .BKTT-ThemeTurismo {
 	margin-top: 56px;
 }
@@ -63,51 +66,6 @@ body *:focus {
 /*lista layout*/
 .WPZT-ListCont--Default {
 	margin-top: 2rem;
-}
-
-@media (max-width: 991px) {
-	main.BKTT-Main {
-		padding-top: 0;
-	}
-
-	.BKTT-Main .row {
-		margin-right: 0;
-		margin-left: 0;
-	}
-
-	.BKTT-Main .row>*[class*=" col-"] {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	/*map*/
-	.BKTT-Map {
-		display: none;
-	}
-}
-
-@media (max-width: 768px) {
-
-	/*scroll*/
-	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal)) {
-		padding-bottom: 8px;
-	}
-
-	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar {
-		height: 6px;
-	}
-
-	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-track {
-		background: var(--primary-color--100);
-		border-radius: 4px;
-	}
-
-	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-thumb {
-		background: var(--secondary-color);
-		border-radius: 4px;
-	}
-
-	/*end scroll*/
 }
 
 .BKTT-ThemeTurismo a {
@@ -162,7 +120,7 @@ h3,
 .BKTT-ThemeTurismo main li,
 .BKTT-ThemeTurismo main span {
 	font-size: 14px;
-	line-height: 21px;
+	/*line-height: 21px;*/
 	margin-right: 0;
 }
 
@@ -528,8 +486,29 @@ h3,
 }
 
 /* Responsive */
-
 @media (max-width: 991px) {
+	main.BKTT-Main {
+		padding-top: 0;
+	}
+
+	.BKTT-Main .row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.BKTT-Main .row>*[class*=" col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.BKTT-TitleBar{
+		gap:16px;
+	}
+
+	/*map*/
+	.BKTT-Map {
+		display: none;
+	}
+
 	.BKTT-ThemeTurismo {
 		margin-top: 0;
 	}
@@ -541,8 +520,30 @@ h3,
 		margin-top: 1rem;
 	}
 }
+@media (max-width: 768px) {
 
-@media (max-width: 575px) {
+	/*scroll*/
+	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal)) {
+		padding-bottom: 8px;
+	}
+
+	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-track {
+		background: var(--primary-color--100);
+		border-radius: 4px;
+	}
+
+	.BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal))::-webkit-scrollbar-thumb {
+		background: var(--secondary-color);
+		border-radius: 4px;
+	}
+
+	/*end scroll*/
+/*}
+@media (max-width: 575px) {*/
 	.BKTT-EventoDetalle {
 		padding-top: 1rem;
 	}

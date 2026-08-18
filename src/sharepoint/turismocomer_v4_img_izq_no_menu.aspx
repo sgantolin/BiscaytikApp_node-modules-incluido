@@ -37,7 +37,6 @@
 						<asp:Content ContentPlaceholderID="PlaceHolderPageTitleInTitleArea" runat="server">
 							<WebPartPages:SPProxyWebPartManager runat="server" id="spproxywebpartmanager">
 							</WebPartPages:SPProxyWebPartManager>
-							<!--<SharePointWebControls:FieldValue ID="FieldValue1" FieldName="Title" runat="server"/>-->
 						</asp:Content>
 
 						<asp:Content ContentPlaceHolderId="PlaceHolderTitleBreadcrumb" runat="server">
@@ -535,18 +534,13 @@
 											<section id="relacionados" role="region"
 												aria-labelledby="relacionados-heading">
 												<h2 id="relacionados-heading">Relacionados</h2>
-												<ul class="BKTT-CardContainer 
-       
-      
-      ">
+												<h3>h3 de prueba en detalle</h3>
+												<ul class="BKTT-CardContainer">
 													<li class="BKTT-CardContainer__item col " itemscope=""
 														itemtype="https://schema.org/Event">
-														<div class="BKTT-CardContainer__card card 
-     
-    
-    ">
+														<div class="BKTT-CardContainer__card card">
 															<figure class="BKTT-Card__figure" itemprop="image"><img
-																	src="/src/assets/themes/default/media/puente.jpg"
+																	src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/puente.jpg"
 																	class="card-img-top" alt="Plan cultural de un día"
 																	itemprop="image">
 															</figure>
@@ -583,12 +577,9 @@
 													</li>
 													<li class="BKTT-CardContainer__item col " itemscope=""
 														itemtype="https://schema.org/Event">
-														<div class="BKTT-CardContainer__card card 
-     
-    
-    ">
+														<div class="BKTT-CardContainer__card card">
 															<figure class="BKTT-Card__figure" itemprop="image"><img
-																	src="/src/assets/themes/default/media/rio.jpg"
+																	src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/rio.jpg"
 																	class="card-img-top" alt="Plan cultural de un día"
 																	itemprop="image">
 															</figure>
@@ -625,12 +616,9 @@
 													</li>
 													<li class="BKTT-CardContainer__item col " itemscope=""
 														itemtype="https://schema.org/Event">
-														<div class="BKTT-CardContainer__card card 
-     
-    
-    ">
+														<div class="BKTT-CardContainer__card card">
 															<figure class="BKTT-Card__figure" itemprop="image"><img
-																	src="/src/assets/themes/default/media/hotel3.jpg"
+																	src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel3.jpg"
 																	class="card-img-top" alt="Plan cultural de un día"
 																	itemprop="image">
 															</figure>
@@ -665,12 +653,9 @@
 													</li>
 													<li class="BKTT-CardContainer__item col " itemscope=""
 														itemtype="https://schema.org/Event">
-														<div class="BKTT-CardContainer__card card 
-     
-    
-    ">
+														<div class="BKTT-CardContainer__card card">
 															<figure class="BKTT-Card__figure" itemprop="image"><img
-																	src="/src/assets/themes/default/media/iglesia.jpg"
+																	src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/iglesia.jpg"
 																	class="card-img-top" alt="Plan cultural de un día"
 																	itemprop="image">
 															</figure>
@@ -713,13 +698,12 @@
 								<section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
 									<div class="">
 										<div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
-											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte
-											</h2>
+											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte</h2>
 											<div class="row g-3">
 												<div class="BKTT-CardGrid__item"><a
 														class="BKTT-CardGrid__card card h-100"
 														style="cursor: pointer;"><img
-															src="/src/assets/themes/default/media/teatro.jpg"
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/teatro.jpg"
 															class="card-img-top" alt="Pub Leku Ona">
 														<div class="BKTT-CardGrid__header"
 															style="background-color: var(--custom-white);">
@@ -730,7 +714,7 @@
 												<div class="BKTT-CardGrid__item"><a
 														class="BKTT-CardGrid__card card h-100"
 														style="cursor: pointer;"><img
-															src="/src/assets/themes/default/media/hotel1.jpg"
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel1.jpg"
 															class="card-img-top" alt="Hotel Boutique Bahía de Plentzia">
 														<div class="BKTT-CardGrid__header"
 															style="background-color: var(--custom-white);">
@@ -742,7 +726,7 @@
 												<div class="BKTT-CardGrid__item"><a
 														class="BKTT-CardGrid__card card h-100"
 														style="cursor: pointer;"><img
-															src="/src/assets/themes/default/media/canoa.jpg"
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/canoa.jpg"
 															class="card-img-top" alt="Comercio X">
 														<div class="BKTT-CardGrid__header"
 															style="background-color: var(--custom-white);">

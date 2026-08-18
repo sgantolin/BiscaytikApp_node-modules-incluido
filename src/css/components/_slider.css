@@ -46,6 +46,10 @@
  width: 100%;
  overflow: hidden;
  margin-bottom: 0;
+ position: relative;
+}
+.BKTT-FigureSlider .carousel-indicators, .BKTT-FigureSlider .carousel-inner .carousel-caption, .BKTT-FigureSlider .BKTT-CarrouselControl{
+ max-width:1400px;
 }
 
 .BKTT-FigureSlider ul {
@@ -62,8 +66,11 @@
 
 .BKTT-FigureSlider figcaption {
  text-align: left;
- left: 2.8%;
- bottom: 7.25rem;
+ /*left: 2.8%;*
+ bottom: 7.25rem;*/
+ /*max-width: 1400px;*/
+ bottom: 10rem;
+ margin-left: -15px;
 }
 
 .BKTT-FigureSlider .bg-info {
@@ -100,7 +107,8 @@
 .BKTT-FigureSlider .BKTT-CarrouselControl {
  position: absolute;
  bottom: 40px;
- left: 40px;
+ /*left: 40px;*/
+ left: 50%;
  display: flex;
  justify-content: space-between;
  align-items: center;
@@ -110,6 +118,7 @@
  padding: 12px 8px;
  border-radius: 25px;
  height: 51px;
+ margin-left: -36%;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl>div {
@@ -150,13 +159,15 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-right:before {
- top: -10px;
+ top: -11px;
  left: -6px;
+ line-height: 21px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-left:before {
- top: 1px;
- left: 6px;
+ top: 0;
+ left: 4px;
+ line-height: 21px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button:hover {
@@ -207,7 +218,7 @@
 .carousel-indicators {
  top: 20px;
  justify-content: right;
- margin-right: 15px;
+ /*margin-right: 15px;*/
 }
 
 .carousel-indicators [data-bs-target] {
@@ -217,7 +228,21 @@
  border-radius: 50%;
  display: inline-block;
 }
-
+@media (max-width: 1600px) {
+ /*.BKTT-FigureSlider .carousel-inner .carousel-caption{
+  max-width: 1600px;
+ }*/
+ .BKTT-FigureSlider .carousel-caption{
+  left: 8%;
+ }
+ .BKTT-FigureSlider .carousel-indicators{
+  margin-left: 4%;
+  margin-right: 4%;
+ }
+ .BKTT-FigureSlider .BKTT-CarrouselControl{
+  margin-left:-45%;
+ }
+}
 @media (max-width: 991px) {
  .BKTT-FigureSlider .w-100 {
   height: 733px;
@@ -234,10 +259,11 @@
  .BKTT-FigureSlider .BKTT-CarrouselControl {
   bottom: 30px;
   left: 12px;
+  margin-left: 0;
  }
 
  .carousel-dark .carousel-caption {
-  left: 1rem;
+  /*left: 1rem;*/
   bottom: 4rem;
   display: block !important;
  }

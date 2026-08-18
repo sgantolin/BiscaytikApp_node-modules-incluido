@@ -3,6 +3,8 @@
 .BKTT-Block {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .BKTT-Block__overlay {
@@ -20,6 +22,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--BKTT-block-gap, 0);
   align-items: var(--BKTT-block-align, center);
+  max-width: 1400px;
 }
 
 /* ─── Layouts: text-image / image-text / text-cards (replica Banner) ──────── */
@@ -370,18 +373,23 @@
   .BKTT-Block--cards {
     padding: 2rem;
   }
-  .BKTT-Block--text-image .BKTT-Block__content{
-    padding: 0 ;
+
+  .BKTT-Block--text-image .BKTT-Block__content {
+    padding: 0;
   }
-  .BKTT-Block--text-image .BKTT-Block__content > h2,.BKTT-Block--text-image .BKTT-Block__content > .BKTT-Block__actions{
-  padding:0 3rem;
-}
-.BKTT-Block--text-image .BKTT-Block__content > h2{
-  padding-top: 3rem;
-}
+
+  .BKTT-Block--text-image .BKTT-Block__content>h2,
+  .BKTT-Block--text-image .BKTT-Block__content>.BKTT-Block__actions {
+    padding: 0 3rem;
+  }
+
+  .BKTT-Block--text-image .BKTT-Block__content>h2 {
+    padding-top: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
+
   .BKTT-Block--text-image,
   .BKTT-Block--image-text,
   .BKTT-Block--text-cards {
@@ -463,9 +471,9 @@
 @media (max-width: 576px) {
   .BKTT-Block--split .BKTT-Block__content {
     padding: 1.5rem;
-  }*/
+  }
 
-  .BKTT-Block--split .BKTT-Block__imageWrapper {
+  */ .BKTT-Block--split .BKTT-Block__imageWrapper {
     height: 230px;
   }
 

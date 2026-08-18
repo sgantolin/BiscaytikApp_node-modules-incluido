@@ -103,8 +103,9 @@
  overflow: hidden;
  text-overflow: ellipsis;
 }
-.BKTT-Card__title *{
- font-size: inherit!important;
+
+.BKTT-Card__title * {
+ font-size: inherit !important;
 }
 
 .BKTT-Card__main .BKTT-Link {
@@ -205,11 +206,14 @@
 .BKTT-CardContainer__card--horizontal .BKTT-Card__main {
  border: none !important;
  border-radius: 0 !important;
- padding-top:0;
- padding-bottom:0;
+ padding-top: 0;
+ padding-bottom: 0;
  /*justify-content: center;*/
 }
-
+.col-md-6 .BKTT-CardContainer--column{
+ flex-direction: column;
+ flex-wrap: nowrap
+}
 /* Fondos alternos en column */
 .BKTT-CardContainer--column .BKTT-CardContainer__card {
  border: none;
@@ -284,7 +288,7 @@
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal.BKTT-CardContainer__card--no-image {
  flex-direction: column;
  height: auto;
- padding-bottom:1rem;
+ padding-bottom: 1rem;
 }
 
 .BKTT-CardContainer__card--no-image .BKTT-Card__figure {
@@ -322,7 +326,7 @@
  flex: 1;
  flex-wrap: nowrap;
  align-items: center;
- margin-bottom: 0!important;
+ margin-bottom: 0 !important;
 }
 
 .BKTT-CardContainer__card--horizontal .BKTT-progress__Container {
@@ -337,9 +341,14 @@
  margin-left: 8px;
  /*bottom: -25px;*/
 }
-.BKTT-carousel .BKTT-Button.carousel-control-next, .BKTT-carousel .BKTT-Button.carousel-control-prev, .BKTT-carousel .BKTT-Button.carousel-control-next:hover, .BKTT-carousel .BKTT-Button.carousel-control-prev:hover {
+
+.BKTT-carousel .BKTT-Button.carousel-control-next,
+.BKTT-carousel .BKTT-Button.carousel-control-prev,
+.BKTT-carousel .BKTT-Button.carousel-control-next:hover,
+.BKTT-carousel .BKTT-Button.carousel-control-prev:hover {
  background-color: transparent;
 }
+
 .BKTT-carousel .BKTT-Button.carousel-control-next {
  left: 30px;
 }
@@ -381,10 +390,11 @@
 
 /* === VARIANTES === */
 
-.BKTT-CardContainer.BKTT-CardContainer--column {
+/*.BKTT-CardContainer.BKTT-CardContainer--column {
  flex-direction: column;
  flex-wrap: nowrap;
-}
+}*/
+
 .BKTT-CardContainer--scroll {
  max-height: 835px;
  overflow-y: auto;
@@ -404,24 +414,34 @@
  .BKTT-CardContainer__card {
   min-width: 155px !important;
  }
-.BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal{
- flex-direction: column;
+
+ .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
+  flex-direction: column;
+ }
+ .col-md-6 .BKTT-CardContainer--column{
+ flex-wrap: nowrap!important;
 }
-.BKTT-CardContainer__card--horizontal .BKTT-Card__figure{
- height: auto;
- min-height: auto;
- margin-top: 5px;
-}
-.BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge, .BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge {
- position: relative;
-}
-.BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge{
- top:0;
-}
- .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img{
+
+ .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
+  height: auto;
+  min-height: auto;
+  margin-top: 5px;
+ }
+
+ .BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge,
+ .BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge {
+  position: relative;
+ }
+
+ .BKTT-CardContainer__card--horizontal .BKTT-Card__figure .BKTT-Badge {
+  top: 0;
+ }
+
+ .BKTT-CardContainer__card--horizontal .BKTT-Card__figure img {
   display: none;
  }
- .BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge{
+
+ .BKTT-CardContainer__card--no-image .BKTT-Card__figure .BKTT-Badge {
   margin-left: 3px;
   margin-right: 3px;
  }
@@ -441,15 +461,17 @@
 
  .BKTT-CardContainer:not(.BKTT-CardContainer--column):not(:has(.BKTT-CardContainer__card--horizontal)) .BKTT-CardContainer__item {
   flex: 0 0 calc(50% - 0.375rem);
-  min-width: calc(50% - 0.375rem);
+  /*min-width: calc(50% - 0.375rem);*/
   scroll-snap-align: start;
+  max-width: 100% !important;
+  min-width: -webkit-fill-available;
  }
 
 
- /* Cards horizontales: se apilan en columna */
+ /* Cards horizontales: se apilan en columna *
  .BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal) {
   flex-direction: column;
- }
+ }*/
 
  .BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal) .BKTT-CardContainer__item {
   flex: 1 1 100%;
