@@ -28,7 +28,7 @@
 }
 
 .BKTT-Breadcrumb__link:hover {
-    color: var(--secondary-color)  ;
+    color: var(--secondary-color);
 }
 
 .BKTT-Breadcrumb__text {
@@ -38,4 +38,21 @@
 .BKTT-Breadcrumb__item.is-active .BKTT-Breadcrumb__text {
     color: var(--text-color);
     font-weight: 400;
+}
+
+/*sharepoint*/
+.BKTT-Main nav.container ul, .BKTT-Main .pagenation ul{
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+    padding: 1rem 0;
+}
+.BKTT-Main nav.container li, .BKTT-Main .pagenation li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }

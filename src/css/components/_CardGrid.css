@@ -45,11 +45,11 @@
   width: 100%;*/
 }
 
-/*.BKTT-CardGrid__card .card-img-top {
+.BKTT-CardGrid__card .card-img-top {
   width: 100%;
   height: 150px;
   object-fit: cover;
-}*/
+}
 
 .BKTT-CardGrid__header {
   background-color: var(--primary-color);
