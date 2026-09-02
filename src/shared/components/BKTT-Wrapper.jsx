@@ -124,7 +124,7 @@ function Wrapper({
       {backgroundImage && overlayColor && (
         <div className="BKTT-Block__overlay" style={{ backgroundColor: overlayColor }} />
       )}
-      <div className="BKTT-Block__grid row">
+      <div className="BKTT-Block__grid row container">
         {resolvedSections.map((section, i) => {
           if (section._cards) {
             return (

@@ -55,7 +55,7 @@
 								itemtype="https://schema.org/Event">
 								<div class="row">
 									<div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
-										<nav class="container">
+										<nav class="container BKTT-Breadcrumb__list BKTT-Breadcrumb">
 											<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
 												SiteCollectionWeb="false" id="ExtendedBreadcrumb1" runat="server" />
 										</nav>
