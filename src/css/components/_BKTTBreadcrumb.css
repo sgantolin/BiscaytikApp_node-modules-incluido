@@ -1,4 +1,4 @@
-.BKTT-Breadcrumb__list {
+/*.BKTT-Breadcrumb__list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -40,8 +40,9 @@
     font-weight: 400;
 }
 
-/*sharepoint*/
-.BKTT-Main nav.container ul, .BKTT-Main .pagenation ul{
+/*sharepoint*
+.BKTT-Main nav.container ul,
+.BKTT-Main .pagenation ul {
     padding-left: 0;
     display: flex;
     align-items: center;
@@ -50,9 +51,46 @@
     margin: 0;
     padding: 1rem 0;
 }
-.BKTT-Main nav.container li, .BKTT-Main .pagenation li {
+
+.BKTT-Main nav.container li,
+.BKTT-Main .pagenation li {
     list-style: none;
     display: flex;
     align-items: center;
     gap: .5rem;
+}
+
+hasta aquí old*/
+.BKTT-Breadcrumb__list ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.BKTT-Breadcrumb__list ul li:first-child {
+    width: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.BKTT-Breadcrumb__list ul li:first-child a:before {
+    content: "\f015";
+    font-family: 'Font Awesome 6 Pro';
+    margin-right: 8px;
+    color: var(--link-color);
+}
+
+.BKTT-Breadcrumb__list ul li:after {
+    content: "\f061";
+    font-family: 'Font Awesome 6 Pro';
+    color: var(--primary-color);
+    margin-left: 8px;
+}
+
+.BKTT-Breadcrumb__list ul li:last-child:after {
+    content: "";
 }

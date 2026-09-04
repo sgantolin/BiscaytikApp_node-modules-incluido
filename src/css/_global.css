@@ -44,10 +44,12 @@ body *:focus {
 	font-size: inherit !important;
 	margin-right: 1rem !important;
 }
-.BKTT-Main p{
+
+.BKTT-Main p {
 	font-size: 14px;
 	line-height: 21px;
 }
+
 .BKTT-ThemeTurismo {
 	margin-top: 56px;
 }
@@ -55,9 +57,11 @@ body *:focus {
 .BKTT-ThemeTurismo h2 * {
 	font-size: 2rem !important;
 }
-.BKTT-ThemeTurismo h2 .BKTT-Icon{
+
+.BKTT-ThemeTurismo h2 .BKTT-Icon {
 	margin-left: 0.5rem;
 }
+
 
 /*en desa no necesario main.BKTT-Main {
 	padding-top: 28px;
@@ -94,6 +98,10 @@ body main .BKTT-Badge.bg-primary {
 
 .BKTT-Badge {
 	padding: 4px 8px;
+	background-color: var(--grey__background) !important;
+	gap: 8px;
+	display: flex;
+	align-items: center;
 }
 
 .BKTT-cookies {
@@ -328,6 +336,10 @@ h3,
 	list-style: none;
 }
 
+/*.BKTT-Tags .BKTT-Badge .BKTT-Icon {
+	width: 21px;
+}*/
+
 .BKTT-Tags li span,
 .BKTT-Tags li span:before {
 	color: var(--text-color__grey);
@@ -335,6 +347,9 @@ h3,
 
 /*.BKTT-Tags li .BKTT-Label {
  font-weight: 600;
+}
+.BKTT-Main .spinner-border {
+	border: var(--bs-spinner-border-width) solid var(--primary-color);
 }*/
 
 /*Detalle*/
@@ -434,7 +449,11 @@ h3,
 	padding: 0.5rem 0.8rem;
 	margin-bottom: 2rem;
 }
-.BKTT-Collapse, .BKTT-Collapse *, .BKTT-Collapse:hover, .BKTT-Collapse *:hover{
+
+.BKTT-Collapse,
+.BKTT-Collapse *,
+.BKTT-Collapse:hover,
+.BKTT-Collapse *:hover {
 	text-decoration: none;
 }
 
@@ -476,11 +495,13 @@ h3,
 .BKTT-Main button {
 	min-width: fit-content;
 }
-.BKTT-footer li .fa{
+
+.BKTT-footer li .fa {
 	margin-right: 0.5rem;
 	position: relative;
 }
-.BKTT-Main .BKTT-Button *{
+
+.BKTT-Main .BKTT-Button * {
 	color: inherit !important;
 	text-decoration: none;
 }
@@ -500,8 +521,9 @@ h3,
 		padding-right: 0;
 		padding-left: 0;
 	}
-	.BKTT-TitleBar{
-		gap:16px;
+
+	.BKTT-TitleBar {
+		gap: 16px;
 	}
 
 	/*map*/
@@ -512,6 +534,7 @@ h3,
 	.BKTT-ThemeTurismo {
 		margin-top: 0;
 	}
+
 	.BKTT-EventoDetalle__title {
 		font-size: 1.75rem;
 	}
@@ -520,6 +543,7 @@ h3,
 		margin-top: 1rem;
 	}
 }
+
 @media (max-width: 768px) {
 
 	/*scroll*/
@@ -542,7 +566,7 @@ h3,
 	}
 
 	/*end scroll*/
-/*}
+	/*}
 @media (max-width: 575px) {*/
 	.BKTT-EventoDetalle {
 		padding-top: 1rem;

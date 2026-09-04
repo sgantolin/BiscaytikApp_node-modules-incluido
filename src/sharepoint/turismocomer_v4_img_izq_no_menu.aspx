@@ -55,12 +55,15 @@
 								itemtype="https://schema.org/Event">
 								<div class="row">
 									<div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
-										<div class=" container" >
-											<nav class="container BKTT-Breadcrumb__list BKTT-Breadcrumb">
-											<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
-												SiteCollectionWeb="false" id="ExtendedBreadcrumb1" runat="server" />
-											</nav>
-										</div>									
+										<div class=" container">
+											<div class="container">
+												<nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
+													<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
+														SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
+														runat="server" />
+												</nav>
+											</div>
+										</div>
 										<figure class="BKTT-FigureImg" itemprop="image" itemscope
 											itemtype="https://schema.org/ImageObject">
 											<biscaytik:HideWhenBlank ID="HideWhenBlank21" runat="server"
@@ -124,6 +127,11 @@
 																		FieldName="Tipo_x0020_de_x0020_comida"
 																		runat="server" />
 																</biscaytik:HideWhenBlank>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/restaurante-marisco.svg"
+																		class="BKTT-Icon" alt="restaurante marisco">
+																	<span class="BKTT-Label">Marisco</span>
+																</span>
 															</dd>
 														</div>
 														<div class="BKTT-EventoDetalle__metaItem">
@@ -147,12 +155,42 @@
 															</dd>
 													</dl>
 													<!--add SS tags o subcategorias-->
+													<h3>Servicios</h3>
 													<ul class="BKTT-Tags">
-														<li><span class="BKTT-Badge badge bg-light text-dark"><span
-																	class="BKTT-Icon fa-solid fa-music me-2"></span><span>Música</span></span>
+														<li>
+															<span class="BKTT-Badge badge bg-light text-dark">
+																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_asador.svg"
+																	class="BKTT-Icon" alt="Asador">
+																<span class="BKTT-Label">Asador</span>
+															</span>
 														</li>
-														<li><span class="BKTT-Badge badge bg-light text-dark"><span
-																	class="BKTT-Icon fa-solid fa-water me-2"></span><span>Mar</span></span>
+														<li>
+															<span class="BKTT-Badge badge bg-light text-dark">
+																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_edifhistorico.svg"
+																	class="BKTT-Icon" alt="Edificio Histórico">
+																<span class="BKTT-Label">Edificio Histórico</span>
+															</span>
+														</li>
+														<li>
+															<span class="BKTT-Badge badge bg-light text-dark">
+																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_terraza.svg"
+																	class="BKTT-Icon" alt="Terraza">
+																<span class="BKTT-Label">Terraza</span>
+															</span>
+														</li>
+														<li>
+															<span class="BKTT-Badge badge bg-light text-dark">
+																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_wifi.svg"
+																	class="BKTT-Icon" alt="Wifi">
+																<span class="BKTT-Label">Wifi</span>
+															</span>
+														</li>
+														<li>
+															<span class="BKTT-Badge badge bg-light text-dark">
+																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_bar.svg"
+																	class="BKTT-Icon" alt="Bar">
+																<span class="BKTT-Label">Bar</span>
+															</span>
 														</li>
 													</ul>
 													<!--end add SS tags o subcategorias-->
@@ -339,7 +377,8 @@
 														</dd>
 														<!--SS mapa ejem-->
 														<!-- CSS de Leaflet -->
-														<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+														<link rel="stylesheet"
+															href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 														<!-- Mapa -->
 														<div id="map"
@@ -347,7 +386,8 @@
 														</div>
 
 														<!-- JS de Leaflet -->
-														<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+														<script
+															src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 														<script>
 															var map = L.map('map').setView([43.3183, -1.9812], 13);
@@ -537,7 +577,7 @@
 												</div>
 											</aside>
 										</div>
-										<!--add SS Eventos similares-->
+										<!--add SS Eventos similares--
 										<div class="row">
 											<section id="relacionados" role="region"
 												aria-labelledby="relacionados-heading">
@@ -706,7 +746,8 @@
 								<section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
 									<div class="">
 										<div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
-											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte</h2>
+											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte
+											</h2>
 											<div class="row g-3">
 												<div class="BKTT-CardGrid__item"><a
 														class="BKTT-CardGrid__card card h-100"
@@ -749,21 +790,24 @@
 								<!--end add SS interesante-->
 
 								<!-- Botón prueba modal -->
-								<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loadingModal">
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+									data-bs-target="#loadingModal">
 									Mostrar modal
 								</button>
 
 								<!-- Modal con spinner -->
-								<div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+								<div class="BKTT-Modal modal fade" id="loadingModal" tabindex="-1"
+									aria-labelledby="loadingModalLabel" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h5 class="modal-title" id="loadingModalLabel">Cargando</h5>
-												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+												<button type="button" class="btn-close" data-bs-dismiss="modal"
+													aria-label="Cerrar"></button>
 											</div>
 
 											<div class="modal-body text-center">
-												<div class="spinner-border" role="status">
+												<div class="spinner-border text-primary" role="status">
 													<span class="visually-hidden">Cargando...</span>
 												</div>
 												<p class="mt-3">Cargando...</p>
