@@ -7,6 +7,7 @@
  padding: 0;
  margin: 0;
  display: flex;
+ justify-content: center;
  flex-wrap: wrap;
  /*gap: 0.3rem;*/
  gap: 0.55%;
@@ -210,10 +211,12 @@
  padding-bottom: 0;
  /*justify-content: center;*/
 }
-.col-md-6 .BKTT-CardContainer--column{
+
+.col-md-6 .BKTT-CardContainer--column {
  flex-direction: column;
  flex-wrap: nowrap
 }
+
 /* Fondos alternos en column */
 .BKTT-CardContainer--column .BKTT-CardContainer__card {
  border: none;
@@ -282,7 +285,8 @@
  color: var(--text-color__grey) !important;
  font-weight: 500;
  font-size: 0.9rem;
- border-radius: 0;
+ padding: 0.5rem;
+ border-radius: 8px;
 }
 
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal.BKTT-CardContainer__card--no-image {
@@ -418,9 +422,10 @@
  .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
   flex-direction: column;
  }
- .col-md-6 .BKTT-CardContainer--column{
- flex-wrap: nowrap!important;
-}
+
+ .col-md-6 .BKTT-CardContainer--column {
+  flex-wrap: nowrap !important;
+ }
 
  .BKTT-CardContainer__card--horizontal .BKTT-Card__figure {
   height: auto;

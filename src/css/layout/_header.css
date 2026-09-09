@@ -8,7 +8,8 @@
 	border-bottom-color: var(--border-color);
 	box-shadow: none;
 	border-radius: 0px;
-	/*min-height: 60px;*/
+	height: 56px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .BKTT-Header .logo {
@@ -87,14 +88,15 @@
 .BKTT-Nav+.BKTT-LangSelect ul li {
 	font-family: var(--font-family-secondary);
 }
+
 .BKTT-Search .ms-srch-sb-searchLink:before {
-		content: "\f002";
-		font-family: 'Font Awesome 6 Pro';
-		position: absolute;
-		top: 2px;
-		left: 7px;
-		color: var(--link-color-light);
-	}
+	content: "\f002";
+	font-family: 'Font Awesome 6 Pro';
+	position: absolute;
+	top: 2px;
+	left: 7px;
+	color: var(--link-color-light);
+}
 
 
 @media (max-width: 1255px) {
@@ -127,10 +129,10 @@
 		display: none;
 	}
 
-	.BKTT-Search--mobile {
+	/*.BKTT-Search--mobile {
 		position: relative;
 		display: block !important;
-	}
+	}*/
 
 	.BKTT-Search--mobile .container {
 		display: none;
@@ -142,8 +144,8 @@
 		display: block;
 		position: absolute;
 		width: 400px;
-		top: 45px;
-		left: -196px;
+		top: 54px;
+		left: 15px;
 		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 		z-index: 888;
 	}
@@ -152,6 +154,12 @@
 		border-color: transparent;
 		background-color: transparent;
 		padding: 4px 7px;
+		min-width: fit-content;
+		background-color: transparent !important;
+		border-color: transparent !important;
+	}
+	.BKTT-Nav .container-fluid .navbar-toggle {
+		min-width: fit-content;
 	}
 
 	.BKTT-Search--mobile .BKTT-Button:hover,

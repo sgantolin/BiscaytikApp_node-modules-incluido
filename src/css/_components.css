@@ -8,14 +8,6 @@
 @import url('./components/_CardGrid.css');
 @import url('./components/_dialog.css');
 
-/*cookies*/
-.BKTT-cookies {
- position: absolute;
- bottom: 0px;
- padding: 0.5rem 1rem;
- z-index: 999;
- background-color: var(--custom-white);
-}
 /*carousel*/
 .BKTT-carousel {
  margin-bottom: 60px;

@@ -744,46 +744,46 @@
 								</div>
 								<!--add SS interesante-->
 								<section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
-									<div class="">
-										<div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
+									<div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
+										<div class="container">
 											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte
-											</h2>
-											<div class="row g-3">
-												<div class="BKTT-CardGrid__item"><a
-														class="BKTT-CardGrid__card card h-100"
-														style="cursor: pointer;"><img
-															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/teatro.jpg"
-															class="card-img-top" alt="Pub Leku Ona">
-														<div class="BKTT-CardGrid__header"
-															style="background-color: var(--custom-white);">
-															<h5 class="BKTT-CardGrid__title"
-																style="color: var(--primary-color);">Pub Leku Ona</h5>
-														</div>
-													</a></div>
-												<div class="BKTT-CardGrid__item"><a
-														class="BKTT-CardGrid__card card h-100"
-														style="cursor: pointer;"><img
-															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel1.jpg"
-															class="card-img-top" alt="Hotel Boutique Bahía de Plentzia">
-														<div class="BKTT-CardGrid__header"
-															style="background-color: var(--custom-white);">
-															<h5 class="BKTT-CardGrid__title"
-																style="color: var(--primary-color);">Hotel Boutique
-																Bahía de Plentzia</h5>
-														</div>
-													</a></div>
-												<div class="BKTT-CardGrid__item"><a
-														class="BKTT-CardGrid__card card h-100"
-														style="cursor: pointer;"><img
-															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/canoa.jpg"
-															class="card-img-top" alt="Comercio X">
-														<div class="BKTT-CardGrid__header"
-															style="background-color: var(--custom-white);">
-															<h5 class="BKTT-CardGrid__title"
-																style="color: var(--primary-color);">Comercio X</h5>
-														</div>
-													</a></div>
-											</div>
+										</h2>
+										<div class="row mb-5">
+											<div class="BKTT-CardGrid__item"><a
+													class="BKTT-CardGrid__card card h-100"
+													style="cursor: pointer;"><img
+														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/teatro.jpg"
+														class="card-img-top" alt="Pub Leku Ona">
+													<div class="BKTT-CardGrid__header"
+														style="background-color: var(--custom-white);">
+														<h5 class="BKTT-CardGrid__title"
+															style="color: var(--primary-color);">Pub Leku Ona</h5>
+													</div>
+												</a></div>
+											<div class="BKTT-CardGrid__item"><a
+													class="BKTT-CardGrid__card card h-100"
+													style="cursor: pointer;"><img
+														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel1.jpg"
+														class="card-img-top" alt="Hotel Boutique Bahía de Plentzia">
+													<div class="BKTT-CardGrid__header"
+														style="background-color: var(--custom-white);">
+														<h5 class="BKTT-CardGrid__title"
+															style="color: var(--primary-color);">Hotel Boutique
+															Bahía de Plentzia</h5>
+													</div>
+												</a></div>
+											<div class="BKTT-CardGrid__item"><a
+													class="BKTT-CardGrid__card card h-100"
+													style="cursor: pointer;"><img
+														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/canoa.jpg"
+														class="card-img-top" alt="Comercio X">
+													<div class="BKTT-CardGrid__header"
+														style="background-color: var(--custom-white);">
+														<h5 class="BKTT-CardGrid__title"
+															style="color: var(--primary-color);">Comercio X</h5>
+													</div>
+												</a></div>
+										</div>
 										</div>
 									</div>
 								</section>

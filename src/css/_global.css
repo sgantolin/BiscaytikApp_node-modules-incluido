@@ -84,9 +84,15 @@ body main .BKTT-Badge.bg-primary {
 #root,
 #s4-workspace,
 .BKTT-ThemeTurismo {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+	/*height: auto;*
+	min-height: 100vh;
+	overflow: visible;
+	overflow-y: auto;
+	width: 100vw;
+	max-width: 100%;*/
+	overflow-x: clip;
+	padding-bottom: 0 !important;
+	height: 100vh !important;
 }
 
 ::placeholder,
@@ -102,14 +108,25 @@ body main .BKTT-Badge.bg-primary {
 	gap: 8px;
 	display: flex;
 	align-items: center;
+	width: fit-content;
 }
 
 .BKTT-cookies {
+	background-color: var(--secondary-color);
+	color: var(--theme-white);
 	position: absolute;
-	bottom: 0px;
-	padding: 0.5rem 1rem;
+	margin-right: 0;
+	max-height: 450px;
+	overflow-y: auto;
+	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--bs-border-color-translucent);
+	bottom: 0;
 	z-index: 999;
-	background-color: var(--custom-white);
+	padding: 1rem 4.5rem;
+}
+
+.BKTT-cookies a {
+	color: var(--theme-white);
 }
 
 .BKTT-Link {
@@ -509,7 +526,8 @@ h3,
 /* Responsive */
 @media (max-width: 991px) {
 	main.BKTT-Main {
-		padding-top: 0;
+		/*padding-top: 0;*/
+		margin-top:55px;
 	}
 
 	.BKTT-Main .row {
@@ -522,7 +540,7 @@ h3,
 		padding-left: 0;
 	}
 
-	.BKTT-TitleBar {
+	.BKTT-Main .BKTT-TitleBar {
 		gap: 16px;
 	}
 
@@ -531,9 +549,9 @@ h3,
 		display: none;
 	}
 
-	.BKTT-ThemeTurismo {
+	/*.BKTT-ThemeTurismo {
 		margin-top: 0;
-	}
+	}*/
 
 	.BKTT-EventoDetalle__title {
 		font-size: 1.75rem;
@@ -541,6 +559,14 @@ h3,
 
 	.BKTT-EventoDetalleAside {
 		margin-top: 1rem;
+	}
+
+	.BKTT-cookies {
+		display: flex;
+		flex-direction: column;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		gap:8px;
 	}
 }
 

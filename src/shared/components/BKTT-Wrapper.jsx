@@ -29,12 +29,12 @@ const BlockButton = ({ button }) => {
     </>
   );
   if (button.href) {
-    return <a href={button.href} className={`BKTT-Block__button ${button.className || ''}`}>{inner}</a>;
+    return <a href={button.href} className={`BKTT-Button ${button.className || ''}`}>{inner}</a>;
   }
   if (button.link) {
-    return <Link to={button.link} className={`BKTT-Block__button ${button.className || ''}`}>{inner}</Link>;
+    return <Link to={button.link} className={`BKTT-Button ${button.className || ''}`}>{inner}</Link>;
   }
-  return <button type="button" className={`BKTT-Block__button ${button.className || ''}`}>{inner}</button>;
+  return <button type="button" className={`BKTT-Button ${button.className || ''}`}>{inner}</button>;
 };
 
 const BlockText = ({ section }) => {
