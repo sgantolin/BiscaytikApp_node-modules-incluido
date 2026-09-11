@@ -29,8 +29,8 @@ body *:focus {
 .BKTT-Main h6 {
 	margin-left: 0;
 	margin-right: 0;
-	font-family: var(--font-family);
-	color: var(--text-color);
+	font-family: var(--font-family)!important;
+	color: var(--text-color)!important;
 	font-weight: 600;
 }
 
@@ -61,11 +61,6 @@ body *:focus {
 .BKTT-ThemeTurismo h2 .BKTT-Icon {
 	margin-left: 0.5rem;
 }
-
-
-/*en desa no necesario main.BKTT-Main {
-	padding-top: 28px;
-}*/
 
 /*lista layout*/
 .WPZT-ListCont--Default {
@@ -525,9 +520,12 @@ h3,
 
 /* Responsive */
 @media (max-width: 991px) {
-	main.BKTT-Main {
-		/*padding-top: 0;*/
-		margin-top:55px;
+	/*main.BKTT-Main {
+		/*padding-top: 0;
+		margin-top:55px;*
+	}*/
+	.BKTT-ThemeTurismo{
+		margin-top:0;
 	}
 
 	.BKTT-Main .row {

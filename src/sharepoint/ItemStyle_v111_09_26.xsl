@@ -922,7 +922,7 @@
         <ul class="BKTT-Tags">
          <li>
           <span class="BKTT-Badge badge bg-light text-dark">
-           <span class="BKTT-Icon fa-solid fa-wine-glass"></span>
+           <span class="BKTT-Icon fa-solid fa-wine-glass">&nbsp;</span>
            <span class="BKTT-Label" itemprop="servesCuisine">
             <xsl:value-of select="@TipoComida"/>
            </span>
@@ -939,7 +939,7 @@
       </div>
       <xsl:if test="normalize-space(@Valoracion) != ''">
        <p itemprop="ratingValue">
-        <span class="BKTT-Icon fa-light fa-stars me-2"></span>
+        <span class="BKTT-Icon fa-light fa-stars me-2">&nbsp;</span>
         <span class="BKTT-Label">
          <xsl:value-of select="translate(format-number(@Valoracion,'0.0'),'.',',')"/>
         </span>
@@ -989,7 +989,7 @@
     </xsl:call-template>
   </xsl:variable>
 
-  <li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/Restaurant">
+  <li class="BKTT-CardContainer__item col" itemscope="" itemtype="https://schema.org/Restaurant">
    <div class="BKTT-CardContainer__card card">
     <!-- IMAGEN -->
     <figure class="BKTT-Card__figure">
@@ -1021,7 +1021,7 @@
         <ul class="BKTT-Tags">
          <li>
           <span class="BKTT-Badge badge bg-light text-dark">
-           <span class="BKTT-Icon fa-solid fa-plate-utensils"></span>
+           <span class="BKTT-Icon fa-solid fa-plate-utensils">&nbsp;</span>
            <span class="BKTT-Label" itemprop="servesCuisine"><xsl:value-of select="@TipoComida"/></span>
           </span>
          </li>
@@ -1036,7 +1036,7 @@
       </div>
       <xsl:if test="normalize-space(@Valoracion) != ''">
        <p itemprop="ratingValue">
-        <span class="BKTT-Icon fa-light fa-stars me-2"></span>
+        <span class="BKTT-Icon fa-light fa-stars me-2">&nbsp;</span>
         <span class="BKTT-Label">
          <xsl:value-of select="translate(format-number(@Valoracion,'0.0'),'.',',')"/>
         </span>

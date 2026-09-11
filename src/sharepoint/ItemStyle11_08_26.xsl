@@ -756,8 +756,12 @@
     <div class="BKTT-CardContainer__card card">
       <!-- IMAGEN -->
       <figure class="BKTT-Card__figure">
-       <xsl:if test="string-length($SafeImageUrl) != 0">
-        <img
+        <xsl:if test="string-length($SafeImageUrl) != 0">
+          <a
+            href="{$SafeLinkUrl}"
+            title="{$DisplayTitle}"
+          >
+            <img
               src="{$SafeImageUrl}"
               class="card-img-top"
               title="{@ImageUrlAltText}"
@@ -775,18 +779,21 @@
                 </xsl:attribute>
               </xsl:if>
             </img>
-          
-       </xsl:if>
-        <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate" />
+          </a>
+        </xsl:if>
+
+        <xsl:call-template
+          name="OuterTemplate.CallPresenceStatusIconTemplate"
+        />
       </figure>
+
       <!-- CONTENIDO -->
+
       <div class="BKTT-Card__main">
-       <h3 class="BKTT-Card__title">
-        <a href="{$SafeLinkUrl}" title="{$DisplayTitle}" >
-         <xsl:value-of select="$DisplayTitle"/>
-        </a>
-       </h3>
-      
+
+        <h3 class="BKTT-Card__title">
+          <xsl:value-of select="$DisplayTitle"/>
+        </h3>
 
         <div class="BKTT-Card__Body">
 
@@ -851,203 +858,7 @@
     </div>
   </li>
 </xsl:template>
-<!--BARES2026-->
-<xsl:template
-  name="Bares2026"
-  match="Row[@Style='Bares2026']"
-  mode="itemstyle"
->
-  <xsl:variable name="SafeLinkUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeLink">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
 
-  <xsl:variable name="SafeImageUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeStaticUrl">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'ImageUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="DisplayTitle">
-    <xsl:call-template name="OuterTemplate.GetTitle">
-      <xsl:with-param
-        name="Title"
-        select="@Title"
-      />
-
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <li class="BKTT-CardContainer__item col" itemscope="" itemtype="https://schema.org/BarOrPub">
-   <div class="BKTT-CardContainer__card card">
-    <!-- IMAGEN -->
-    <figure class="BKTT-Card__figure">
-     <xsl:if test="string-length($SafeImageUrl) != 0">
-      <img src="{$SafeImageUrl}" class="card-img-top" title="{@ImageUrlAltText}" alt="{@ImageUrlAltText}">
-       <xsl:if test="$ImageWidth != ''">
-        <xsl:attribute name="width">
-         <xsl:value-of select="$ImageWidth" />
-        </xsl:attribute>
-       </xsl:if>
-       <xsl:if test="$ImageHeight != ''">
-         <xsl:attribute name="height">
-           <xsl:value-of select="$ImageHeight" />
-         </xsl:attribute>
-       </xsl:if>
-      </img>
-     </xsl:if>
-     <xsl:call-template name="OuterTemplate.CallPresenceStatusIconTemplate" />
-    </figure>
-    <!-- CONTENIDO -->
-    <div class="BKTT-Card__main">
-     <h3 class="BKTT-Card__title" itemprop="name">
-      <a href="{$SafeLinkUrl}" title="{$DisplayTitle}" >
-       <xsl:value-of select="$DisplayTitle"/>
-      </a>
-     </h3>
-     <div class="BKTT-Card__Body">
-      <div class="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
-       <xsl:if test="normalize-space(@TipoComida) != ''">
-        <ul class="BKTT-Tags">
-         <li>
-          <span class="BKTT-Badge badge bg-light text-dark">
-           <span class="BKTT-Icon fa-solid fa-wine-glass"></span>
-           <span class="BKTT-Label" itemprop="servesCuisine">
-            <xsl:value-of select="@TipoComida"/>
-           </span>
-          </span>
-         </li>
-        </ul>
-       </xsl:if>
-       <xsl:if test="normalize-space(@GastoMedio) != ''">
-        <strong itemprop="priceRange">
-         <xsl:value-of select="@GastoMedio"/> €/persona
-         <!-- <xsl:value-of select="ddwrt:Resource('comida','Tipo_x0020_de_x0020_comida')" /> -->
-        </strong>
-       </xsl:if>
-      </div>
-      <xsl:if test="normalize-space(@Valoracion) != ''">
-       <p itemprop="ratingValue">
-        <span class="BKTT-Icon fa-light fa-stars me-2"></span>
-        <span class="BKTT-Label">
-         <xsl:value-of select="translate(format-number(@Valoracion,'0.0'),'.',',')"/>
-        </span>
-       </p>
-      </xsl:if>
-     </div>
-    </div>
-   </div>
-  </li>
-</xsl:template>
-<!--FINBARES2026-->
-<!--RESTAURANTES2026-->
-<xsl:template
-  name="Restaurantes2026"
-  match="Row[@Style='Restaurantes2026']"
-  mode="itemstyle"
->
-  <xsl:variable name="SafeLinkUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeLink">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="SafeImageUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeStaticUrl">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'ImageUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="DisplayTitle">
-    <xsl:call-template name="OuterTemplate.GetTitle">
-      <xsl:with-param
-        name="Title"
-        select="@Title"
-      />
-
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/Restaurant">
-   <div class="BKTT-CardContainer__card card">
-    <!-- IMAGEN -->
-    <figure class="BKTT-Card__figure">
-     <xsl:if test="string-length($SafeImageUrl) != 0">
-      <img src="{$SafeImageUrl}" class="card-img-top" title="{@ImageUrlAltText}" alt="{@ImageUrlAltText}">
-       <xsl:if test="$ImageWidth != ''">
-         <xsl:attribute name="width">
-           <xsl:value-of select="$ImageWidth" />
-         </xsl:attribute>
-       </xsl:if>
-       <xsl:if test="$ImageHeight != ''">
-         <xsl:attribute name="height">
-           <xsl:value-of select="$ImageHeight" />
-         </xsl:attribute>
-       </xsl:if>
-      </img>
-     </xsl:if>
-    </figure>
-    <!-- CONTENIDO -->
-    <div class="BKTT-Card__main">
-     <h3 class="BKTT-Card__title" itemprop="name">
-      <a href="{$SafeLinkUrl}" title="{$DisplayTitle}" >
-       <xsl:value-of select="$DisplayTitle"/>
-      </a>
-     </h3>
-     <div class="BKTT-Card__Body">
-      <div class="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
-       <xsl:if test="normalize-space(@TipoComida) != ''">
-        <ul class="BKTT-Tags">
-         <li>
-          <span class="BKTT-Badge badge bg-light text-dark">
-           <span class="BKTT-Icon fa-solid fa-plate-utensils"></span>
-           <span class="BKTT-Label" itemprop="servesCuisine"><xsl:value-of select="@TipoComida"/></span>
-          </span>
-         </li>
-        </ul>
-       </xsl:if>
-       <xsl:if test="normalize-space(@GastoMedio) != ''">
-        <strong itemprop="priceRange">
-         <xsl:value-of select="@GastoMedio"/> €/persona
-         <!-- <xsl:value-of select="ddwrt:Resource('comida','Tipo_x0020_de_x0020_comida')" /> -->
-        </strong>
-       </xsl:if>
-      </div>
-      <xsl:if test="normalize-space(@Valoracion) != ''">
-       <p itemprop="ratingValue">
-        <span class="BKTT-Icon fa-light fa-stars me-2"></span>
-        <span class="BKTT-Label">
-         <xsl:value-of select="translate(format-number(@Valoracion,'0.0'),'.',',')"/>
-        </span>
-       </p>
-      </xsl:if>
-     </div>
-    </div>
-   </div>
-  </li>
-</xsl:template>
-<!--FINRESTAURANTES2026-->
 <!--EventosRep-->
 <xsl:template name="EventosRep" match="Row[@Style='EventosRep']" mode="itemstyle">
   <xsl:variable name="SafeLinkUrl">

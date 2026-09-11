@@ -272,7 +272,7 @@
 		</div>
 	</div>
 </xsl:template>
-
+<!--Alojamientos "mismos" campos que restaurantes-->
 
 <!-- NOTICIAS -->
 <xsl:template name="Restaurantes2026" match="Row[@Style='Restaurantes2026']" mode="itemstyle">
