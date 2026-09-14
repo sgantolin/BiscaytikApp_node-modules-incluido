@@ -277,20 +277,13 @@
 <!-- NOTICIAS -->
 <xsl:template name="Restaurantes2026" match="Row[@Style='Restaurantes2026']" mode="itemstyle">
 
-	<div class="BKTT-CardContainer__item col">
-
+	<li class="BKTT-CardContainer__item col" itemscope="" itemtype="https://schema.org/NewsArticle">
 		<div class="BKTT-CardContainer__card card BKTT-CardContainer__card--horizontal BKTT-CardContainer__card--no-image">
-
-			<figure class="BKTT-Card__figure" itemprop="image">
-
 				<span class="BKTT-Badge badge bg-light text-dark">
 					<span>Parejas</span>
 				</span>
 
-			</figure>
-
 			<div class="BKTT-Card__main">
-
 				<h3 class="BKTT-Card__title">
 					<a class="BKTT-Link" href="/noticia-plan-cultural-1" itemprop="url">
 						<span class="BKTT-Label" itemprop="name">
@@ -338,7 +331,7 @@
 
 		</div>
 
-	</div>
+	</li>
 
 </xsl:template>
 
