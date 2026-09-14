@@ -67,8 +67,13 @@ body *:focus {
 	margin-top: 2rem;
 }
 
-.BKTT-ThemeTurismo a {
+.BKTT-Main a, .BKTT-Main a:visited, .BKTT-Main a:hover, .BKTT-Main a:active {
+	color: var(--primary-color) !important;
+	text-decoration: none;
+}
+.BKTT-Main a:hover	{
 	color: var(--link-color);
+	text-decoration: underline;
 }
 
 html main .BKTT-Badge.bg-primary,
@@ -147,7 +152,7 @@ h3,
 .BKTT-Data {
 	font-size: 16px;
 	line-height: 24px;
-	font-weight: 600;
+	/*font-weight: 600;*/
 }
 
 .BKTT-carousel {
@@ -181,7 +186,7 @@ h3,
 }
 
 /*Botones*/
-.BKTT-Main .BKTT-Button {
+.BKTT-Main .BKTT-Button, .BKTT-Main .tp-caption.slider_but7 a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -341,11 +346,13 @@ h3,
 	padding-left: 0;
 	display: flex;
 	align-items: center;
-	gap: 8px
+	gap: 8px;
+	flex-wrap: wrap !important;
 }
 
 .BKTT-Tags li {
 	list-style: none;
+	white-space: normal;
 }
 
 /*.BKTT-Tags .BKTT-Badge .BKTT-Icon {
@@ -547,10 +554,6 @@ h3,
 		display: none;
 	}
 
-	/*.BKTT-ThemeTurismo {
-		margin-top: 0;
-	}*/
-
 	.BKTT-EventoDetalle__title {
 		font-size: 1.75rem;
 	}
@@ -565,6 +568,9 @@ h3,
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
 		gap:8px;
+	}
+	.BKTT-Tags li .BKTT-Icon{
+		display:none;
 	}
 }
 

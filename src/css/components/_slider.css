@@ -34,6 +34,7 @@
 }
 
 /*end SHAREPINT OLD*/
+/*propuesta inicio*/
 .BKTT-FigureSlider--container {
  position: relative;
  width: 100%;
@@ -59,7 +60,6 @@
  list-style: none;
  padding-left: 0;
  margin-left: 0;
- /*display: block;*/
  display: flex;
  overflow: hidden;
 }
@@ -70,9 +70,6 @@
 
 .BKTT-FigureSlider figcaption {
  text-align: left;
- /*left: 2.8%;*
- bottom: 7.25rem;*/
- /*max-width: 1400px;*/
  bottom: 10rem;
  margin-left: -15px;
 }
@@ -84,7 +81,7 @@
 }
 
 .BKTT-FigureSlider figcaption h2 {
- color: var(--custom-white);
+ color: var(--custom-white)!important;
  font-size: 48px;
  line-height: 64px;
  font-weight: 600;
@@ -111,7 +108,6 @@
 .BKTT-FigureSlider .BKTT-CarrouselControl {
  position: absolute;
  bottom: 40px;
- /*left: 40px;*/
  left: 50%;
  display: flex;
  justify-content: space-between;
@@ -182,17 +178,6 @@
  filter: none;
 }
 
-/*.BKTT-FigureSlider--container .tp-leftarrow,
-.BKTT-FigureSlider--container .tp-rightarrow {
- position: absolute;
- top: 225px;
- z-index: 100;
- cursor: pointer;
- background-color: red;
- width: 39px;
- height: 46px;
-}*/
-
 .BKTT-FigureSlider--container .tp-leftarrow {
  left: 16px;
 }
@@ -211,7 +196,7 @@
 }
 
 .BKTT-carousel .BKTT-CarrouselControl .BKTT-Icon {
- color: var(--primary-color);
+ color: var(--primary-color)!important;
  font-size: 2rem;
 }
 
@@ -222,7 +207,6 @@
 .carousel-indicators {
  top: 20px;
  justify-content: right;
- /*margin-right: 15px;*/
 }
 
 .carousel-indicators [data-bs-target] {
@@ -234,10 +218,6 @@
 }
 
 @media (max-width: 1600px) {
-
- /*.BKTT-FigureSlider .carousel-inner .carousel-caption{
-  max-width: 1600px;
- }*/
  .BKTT-FigureSlider .carousel-caption {
   left: 8%;
  }
@@ -263,8 +243,6 @@
   justify-content: center;
   top: 12px!important;
   margin-left: 4%;
-  /*bottom: 0;
-  top: auto;*/
  }
 
  .BKTT-FigureSlider .BKTT-CarrouselControl {
@@ -274,7 +252,6 @@
  }
 
  .carousel-dark .carousel-caption {
-  /*left: 1rem;*/
   bottom: 4rem;
   display: block !important;
  }
@@ -282,3 +259,4 @@
   width:91%;
  }
 }
+/*propuesta end*/

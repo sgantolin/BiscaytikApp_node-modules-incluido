@@ -75,7 +75,7 @@
 .BKTT-Block--text-image .BKTT-Block__content,
 .BKTT-Block--image-text .BKTT-Block__content,
 .BKTT-Block--text-cards .BKTT-Block__content {
-  padding: 3rem;
+  padding: 3rem 3rem 3rem 0;
   justify-content: center;
   height: 100%;
 }
@@ -148,13 +148,12 @@
   object-fit: contain;
 }
 
-.BKTT-Block__title {
-  color: var(--primary-color);
+h2.BKTT-Block__title {
+  color: var(--custom-white)!important;
   margin: 0 0 2rem;
   font-size: clamp(1.75rem, 3vw, 3rem);
   line-height: 1.2;
   font-weight: 600;
-  color: #171717;
   max-width: 700px;
 }
 
