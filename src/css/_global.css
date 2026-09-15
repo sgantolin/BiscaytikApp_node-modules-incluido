@@ -106,7 +106,7 @@ body main .BKTT-Badge.bg-primary {
 	padding: 4px 8px;
 	background-color: var(--grey__background) !important;
 	gap: 8px;
-	display: flex;
+	display: flex!important;
 	align-items: center;
 	width: fit-content;
 }

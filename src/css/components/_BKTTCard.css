@@ -24,11 +24,11 @@
  min-width: 0;
 }
 
-.BKTT-CardContainer:not(.BKTT-CardContainer--column) .BKTT-CardContainer__item {
+/*.BKTT-CardContainer:not(.BKTT-CardContainer--column) .BKTT-CardContainer__item {
  flex: 1 1 223px;
  min-width: 223px;
  max-width: none;
-}
+}*/
 
 .BKTT-CardContainer.flex-column .BKTT-CardContainer__item {
  width: 100%;

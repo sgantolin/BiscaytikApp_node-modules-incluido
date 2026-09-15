@@ -1,103 +1,101 @@
 .BKTT-Main ul:has(> .BKTT-CardContainer__item) {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: flex-start !important;
-  flex-wrap: wrap;
-  gap: 8px;
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ display: flex;
+ justify-content: flex-start !important;
+ flex-wrap: wrap;
+ gap: 8px;
 }
 
 .BKTT-CardGrid {
-  display: flex;
-  flex-direction: column;
+ display: flex;
+ flex-direction: column;
 }
 
 .BKTT-CardGrid__sectionTitle {
-  margin-top: 2rem;
+ margin-top: 2rem;
 }
 
 .BKTT-CardGrid__item {
-  max-width: 33%;
+ max-width: 33%;
 }
 
 .BKTT-CardGrid__card {
-  border: none !important;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-  background-color: transparent;
-  box-shadow: none;
+ border: none !important;
+ border-radius: 8px;
+ overflow: hidden;
+ transition: box-shadow 0.3s ease, transform 0.3s ease;
+ text-decoration: none;
+ background-color: transparent;
+ box-shadow: none;
 }
 
 .BKTT-CardGrid__card .card-img-top {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+ width: 100%;
+ height: 150px;
+ object-fit: cover;
 }
 
 .BKTT-CardGrid__header {
-  background-color: var(--primary-color);
-  padding: 0.75rem 1rem;
-  height: 56px;
+ background-color: var(--primary-color);
+ padding: 0.75rem 1rem;
+ height: 56px;
 }
 
 
 .BKTT-CardGrid__card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ transform: translateY(-2px);
 }
 
 .BKTT-CardGrid__title,
 h3.BKTT-CardGrid__title {
-  color: var(--custom-white) !important;
-  margin: 0;
-  text-align: center;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: left;
+ color: var(--custom-white) !important;
+ margin: 0;
+ text-align: center;
+ font-weight: 600;
+ text-decoration: none;
+ text-align: left;
 }
 
-/*.BKTT-CardGrid__item .BKTT-CardGrid__title {
- text-align: center;
-}*/
-
 .BKTT-CardGrid__card:hover .BKTT-CardGrid__title {
-  text-decoration: none;
+ text-decoration: none;
 }
 
 .BKTT-Main .dfwp-item {
-  display: none;
+ display: none;
 }
 
 /*25 w*/
-.BKTT-WebPartZone-H25--L , .BKTT-WebPartZone-H25--R {
-  overflow: hidden;
-  overflow-x: auto;
+.BKTT-WebPartZone-H25--L,
+.BKTT-WebPartZone-H25--R {
+ overflow: hidden;
+ overflow-x: auto;
 }
+
 .BKTT-WebPartZone-H25--L ul,
 .BKTT-WebPartZone-H25--R ul {
-  gap: 8px !important;
-  overflow-y: hidden;
-  flex-wrap: nowrap !important;
+ gap: 8px !important;
+ overflow-y: hidden;
+ flex-wrap: nowrap !important;
 }
 
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__item,
 .BKTT-WebPartZone-H25--R .BKTT-CardContainer__item {
-  max-width: 48%;
+ max-width: 48%;
 }
 
 /*end 25 w*/
 /*noticias*/
 .BKTT-CardContainer__card--no-image {
-  padding-top: 1rem !important;
-  align-items: flex-start !important;
+ /*padding-top: 1rem !important;*/
+ align-items: flex-start !important;
 }
 
 .BKTT-CardContainer__card--no-image .BKTT-Badge {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+ margin-left: 1rem;
+ margin-bottom: 1rem;
 }
 
 /*noticias end*/
@@ -108,45 +106,104 @@ h3.BKTT-CardGrid__title {
 .BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal {
-  flex-direction: column;
+ flex-direction: column;
 }
 
-.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
+/*.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
 .BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
+.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,*/
 .BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal p {
-  display: none;
+ display: none;
 }
 
 /*end rutas*/
+.BKTT-Main ul:has(> .BKTT-CardContainer__item) {
+ margin-bottom: 0.5rem;
+}
 
+/*horizontal*/
+.BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal),
+.dfwp-column:has(.BKTT-CardContainer__card--horizontal) {
+ flex-direction: column;
+}
+
+.BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal) li:nth-child(odd),
+.dfwp-column:has(.BKTT-CardContainer__card--horizontal) li:nth-child(odd) {
+ background-color: #F1F1F2;
+}
+
+.BKTT-CardContainer__card.BKTT-CardContainer__card--no-image .BKTT-Card__main {
+ border: none !important;
+}
+
+[class*="BKTT-WebPartZone-H25--"] .BKTT-CardContainer__item,
+[class*="BKTT-WebPartZone-H33--"] .BKTT-CardContainer__item,
+[class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item {
+ scroll-snap-align: start;
+}
+
+[class*="BKTT-WebPartZone-H25--"] .BKTT-Card__Data,
+[class*="BKTT-WebPartZone-H33--"] .BKTT-Card__Data,
+[class*="BKTT-WebPartZone-H50--"] .BKTT-Card__Data {
+ flex-wrap: wrap;
+}
+
+/* 
+    flex-grow: 1   -> Si faltan elementos, crecen hasta llenar el contenedor.
+    flex-shrink: 0 -> Si sobran elementos, no se encogen (fuerza el scroll).
+    flex-basis: ...-> El tamaño ideal cuando hay suficientes elementos (1.5 elementos por pantalla).
+  */
+/*25*/
+[class*="BKTT-WebPartZone-H25--"] .BKTT-CardContainer__item {
+ /* Calcula el ancho para que quepa 1 elemento completo y la mitad de otro, restando el espacio del gap */
+ flex: 1 0 calc((100% - 8px) / 1.5);
+ /* Se alinea al inicio al hacer scroll */
+}
+
+/*33*/
+
+[class*="BKTT-WebPartZone-H33--"] .BKTT-CardContainer__item {
+ flex: 1 0 calc((100% - 8px) / 2);
+}
+
+/*50*/
+[class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item {
+ flex: 1 0 calc((100% - 16px) / 3);
+}
+
+/*full*/
+[class*="BKTT-WebPartZone-fullWidth"] .BKTT-CardContainer__item,
+[class*="BKTT-WebPartZone-fullWidth"] .carousel-item .BKTT-CardContainer__item {
+ flex: 1 0 calc((100% - 40px) / 6) !important;
+ max-width: 100% !important
+}
 
 @media (max-width: 991px) {
-  .BKTT-CardGrid {
-    flex-direction: column;
-  }
+ .BKTT-CardGrid {
+  flex-direction: column;
+ }
 
-  .BKTT-CardGrid__item {
-    max-width: 100%;
-  }
+ .BKTT-CardGrid__item {
+  max-width: 100%;
+ }
 
-  /*rutas*/
-  [class*="BKTT-WebPartZone-"] .BKTT-CardContainer__card--horizontal {
-    flex-direction: column;
-  }
+ /*rutas*/
+ [class*="BKTT-WebPartZone-"] .BKTT-CardContainer__card--horizontal {
+  flex-direction: column;
+ }
 
-  [class*="BKTT-WebPartZone-"] .BKTT-Card__figure,
-  [class*="BKTT-WebPartZone-"] p {
-    display: none;
-  }
+ [class*="BKTT-WebPartZone-"] .BKTT-Card__figure,
+ [class*="BKTT-WebPartZone-"] p {
+  display: none;
+ }
 
-  /*end rutas*/
+ /*end rutas*/
 }
