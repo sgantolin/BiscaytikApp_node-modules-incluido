@@ -187,7 +187,10 @@ h3.BKTT-CardGrid__title {
 }
 
 @media (max-width: 991px) {
- .BKTT-CardGrid {
+ [class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item {
+    flex: 1;
+}
+ .BKTT-CardGrid, .BKTT-Main ul:has(> .BKTT-CardContainer__item){
   flex-direction: column;
  }
 
@@ -200,7 +203,7 @@ h3.BKTT-CardGrid__title {
   flex-direction: column;
  }
 
- [class*="BKTT-WebPartZone-"] .BKTT-Card__figure,
+ /*[class*="BKTT-WebPartZone-"] .BKTT-Card__figure,*/
  [class*="BKTT-WebPartZone-"] p {
   display: none;
  }
