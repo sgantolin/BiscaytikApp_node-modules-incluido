@@ -993,7 +993,7 @@
       <span class="BKTT-Icon fa-solid fa-link me-1">
        <xsl:text>&#8203;</xsl:text>
       </span>
-      <span class="BKTT-Label">Reserva</span></button></div>
+      <span class="BKTT-Label">Reservar</span></button></div>
     </div>
    </div>
   </li>
@@ -1085,7 +1085,7 @@
        <span class="BKTT-Icon fa-solid fa-link me-1">
         <xsl:text>&#8203;</xsl:text>
        </span>
-       <span class="BKTT-Label">RESERVAR</span>
+       <span class="BKTT-Label">Reservar</span>
       </button>
      </div>
 

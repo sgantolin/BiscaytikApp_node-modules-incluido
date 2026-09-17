@@ -376,9 +376,44 @@
  <div class="container">
   <div class="row">
    <div class="BKTT-WebPartZone-H50--L col-md-6">
+  <style>
+   .BKTT-Map--static {
+    position: relative;
+    height: 652px;
+    min-height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #e9ecef;
+   }
+
+   .BKTT-Map--static > :not(iframe) {
+    display: none !important;
+   }
+
+   .BKTT-Map--static iframe {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+   }
+
+   @media (max-width: 767.98px) {
+    .BKTT-Map--static {
+     height: 420px;
+    }
+   }
+  </style>
     <div id="map"
-     class="BKTT-Map leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-     tabindex="0" style="position: relative;">
+   class="BKTT-Map BKTT-Map--static"
+   tabindex="0" style="position: relative; height: 652px; min-height: 320px; overflow: hidden;">
+   <iframe
+    title="Mapa de Plentzia"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-2.98%2C43.38%2C-2.93%2C43.43&layer=mapnik&marker=43.405%2C-2.947"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
      <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
       <div class="leaflet-pane leaflet-tile-pane">
        <div class="leaflet-layer " style="z-index: 3; opacity: 1;">
@@ -850,7 +885,6 @@
       ">
      <li class="BKTT-CardContainer__item col " itemscope="" itemtype="https://schema.org/Event">
       <div class="BKTT-CardContainer__card card 
-    BKTT-CardContainer__card--horizontal 
     BKTT-CardContainer__card--no-image
     ">
        <figure class="BKTT-Card__figure" itemprop="image"><span
@@ -875,7 +909,6 @@
      </li>
      <li class="BKTT-CardContainer__item col " itemscope="" itemtype="https://schema.org/Event">
       <div class="BKTT-CardContainer__card card 
-    BKTT-CardContainer__card--horizontal 
     BKTT-CardContainer__card--no-image
     ">
        <figure class="BKTT-Card__figure" itemprop="image"><span
@@ -899,7 +932,6 @@
      </li>
      <li class="BKTT-CardContainer__item col " itemscope="" itemtype="https://schema.org/Event">
       <div class="BKTT-CardContainer__card card 
-    BKTT-CardContainer__card--horizontal 
     BKTT-CardContainer__card--no-image
     ">
        <figure class="BKTT-Card__figure" itemprop="image"><span
@@ -923,7 +955,6 @@
      </li>
      <li class="BKTT-CardContainer__item col " itemscope="" itemtype="https://schema.org/Event">
       <div class="BKTT-CardContainer__card card 
-    BKTT-CardContainer__card--horizontal 
     BKTT-CardContainer__card--no-image
     ">
        <figure class="BKTT-Card__figure" itemprop="image"><span

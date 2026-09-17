@@ -56,13 +56,11 @@
 								<div class="row">
 									<div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
 										<div class=" container">
-											<div class="container">
 												<nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
 													<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
 														SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
 														runat="server" />
 												</nav>
-											</div>
 										</div>
 										<figure class="BKTT-FigureImg" itemprop="image" itemscope
 											itemtype="https://schema.org/ImageObject">
