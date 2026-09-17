@@ -29,8 +29,8 @@ body *:focus {
 .BKTT-Main h6 {
 	margin-left: 0;
 	margin-right: 0;
-	font-family: var(--font-family)!important;
-	color: var(--text-color)!important;
+	font-family: var(--font-family) !important;
+	color: var(--text-color) !important;
 	font-weight: 600;
 }
 
@@ -67,11 +67,15 @@ body *:focus {
 	margin-top: 2rem;
 }
 
-.BKTT-Main a, .BKTT-Main a:visited, .BKTT-Main a:hover, .BKTT-Main a:active {
+.BKTT-Main a,
+.BKTT-Main a:visited,
+.BKTT-Main a:hover,
+.BKTT-Main a:active {
 	color: var(--primary-color) !important;
 	text-decoration: none;
 }
-.BKTT-Main a:hover	{
+
+.BKTT-Main a:hover {
 	color: var(--link-color);
 	text-decoration: underline;
 }
@@ -106,7 +110,7 @@ body main .BKTT-Badge.bg-primary {
 	padding: 4px 8px;
 	background-color: var(--grey__background) !important;
 	gap: 8px;
-	display: flex!important;
+	display: flex !important;
 	align-items: center;
 	width: fit-content;
 }
@@ -186,7 +190,8 @@ h3,
 }
 
 /*Botones*/
-.BKTT-Main .BKTT-Button, .BKTT-Main .tp-caption.slider_but7 a {
+.BKTT-Main .BKTT-Button,
+.BKTT-Main .tp-caption.slider_but7 a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -339,6 +344,27 @@ h3,
 	height: auto;
 	display: block;
 	margin-bottom: 2rem;
+}/*
+.BKTT-Listado .container+.BKTT-FigureImg {
+	height: 120px;
+	position: relative;
+}
+
+.BKTT-Listado .container+.BKTT-FigureImg:before {
+	width: 100%;
+	background-color: var(--primary-color) !important;
+	content: "";
+	position: absolute;
+	height: 100%;
+	opacity: 40%;
+	mix-blend-mode: multiply;
+}
+.BKTT-ListadoHero .container{
+	position: absolute;
+	top: 40px;
+}*/
+.BKTT-ListadoHero h1 {
+	color: var(--custom-white) !important;
 }
 
 /*end listado*/
@@ -527,12 +553,13 @@ h3,
 
 /* Responsive */
 @media (max-width: 991px) {
+
 	/*main.BKTT-Main {
 		/*padding-top: 0;
 		margin-top:55px;*
 	}*/
-	.BKTT-ThemeTurismo{
-		margin-top:0;
+	.BKTT-ThemeTurismo {
+		margin-top: 0;
 	}
 
 	.BKTT-Main .row {
@@ -567,10 +594,11 @@ h3,
 		flex-direction: column;
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
-		gap:8px;
+		gap: 8px;
 	}
-	.BKTT-Tags li .BKTT-Icon{
-		display:none;
+
+	.BKTT-Tags li .BKTT-Icon {
+		display: none;
 	}
 }
 
