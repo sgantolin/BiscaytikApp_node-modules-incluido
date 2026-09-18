@@ -226,28 +226,23 @@
                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" BlockElement="true" CssClass="BKTT-Search " runat="server">
                     <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
                      <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
+                     <div class="BKTT-Search--mobile" id="toggle-search" type="button" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="BKTT-Button btn btn-primary" type="reset">
+                         <span class="BKTT-Icon fa-light fa-search"></span>
+                        </button>
+                    <div class="container" id="BKTT-Search--mobileCollap">
+                     <!--SharePoint buscador-->
                      <div class="input-group d-flex align-items-center">
                       <div id="searchInputBox" CssClass="form-control">
                        <SharePoint:DelegateControl ID="DelegateControl2" runat="server" ControlId="SmallSearchInputBox" />
                       </div>
                      </div>
-                    </asp:ContentPlaceHolder>
-                   </SharePoint:AjaxDelta>
-                   <div class="BKTT-Search--mobile" id="toggle-search" type="button" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="collapseExample">
-                    <button class="BKTT-Button btn btn-primary" type="reset">
-                         <span class="BKTT-Icon fa-light fa-search"></span>
-                        </button>
-                    <div class="container" id="BKTT-Search--mobileCollap">
-                     <form action="" method="GET" role="search">
-                      <div class="input-group">
-                       <input type="text" class="form-control" name="q" placeholder="Búsqueda..."/>
-                       <span class="input-group-btn">
-                        <button class="BKTT-Button btn btn-primary" type="submit" aria-label="Submit search"><span class="BKTT-Icon fa-light fa-search"></span></button>
-                       </span>
-                      </div>
-                     </form>
+                     <!--end sharepoint buscador-->
                     </div>
                    </div>
+                     
+                    </asp:ContentPlaceHolder>
+                   </SharePoint:AjaxDelta>
                    <!--end form-->
                    <!--BKTT-Nav-->
                    <nav class="BKTT-Nav navbar navbar-expand-lg" role="navigation">
@@ -269,15 +264,15 @@
                         <!--end lang mob-->
                      </div>
                     </div>
-                    
                    </nav>
                    <!--End BKTT-Nav-->
+				   <!--BKTT-LangSelect-->
                    <div class="BKTT-LangSelect header-end">
                     <button class="btn btn-line dropdown-toggle" type="button" id="dropdownMenuLangButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="BKTT-Icon fa-light fa-globe me-1"></span> ES
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLangButton">
-                     <biscaytik:VariationsMenu ID="LanguageSelector1" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu>
+                     <biscaytik:VariationsMenu2026 ID="LanguageSelector1" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu2026>
                     </div>
                    </div>
                    <!--end BKTT-LangSelect-->

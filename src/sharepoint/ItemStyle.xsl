@@ -1051,7 +1051,7 @@
      <div class="BKTT-Card__Body">
       <div class="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
        <date>
-        <span class="BKTT-Icon fa-light fa-calendar me-3">
+        <span class="BKTT-Icon fa-light fa-calendar me-2">
          <xsl:text>&#8203;</xsl:text>
         </span>
         <time datetime="2026-01-12" itemprop="startDate">12/01/2026</time>

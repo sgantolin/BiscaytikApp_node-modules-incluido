@@ -11,7 +11,7 @@ import GestionUsuarios from "./pages/gestionUsuarios/GestionUsuarios";
 import GestionUsuariosCrear from "./pages/gestionUsuarios/GestionUsuariosCrear";
 import GestionUsuariosEditar from "./pages/gestionUsuarios/GestionUsuariosEditar";
 import GestionUsuariosVer from "./pages/gestionUsuarios/GestionUsuariosVer";
-import UsuariosAdministradores from "./pages/UsuariosAdministradores/usuariosAdministradores";
+import UsuariosAdministradores from "./pages/usuariosAdministradores/usuariosAdministradores";
 import GenerarListados from "./pages/listados/GenerarListados";
 import BajaMasivaUsuarios from "./pages/bajaMasivaUsuarios/BajaMasivaUsuarios";
 import ReactivacionMasivaUsuarios from "./pages/reactivacionMasivaUsuarios/ReactivacionMasivaUsuarios";

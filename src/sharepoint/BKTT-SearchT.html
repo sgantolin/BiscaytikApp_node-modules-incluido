@@ -1,0 +1,55 @@
+<div id="DeltaPlaceHolderSearchArea" class="BKTT-Search ">
+ <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
+ <div class="input-group d-flex align-items-center">
+  <div id="searchInputBox" cssclass="form-control">
+   <div class="ms-webpart-chrome ms-webpart-chrome-fullWidth ">
+    <div webpartid="00000000-0000-0000-0000-000000000000" haspers="true" id="WebPartWPQ1" width="100%"
+     class="ms-WPBody " onlyformepart="true" allowdelete="false" style="">
+     <div componentid="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr"
+      id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr">
+      <div id="SearchBox" name="Control">
+       <div class="ms-srch-sb ms-srch-sb-border" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv">
+        <input type="text" value="b" maxlength="2048" accesskey="S" title="Búsqueda..."
+         id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox" autocomplete="off" autocorrect="off"
+         onkeypress="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {if (Srch.U.isEnterKey(String.fromCharCode(event.keyCode))) {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);return Srch.U.cancelEvent(event);}})"
+         onkeydown="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.activateDefaultQuerySuggestionBehavior();})"
+         onfocus="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.hidePrompt();ctl.setBorder(true);})"
+         onblur="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'); if (ctl){ ctl.showPrompt(); ctl.setBorder(false);}})"
+         class="ms-textSmall "><a title="Realiza búsquedas" role="button" class="ms-srch-sb-searchLink"
+         id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink"
+         onclick="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);})"
+         href="javascript: {}"><img src="/_layouts/15/images/searchresultui.png?rev=40" class="ms-srch-sb-searchImg"
+          id="searchImg" alt="Realiza búsquedas"></a>
+        <div class="ms-qSuggest-container ms-shadow" id="AutoCompContainer">
+         <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList"></div>
+        </div>
+       </div>
+      </div>
+     </div><noscript>
+      <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_noscript">Parece que el explorador no tiene
+       JavaScript
+       habilitado. Active JavaScript e inténtelo de nuevo.</div>
+     </noscript>
+     <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1">
+
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="BKTT-Search--mobile" id="toggle-search" type="button" data-bs-toggle="collapse"
+  data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="true" aria-controls="collapseExample">
+  <button class="BKTT-Button btn btn-primary" type="reset">
+   <span class="BKTT-Icon fa-light fa-search"></span>
+  </button>
+  <div class="container collapse show" id="BKTT-Search--mobileCollap">
+   <div class="input-group">
+    <input type="text" class="form-control" name="q" placeholder="Búsqueda...">
+    <span class="input-group-btn">
+     <button class="BKTT-Button btn btn-primary" type="submit" aria-label="Submit search"><span
+       class="BKTT-Icon fa-light fa-search"></span></button>
+    </span>
+   </div>
+  </div>
+ </div>
+</div>

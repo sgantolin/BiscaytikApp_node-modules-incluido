@@ -100,21 +100,17 @@ h3.BKTT-CardGrid__title {
 
 /*noticias end*/
 /*rutas*/
-.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal,
+/*.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal,
 .BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal {
+.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal,
+.BKTT-Listado */
+[class*="BKTT-WebPartZone-H25--"] .BKTT-CardContainer__card--horizontal {
  flex-direction: column;
 }
 
-/*.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,
-.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal .BKTT-Card__figure,*/
 .BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal p,
 .BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal p,
@@ -181,11 +177,16 @@ h3.BKTT-CardGrid__title {
 
 /*full*/
 [class*="BKTT-WebPartZone-fullWidth"] .BKTT-CardContainer__item,
-[class*="BKTT-WebPartZone-fullWidth"] .carousel-item .BKTT-CardContainer__item {
+[class*="BKTT-WebPartZone-fullWidth"] .carousel-item .BKTT-CardContainer__item,
+.WPZT-ListCont--Default.col-12 .BKTT-CardContainer__item{
  flex: 1 0 calc((100% - 40px) / 6) !important;
  max-width: 100% !important
 }
-
+/*listado*/
+.BKTT-Listado 
+[class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item .BKTT-CardContainer__card{
+    flex-direction: row;
+    }
 @media (max-width: 991px) {
  [class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item {
     flex: 1;

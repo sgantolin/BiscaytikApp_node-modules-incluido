@@ -108,26 +108,39 @@ function Home() {
  // Initialize Leaflet map when the Home component mounts and the #map element is present
  useEffect(() => {
   let mapInstance = null;
-  if (typeof window !== 'undefined' && window.initLeafletMap) {
-   // Wait a tick to ensure the #map element is rendered
-   const t = setTimeout(() => {
+  let retryTimer = null;
+
+  const init = () => {
+   if (typeof window !== 'undefined' && window.initLeafletMap) {
     try {
      const el = document.getElementById('map');
      if (el) {
       mapInstance = window.initLeafletMap('map');
+      return true;
      }
     } catch (e) {
      console.warn('initLeafletMap failed', e);
     }
-   }, 0);
+   }
+   return false;
+  };
+
+  if (!init()) {
+   retryTimer = setInterval(() => {
+    if (init()) clearInterval(retryTimer);
+   }, 100);
+  }
 
    return () => {
-    clearTimeout(t);
+    if (retryTimer) clearInterval(retryTimer);
     try {
-     if (mapInstance && mapInstance.remove) mapInstance.remove();
+     if (mapInstance && mapInstance.remove) {
+      mapInstance.remove();
+      const mapElement = document.getElementById('map');
+      if (mapElement) delete mapElement._bktLeafletMap;
+     }
     } catch (e) { }
    };
-  }
  }, []);
 
  const AgendaCardss = [

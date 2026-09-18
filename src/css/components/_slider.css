@@ -32,7 +32,7 @@
 .BKTT-Main .tp-rightarrow:before {
  content: "\f105";
 }
-
+.BKTT-Main {}
 /*end SHAREPINT OLD*/
 /*propuesta inicio*/
 .BKTT-FigureSlider--container {
@@ -122,11 +122,11 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl>div {
- width: 80px;
+ width: fit-content;
  position: relative;
  top: 0;
  justify-content: flex-end;
- margin-left: 12px;
+ margin-left: 24px;
  margin-right: 5px;
  display: flex;
 }
@@ -135,14 +135,13 @@
  border: none;
  background-color: transparent;
  color: var(--custom-white);
- font-size: 1.6rem;
+ font-size: 2rem;
  width: auto;
  min-width: auto;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {
- width: 26px;
- height: 26px;
+ width: 40px;
  position: relative;
  opacity: 1;
  border: 2px solid;
@@ -165,9 +164,8 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-left:before {
- top: 0;
- left: 5px;
- line-height: 23px;
+ top: 7px;
+ left: 12px;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button:hover {
@@ -257,6 +255,9 @@
  }
  .carousel-dark .carousel-caption {
   width:91%;
+ }
+ .BKTT-FigureSlider figcaption h2 {
+  max-width: 100%;
  }
 }
 /*propuesta end*/
