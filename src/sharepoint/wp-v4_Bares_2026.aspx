@@ -45,29 +45,28 @@
 
 							<div id="BKTT-ListadoBares" class="BKTT-Listado row">
 								<div class="container">
-										<nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
-											<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
-												SiteCollectionWeb="false" id="ExtendedBreadcrumb1" runat="server" />
-										</nav>
+									<nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
+										<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false" SiteCollectionWeb="false"
+											id="ExtendedBreadcrumb1" runat="server" />
+									</nav>
+								</div>
+								<section class="BKTT-ListadoHero">
+									<div
+										class="container d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+										<h1 class="mb-0">
+											<SharePointWebControls:TextField runat="server" FieldName="Title">
+											</SharePointWebControls:TextField>
+										</h1>
 									</div>
-									<section class="BKTT-ListadoHero">
-										<div class="container d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
-												<h1 class="mb-0">
-													<SharePointWebControls:TextField runat="server" FieldName="Title">
-													</SharePointWebControls:TextField>
-												</h1>
-											</div>
-										<!--<figure class="BKTT-FigureImg" itemprop="image" itemscope
+									<!--<figure class="BKTT-FigureImg" itemprop="image" itemscope
 											itemtype="https://schema.org/ImageObject">
 											<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/listadoimg.jpg"
 												class="card-img-top" alt="Berdel eguna" itemprop="image">
 											
 										</figure>-->
-									</section>
-								
+								</section>
+
 								<div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
-									
-									
 									<div class="container">
 										<div class="row">
 											<div class="WPZT-ListCont--Default col-12">
@@ -92,6 +91,7 @@
 													Orientation="Vertical">
 													<ZoneTemplate></ZoneTemplate>
 												</WebPartPages:WebPartZone>
+												
 											</div>
 										</div>
 										<div class="row">

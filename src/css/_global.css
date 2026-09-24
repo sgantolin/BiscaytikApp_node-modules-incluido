@@ -62,6 +62,10 @@ body *:focus {
 	margin-left: 0.5rem;
 }
 
+.BKTT-ThemeTurismo .s4-wpActive {
+ width: 100%;
+}
+
 /*lista layout*/
 .WPZT-ListCont--Default {
 	margin-top: 2rem;
@@ -69,15 +73,22 @@ body *:focus {
 
 .BKTT-Main a,
 .BKTT-Main a:visited,
-.BKTT-Main a:hover,
 .BKTT-Main a:active {
-	color: var(--primary-color) !important;
 	text-decoration: none;
+	color: var(--primary-color);
+	transition: all 0.3s ease-in-out;
 }
 
-.BKTT-Main a:hover {
+.BKTT-Main a:hover,
+.BKTT-footer a,
+.BKTT-footer a:visited,
+.BKTT-footer a:active {
 	color: var(--link-color);
+	transition: all 0.3s ease-in-out;
+}
+.BKTT-footer a:hover{
 	text-decoration: underline;
+	color: var(--primary-color);
 }
 
 html main .BKTT-Badge.bg-primary,
@@ -197,11 +208,11 @@ h3,
 	justify-content: center;
 	gap: 8px;
 	width: 100%;
-	padding: 0.5rem 0;
+	padding: 0.5rem 1rem;
 	border: 0;
 	border-radius: 0.2rem;
 	background: var(--primary-color);
-	color: var(--custom-white);
+	color: var(--custom-white)!important;
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
 	min-width: auto;
@@ -344,25 +355,7 @@ h3,
 	height: auto;
 	display: block;
 	margin-bottom: 2rem;
-}/*
-.BKTT-Listado .container+.BKTT-FigureImg {
-	height: 120px;
-	position: relative;
 }
-
-.BKTT-Listado .container+.BKTT-FigureImg:before {
-	width: 100%;
-	background-color: var(--primary-color) !important;
-	content: "";
-	position: absolute;
-	height: 100%;
-	opacity: 40%;
-	mix-blend-mode: multiply;
-}
-.BKTT-ListadoHero .container{
-	position: absolute;
-	top: 40px;
-}*/
 .BKTT-ListadoHero h1 {
 	color: var(--custom-white) !important;
 }

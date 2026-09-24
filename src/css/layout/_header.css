@@ -70,6 +70,10 @@
 	padding: 14px 15px;
 	top: 3px;
 }
+/*.BKTT-Search .input-group input:focus + .ms-srch-sb-searchLink´{
+	background-color: var(--secondary-color) !important;
+	border-color: var(--secondary-color);
+}*/
 
 .BKTT-Search .ms-srch-sb-searchLink .ms-srch-sb-searchImg {
 	display: none;

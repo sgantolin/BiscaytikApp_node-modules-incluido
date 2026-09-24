@@ -56,7 +56,6 @@ h3.BKTT-CardGrid__title {
  text-align: center;
  font-weight: 600;
  text-decoration: none;
- text-align: left;
 }
 
 .BKTT-CardGrid__card:hover .BKTT-CardGrid__title {
@@ -89,7 +88,6 @@ h3.BKTT-CardGrid__title {
 /*end 25 w*/
 /*noticias*/
 .BKTT-CardContainer__card--no-image {
- /*padding-top: 1rem !important;*/
  align-items: flex-start !important;
 }
 
@@ -100,13 +98,6 @@ h3.BKTT-CardGrid__title {
 
 /*noticias end*/
 /*rutas*/
-/*.BKTT-WebPartZone-H25--R .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--L .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--1 .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--2 .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--3 .BKTT-CardContainer__card--horizontal,
-.BKTT-WebPartZone-H25--4 .BKTT-CardContainer__card--horizontal,
-.BKTT-Listado */
 [class*="BKTT-WebPartZone-H25--"] .BKTT-CardContainer__card--horizontal {
  flex-direction: column;
 }
@@ -129,6 +120,7 @@ h3.BKTT-CardGrid__title {
 .BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal),
 .dfwp-column:has(.BKTT-CardContainer__card--horizontal) {
  flex-direction: column;
+ flex-wrap: nowrap !important;
 }
 
 .BKTT-CardContainer:has(.BKTT-CardContainer__card--horizontal) li:nth-child(odd),
@@ -178,20 +170,27 @@ h3.BKTT-CardGrid__title {
 /*full*/
 [class*="BKTT-WebPartZone-fullWidth"] .BKTT-CardContainer__item,
 [class*="BKTT-WebPartZone-fullWidth"] .carousel-item .BKTT-CardContainer__item,
-.WPZT-ListCont--Default.col-12 .BKTT-CardContainer__item{
+.WPZT-ListCont--Default.col-12 .BKTT-CardContainer__item {
  flex: 1 0 calc((100% - 40px) / 6) !important;
  max-width: 100% !important
 }
+
 /*listado*/
-.BKTT-Listado 
-[class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item .BKTT-CardContainer__card{
-    flex-direction: row;
-    }
+.BKTT-Listado [class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item .BKTT-CardContainer__card {
+ flex-direction: row;
+}
+
+.BKTT-carousel .BKTT-CarrouselControl {
+ bottom: 0 !important;
+}
+
 @media (max-width: 991px) {
  [class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item {
-    flex: 1;
-}
- .BKTT-CardGrid, .BKTT-Main ul:has(> .BKTT-CardContainer__item){
+  flex: 1;
+ }
+
+ .BKTT-CardGrid,
+ .BKTT-Main ul:has(> .BKTT-CardContainer__item) {
   flex-direction: column;
  }
 
