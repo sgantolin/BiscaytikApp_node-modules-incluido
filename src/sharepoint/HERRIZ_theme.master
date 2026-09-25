@@ -296,56 +296,60 @@
         <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server"> </asp:ContentPlaceHolder>
 		     </SharePoint:AjaxDelta>
     </main>
-		    <footer class="BKTT-footer container-fluid">
-		     <div class="container">
-        <div class="row">
-         <div class="col-12 col-md-3 text-center text-sm-start">
-          <biscaytik:FooterWebControl id="pieizq" runat="server" zone="Izquierda"></biscaytik:FooterWebControl>
-         </div>
-         <div class="col-12 col-md-3 text-center text-sm-start">
-          <biscaytik:FooterWebControl id="piecentro" runat="server" zone="Centro"></biscaytik:FooterWebControl>
-         </div>
-         <div class="col-12 col-md-3 text-center text-sm-start">
-          <biscaytik:FooterWebControl id="piedch" runat="server" zone="Derecha"></biscaytik:FooterWebControl> 
-         </div>
-         <div class="col-12 col-md-3 text-center text-sm-start">
-          <ul class="BKTT-RRSS list-group list-group-horizontal mb-5">
-           <li class="list-group-item">
-            <a href="#" target="_blank" rel="">
-            <span class="BKTT-Icon fa-brands fa-facebook fs-3 me-3"></span>
-            </a>
-           </li>
-           <li class="list-group-item">
-            <a href="#" target="_blank" rel="">
-            <span class="BKTT-Icon fa-brands fa-instagram fs-3 me-3"></span>
-            </a>
-           </li>
-           <li class="list-group-item">
-            <a href="#" target="_blank" rel="">
-            <span class="BKTT-Icon fa-brands fa-whatsapp fs-3 me-3"></span>
-            </a>
-           </li>
-           <li class="list-group-item">
-            <a href="#" target="_blank" rel="">
-            <span class="BKTT-Icon fa-sharp fa-light fa-messages fs-3"></span>
-            </a>
-           </li>
-          </ul>
-          <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
-         </div>
-        </div>
-        <div class="row mt-4">
-         <div class="col-12 text-center">
-          <biscaytik:PortalContentWebControl id="contentrightbotton" CssClass="text-center" runat="server" zone="bottonright"/>						
-         </div>        						        
-        </div> 
-							</div>
+		  <footer class="BKTT-footer container-fluid">
+		   <div class="container">
+      <div class="row">
+       <div class="col-12 col-md-3 text-center text-sm-start">
+        <biscaytik:FooterWebControl id="pieizq" runat="server" zone="Izquierda"></biscaytik:FooterWebControl>
+       </div>
+       <div class="col-12 col-md-3 text-center text-sm-start">
+        <biscaytik:FooterWebControl id="piecentro" runat="server" zone="Centro"></biscaytik:FooterWebControl>
+       </div>
+       <div class="col-12 col-md-3 text-center text-sm-start">
+        <biscaytik:FooterWebControl id="piedch" runat="server" zone="Derecha"></biscaytik:FooterWebControl> 
+       </div>
+       <div class="col-12 col-md-3 text-center text-sm-start">
+        <ul class="BKTT-RRSS list-group list-group-horizontal mb-5">
+         <li class="list-group-item">
+          <a href="#" target="_blank" rel="">
+           <span class="BKTT-Icon fa-brands fa-facebook fs-3 me-3"></span>
+          </a>
+         </li>
+         <li class="list-group-item">
+          <a href="#" target="_blank" rel="">
+           <span class="BKTT-Icon fa-brands fa-instagram fs-3 me-3"></span>
+          </a>
+         </li>
+         <li class="list-group-item">
+          <a href="#" target="_blank" rel="">
+           <span class="BKTT-Icon fa-brands fa-whatsapp fs-3 me-3"></span>
+          </a>
+         </li>
+         <li class="list-group-item">
+          <a href="#" target="_blank" rel="">
+           <span class="BKTT-Icon fa-sharp fa-light fa-messages fs-3"></span>
+          </a>
+         </li>
+        </ul>
+        <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
+       </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+       <img alt="logotipo diputación Bizkaia Bizkaiko Foru aldundia" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/diputacion_Bizkaia.svg" />
+       <img alt="logotipo govierno vasco - eusko jaurlaritza" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/diputacion_Bizkaia.svg" />
+      </div>
+      <div class="row mt-4">
+       <div class="col-12 text-center">
+        <biscaytik:PortalContentWebControl id="contentrightbotton" CssClass="text-center" runat="server" zone="bottonright"/>						
+       </div>        						        
+      </div> 
+					</div>
        <a href="#" class="BKTT-BackTop btn btn-primary btn-floating btn-lg scrollup" style="display: inline;">
         <span class="fas fa-arrow-up"></span>
        </a>
 						</footer>
 					</div>
-            	</div>
+    </div>
     <SharePointWebControls:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server"><asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server"><SharePointWebControls:formdigest ID="Formdigest1" runat="server" /></asp:ContentPlaceHolder></SharePointWebControls:AjaxDelta></SharePointWebControls:SharePointForm><SharePointWebControls:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server"><asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" /></SharePointWebControls:AjaxDelta><asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" Visible="False" runat="server" /><asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" Visible="False" runat="server" />
 	<asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" Visible="False" runat="server" >
 	</asp:ContentPlaceHolder>
