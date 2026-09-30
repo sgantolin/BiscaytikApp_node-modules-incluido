@@ -109,6 +109,35 @@
 .BKTT-Search--mobile>.BKTT-Button {
 	display: none;
 }
+.BKTT-LangSelect .dropdown-toggle{
+        min-width:fit-content;
+    }
+    .BKTT-LangSelect .BKTT-Icon{
+        margin-right:8px!important;
+    }
+    .BKTT-LangSelect .dropdown-toggle::after{
+        color: var(--primary-color);
+        margin-right: 0;
+        font-family: 'Font Awesome 6 Pro';
+        content: "\f078"!important;
+        vertical-align: 0;
+        border: none;
+        font-weight: 400;
+    }
+    .BKTT-LangSelect .dropdown-menu, .BKTT-LangSelect .dropdown-menu ul, .BKTT-LangSelect .dropdown-menu li{
+        width:fit-content;
+    }
+    .BKTT-LangSelect .dropdown-menu ul{
+        padding-left:1rem!important;
+        margin-bottom:0!important;
+    }
+    .BKTT-LangSelect .dropdown-menu li{
+        list-style:none;
+    }
+    .BKTT-LangSelect .dropdown-menu li a{
+        color:var(--primary-color);
+        text-decoration:none;
+    }
 
 @media (max-width: 1255px) {
 	.BKTT-Header .container .d-flex .BKTT-Logo {
@@ -137,6 +166,10 @@
 	}
 
 	.BKTT-Search {
+		display: block;
+	}
+
+	.BKTT-Search #searchInputBox {
 		display: none;
 	}
 

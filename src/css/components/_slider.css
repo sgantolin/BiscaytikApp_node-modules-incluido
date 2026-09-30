@@ -261,6 +261,58 @@
  display: inline-block;
 }
 
+/*GALERIA*/
+.BKTT-EventoDetalle .galleria-stage,
+.BKTT-EventoDetalle .galleria-frame {
+ background: transparent !important;
+}
+
+.BKTT-EventoDetalle .galleria-loader,
+.BKTT-EventoDetalle .galleria-counter {
+ color: var(--secondary-color);
+}
+
+.BKTT-EventoDetalle .galleria-image-nav .galleria-image-nav-right,
+.BKTT-EventoDetalle .galleria-image-nav .galleria-image-nav-left,
+.BKTT-EventoDetalle .galleria-videoicon {
+ background-color: var(--primary-color);
+ border-radius: 8px;
+}
+
+.BKTT-EventoDetalle .galleria-bar {
+ background: var(--secondary-color);
+}
+
+.BKTT-EventoDetalle .galleria-info {
+ background-color: var(--secondary-color);
+ opacity: 0.8 !important;
+}
+
+.BKTT-EventoDetalle .galleria-container {
+ font-family: var(--font-family) !important;
+}
+
+.BKTT-EventoDetalle .galleria-fullscreen,
+.BKTT-EventoDetalle .galleria-play {
+ outline: 0;
+ border-right: 0;
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails {
+ width: fit-content !important;
+ max-width: 50%;
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails .galleria-image {
+ border: none;
+ margin: 0 0 0 8px;
+ opacity: 0.8;
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails .galleria-image.active {
+ opacity: 1;
+}
+
 @media (max-width: 1600px) {
  .BKTT-FigureSlider .carousel-caption {
   left: 6%;

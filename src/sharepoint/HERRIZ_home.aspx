@@ -27,6 +27,17 @@
 						<!---->
 						<div class="container">
 							<div class="row">
+								<div class="BKTT-WebPartZone-fullContainerWidth--Top col-12">
+									<WebPartPages:WebPartZone runat="server" AllowPersonalization="false"
+										ID="bootstrapRow1Column1C" FrameType="None" Orientation="Vertical">
+										<ZoneTemplate></ZoneTemplate>
+									</WebPartPages:WebPartZone>
+								</div>
+							</div>
+						</div>
+						<!---->
+						<div class="container">
+							<div class="row">
 								<div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12">
 									<WebPartPages:WebPartZone runat="server" AllowPersonalization="false"
 										ID="bootstrapRow2Column1" FrameType="None" Orientation="Vertical">
@@ -107,6 +118,17 @@
 								</WebPartPages:WebPartZone>
 							</div>
 						</div>
+						<!---->
+						<div class="container">
+							<div class="row">
+								<div class="BKTT-WebPartZone-fullWidthContainer--Middle col-12">
+									<WebPartPages:WebPartZone runat="server" AllowPersonalization="false"
+										ID="bootstrapRow5Column1C" FrameType="None" Orientation="Vertical">
+										<ZoneTemplate></ZoneTemplate>
+									</WebPartPages:WebPartZone>
+								</div>
+							</div>
+						</div>
 						<!--7-->
 						<div class="container">
 							<div class="row">
@@ -143,6 +165,17 @@
 									ID="bootstrapRow8Column1" FrameType="None" Orientation="Vertical">
 									<ZoneTemplate></ZoneTemplate>
 								</WebPartPages:WebPartZone>
+							</div>
+						</div>
+						<!---->
+						<div class="container">
+							<div class="row">
+								<div class="BKTT-WebPartZone-fullWidthContainer--Bottom col-12">
+									<WebPartPages:WebPartZone runat="server" AllowPersonalization="false"
+										ID="bootstrapRow8Column1C" FrameType="None" Orientation="Vertical">
+										<ZoneTemplate></ZoneTemplate>
+									</WebPartPages:WebPartZone>
+								</div>
 							</div>
 						</div>
 					</asp:Content>

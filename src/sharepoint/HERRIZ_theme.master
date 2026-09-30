@@ -85,8 +85,8 @@
     
     <!-- ######### CSS STYLES ######### -->
 	
-    <!--<link rel="stylesheet" href="/_layouts/15/Turismo2013.Files/Styles/common/css/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/Style Library/css/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="/_layouts/15/Turismo2013.Files/Styles/common/css/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Style Library/css/font-awesome/css/font-awesome.min.css" />
 
     <!-- responsive devices styles -->
    
@@ -126,6 +126,17 @@
     <SharePoint:CssRegistration ID="CssRegistration19" name="/_layouts/15/Turismo2013.Files/custom_web/css/layout/_footer.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration20" name="/_layouts/15/Turismo2013.Files/custom_web/css/_components.css" runat="server" after="SharepointCssFile"/>
     <SharePoint:CssRegistration ID="CssRegistration17" name="/_layouts/15/Turismo2013.Files/custom_web/css/themes/_default.css" runat="server" after="SharepointCssFile"/>
+    <!--<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchPanel = document.getElementById('BKTT-Search--mobileCollap');
+
+            if (searchPanel) {
+            searchPanel.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+            }
+        });
+    </script>-->
     <!--end SS--> 
  	<script type="text/javascript" src="/Style Library/JS/controlCookies.js"></script>
 <noscript>
@@ -226,23 +237,22 @@
                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" BlockElement="true" CssClass="BKTT-Search " runat="server">
                     <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
                      <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
-                     <div class="BKTT-Search--mobile" id="toggle-search" type="button" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="collapseExample">
-                    <button class="BKTT-Button btn btn-primary" type="reset">
-                         <span class="BKTT-Icon fa-light fa-search"></span>
-                        </button>
-                    <div class="container" id="BKTT-Search--mobileCollap">
-                     <!--SharePoint buscador-->
                      <div class="input-group d-flex align-items-center">
                       <div id="searchInputBox" CssClass="form-control">
                        <SharePoint:DelegateControl ID="DelegateControl2" runat="server" ControlId="SmallSearchInputBox" />
                       </div>
                      </div>
-                     <!--end sharepoint buscador-->
-                    </div>
-                   </div>
-                     
+                                         <div class="BKTT-Search--mobile">
+                                            <button class="BKTT-Button btn btn-primary" type="button" id="toggle-search" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="BKTT-Search--mobileCollap">
+                       <span class="BKTT-Icon fa-light fa-search"></span>
+                      </button>
+                                         <div class="container collapse" id="BKTT-Search--mobileCollap">
+                     <SharePoint:DelegateControl ID="DelegateControl3" runat="server" ControlId="SmallSearchInputBox" />
+                                         </div>
+                                        </div>
                     </asp:ContentPlaceHolder>
                    </SharePoint:AjaxDelta>
+                   
                    <!--end form-->
                    <!--BKTT-Nav-->
                    <nav class="BKTT-Nav navbar navbar-expand-lg" role="navigation">
@@ -251,31 +261,14 @@
                       <span class="BKTT-Icon fa-regular fa-bars"></span>
                      </button>
                      <div id="defaultmenu" class="navbar-collapse collapse">
-                      <biscaytik:TopMenuWebControl ID="TopMenuWebControl1" runat="server"></biscaytik:TopMenuWebControl >
-                      <!--lang mob-->
-                      <div class="BKTT-LangSelect d-sm-block d-md-none">
-                        <button class="btn btn-line dropdown-toggle" type="button" id="dropdownMenuLangButtonM" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="BKTT-Icon fa-light fa-globe me-1"></span> ES
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLangButtonM">
-                        <biscaytik:VariationsMenu ID="LanguageSelector2" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu>
-                        </div>
-                        </div>
-                        <!--end lang mob-->
+                      <biscaytik:TopMenu2026WebControl ID="TopMenuWebControl1" runat="server"></biscaytik:TopMenu2026WebControl >
+                      <!--BKTT-LangSelect-->
+                      <biscaytik:VariationsMenu2026 ID="LanguageSelector1" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu2026>
+                      <!--end BKTT-LangSelect-->
                      </div>
                     </div>
                    </nav>
                    <!--End BKTT-Nav-->
-				   <!--BKTT-LangSelect-->
-                   <div class="BKTT-LangSelect header-end">
-                    <button class="btn btn-line dropdown-toggle" type="button" id="dropdownMenuLangButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="BKTT-Icon fa-light fa-globe me-1"></span> ES
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLangButton">
-                     <biscaytik:VariationsMenu2026 ID="LanguageSelector1" ConcatQueryString="True" runat="server"></biscaytik:VariationsMenu2026>
-                    </div>
-                   </div>
-                   <!--end BKTT-LangSelect-->
                   </div>
                  </div>
                  <biscaytik:PortalContentWebControl id="contentsuperior3" runat="server" zone="superior"/>
@@ -309,37 +302,19 @@
         <biscaytik:FooterWebControl id="piedch" runat="server" zone="Derecha"></biscaytik:FooterWebControl> 
        </div>
        <div class="col-12 col-md-3 text-center text-sm-start">
-        <ul class="BKTT-RRSS list-group list-group-horizontal mb-5">
-         <li class="list-group-item">
-          <a href="#" target="_blank" rel="">
-           <span class="BKTT-Icon fa-brands fa-facebook fs-3 me-3"></span>
-          </a>
-         </li>
-         <li class="list-group-item">
-          <a href="#" target="_blank" rel="">
-           <span class="BKTT-Icon fa-brands fa-instagram fs-3 me-3"></span>
-          </a>
-         </li>
-         <li class="list-group-item">
-          <a href="#" target="_blank" rel="">
-           <span class="BKTT-Icon fa-brands fa-whatsapp fs-3 me-3"></span>
-          </a>
-         </li>
-         <li class="list-group-item">
-          <a href="#" target="_blank" rel="">
-           <span class="BKTT-Icon fa-sharp fa-light fa-messages fs-3"></span>
-          </a>
-         </li>
-        </ul>
+        <div class="BKTT-RRSS list-group list-group-horizontal mb-5">
+            <biscaytik:SocialWebControl id="barrasocialtop" runat="server" zone="Top"/>
+         
+        </div>
         <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
        </div>
       </div>
-      <div class="row d-flex justify-content-center">
-       <img alt="logotipo diputación Bizkaia Bizkaiko Foru aldundia" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/diputacion_Bizkaia.svg" />
-       <img alt="logotipo govierno vasco - eusko jaurlaritza" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/diputacion_Bizkaia.svg" />
+      <div class="BKTT_Logos--footer d-flex justify-content-center mt-5">
+       <img alt="logotipo diputación Bizkaia Bizkaiko Foru aldundia" style="max-height:50px;" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/diputacion_Bizkaia.svg" />
+       <img alt="logotipo govierno vasco - eusko jaurlaritza" style="max-height:50px;" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/eusko_jaurlaritza.svg" />
       </div>
       <div class="row mt-4">
-       <div class="col-12 text-center">
+       <div class="col-12 d-flex justify-content-between">
         <biscaytik:PortalContentWebControl id="contentrightbotton" CssClass="text-center" runat="server" zone="bottonright"/>						
        </div>        						        
       </div> 

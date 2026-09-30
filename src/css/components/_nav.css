@@ -1,9 +1,8 @@
-.BKTT-Nav .navbar-nav li {
+/*.BKTT-Nav .navbar-nav li {
 	padding: 0.5rem 0;
-}
+}*/
 
 .BKTT-Nav .navbar-nav li a {
-	padding: 11.1px 0.85rem;
 	color: var(--text-color);
 	transition: box-shadow 0.2s;
 	user-select: none;
@@ -16,8 +15,9 @@
 	font-family:  var(--font-family-secondary);
 }
 
-.BKTT-Nav .navbar-nav li a .BKTT-Icon {
+/*.BKTT-Nav .navbar-nav li a .BKTT-Icon*/.BKTT-Nav .BKTT-Icon {
 	margin-right: 0.5rem;
+	max-width:24px;
 }
 
 .BKTT-Nav .navbar-nav li a .BKTT-Icon:first-child {
@@ -26,12 +26,12 @@
 
 .BKTT-Nav .navbar-nav>li>a:after {
 	color: var(--primary-color);
-	margin-right: 0;
 	font-family: 'Font Awesome 6 Pro';
 	content: "\f078";
 	vertical-align: 0;
 	border: none;
 	font-weight: 400;
+	margin-left: 8px;
 }
 
 .BKTT-Nav .navbar-nav li a:hover {
