@@ -1169,6 +1169,7 @@
           </xsl:choose>
          </xsl:if>
         </time>
+        <span> - </span>
         <time datetime="2026-01-15" itemprop="endDate">
          <xsl:if test="normalize-space(@TurismoEventEnd) != ''">
          <xsl:text>&#160;-&#160;</xsl:text>
@@ -1209,7 +1210,7 @@
        </div>
       </div>
      </div>
-		<!--<xsl:if test="normalize-space(@TextoDestacado) != ''">
+		   <xsl:if test="normalize-space(@TextoDestacado) != ''">
 			  <span class="BKTT-Label">
      <div class="">
       <xsl:choose>
@@ -1222,16 +1223,17 @@
       </xsl:choose>
      </div>
       </span>
-      </xsl:if>-->
+      </xsl:if>
       <div class="BKTT-Card__Footer d-flex justify-content-end">
        <xsl:if test="string-length($RawWebReserva) &gt; 0">
         <div class="campo-web-reserva">
          <div class="BKTT-Button">
-           <span class="BKTT-Icon fa-light fa-link" aria-hidden="true">&#8203;</span>
+           <span class="BKTT-Icon fa-light fa-link" aria-hidden="true"></span>
            <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
          </div>
         </div>
        </xsl:if>
+      </div>
      </div>
     </div>
    </div>

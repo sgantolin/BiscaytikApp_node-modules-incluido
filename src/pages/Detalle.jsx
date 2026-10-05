@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CardContainer from '../shared/components/CardContainer';
 import CardGrid from '../shared/components/CardGrid';
 import BKTTFigureGaleria from '../shared/components/BKTTFigureGaleria';
@@ -20,6 +20,40 @@ import playa from '../assets/themes/default/media/playa.png';
 import titleDatepicker2 from '../assets/themes/default/title & datepicker (1).png';
 
 function EventoDetalle() {
+ const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
+
+ const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://example.com/detalle';
+ const shareTitle = typeof document !== 'undefined' ? document.title : 'Plentzia SummerFest';
+ const shareText = `Mira este contenido: ${shareTitle}`;
+
+ const shareLinks = {
+  whatsapp: `https://wa.me/?text=${encodeURIComponent(`${shareText}\n${shareUrl}`)}`,
+  facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+  x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+  linkedIn: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+  email: `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`,
+ };
+
+ const handleShareClick = async () => {
+  if (navigator.share) {
+   try {
+    await navigator.share({
+     title: shareTitle,
+     text: shareText,
+     url: shareUrl,
+    });
+    return;
+   } catch (error) {
+    if (error?.name !== 'AbortError') {
+     console.warn('Error al compartir', error);
+    }
+    return;
+   }
+  }
+
+  setIsShareMenuOpen((prevState) => !prevState);
+ };
+
  useEffect(() => {
   let mapInstance = null;
 
@@ -173,11 +207,41 @@ function EventoDetalle() {
 
       <div className="BKTT-EventoDetalle__header container mt-5">
        <div className="BKTT-EventoDetalle__heading">
-        <h1 className="BKTT-EventoDetalle__title" itemprop="name">Plentzia SummerFest</h1>
+        <h1 className="BKTT-EventoDetalle__title" itemProp="name">Plentzia SummerFest</h1>
        </div>
-       <button className="BKTT-EventoDetalle__share" type="button" aria-label="Compartir evento" >
-        <span className="BKTT-Icon fa-light fa-arrow-up-from-bracket" aria-hidden="true" />
-       </button>
+
+       <div className="share-container">
+        <button
+         id="shareButton"
+         className="BKTT-EventoDetalle__share"
+         type="button"
+         aria-label="Compartir evento"
+         aria-expanded={isShareMenuOpen}
+         onClick={handleShareClick}
+        >
+         <span className="BKTT-Icon fa-light fa-arrow-up-from-bracket" aria-hidden="true" />
+        </button>
+
+        {isShareMenuOpen && (
+         <div className="share-options" role="menu" aria-label="Opciones de compartir">
+          <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+           WhatsApp
+          </a>
+          <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer">
+           Facebook
+          </a>
+          <a href={shareLinks.x} target="_blank" rel="noopener noreferrer">
+           X
+          </a>
+          <a href={shareLinks.linkedIn} target="_blank" rel="noopener noreferrer">
+           LinkedIn
+          </a>
+          <a href={shareLinks.email}>
+           Email
+          </a>
+         </div>
+        )}
+       </div>
       </div>
      </div>
     </div>
@@ -258,12 +322,12 @@ function EventoDetalle() {
           <li>3</li>
          </ul>
         </div>
-         <BKTTFigureGaleria
-          variant="featured"
-          images={galleryImages}
-          showDots
-          showThumbs
-         />
+        <BKTTFigureGaleria
+         variant="featured"
+         images={galleryImages}
+         showDots
+         showThumbs
+        />
        </section>
        <section id="localizacion" className="BKTT-EventoDetalle__section" itemprop="location" itemscope itemtype="https://schema.org/Place">
         <h2>Localización</h2>

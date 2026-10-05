@@ -4,21 +4,27 @@
 
 /*end resolver tema variable fuentes*/
 :root {
-    //*default font*/
+    /* default font */
     --theme-font-family: 'Gelasio', sans-serif;
     --theme-font-family-secondary: 'Poppins', sans-serif;
+    --theme-font-family-italic: 'Poppins Italic', sans-serif;
     /*icon font*/
 
     /*default colors*/
     --theme-white: #FAF8F2;
-    /*--theme-beige: #FAF8F2;*/
+    --theme-beige: #FAF8F2;
     --theme-primary-color: #C82909;
     --theme-primary-color--100: #FEEBE7;
     --theme-secondary-color: #2D2D31;
 
     --theme-black: #2D2D31;
+    --theme-grey__text:#71717A;
     --theme-border-color: #ddd;
+    --theme-grey__background: #f1f1f1;
 
     --theme-menu-image: none;
+ --theme-list-image: none;
+
+ --theme-border-radius: 5px;
     
 }

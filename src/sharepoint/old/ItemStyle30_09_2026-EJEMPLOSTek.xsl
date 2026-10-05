@@ -1088,7 +1088,6 @@
        <span class="BKTT-Label">Reservar</span>
       </button>
      </div>
-
     </div>
    </div>
   </li>

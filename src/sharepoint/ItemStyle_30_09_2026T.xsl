@@ -1098,140 +1098,138 @@
   <xsl:variable name="RawTitleEU" select="@TipoEvento_x003a_TitleEU" />
   <xsl:variable name="RawTitleEN" select="@TipoEvento_x003a_TitleEN" />
   <xsl:variable name="RawTitleFR" select="@TipoEvento_x003a_TitleFR" />
+  <xsl:variable name="RawwTitleES" select="concat(@TipoEvento_x003a_TitleES, @TipoEvento_TitleES, @TitleES)" />
+  <xsl:variable name="RawwTitleEU" select="concat(@TipoEvento_x003a_TitleEU, @TipoEvento_TitleEU, @TitleEU)" />
+  <xsl:variable name="RawwTitleEN" select="concat(@TipoEvento_x003a_TitleEN, @TipoEvento_TitleEN, @TitleEN)" />
+  <xsl:variable name="RawwTitleFR" select="concat(@TipoEvento_x003a_TitleFR, @TipoEvento_TitleFR, @TitleFR)" />
   
-  <li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/Event">
+  <li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/Restaurant">
    <div class="BKTT-CardContainer__card card">
-    <xsl:variable name="CleanTipoEvento">
-      <xsl:choose>
-     <xsl:when test="contains($TipoEvento, ';#')">
-       <xsl:value-of select="substring-after($TipoEvento, ';#')" />
-     </xsl:when>
-     <xsl:otherwise>
-       <xsl:value-of select="$TipoEvento" />
-     </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
+			<xsl:for-each select="@*">
+				<div>
+					<xsl:value-of select="name()" />
+						=
+					<xsl:value-of select="." />
+					<br/>
+				</div>
+			</xsl:for-each>
+			<xsl:variable name="CleanTipoEvento">
+			  <xsl:choose>
+				<xsl:when test="contains($TipoEvento, ';#')">
+				  <xsl:value-of select="substring-after($TipoEvento, ';#')" />
+				</xsl:when>
+				<xsl:otherwise>
+				  <xsl:value-of select="$TipoEvento" />
+				</xsl:otherwise>
+			  </xsl:choose>
+			</xsl:variable>
+
+			<!-- 3. Mostrar el valor si no está vacío -->
+			<xsl:if test="string-length($CleanTipoEvento) &gt; 0">
+			  <div class="tipo-evento-valor">
+				ZZZZZZ<xsl:value-of select="$CleanTipoEvento" />
+			  </div>
+			</xsl:if>
 
     <figure class="BKTT-Card__figure">
-     <xsl:if test="string-length($CleanTipoEvento) &gt; 0">
-      <span class="BKTT-Badge badge bg-light text-dark">
-       <span class="BKTT-Icon fa-solid fa-person-swimming">
-        <xsl:text>&#8203;</xsl:text>
-       </span>
-       <span class="BKTT-Label tipo-evento-valor" itemprop="about">
-        <xsl:value-of select="$CleanTipoEvento" />
-       </span>
-      </span>
-     </xsl:if>
-     <xsl:if test="string-length($SafeImageUrl) != 0">
-      <img src="{$SafeImageUrl}" class="" itemprop="image" title="{@ImageUrlAltText}" alt="{@ImageUrlAltText}">
-       <xsl:if test="$ImageWidth != ''">
-        <xsl:attribute name="width">
-          <xsl:value-of select="$ImageWidth" />
-        </xsl:attribute>
-       </xsl:if>
-       <xsl:if test="$ImageHeight != ''">
-        <xsl:attribute name="height">
-          <xsl:value-of select="$ImageHeight" />
-        </xsl:attribute>
-       </xsl:if>
-      </img>
-     </xsl:if>
+		<xsl:if test="string-length($SafeImageUrl) != 0">
+			<img src="{$SafeImageUrl}" class="card-img-top" title="{@ImageUrlAltText}" alt="{@ImageUrlAltText}">
+			<xsl:if test="$ImageWidth != ''">
+			 <xsl:attribute name="width">
+			   <xsl:value-of select="$ImageWidth" />
+			 </xsl:attribute>
+			</xsl:if>
+			<xsl:if test="$ImageHeight != ''">
+			 <xsl:attribute name="height">
+			   <xsl:value-of select="$ImageHeight" />
+			 </xsl:attribute>
+			</xsl:if>
+		</img>
+		</xsl:if>
     </figure>
     <!-- CONTENIDO -->
     <div class="BKTT-Card__main">
      <h3 class="BKTT-Card__title" itemprop="name">
-      <a class="BKTT-Link" href="{$SafeLinkUrl}" title="{$DisplayTitle}" itemprop="url">
-       <span class="BKTT-Label" itemprop="name">
-        <xsl:value-of select="$DisplayTitle"/>
-       </span>
+      <a href="{$SafeLinkUrl}" title="{$DisplayTitle}" >
+       <xsl:value-of select="$DisplayTitle"/>
       </a>
      </h3>
      <div class="BKTT-Card__Body">
       <div class="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
-       <date>
-        <span class="BKTT-Icon fa-light fa-calendar me-2">
-         <xsl:text>&#8203;</xsl:text>
-        </span>
-        <time datetime="2026-01-12" itemprop="startDate">
-         <xsl:if test="normalize-space(@TurismoEventStart) != ''">
-          <!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventStart, 1, 10)"/></span>-->
-          <xsl:choose>
-            <xsl:when test="bittek:GetCultureString() = 'eu'">
-           <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'yyyy/MM/dd')" /> 
-            </xsl:when>
-            <xsl:when test="bittek:GetCultureString() = 'en'">
-           <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'MM/dd/yyyy')" /> 
-            </xsl:when>
-            <xsl:otherwise>
-           <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'dd/MM/yyyy')" />
-            </xsl:otherwise>
-          </xsl:choose>
-         </xsl:if>
-        </time>
-        <time datetime="2026-01-15" itemprop="endDate">
-         <xsl:if test="normalize-space(@TurismoEventEnd) != ''">
-         <xsl:text>&#160;-&#160;</xsl:text>
-         <!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventEnd, 1, 10)"/></span>-->
-         <xsl:choose>
-           <xsl:when test="bittek:GetCultureString() = 'eu'">
-          <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'yyyy/MM/dd')" /> 
-           </xsl:when>
-           <xsl:when test="bittek:GetCultureString() = 'en'">
-          <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'MM/dd/yyyy')" /> 
-           </xsl:when>
-           <xsl:otherwise>
-          <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'dd/MM/yyyy')" />
-           </xsl:otherwise>
-         </xsl:choose>
-          </xsl:if>
-        </time>
-        <!--<xsl:if test="normalize-space(@HoraInicio) != ''">
-         <span class="BKTT-Label"><xsl:value-of select="@HoraInicio"/></span>
-         <xsl:if test="normalize-space(@HoraFin) = ''">h</xsl:if>
-         </xsl:if>
-         <xsl:if test="normalize-space(@HoraFin) != ''">
-         <xsl:text>&#160;-&#160;</xsl:text>
-         <span class="BKTT-Label"><xsl:value-of select="@HoraFin"/>h</span>
-         </xsl:if>-->
-       </date>
-       <div class="BKTT-Data" itemscope="itemscope" itemtype="https://schema.org/Offer">
-        <meta itemprop="priceCurrency" content="EUR"/>
-        <meta itemprop="price" content="10"/>
-        <meta itemprop="availability" content="https://schema.org/InStock"/>
-        <strong itemprop="price">
-         <xsl:if test="normalize-space(@TurismoPrecio) != ''">
-          <strong itemprop="priceRange">
-           <xsl:value-of select="@TurismoPrecio"/>
-          </strong>
-         </xsl:if>
-        </strong>
-       </div>
-      </div>
-     </div>
-		<!--<xsl:if test="normalize-space(@TextoDestacado) != ''">
+		<div>
+		   <xsl:if test="normalize-space(@TurismoEventStart) != ''">
+				<!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventStart, 1, 10)"/></span>-->
+				<xsl:choose>
+				  <xsl:when test="bittek:GetCultureString() = 'eu'">
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'yyyy/MM/dd')" /> 
+				  </xsl:when>
+				  <xsl:when test="bittek:GetCultureString() = 'en'">
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'MM/dd/yyyy')" /> 
+				  </xsl:when>
+				  <xsl:otherwise>
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'dd/MM/yyyy')" />
+				  </xsl:otherwise>
+				</xsl:choose>
+		   </xsl:if>
+		   <xsl:if test="normalize-space(@TurismoEventEnd) != ''">
+				<xsl:text>&#160;-&#160;</xsl:text>
+				<!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventEnd, 1, 10)"/></span>-->
+				<xsl:choose>
+				  <xsl:when test="bittek:GetCultureString() = 'eu'">
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'yyyy/MM/dd')" /> 
+				  </xsl:when>
+				  <xsl:when test="bittek:GetCultureString() = 'en'">
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'MM/dd/yyyy')" /> 
+				  </xsl:when>
+				  <xsl:otherwise>
+					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'dd/MM/yyyy')" />
+				  </xsl:otherwise>
+				</xsl:choose>
+		   </xsl:if>
+		</div>
+		<div>
+		   <xsl:if test="normalize-space(@HoraInicio) != ''">
+			  <span class="BKTT-Label"><xsl:value-of select="@HoraInicio"/></span>
+			  <xsl:if test="normalize-space(@HoraFin) = ''">h</xsl:if>
+		   </xsl:if>
+		   <xsl:if test="normalize-space(@HoraFin) != ''">
+			  <xsl:text>&#160;-&#160;</xsl:text>
+			  <span class="BKTT-Label"><xsl:value-of select="@HoraFin"/>h</span>
+		   </xsl:if>
+		</div>
+		<div>
+		   <xsl:if test="normalize-space(@TurismoPrecio) != ''">
+			<strong itemprop="priceRange">
+			 <xsl:value-of select="@TurismoPrecio"/>
+			</strong>
+		   </xsl:if>
+		</div>
+		<div>
+		   <xsl:if test="normalize-space(@TextoDestacado) != ''">
 			  <span class="BKTT-Label">
-     <div class="">
-      <xsl:choose>
-       <xsl:when test="string-length(@TextoDestacado) &gt; 200">
-        <xsl:value-of select="substring(@TextoDestacado, 1, 200)"/>...
-       </xsl:when>
-       <xsl:otherwise>
-        <xsl:value-of select="@TextoDestacado"/>
-       </xsl:otherwise>
-      </xsl:choose>
-     </div>
-      </span>
-      </xsl:if>-->
-      <div class="BKTT-Card__Footer d-flex justify-content-end">
-       <xsl:if test="string-length($RawWebReserva) &gt; 0">
-        <div class="campo-web-reserva">
-         <div class="BKTT-Button">
-           <span class="BKTT-Icon fa-light fa-link" aria-hidden="true">&#8203;</span>
-           <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
-         </div>
-        </div>
-       </xsl:if>
+				<div class="">
+					<xsl:choose>
+						<xsl:when test="string-length(@TextoDestacado) &gt; 200">
+							<xsl:value-of select="substring(@TextoDestacado, 1, 200)"/>...
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="@TextoDestacado"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+			  </span>
+		   </xsl:if>
+
+		  <xsl:if test="string-length($RawWebReserva) &gt; 0">
+			<div class="campo-web-reserva">
+				<div class="BKTT-Button">
+				  <span class="BKTT-Icon fa-light fa-link" aria-hidden="true"></span>
+				  <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
+				</div>
+			</div>
+		  </xsl:if>
+		</div>
+      </div>
      </div>
     </div>
    </div>
@@ -1401,7 +1399,7 @@
   </xsl:variable>
   
  <li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/NewsArticle">
-   <div class="BKTT-CardContainer__card card BKTT-CardContainer__card--no-image">
+   <div class="BKTT-CardContainer__card card BKTT-CardContainer__card--horizontal BKTT-CardContainer__card--no-image">
     <!-- CONTENIDO -->
     <span class="BKTT-Badge badge bg-light text-dark">
      <span>Categoría noticias</span>
@@ -1457,157 +1455,6 @@
   </li>
 </xsl:template>
 <!--FINNOTICIAS2026-->
-<!--PATRIMONIO2026-->
-<xsl:template
-  name="Patrimonio2026"
-  match="Row[@Style='Patrimonio2026']"
-  mode="itemstyle"
->
-  <xsl:variable name="SafeLinkUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeLink">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="SafeImageUrl">
-    <xsl:call-template name="OuterTemplate.GetSafeStaticUrl">
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'ImageUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="DisplayTitle">
-    <xsl:call-template name="OuterTemplate.GetTitle">
-      <xsl:with-param
-        name="Title"
-        select="@Title"
-      />
-
-      <xsl:with-param
-        name="UrlColumnName"
-        select="'LinkUrl'"
-      />
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:variable name="RawWebReserva" select="@WebReserva" />
-	<li class="BKTT-CardContainer__item col"  itemscope="" itemtype="https://schema.org/Restaurant">
-	<div class="BKTT-CardContainer__card card">
-	<figure class="BKTT-Card__figure">
-		<xsl:if test="string-length($SafeImageUrl) != 0">
-			<img src="{$SafeImageUrl}" class="card-img-top" title="{@ImageUrlAltText}" alt="{@ImageUrlAltText}">
-			<xsl:if test="$ImageWidth != ''">
-			 <xsl:attribute name="width">
-			   <xsl:value-of select="$ImageWidth" />
-			 </xsl:attribute>
-			</xsl:if>
-			<xsl:if test="$ImageHeight != ''">
-			 <xsl:attribute name="height">
-			   <xsl:value-of select="$ImageHeight" />
-			 </xsl:attribute>
-			</xsl:if>
-		</img>
-		</xsl:if>
-    </figure>
-
-  
-    <!-- CONTENIDO -->
-    <div class="BKTT-Card__main">
-     <h3 class="BKTT-Card__title" itemprop="name">
-      <a href="{$SafeLinkUrl}" title="{$DisplayTitle}" >
-       <xsl:value-of select="$DisplayTitle"/>
-      </a>
-     </h3>
-     <div class="BKTT-Card__Body">
-      <div class="BKTT-Card__Data d-flex justify-content-between align-items-center mb-2">
-		<div>
-		   <xsl:if test="normalize-space(@TurismoEventStart) != ''">
-				<!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventStart, 1, 10)"/></span>-->
-				<xsl:choose>
-				  <xsl:when test="bittek:GetCultureString() = 'eu'">
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'yyyy/MM/dd')" /> 
-				  </xsl:when>
-				  <xsl:when test="bittek:GetCultureString() = 'en'">
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'MM/dd/yyyy')" /> 
-				  </xsl:when>
-				  <xsl:otherwise>
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'dd/MM/yyyy')" />
-				  </xsl:otherwise>
-				</xsl:choose>
-		   </xsl:if>
-		   <xsl:if test="normalize-space(@TurismoEventEnd) != ''">
-				<xsl:text>&#160;-&#160;</xsl:text>
-				<!--<span class="BKTT-Label"><xsl:value-of select="substring(@TurismoEventEnd, 1, 10)"/></span>-->
-				<xsl:choose>
-				  <xsl:when test="bittek:GetCultureString() = 'eu'">
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'yyyy/MM/dd')" /> 
-				  </xsl:when>
-				  <xsl:when test="bittek:GetCultureString() = 'en'">
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'MM/dd/yyyy')" /> 
-				  </xsl:when>
-				  <xsl:otherwise>
-					<xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'dd/MM/yyyy')" />
-				  </xsl:otherwise>
-				</xsl:choose>
-		   </xsl:if>
-		</div>
-		<div>
-		<div>
-		<span>por persona</span>
-		</div>
-		   <xsl:if test="normalize-space(@HoraInicio) != ''">
-			  <span class="BKTT-Label"><xsl:value-of select="@HoraInicio"/></span>
-			  <xsl:if test="normalize-space(@HoraFin) = ''">h</xsl:if>
-		   </xsl:if>
-		   <xsl:if test="normalize-space(@HoraFin) != ''">
-			  <xsl:text>&#160;-&#160;</xsl:text>
-			  <span class="BKTT-Label"><xsl:value-of select="@HoraFin"/>h</span>
-		   </xsl:if>
-		</div>
-		<div>
-		   <xsl:if test="normalize-space(@GastoMedio) != ''">
-			<strong itemprop="priceRange">
-			 <xsl:value-of select="@GastoMedio"/>
-			</strong>
-		   </xsl:if>
-		</div>
-		<div>
-		   <xsl:if test="normalize-space(@TextoDestacado) != ''">
-			  <span class="BKTT-Label">
-				<div class="">
-					<xsl:choose>
-						<xsl:when test="string-length(@TextoDestacado) &gt; 200">
-							<xsl:value-of select="substring(@TextoDestacado, 1, 200)"/>...
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="@TextoDestacado"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</div>
-			  </span>
-		   </xsl:if>
-
-		  <xsl:if test="string-length($RawWebReserva) &gt; 0">
-			<div class="campo-web-reserva">
-				<div class="BKTT-Button">
-				  <span class="BKTT-Icon fa-light fa-link" aria-hidden="true"></span>
-				  <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
-				</div>
-			</div>
-		  </xsl:if>
-		</div>
-      </div>
-     </div>
-    </div>
-	</div>
-	</li>
-</xsl:template>
-<!--FINPATRIMONIO2026-->
  
   
 </xsl:stylesheet>

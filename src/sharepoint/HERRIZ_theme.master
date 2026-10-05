@@ -137,6 +137,47 @@
             }
         });
     </script>-->
+	
+	<script type="text/javascript">
+		function colocarBuscadorResponsive() {
+
+			var search = document.getElementById('BKTT-Search--shared');
+			var desktop = document.getElementById('searchInputBox');
+			var mobile = document.getElementById('BKTT-Search--mobileCollap');
+
+			if (!search || !desktop || !mobile) {
+				return;
+			}
+
+			var esMobile = window.matchMedia('(max-width: 991.98px)').matches;
+
+			if (esMobile) {
+
+				if (search.parentNode !== mobile) {
+					mobile.appendChild(search);
+				}
+
+			} else {
+
+				if (search.parentNode !== desktop) {
+					desktop.appendChild(search);
+				}
+
+			}
+		}
+
+		document.addEventListener(
+			'DOMContentLoaded',
+			colocarBuscadorResponsive
+		);
+
+		window.addEventListener(
+			'resize',
+			colocarBuscadorResponsive
+		);
+	</script>
+
+
     <!--end SS--> 
  	<script type="text/javascript" src="/Style Library/JS/controlCookies.js"></script>
 <noscript>
@@ -237,19 +278,43 @@
                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" BlockElement="true" CssClass="BKTT-Search " runat="server">
                     <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
                      <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
-                     <div class="input-group d-flex align-items-center">
-                      <div id="searchInputBox" CssClass="form-control">
-                       <SharePoint:DelegateControl ID="DelegateControl2" runat="server" ControlId="SmallSearchInputBox" />
-                      </div>
-                     </div>
-                                         <div class="BKTT-Search--mobile">
-                                            <button class="BKTT-Button btn btn-primary" type="button" id="toggle-search" data-bs-toggle="collapse" data-bs-target="#BKTT-Search--mobileCollap" aria-expanded="false" aria-controls="BKTT-Search--mobileCollap">
-                       <span class="BKTT-Icon fa-light fa-search"></span>
-                      </button>
-                                         <div class="container collapse" id="BKTT-Search--mobileCollap">
-                     <SharePoint:DelegateControl ID="DelegateControl3" runat="server" ControlId="SmallSearchInputBox" />
-                                         </div>
-                                        </div>
+                    
+					<!-- Contenedor escritorio -->
+					<div class="input-group d-flex align-items-center">
+						<div id="searchInputBox" class="form-control">
+
+							<!-- ÚNICA INSTANCIA REAL DEL BUSCADOR -->
+							<div id="BKTT-Search--shared">
+								<SharePoint:DelegateControl
+									ID="DelegateControl2"
+									runat="server"
+									ControlId="SmallSearchInputBox" />
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Zona móvil -->
+					<div class="BKTT-Search--mobile">
+
+						<button
+							class="BKTT-Button btn btn-primary"
+							type="button"
+							id="toggle-search"
+							data-bs-toggle="collapse"
+							data-bs-target="#BKTT-Search--mobileCollap"
+							aria-expanded="false"
+							aria-controls="BKTT-Search--mobileCollap">
+
+							<span class="BKTT-Icon fa-light fa-search"></span>
+						</button>
+
+						<div
+							class="container collapse"
+							id="BKTT-Search--mobileCollap">
+						</div>
+
+					</div>
                     </asp:ContentPlaceHolder>
                    </SharePoint:AjaxDelta>
                    
