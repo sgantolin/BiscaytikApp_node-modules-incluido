@@ -261,7 +261,23 @@
  display: inline-block;
 }
 
-/*GALERIA*/
+/*GALERIA OLD*/
+.BKTT-EventoDetalle .ms-WPBorder {
+ border: none;
+}
+
+.BKTT-EventoDetalle #GMapdiv {
+ background-color: transparent !important;
+}
+
+.BKTT-EventoDetalle .ui-corner-all {
+ background: transparent;
+ border: 0;
+ border-radius: 0;
+ color: transparent;
+ padding: 0;
+}
+
 .BKTT-EventoDetalle .galleria-stage,
 .BKTT-EventoDetalle .galleria-frame {
  background: transparent !important;
@@ -290,6 +306,7 @@
 
 .BKTT-EventoDetalle .galleria-container {
  font-family: var(--font-family) !important;
+ width: 100% !important;
 }
 
 .BKTT-EventoDetalle .galleria-fullscreen,
@@ -311,6 +328,61 @@
 
 .BKTT-EventoDetalle .galleria-thumbnails .galleria-image.active {
  opacity: 1;
+}
+
+.BKTT-EventoDetalle .galleria-stage,
+.BKTT-EventoDetalle .galleria-image,
+.BKTT-EventoDetalle .galleria-layer,
+.BKTT-EventoDetalle .galleria-frame,
+.BKTT-EventoDetalle .galleria-container img {
+ height: 100% !important;
+}
+
+.BKTT-EventoDetalle .galleria-container img {
+ width: 100% !important;
+ left: 0 !important;
+ top: 0 !important;
+ margin-bottom: 0;
+}
+
+.BKTT-EventoDetalle .galleria-info {
+ bottom: 40px !important;
+ /*z-index: 999;*/
+}
+
+.BKTT-EventoDetalle .galleria-captionopen {
+ right: 450px;
+ background: var(--secondary-color);
+ z-index: 999;
+}
+
+.BKTT-EventoDetalle .galleria-bar {
+ background-color: transparent;
+ bottom: 10px;
+ position: absolute;
+ height: 56px !important;
+}
+
+.BKTT-EventoDetalle .galleria-fullscreen,
+.BKTT-EventoDetalle .galleria-play {
+ top: 25px;
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails-container,
+.BKTT-EventoDetalle .galleria-thumbnails-list,
+.BKTT-EventoDetalle .galleria-thumbnails {
+ height: 98% !important;
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails .galleria-image {
+ width: 75px !important;
+ border-radius: 8px;
+ margin: 0 4px !important;
+
+}
+
+.BKTT-EventoDetalle .galleria-thumbnails .galleria-image.active {
+ border: 2px solid var(--primary-color) !important;
 }
 
 @media (max-width: 1600px) {
