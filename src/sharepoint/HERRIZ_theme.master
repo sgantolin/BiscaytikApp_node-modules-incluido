@@ -367,10 +367,10 @@
         <biscaytik:FooterWebControl id="piedch" runat="server" zone="Derecha"></biscaytik:FooterWebControl> 
        </div>
        <div class="col-12 col-md-3 text-center text-sm-start">
-        <div class="BKTT-RRSS list-group list-group-horizontal mb-5">
+        <div class="BKTT-RRSS mb-5">
             <biscaytik:SocialWebControl id="barrasocialtop" runat="server" zone="Top"/>
-         
         </div>
+         
         <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
        </div>
       </div>

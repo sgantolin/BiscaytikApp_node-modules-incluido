@@ -183,9 +183,9 @@ h3.BKTT-CardGrid__title {
  bottom: 0 !important;
 }
 /* Figure sin imagen con clase condicional */
-.BKTT-CardContainer__card--no-image {
+.BKTT-CardContainer__card--no-image.card {
  border: 1px solid var(--border-color) !important;
- border-radius: var(--border-radius) !important;
+ /*border-radius: var(--border-radius) !important;*/
 }
 
 .BKTT-CardContainer--column .BKTT-CardContainer__card--horizontal.BKTT-CardContainer__card--no-image {

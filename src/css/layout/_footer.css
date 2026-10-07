@@ -42,19 +42,6 @@
  color: var(--primary-color);
 }
 
-/*
-.BKTT-footer .BKTT-Icon.logo-biscaytik {
- width: fit-content;
-}
-
-.BKTT-footer .justify-content-end {
- justify-content: center !important;
-}
-
-.BKTT-footer .contact-block p a {
- font-weight: 400;
-}*/
-
 .BKTT-footer h3 {
  font-size: 13px;
  color: var(--text-color);
@@ -71,6 +58,14 @@
  list-style: none;
  margin: 0px;
  padding: 0px;
+}
+.BKTT-footer .BKTT-RRSS ul {
+  display: flex;
+  flex-direction: row;
+  gap:8px;
+}
+.BKTT-footer .BKTT-RRSS i[class="fa"]{
+  font-size:1.5rem;
 }
 
 .BKTT-footer ul li {

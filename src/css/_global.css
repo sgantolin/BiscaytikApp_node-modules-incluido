@@ -157,18 +157,15 @@ h3,
 }
 
 .BKTT-ThemeTurismo main p,
-.BKTT-ThemeTurismo main time,
 .BKTT-ThemeTurismo main li,
 .BKTT-ThemeTurismo main span {
  font-size: 14px;
- /*line-height: 21px;*/
  margin-right: 0;
 }
 
 .BKTT-Data {
  font-size: 16px;
  line-height: 24px;
- /*font-weight: 600;*/
 }
 
 .BKTT-carousel {
