@@ -31,7 +31,6 @@
 .BKTT-Block--text-image,
 .BKTT-Block--image-text,
 .BKTT-Block--text-cards {
-  height: 324px;
   overflow: visible;
 }
 
