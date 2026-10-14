@@ -56,21 +56,22 @@
 								<div class="row">
 									<div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
 										<div class=" container">
+											<div class="container">
 												<nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
-													<biscaytik:ExtendedBreadcrumb ShowCurrentPage="false"
-														SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
-														runat="server" />
+													<biscaytik:ExtendedBreadcrumb2026 ShowCurrentPage="false"
+														SiteCollectionWeb="false" id="ExtendedBreadcrumb1" runat="server" />
 												</nav>
+											</div>
 										</div>
-										<figure class="BKTT-FigureImg" itemprop="image" itemscope
-											itemtype="https://schema.org/ImageObject">
-											<biscaytik:HideWhenBlank ID="HideWhenBlank21" runat="server"
-												FieldNameToCheck="PublishingRollupImage">
+										<biscaytik:HideWhenBlank ID="HideWhenBlank21" runat="server"
+											FieldNameToCheck="PublishingRollupImage">
+											<figure class="BKTT-FigureImg" itemprop="image" itemscope
+												itemtype="https://schema.org/ImageObject">
 												<PublishingWebControls:RichImageField ID="RichImageField21"
 													FieldName="PublishingRollupImage" AllowHyperLinks="false"
 													runat="server" />
-											</biscaytik:HideWhenBlank>
-										</figure>
+											</figure>
+										</biscaytik:HideWhenBlank>
 										<div class="BKTT-EventoDetalle__header container mt-5">
 											<div class="BKTT-EventoDetalle__heading">
 												<h1 class="BKTT-EventoDetalle__title" itemprop="name">
@@ -79,10 +80,131 @@
 														FieldName="Title" />
 												</h1>
 											</div>
-											<button class="BKTT-EventoDetalle__share" type="button"
-												aria-label="Compartir evento"><span
-													class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
-													aria-hidden="true"></span></button>
+
+<!-- Botón de compartir -->
+<div class="share-container">
+  <button id="shareButton" class="BKTT-EventoDetalle__share" type="button"
+	aria-label="Compartir evento"><span
+		class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
+		aria-hidden="true"></span></button>
+  <div id="shareOptions" class="share-options" hidden>
+    <a id="shareWhatsApp" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+    <a id="shareFacebook" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+    <a id="shareX" target="_blank" rel="noopener noreferrer">
+      X
+    </a>
+    <a id="shareLinkedIn" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+    <a id="shareEmail">
+      Email
+    </a>
+  </div>
+</div>
+
+<style>
+  .share-container {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+  }
+
+  .share-button {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    font-size: 15px;
+  }
+
+  .share-button:hover {
+    background: #555;
+  }
+
+  .share-options {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 6px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  }
+
+  .share-options a {
+    display: block;
+    padding: 9px 12px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .share-options a:hover {
+    background: #f2f2f2;
+  }
+</style>
+
+<script>
+  const shareButton = document.getElementById("shareButton");
+  const shareOptions = document.getElementById("shareOptions");
+
+  // URL y título del contenido que se va a compartir
+  var pageUrl = window.location.href;
+  const pageTitle = document.title;
+
+  // Texto que acompañará al enlace
+  const shareText = `Mira este contenido: ${pageTitle}`;
+  
+
+  shareButton.addEventListener("click", async () => {
+    // Usar el sistema nativo de compartir del dispositivo
+    if (navigator.share) {
+	  console.log(window.isSecureContext);
+	  console.log(location.href);
+	  console.log(location.protocol);
+      try {
+        await navigator.share({
+          title: pageTitle,
+          text: shareText,
+          url: pageUrl
+        });
+		console.log("PROMISE", p);
+
+		p.then(() => console.log("THEN"));
+
+		p.catch(e => console.log("CATCH", e));
+      } catch (error) {
+        // El usuario puede haber cancelado el menú de compartir
+        console.log("Compartir cancelado");
+		alert("name: " + error.name + "\nmessage: " + error.message);
+      }
+
+    } else {
+      // Si no existe Web Share API, mostramos las alternativas
+      shareOptions.hidden = !shareOptions.hidden;
+    }
+  });
+
+  // WhatsApp
+  document.getElementById("shareWhatsApp").href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + pageUrl);
+  // Facebook
+  document.getElementById("shareFacebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl);
+  // X
+  document.getElementById("shareX").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
+  // LinkedIn
+  document.getElementById("shareLinkedIn").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(pageUrl);
+  // Email
+  document.getElementById("shareEmail").href = "mailto:?subject=" + encodeURIComponent(pageTitle) + "&body=" + encodeURIComponent(shareText + "\n\n" + pageUrl);
+</script>
 										</div>
 									</div>
 								</div>
@@ -96,104 +218,116 @@
 														<li><a href="#descripcion" class="is-active">Descripción</a>
 														</li>
 														<li><a href="#localizacion">Localización</a></li>
-														<li><a href="#relacionados">Relacionados</a></li>
+														<!-- <li><a href="#relacionados">Relacionados</a></li> -->
 													</ul>
 												</nav>
 												<section id="descripcion" class="BKTT-EventoDetalle__section"
 													itemprop="description" role="region"
 													aria-labelledby="descripcion-heading">
-													<biscaytik:HideWhenBlank ID="HideWhenBlank12" runat="server"
-														FieldNameToCheck="TurismoGrupoGaleria">
-														<biscaytik:GalleryContentPageWebPart id="GalleriaContent"
-															runat="server"
-															__WebPartId="{C0A48ADF-4184-48DA-BF35-A2237A8C8565}"
-															__MarkupType="vsattributemarkup" WebPart="true" Height=""
-															Width="">
-														</biscaytik:GalleryContentPageWebPart>
-													</biscaytik:HideWhenBlank>
 													<dl class="BKTT-EventoDetalle__meta"
 														aria-label="Información del evento">
-														<div class="BKTT-EventoDetalle__metaItem">
-															<dt class="sr-only">Tipo de comida</dt>
-															<dd>
-																<span
-																	class="BKTT-Icon fa-light fa-plate-utensils"></span>
-																<biscaytik:HideWhenBlank ID="HideWhenBlank15"
-																	runat="server"
-																	FieldNameToCheck="Tipo_x0020_de_x0020_comida">
-																	<SharePointWebControls:TextField ID="TextField15"
-																		FieldName="Tipo_x0020_de_x0020_comida"
+														<biscaytik:HideWhenBlank ID="HideWhenBlank15"
+															runat="server"
+															FieldNameToCheck="TipoComida">
+															<div class="BKTT-EventoDetalle__metaItem">
+																<dt class="sr-only">Tipo de comida</dt>
+																<dd>
+																	<span class="BKTT-Icon fa-light fa-plate-utensils"></span>
+																		<SharePointWebControls:TextField ID="TextField15" FieldName="TipoComida" runat="server" />
+																	<span class="BKTT-Badge badge bg-light text-dark">
+																		<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/restaurante-marisco.svg"
+																			class="BKTT-Icon" alt="restaurante marisco">
+																		<span class="BKTT-Label">Marisco</span>
+																	</span>
+																</dd>
+															</div>
+														</biscaytik:HideWhenBlank>
+														<biscaytik:HideWhenBlank ID="HideWhenBlank24" runat="server" FieldNameToCheck="GastoMedio">
+															<div class="BKTT-EventoDetalle__metaItem">
+																<dt class="sr-only">Gasto medio</dt>
+																<dd>
+																	<strong><SharePointWebControls:TextField ID="TextField24"
+																		FieldName="GastoMedio"
+																		runat="server" /> €/persona
+																	</strong>
+																</dd>
+															</div>
+														</biscaytik:HideWhenBlank>
+														<biscaytik:HideWhenBlank ID="HideWhenBlank25" runat="server" FieldNameToCheck="OpcionDestacada">
+															<div class="BKTT-EventoDetalle__metaItem">
+																<dt class="sr-only">Opción destacada</dt>
+																<dd>
+																	<strong><SharePointWebControls:TextField ID="TextField25"
+																		FieldName="OpcionDestacada"
 																		runat="server" />
-																</biscaytik:HideWhenBlank>
-																<span class="BKTT-Badge badge bg-light text-dark">
-																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/restaurante-marisco.svg"
-																		class="BKTT-Icon" alt="restaurante marisco">
-																	<span class="BKTT-Label">Marisco</span>
-																</span>
-															</dd>
-														</div>
-														<div class="BKTT-EventoDetalle__metaItem">
-															<dt class="sr-only">
-																<asp:Label
-																	text="<%$Resources:Turismo2013.Layouts,horario%>"
-																	runat="server" />
-															</dt>
-															<dd>
-																<span class="BKTT-Icon fa-light fa-clock"
-																	aria-hidden="true"></span>
-																<biscaytik:HideWhenBlank ID="HideWhenBlank2"
-																	runat="server" FieldNameToCheck="TurismoHour">
+																	</strong>
+																</dd>
+															</div>
+														</biscaytik:HideWhenBlank>
+														<biscaytik:HideWhenBlank ID="HideWhenBlank2"
+															runat="server" FieldNameToCheck="TurismoHour">
+															<div class="BKTT-EventoDetalle__metaItem">
+																<dt class="sr-only">
+																	<h3><asp:Label
+																		text="<%$Resources:Turismo2013.Layouts,horario%>"
+																		runat="server" />
+                 </h3>
+																</dt>
+																<dd>
+																	<span class="BKTT-Icon fa-light fa-clock"
+																		aria-hidden="true"></span>
 																	<span class="BKTT-Label">
 																		<asp:Label text="Horario" runat="server" />
 																		<PublishingWebControls:RichHtmlField
 																			ID="RichHtmlField2" FieldName="TurismoHour"
 																			runat="server" />
 																	</span>
-																</biscaytik:HideWhenBlank>
-															</dd>
+																</dd>
+															</div>
+														</biscaytik:HideWhenBlank>
 													</dl>
 													<!--add SS tags o subcategorias-->
-													<h3>Servicios</h3>
-													<ul class="BKTT-Tags">
-														<li>
-															<span class="BKTT-Badge badge bg-light text-dark">
-																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_asador.svg"
-																	class="BKTT-Icon" alt="Asador">
-																<span class="BKTT-Label">Asador</span>
-															</span>
-														</li>
-														<li>
-															<span class="BKTT-Badge badge bg-light text-dark">
-																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_edifhistorico.svg"
-																	class="BKTT-Icon" alt="Edificio Histórico">
-																<span class="BKTT-Label">Edificio Histórico</span>
-															</span>
-														</li>
-														<li>
-															<span class="BKTT-Badge badge bg-light text-dark">
-																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_terraza.svg"
-																	class="BKTT-Icon" alt="Terraza">
-																<span class="BKTT-Label">Terraza</span>
-															</span>
-														</li>
-														<li>
-															<span class="BKTT-Badge badge bg-light text-dark">
-																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_wifi.svg"
-																	class="BKTT-Icon" alt="Wifi">
-																<span class="BKTT-Label">Wifi</span>
-															</span>
-														</li>
-														<li>
-															<span class="BKTT-Badge badge bg-light text-dark">
-																<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_bar.svg"
-																	class="BKTT-Icon" alt="Bar">
-																<span class="BKTT-Label">Bar</span>
-															</span>
-														</li>
-													</ul>
-													<!--end add SS tags o subcategorias-->
 													<biscaytik:HideWhenBlank ID="HideWhenBlank9" runat="server"
 														FieldNameToCheck="ServiciosComer">
+														<h3>Servicios</h3>
+														<ul class="BKTT-Tags">
+															<li>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_asador.svg"
+																		class="BKTT-Icon" alt="Asador">
+																	<span class="BKTT-Label">Asador</span>
+																</span>
+															</li>
+															<li>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_edifhistorico.svg"
+																		class="BKTT-Icon" alt="Edificio Histórico">
+																	<span class="BKTT-Label">Edificio Histórico</span>
+																</span>
+															</li>
+															<li>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_terraza.svg"
+																		class="BKTT-Icon" alt="Terraza">
+																	<span class="BKTT-Label">Terraza</span>
+																</span>
+															</li>
+															<li>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_wifi.svg"
+																		class="BKTT-Icon" alt="Wifi">
+																	<span class="BKTT-Label">Wifi</span>
+																</span>
+															</li>
+															<li>
+																<span class="BKTT-Badge badge bg-light text-dark">
+																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_bar.svg"
+																		class="BKTT-Icon" alt="Bar">
+																	<span class="BKTT-Label">Bar</span>
+																</span>
+															</li>
+														</ul>
+														<!--end add SS tags o subcategorias-->
 														<span class="BKTT-Label">
 															<asp:Label text="Servicios" runat="server" />
 														</span>
@@ -203,14 +337,12 @@
 																listname="ServiciosComer" />
 														</div>
 													</biscaytik:HideWhenBlank>
-													<SharePointWebControls:TextField ID="TextField17"
-														FieldName="Opcion_x0020_destacada" runat="server" />
-													<h2 id="descripcion-heading">
-														<asp:Label text="<%$Resources:Turismo2013.Layouts,descripcion%>"
-															runat="server" />
-													</h2>
 													<biscaytik:HideWhenBlank ID="HideWhenBlank10" runat="server"
 														FieldNameToCheck="TurismoDescripcion">
+														<h2 id="descripcion-heading">
+															<asp:Label text="<%$Resources:Turismo2013.Layouts,descripcion%>"
+																runat="server" />
+														</h2>
 														<p>
 															<PublishingWebControls:RichHtmlField ID="RichHtmlField3"
 																FieldName="TurismoDescripcion" runat="server" />
@@ -235,8 +367,11 @@
 																FieldName="TurismoMenu" runat="server" />
 														</div>
 													</biscaytik:HideWhenBlank>
+													<biscaytik:HideWhenBlank ID="HideWhenBlank12" runat="server" FieldNameToCheck="TurismoGrupoGaleria">
+														<biscaytik:GalleryContentPageWebPart id="GalleriaContent" runat="server" __WebPartId="{C0A48ADF-4184-48DA-BF35-A2237A8C8565}" __MarkupType="vsattributemarkup" WebPart="true" Height="" Width=""></biscaytik:GalleryContentPageWebPart>
+													</biscaytik:HideWhenBlank>
 												</section>
-												<!--Add SS galeria-->
+												<!--Add SS galeria--
 												<div class="BKTT-Gallery BKTT-Gallery--featured ">
 													<div class="BKTT-Gallery__main"><img
 															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/summerFest.jpg"
@@ -291,7 +426,7 @@
 														</div>
 													</div>
 												</div>
-												<!--obra-->
+												obra--
 												<section class="BKTT-ObraDetalle__gallery">
 													<div class="BKTT-Gallery BKTT-Gallery--masonry "
 														style="--BKTT-gallery-columns: 3; --BKTT-gallery-gap: 0.5rem;">
@@ -351,65 +486,87 @@
 																style="filter: grayscale(1);"></button>
 													</div>
 												</section>
-												<!--end Add SS galería-->
+												end Add SS galería-->
 												<section id="localizacion" class="BKTT-EventoDetalle__section"
 													itemprop="location" itemscope itemtype="https://schema.org/Place"
 													role="region" aria-labelledby="localizacion-heading">
 													<h2 id="localizacion-heading">Localización</h2>
 													<dl>
-														<!--SS dirección con microdatos PostalAddress-->
-														<dt class="sr-only">
-															<span class="BKTT-Label">Dirección</span>
-														</dt>
-														<dd>
-															<span
-																class="BKTT-Icon fa-light fa-location-dot me-2"></span>
-															<strong itemprop="name">Plaza de la Iglesia</strong>
-															<div itemprop="address" itemscope
-																itemtype="https://schema.org/PostalAddress">
-																<span itemprop="streetAddress">C. Villa de Plentzia
-																	Kalea, 14</span><br />
-																<span itemprop="postalCode">48930</span>
-																<span itemprop="addressLocality">Areeta</span>
-															</div>
-														</dd>
+														<biscaytik:HideWhenBlank ID="HideWhenBlank22" runat="server"
+															FieldNameToCheck="WorkAddress">
+															<!--SS dirección con microdatos PostalAddress-->
+															<dt class="sr-only">
+																<span class="BKTT-Label">Dirección</span>
+															</dt>
+															<dd>
+                <div>
+                 <span class="BKTT-Icon fa-light fa-location-dot me-2"></span>
+																 <strong itemprop="name">Plaza de la Iglesia</strong>
+                </div>
+																<div itemprop="address" itemscope
+																	itemtype="https://schema.org/PostalAddress">
+																	<span itemprop="streetAddress">C. Villa de Plentzia
+																		Kalea, 14</span><br />
+																	<span itemprop="postalCode">48930</span>
+																	<span itemprop="addressLocality">Areeta</span>
+																</div>
+
+																<div itemprop="address" itemscope
+																	itemtype="https://schema.org/PostalAddress">
+																	<SharePoint:FieldValue ID="FieldValue22" runat="server"
+																		FieldName="WorkAddress" />
+																</div>
+																<div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+																</div>
+															</dd>
+														</biscaytik:HideWhenBlank>
+
 														<!--SS mapa ejem-->
-														<!-- CSS de Leaflet -->
-														<link rel="stylesheet"
-															href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+														<biscaytik:HideWhenBlank ID="HideWhenBlank23" runat="server"
+															FieldNameToCheck="TurismoCoordenadas">
+															<!-- CSS de Leaflet -->
+															<link rel="stylesheet"
+																href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-														<!-- Mapa -->
-														<div id="map"
-															style="width: 100%; height: 500px; overflow: hidden; background-color: var(--grey__background); margin-bottom: 2rem;">
-														</div>
-
-														<!-- JS de Leaflet -->
-														<script
-															src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-														<script>
-															var map = L.map('map').setView([43.3183, -1.9812], 13);
-
-															L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-																maxZoom: 19,
-																attribution: '© OpenStreetMap'
-															}).addTo(map);
-
-															var marker = L.marker([43.3183, -1.9812]).addTo(map);
-
-															marker.bindPopup("<b>¡Hola!</b><br />Esto es San Sebastián.").openPopup();
-
-															setTimeout(function () {
-																map.invalidateSize();
-															}, 500);
-														</script>
-
+															<!-- Mapa -->
+															<div id="map"
+																style="width: 100%; height: 500px; overflow: hidden; background-color: var(--grey__background); margin-bottom: 2rem;">
+															</div>
+	
+															<!-- JS de Leaflet -->
+															<script
+																src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	
+															<script>
+																// Inicializar el mapa centrado en unas coordenadas y un nivel de zoom
+																var map = L.map('map').setView([<SharePoint:FieldValue ID="FieldValue23" runat="server"
+																		FieldName="TurismoCoordenadas" />], 13);
+	
+																// Añadir la capa base de OpenStreetMap
+																L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+																	maxZoom: 19,
+																	attribution: '© OpenStreetMap'
+																}).addTo(map);
+	
+																// Añadir un marcador
+																var marker = L.marker([<SharePoint:FieldValue ID="FieldValue24" runat="server"
+																		FieldName="TurismoCoordenadas" />]).addTo(map);
+	
+																marker.bindPopup("<b>¡Hola!</b><br />Estamos en la ubicación.").openPopup();
+	
+																setTimeout(function () {
+																	map.invalidateSize();
+																}, 500);
+															</script>
+														</biscaytik:HideWhenBlank>
 														<!--end SS mapa ejem-->
 														<!--end SS dirección con microdatos-->
+
 														<div class="row">
-															<div class="col">
-																<biscaytik:HideWhenBlank ID="HideWhenBlank3"
-																	runat="server" FieldNameToCheck="TurismoPhone">
+															<biscaytik:HideWhenBlank ID="HideWhenBlank3"
+																runat="server" FieldNameToCheck="TurismoPhone">
+																<div class="col">
+																
 																	<dt class="sr-only">
 																		<span class="BKTT-Label">
 																			<asp:Label text="Teléfono" runat="server" />
@@ -421,8 +578,8 @@
 																		<SharePointWebControls:TextField ID="TextField2"
 																			FieldName="TurismoPhone" runat="server" />
 																	</dd>
-																</biscaytik:HideWhenBlank>
-															</div>
+																</div>
+															</biscaytik:HideWhenBlank>
 															<div class="col">
 																<biscaytik:HideWhenBlank ID="HideWhenBlank4"
 																	runat="server" FieldNameToCheck="TurismoWeb">
@@ -537,25 +694,22 @@
 													itemtype="https://schema.org/Offer" role="region"
 													aria-labelledby="destacado-heading">
 													<h2 id="destacado-heading">Destacado</h2>
-													<biscaytik:HideWhenBlank ID="HideWhenBlank17" runat="server"
-														FieldNameToCheck="Opcion_x0020_destacada">
+													<biscaytik:HideWhenBlank ID="HideWhenBlank18" runat="server"
+														FieldNameToCheck="TextoDestacado">
 														<p>
-															<biscaytik:HideWhenBlank ID="HideWhenBlank18" runat="server"
-																FieldNameToCheck="Texto_x0020_destacado">
-																<SharePoint:FieldValue ID="FieldValue18" runat="server"
-																	FieldName="Texto_x0020_destacado" />
-															</biscaytik:HideWhenBlank>
+															<SharePoint:FieldValue ID="FieldValue18" runat="server"
+																FieldName="TextoDestacado" />
 														</p>
 													</biscaytik:HideWhenBlank>
 													<biscaytik:HideWhenBlank ID="HideWhenBlank16" runat="server"
-														FieldNameToCheck="Gasto_x0020_medio">
+														FieldNameToCheck="GastoMedio">
 														<div class="BKTT-EventoDetalleAside__price">
 															<span>por persona</span>
 															<meta itemprop="price" content="15">
 															<meta itemprop="priceCurrency" content="EUR">
 															<strong>
 																<SharePointWebControls:TextField ID="TextField16"
-																	FieldName="Gasto_x0020_medio" runat="server" />
+																	FieldName="GastoMedio" runat="server" />
 																€
 															</strong>
 														</div>
@@ -575,7 +729,7 @@
 												</div>
 											</aside>
 										</div>
-										<!--add SS Eventos similares--
+										<!--add SS Eventos similares
 										<div class="row">
 											<section id="relacionados" role="region"
 												aria-labelledby="relacionados-heading">
@@ -737,55 +891,54 @@
 												</ul>
 											</section>
 										</div>
-										<!--end add SS Eventos similares-->
+										end add SS Eventos similares-->
 									</div>
 								</div>
-								<!--add SS interesante-->
+								<!--add SS interesante--
 								<section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
 									<div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
 										<div class="container">
-											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte
-										</h2>
-										<div class="row mb-5">
-											<div class="BKTT-CardGrid__item"><a
-													class="BKTT-CardGrid__card card h-100"
-													style="cursor: pointer;"><img
-														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/teatro.jpg"
-														class="card-img-top" alt="Pub Leku Ona">
-													<div class="BKTT-CardGrid__header"
-														style="background-color: var(--custom-white);">
-														<h5 class="BKTT-CardGrid__title"
-															style="color: var(--primary-color);">Pub Leku Ona</h5>
-													</div>
-												</a></div>
-											<div class="BKTT-CardGrid__item"><a
-													class="BKTT-CardGrid__card card h-100"
-													style="cursor: pointer;"><img
-														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel1.jpg"
-														class="card-img-top" alt="Hotel Boutique Bahía de Plentzia">
-													<div class="BKTT-CardGrid__header"
-														style="background-color: var(--custom-white);">
-														<h5 class="BKTT-CardGrid__title"
-															style="color: var(--primary-color);">Hotel Boutique
-															Bahía de Plentzia</h5>
-													</div>
-												</a></div>
-											<div class="BKTT-CardGrid__item"><a
-													class="BKTT-CardGrid__card card h-100"
-													style="cursor: pointer;"><img
-														src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/canoa.jpg"
-														class="card-img-top" alt="Comercio X">
-													<div class="BKTT-CardGrid__header"
-														style="background-color: var(--custom-white);">
-														<h5 class="BKTT-CardGrid__title"
-															style="color: var(--primary-color);">Comercio X</h5>
-													</div>
-												</a></div>
-										</div>
+											<h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte</h2>
+											<div class="row mb-5">
+												<div class="BKTT-CardGrid__item"><a
+														class="BKTT-CardGrid__card card h-100"
+														style="cursor: pointer;"><img
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/teatro.jpg"
+															class="card-img-top" alt="Pub Leku Ona">
+														<div class="BKTT-CardGrid__header"
+															style="background-color: var(--custom-white);">
+															<h5 class="BKTT-CardGrid__title"
+																style="color: var(--primary-color);">Pub Leku Ona</h5>
+														</div>
+													</a></div>
+												<div class="BKTT-CardGrid__item"><a
+														class="BKTT-CardGrid__card card h-100"
+														style="cursor: pointer;"><img
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/hotel1.jpg"
+															class="card-img-top" alt="Hotel Boutique Bahía de Plentzia">
+														<div class="BKTT-CardGrid__header"
+															style="background-color: var(--custom-white);">
+															<h5 class="BKTT-CardGrid__title"
+																style="color: var(--primary-color);">Hotel Boutique
+																Bahía de Plentzia</h5>
+														</div>
+													</a></div>
+												<div class="BKTT-CardGrid__item"><a
+														class="BKTT-CardGrid__card card h-100"
+														style="cursor: pointer;"><img
+															src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/canoa.jpg"
+															class="card-img-top" alt="Comercio X">
+														<div class="BKTT-CardGrid__header"
+															style="background-color: var(--custom-white);">
+															<h5 class="BKTT-CardGrid__title"
+																style="color: var(--primary-color);">Comercio X</h5>
+														</div>
+													</a></div>
+											</div>
 										</div>
 									</div>
 								</section>
-								<!--end add SS interesante-->
+								end add SS interesante-->
 
 								<!-- Botón prueba modal -->
 								<button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -794,6 +947,23 @@
 								</button>
 
 								<!-- Modal con spinner -->
+								<div class="BKTT-Modal modal fade" id="loadingModal" tabindex="-1"
+									aria-labelledby="loadingModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered justify-content-center">
+										<div class="">
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+											<div class="modal-body text-center">
+												<div class="spinner-border text-primary" role="status">
+													<span class="visually-hidden">Cargando...</span>
+												</div>
+												<strong class="d-block mt-3">Cargando...</strong>
+												<h3 class="mt-3 BKTT-CSecondary">Enseguida estamos</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End modal -->
+         <!-- Modal 
 								<div class="BKTT-Modal modal fade" id="loadingModal" tabindex="-1"
 									aria-labelledby="loadingModalLabel" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
@@ -813,5 +983,5 @@
 										</div>
 									</div>
 								</div>
-								<!-- End modal -->
+								 End modal -->
 						</asp:Content>

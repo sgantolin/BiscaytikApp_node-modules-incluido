@@ -195,6 +195,13 @@
     .BKTT-Header .container .d-flex .BKTT-Search input {
         position: relative;
     }
+    .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared{
+        background-color: var(--custom-white);
+    }
+    .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared #SearchBox .ms-srch-sb-border{
+        border:none;
+        width: 100%;
+    }
 
     .BKTT-Header .container .d-flex .BKTT-Search input:after {
         content: "\f002";
