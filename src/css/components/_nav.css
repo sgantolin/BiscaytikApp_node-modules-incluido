@@ -9,11 +9,12 @@
     text-decoration: none;
     white-space: nowrap;
     font-family: var(--font-family-secondary);
+    font-size: 14px;
 }
 
 .BKTT-Nav .BKTT-Icon {
     margin: 0 0.5rem;
-    max-width: 24px;
+    max-width: 21px;
 }
 
 .BKTT-Nav .navbar-nav li a .BKTT-Icon:first-child {
@@ -35,10 +36,14 @@
 }
 
 .BKTT-Nav .navbar-nav li.dropdown:hover .dropdown-menu {
-    display: block;
+    display: grid;
 }
 
-.BKTT-Nav .navbar-nav .dropdown-menu {
+.BKTT-Nav .navbar-nav li a + .dropdown-menu {
+    display: none;
+}
+
+.BKTT-Nav .navbar-nav a:hover + .dropdown-menu {
     background-color: var(--primary-color);
     background-image: var(--menu-image);
     background-position: left bottom;
@@ -48,13 +53,19 @@
     border-color: var(--primary-color);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
     border-radius: 0 0 6px 6px;
-    min-width: 230px;
-    width: fit-content;
     margin-top: 1px;
     top: 40px;
     z-index: 999;
     columns: 4;
     column-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    max-width: 800px;
+    /* 4 x 200 aprox */
+    width: max-content;
+
+    gap: .5rem 1rem;
 }
 
 .BKTT-Nav .navbar-nav .dropdown-menu li {
@@ -147,13 +158,22 @@
 @media (max-width: 991px) {
     .BKTT-Nav .navbar-nav .dropdown-menu {
         min-width: fit-content;
-        background-image: none;
+        background-color: transparent !important;
+        background-image: none !important;
+        display: block !important;
+        border: none;
+        /*background-image: none;
         background-color: transparent;
         border-radius: 0;
         border-color: transparent;
         columns: 1;
         column-gap: 0;
-        width: 100%;
+        width: 100%;*/
+    }
+
+    .BKTT-Nav .navbar-nav li a:after {
+        right: 8px;
+        position: absolute;
     }
 
     .BKTT-Nav .navbar-nav .dropdown-menu li a.dropdown-item {
@@ -168,10 +188,21 @@
         color: var(--primary-color);
     }
 
+    /*.BKTT-Nav .navbar-nav .dropdown-menu {
+        box-shadow: none;
+        padding: 8px 0;
+        grid-template-columns: auto;
+    }*/
+
     .BKTT-Nav .navbar-nav .dropdown-menu>li>a {
         color: var(--text-color);
         font-family: var(--font-family-secondary);
         font-weight: normal;
+        padding: 0;
+    }
+
+    .BKTT-Nav .navbar-nav .dropdown-menu>li>a .BKTT-Icon {
+        display: none;
     }
 
     .BKTT-Nav .navbar-collapse {
@@ -192,23 +223,6 @@
         outline: 3px solid var(--primary-color) !important;
     }
 
-    .BKTT-Header .container .d-flex .BKTT-Search input {
-        position: relative;
-    }
-    .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared{
-        background-color: var(--custom-white);
-    }
-    .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared #SearchBox .ms-srch-sb-border{
-        border:none;
-        width: 100%;
-    }
-
-    .BKTT-Header .container .d-flex .BKTT-Search input:after {
-        content: "\f002";
-        font-family: 'Font Awesome 6 Pro';
-        color: var(--primary-color);
-        font-weight: 300;
-    }
 
     .BKTT-Nav .BKTT-LangSelect {
         display: block;

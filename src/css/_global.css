@@ -127,8 +127,8 @@ body main .BKTT-Badge.bg-primary {
  width: fit-content;
 }
 
-.BKTT-CSecondary {
- color: var(--secondary-color);
+.BKTT-Main .BKTT-CSecondary {
+ color: var(--secondary-color)!important;
 }
 
 .BKTT-cookies {

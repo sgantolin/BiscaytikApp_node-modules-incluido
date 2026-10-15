@@ -23,20 +23,23 @@
 }
 
 .BKTT-Search .input-group {
- width: 160px;
+ width: fit-content;
  height: 35px;
 }
 
 .BKTT-Search .input-group .form-control {
  margin-bottom: 0;
  float: none;
+ width: fit-content;
+ min-width: 180px;
+ border: none;
 }
 
 .BKTT-Search .input-group input {
  position: absolute;
- padding: 0.5rem 35px 0.5rem 1rem;
+ padding: 0.5rem 45px 0.5rem 1rem;
  border-color: transparent;
- width: 164px !important;
+ width: 180px !important;
  background-color: transparent;
  right: -4px;
  top: 0;
@@ -81,6 +84,7 @@
 
 .BKTT-LangSelect {
  position: relative;
+ display: block!important;
 }
 
 .BKTT-Nav+.BKTT-LangSelect ul {
@@ -182,7 +186,7 @@
  .BKTT-Search--mobile:has(.BKTT-Button:hover) .container.show {
   display: block;
   position: absolute;
-  width: 400px;
+  width: 100%;
   top: 54px;
   left: 0;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -258,12 +262,12 @@
   width: 100%;
  }
 
- .BKTT-Search--mobile .container.collapse.show {
+ /*.BKTT-Search--mobile .container.collapse.show {
   display: block;
   position: absolute;
   left: 0;
   top: 56px;
- }
+ }*/
 
  .BKTT-LangSelect {
   padding-right: 15px;
@@ -287,9 +291,9 @@
   margin-top: 55px;
  }
 
- .BKTT-Search--mobile:has(.BKTT-Button:hover) .container {
+ /*.BKTT-Search--mobile:has(.BKTT-Button:hover) .container {
   top: 45px;
- }
+ }*/
 
  .BKTT-Search--mobile .container .input-group .form-control {
   padding-left: 20px;
@@ -313,7 +317,53 @@
   color: var(--link-color-light);
   font-size: 0.9rem;
  }
+
  .BKTT-Search .input-group {
-    display: none !important;
+  display: none !important;
  }
+
+ .BKTT-Header .container .d-flex .BKTT-Search input:after {
+  content: "\f002";
+  font-family: 'Font Awesome 6 Pro';
+  color: var(--primary-color);
+  font-weight: 300;
+ }
+
+ .BKTT-Header .container .d-flex .BKTT-Search input {
+  position: relative;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared {
+  background-color: var(--custom-white);
+  height: 45px;
+  border-radius: 8px;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared .ms-webpart-chrome {
+  line-height: 45px;
+  padding: 0 8px 0 16px;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared .ms-srch-sb-searchLink {
+  top: 9px;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared .ms-srch-sb-searchLink:before {
+  top: -9px;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared #SearchBox .ms-srch-sb-border {
+  border: none;
+  /*width: 100%;*/
+  position: relative;
+ }
+
+ .BKTT-Header #BKTT-Search--mobileCollap #BKTT-Search--shared #SearchBox .ms-srch-sb-border input {
+  line-height: 45px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  width: 87% !important;
+ }
+
 }
