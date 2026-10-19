@@ -166,9 +166,6 @@ h3.BKTT-CardGrid__title {
 }
 
 /*listado*/
-/*.BKTT-Listado [class*="BKTT-WebPartZone-H50--"] .BKTT-CardContainer__item .BKTT-CardContainer__card {
- flex-direction: row;
-}*/
 
 .BKTT-carousel .BKTT-CarrouselControl {
  bottom: 0 !important;

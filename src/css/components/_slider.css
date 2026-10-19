@@ -112,6 +112,7 @@
 
 .BKTT-FigureSlider .carousel-item {
     position: relative;
+    height: 500px;
 }
 
 .BKTT-FigureSlider figcaption {
@@ -194,12 +195,15 @@
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button {
-    width: fit-content;
+    /*width: fit-content;*/
     position: relative;
     opacity: 1;
     border: 2px solid;
     border-radius: 100%;
     padding: 0.5rem 0.8rem;
+}
+.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button .fa-info{
+    padding: 0 0.2rem;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon:before {
@@ -220,10 +224,6 @@
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon+div .BKTT-Icon.fa-angle-left:before {
     top: 7px;
     left: 12px;
-}
-
-.BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button:hover {
-    opacity: 0.8;
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button span {
@@ -355,7 +355,6 @@
 
 .BKTT-Main .galleria-info {
     bottom: 40px !important;
-    /*z-index: 999;*/
 }
 
 .BKTT-Main .galleria-captionopen {
@@ -392,6 +391,33 @@
 .BKTT-Main .galleria-thumbnails .galleria-image.active {
     border: 2px solid var(--primary-color) !important;
 }
+.BKTT-FigureSlider .carousel-inner .carousel-caption a{
+    display: inline;
+}
+.BKTT-FigureSlider .carousel-inner .carousel-caption h2{
+        font-size:42px;
+    }
+    .BKTT-FigureSlider .carousel-inner .carousel-caption p, .BKTT-FigureSlider .carousel-inner .carousel-caption a{
+        font-size:18px;
+    }
+    .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Icon .BKTT-Icon{/*realmente uno de los 2 es  BKTT- Button*/
+        font-size:1.8rem!important;
+        padding: 0;
+        margin-top:5px;
+    }
+    .BKTT-FigureSlider .BKTT-CarrouselControl>div{
+        margin-right:0;
+    }
+    .BKTT-FigureSlider .BKTT-CarrouselControl>div .BKTT-Button{
+        min-width:40px;
+    }
+    .BKTT-FigureSlider .BKTT-CarrouselControl .BKTT-Button.carousel-control-prev{
+        margin-right:8px;
+    }
+    
+    .BKTT-FigureSlider .BKTT-CarrouselControl>div .BKTT-Icon{
+        font-size:1.2rem;
+    }
 
 @media (max-width: 1600px) {
     .BKTT-FigureSlider .carousel-caption {

@@ -24,6 +24,7 @@
   align-items: var(--BKTT-block-align, center);
   max-width: 1400px;
 }
+
 .BKTT-Block__button {}
 
 /* ─── Layouts: text-image / image-text / text-cards (replica Banner) ──────── */
@@ -46,7 +47,7 @@
 .BKTT-Block--text-image .BKTT-Block__section:last-child,
 .BKTT-Block--image-text .BKTT-Block__section:first-child {
   position: relative;
-  height: 324px;
+  /*height: 324px;*/
   overflow: hidden;
 }
 
@@ -149,7 +150,7 @@
 }
 
 h2.BKTT-Block__title {
-  color: var(--custom-white)!important;
+  color: var(--custom-white) !important;
   margin: 0 0 2rem;
   font-size: clamp(1.75rem, 3vw, 3rem);
   line-height: 1.2;
@@ -169,6 +170,7 @@ h2.BKTT-Block__title {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  justify-content: center;
 }
 
 /* ─── Imagen genérica ─────────────────────────────────────────────────────── */
@@ -342,6 +344,27 @@ h2.BKTT-Block__title {
 
 .BKTT-Block__section.is-centered .BKTT-Block__content {
   align-items: center;
+}
+
+.BKTT-Block {
+  background: linear-gradient(
+    120deg,
+    var(--secondary-color) 0%,
+    color-mix(in srgb, var(--secondary-color) 70%, var(--primary-color) 30%) 50%,
+    var(--primary-color) 100%
+  );
+}
+
+.BKTT-Block * {
+  color: var(--custom-white);
+}
+/*WPZ 25*/
+[class*="BKTT-WebPartZone-H50"] .BKTT-Block .BKTT-Block__grid,[class*="BKTT-WebPartZone-H33"] .BKTT-Block .BKTT-Block__grid,  [class*="BKTT-WebPartZone-H25"] .BKTT-Block .BKTT-Block__grid{
+  display: flex;
+  flex-direction: column;
+}
+[class*="BKTT-WebPartZone-H50"] .BKTT-Block .BKTT-Block__grid img,[class*="BKTT-WebPartZone-H33"] .BKTT-Block .BKTT-Block__grid img,[class*="BKTT-WebPartZone-H25"] .BKTT-Block .BKTT-Block__grid img{
+  max-width:100%;
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */

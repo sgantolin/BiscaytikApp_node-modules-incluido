@@ -204,7 +204,8 @@ h3,
 
 /*Botones*/
 .BKTT-Main .BKTT-Button,
-.BKTT-Main .tp-caption.slider_but7 a {
+.BKTT-Main .tp-caption.slider_but7 a,
+.BKTT-FigureSlider .carousel-inner .carousel-caption a {
  display: flex;
  align-items: center;
  justify-content: center;
