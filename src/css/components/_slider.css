@@ -187,8 +187,11 @@
     min-width: auto;
 }
 .BKTT-FigureSlider .carousel-inner .carousel-caption{
-    bottom: 20%;
+    bottom: 22%;
+    left: 14%;
     text-align: left;
+    height: fit-content;
+    max-width: 37%;
 }
 .BKTT-FigureSlider .carousel-inner .carousel-caption *{
     color: var(--custom-white)!important;
@@ -259,6 +262,7 @@
 .carousel-indicators {
     top: 20px;
     justify-content: right;
+    height: fit-content;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -267,6 +271,9 @@
     background-color: var(--custom-white) !important;
     border-radius: 50%;
     display: inline-block;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-top: 0;
+    border-bottom: 0;
 }
 
 /*GALERIA OLD*/
@@ -392,7 +399,8 @@
     border: 2px solid var(--primary-color) !important;
 }
 .BKTT-FigureSlider .carousel-inner .carousel-caption a{
-    display: inline;
+    justify-content: flex-start;
+    width: fit-content;
 }
 .BKTT-FigureSlider .carousel-inner .carousel-caption h2{
         font-size:42px;
@@ -440,7 +448,6 @@
         object-fit: cover;
         object-position: center;
     }
-
     .carousel-indicators {
         justify-content: center;
         top: 12px !important;
@@ -452,10 +459,11 @@
         left: 12px;
         margin-left: 0;
     }
-
-    .carousel-dark .carousel-caption {
-        bottom: 4rem;
+.BKTT-FigureSlider .carousel-inner .carousel-caption{
+    left: 4%;
+        bottom: 4.5rem;
         display: block !important;
+        max-width: 100%;
     }
 
     .carousel-dark .carousel-caption {

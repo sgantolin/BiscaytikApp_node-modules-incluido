@@ -902,8 +902,10 @@ function Home() {
         </div>
       </div> */}
 
-   <section className="">
-    <CardGrid cards={AgendaCardss} bgColor="#f5f5f5" title="Destacados" columns={3} />
+   <section >
+    <div className="container">
+      <CardGrid cards={AgendaCardss} title="Destacados" columns={3} />
+    </div>
    </section>
 
    <section className="container py-4 py-md-5">

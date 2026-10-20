@@ -128,6 +128,7 @@
 .BKTT-Card__Data {
  font-size: 0.8rem;
  gap:8px;
+ display: flex;
 }
 
 .BKTT-Card__Data data {
@@ -142,6 +143,9 @@
 
 .BKTT-Card__Data .BKTT-Date {
  font-size: 0.9rem;
+}
+.BKTT-Card__Data .BKTT-Icon{
+    padding-left:1px;
 }
 
 .BKTT-Date {

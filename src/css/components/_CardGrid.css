@@ -328,7 +328,7 @@ h3.BKTT-CardGrid__title {
  }
 
  /*[class*="BKTT-WebPartZone-"] .BKTT-Card__figure,*/
- [class*="BKTT-WebPartZone-"] p {
+ [class*="BKTT-WebPartZone-"] p[itemprop="description"] {
   display: none;
  }
 

@@ -7,8 +7,8 @@
 .BKTT-Modal .modal-content{
  width:100%;
 }
- .p-component-overlay,
- .fade.show {
+ /*.p-component-overlay,*/
+ .BKTT-Modal.fade.show {
   position: absolute;
   top: 0;
   background-color: rgba(255,255,255,.5);
@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
  }
-.p-component-overlay::before, .fade.show::before {
+/*.p-component-overlay::before,*/ .BKTT-Modal.fade.show::before {
   content: "";
   position: absolute;
   inset: 0;

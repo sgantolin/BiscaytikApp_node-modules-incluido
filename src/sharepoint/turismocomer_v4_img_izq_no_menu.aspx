@@ -27,7 +27,7 @@
 									runat="server" />
 							</PublishingWebControls:EditModePanel>
 							<SharePointWebControls:FieldValue id="PageStylesField" FieldName="HeaderStyleDefinitions"
-								runat="server" />
+								runat="server" />		   
 						</asp:Content>
 
 						<asp:Content ContentPlaceholderID="PlaceHolderPageTitle" runat="server">
@@ -154,57 +154,57 @@
 </style>
 
 <script>
-  const shareButton = document.getElementById("shareButton");
-  const shareOptions = document.getElementById("shareOptions");
+const shareButton = document.getElementById("shareButton");
+const shareOptions = document.getElementById("shareOptions");
 
-  // URL y título del contenido que se va a compartir
-  var pageUrl = window.location.href;
-  const pageTitle = document.title;
+const pageUrl = window.location.href;
+const pageTitle = document.title;
+const shareText = `Mira este contenido: ${pageTitle}`;
 
-  // Texto que acompañará al enlace
-  const shareText = `Mira este contenido: ${pageTitle}`;
-  
+// WhatsApp
+document.getElementById("shareWhatsApp").href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + pageUrl);
+// Facebook
+document.getElementById("shareFacebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl);
+// X
+document.getElementById("shareX").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
+// LinkedIn
+document.getElementById("shareLinkedIn").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(pageUrl);
+// Email
+document.getElementById("shareEmail").href = "mailto:?subject=" + encodeURIComponent(pageTitle) + "&body=" + encodeURIComponent(shareText + "\n\n" + pageUrl);
 
-  shareButton.addEventListener("click", async () => {
-    // Usar el sistema nativo de compartir del dispositivo
-    if (navigator.share) {
-	  console.log(window.isSecureContext);
-	  console.log(location.href);
-	  console.log(location.protocol);
-      try {
-        await navigator.share({
-          title: pageTitle,
-          text: shareText,
-          url: pageUrl
-        });
-		console.log("PROMISE", p);
+shareButton.addEventListener("click", async function (e) {
 
-		p.then(() => console.log("THEN"));
+    e.preventDefault();
 
-		p.catch(e => console.log("CATCH", e));
-      } catch (error) {
-        // El usuario puede haber cancelado el menú de compartir
-        console.log("Compartir cancelado");
-		alert("name: " + error.name + "\nmessage: " + error.message);
-      }
+    if (!navigator.share) {
 
-    } else {
-      // Si no existe Web Share API, mostramos las alternativas
-      shareOptions.hidden = !shareOptions.hidden;
+        shareOptions.hidden = !shareOptions.hidden;
+        return;
+
     }
-  });
 
-  // WhatsApp
-  document.getElementById("shareWhatsApp").href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + pageUrl);
-  // Facebook
-  document.getElementById("shareFacebook").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(pageUrl);
-  // X
-  document.getElementById("shareX").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&url=" + encodeURIComponent(pageUrl);
-  // LinkedIn
-  document.getElementById("shareLinkedIn").href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(pageUrl);
-  // Email
-  document.getElementById("shareEmail").href = "mailto:?subject=" + encodeURIComponent(pageTitle) + "&body=" + encodeURIComponent(shareText + "\n\n" + pageUrl);
+    try {
+
+        await navigator.share({
+            title: pageTitle,
+            text: shareText,
+            url: pageUrl
+        });
+
+    }
+    catch (error) {
+
+        console.log(error.name);
+        console.log(error.message);
+
+        shareOptions.hidden = !shareOptions.hidden;
+
+    }
+
+});
+
 </script>
+
 										</div>
 									</div>
 								</div>
@@ -232,8 +232,12 @@
 															<div class="BKTT-EventoDetalle__metaItem">
 																<dt class="sr-only">Tipo de comida</dt>
 																<dd>
-																	<span class="BKTT-Icon fa-light fa-plate-utensils"></span>
-																		<SharePointWebControls:TextField ID="TextField15" FieldName="TipoComida" runat="server" />
+																	<span
+																		class="BKTT-Icon fa-light fa-plate-utensils"></span>
+
+																		<SharePointWebControls:TextField ID="TextField15"
+																			FieldName="TipoComida"
+																			runat="server" />
 																	<span class="BKTT-Badge badge bg-light text-dark">
 																		<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/restaurante-marisco.svg"
 																			class="BKTT-Icon" alt="restaurante marisco">
@@ -287,10 +291,8 @@
 														</biscaytik:HideWhenBlank>
 													</dl>
 													<!--add SS tags o subcategorias-->
-													<biscaytik:HideWhenBlank ID="HideWhenBlank9" runat="server"
-														FieldNameToCheck="ServiciosComer">
-														<h3>Servicios</h3>
-														<ul class="BKTT-Tags">
+													<h3>Servicios</h3>
+													<ul class="BKTT-Tags">
 															<li>
 																<span class="BKTT-Badge badge bg-light text-dark">
 																	<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/servicio_asador.svg"
@@ -328,15 +330,42 @@
 															</li>
 														</ul>
 														<!--end add SS tags o subcategorias-->
-														<span class="BKTT-Label">
-															<asp:Label text="Servicios" runat="server" />
-														</span>
+													<biscaytik:HideWhenBlank ID="HideWhenBlank9" runat="server"
+														FieldNameToCheck="ServiciosComer">
 														<div class="BKTT-Tags">
 															<biscaytik:ServiciosWebControl id="servicioswc"
 																runat="server" fieldname="ServiciosComer"
 																listname="ServiciosComer" />
 														</div>
 													</biscaytik:HideWhenBlank>
+													<script type="text/javascript">
+													(function() {
+														function mostrarTextosServiciosComer() {
+															var items = document.querySelectorAll("ul.forminputservicios li.forminputservicios img");
+															items.forEach(function(img) {
+																if (img.nextElementSibling && img.nextElementSibling.classList.contains("biscaytik-servicio-nombre")) {
+																	return;
+																}
+																var texto = img.getAttribute("alt") || img.getAttribute("title");
+																if (texto) {
+																	var span = document.createElement("span");
+																	span.className = "biscaytik-servicio-nombre";
+																	span.textContent = texto;
+																	span.style.marginLeft = "8px";
+																	span.style.verticalAlign = "middle";
+																	img.style.verticalAlign = "middle";
+																	img.parentNode.appendChild(span);
+																}
+															});
+														}
+													
+														if (document.readyState === "loading") {
+															document.addEventListener("DOMContentLoaded", mostrarTextosServiciosComer);
+														} else {
+															mostrarTextosServiciosComer();
+														}
+													})();
+													</script>
 													<biscaytik:HideWhenBlank ID="HideWhenBlank10" runat="server"
 														FieldNameToCheck="TurismoDescripcion">
 														<h2 id="descripcion-heading">
@@ -499,10 +528,8 @@
 																<span class="BKTT-Label">Dirección</span>
 															</dt>
 															<dd>
-                <div>
-                 <span class="BKTT-Icon fa-light fa-location-dot me-2"></span>
-																 <strong itemprop="name">Plaza de la Iglesia</strong>
-                </div>
+																<span class="BKTT-Icon fa-light fa-location-dot me-2"></span>
+																<strong itemprop="name">Plaza de la Iglesia</strong>
 																<div itemprop="address" itemscope
 																	itemtype="https://schema.org/PostalAddress">
 																	<span itemprop="streetAddress">C. Villa de Plentzia
@@ -592,6 +619,8 @@
 																		<span
 																			class="BKTT-Icon fa-light fa-browser"></span>
 																		<span class="BKTT-Link">
+						
+																 
 																			<PublishingWebControls:RichLinkField
 																				ID="RichLinkField1"
 																				FieldName="TurismoWeb" runat="server" />
@@ -609,6 +638,8 @@
 																		<span
 																			class="BKTT-Icon fa-light fa-envelope"></span>
 																		<span class="BKTT-Link">
+						
+																  
 																			<SharePointWebControls:TextField
 																				ID="TextField3" FieldName="TurismoMail"
 																				runat="server" />
@@ -629,6 +660,8 @@
 																		<span
 																			class="BKTT-Icon fa-brands fa-facebook"></span>
 																		<span class="BKTT-Link">
+						
+																   
 																			<PublishingWebControls:RichLinkField
 																				ID="RichLinkField2"
 																				FieldName="TurismoFacebook"
@@ -647,6 +680,8 @@
 																		<span
 																			class="BKTT-Icon fa-light fa-square-rss"></span>
 																		<span class="BKTT-Link">
+						
+																	
 																			<PublishingWebControls:RichLinkField
 																				ID="RichLinkField3"
 																				FieldName="TurismoTwitter"
@@ -758,7 +793,8 @@
 																				class="BKTT-Icon fa-light fa-calendar me-2"></span><time
 																				datetime="2026-01-22"
 																				itemprop="startDate">22/01/2026</time><span>
-																				- </span><time datetime="2026-01-24"
+																				</span><time datetime="2026-01-24"
+
 																				itemprop="endDate">24/01/2026</time>
 																		</div>
 																	</div>
@@ -797,7 +833,8 @@
 																				class="BKTT-Icon fa-light fa-calendar me-2"></span><time
 																				datetime="2026-01-22"
 																				itemprop="startDate">22/01/2026</time><span>
-																				- </span><time datetime="2026-01-24"
+																				</span><time datetime="2026-01-24"
+
 																				itemprop="endDate">24/01/2026</time>
 																		</div>
 																	</div>
@@ -984,4 +1021,191 @@
 									</div>
 								</div>
 								 End modal -->
+
+							<script>
+								(function () {
+									function limpiarTodoDOM() {
+										// 1. Limpieza estricta de enlaces de contacto (Web, Mail, Facebook, Twitter)
+										// Si no existe un elemento <a> con un href válido, se oculta el contenedor completo
+										var linksContacto = document.querySelectorAll('#localizacion .BKTT-Link');
+   
+										linksContacto.forEach(function (linkSpan) {
+											var a = linkSpan.querySelector('a');
+											var esValido = false;
+
+				 
+			
+											if (a) {
+												var href = (a.getAttribute('href') || '').trim();
+												var clonA = a.cloneNode(true);
+												clonA.querySelectorAll('.BKTT-Icon, svg, i, span[class*="fa-"]').forEach(function (ic) { ic.remove(); });
+												var txtA = clonA.textContent.replace(/[\s\u00A0\u200B\n\r\t]+/g, '').trim();
+												if (href && href !== '#' && href.indexOf('javascript') !== 0 && (txtA.length > 0 || a.querySelector('img'))) {
+													esValido = true;
+												}
+											}
+
+											if (!esValido) {
+												var dd = linkSpan.closest('dd');
+												if (dd) {
+													dd.style.setProperty('display', 'none', 'important');
+													var dt = dd.previousElementSibling;
+													if (dt && dt.tagName === 'DT') dt.style.setProperty('display', 'none', 'important');
+												}
+											}
+										});
+
+										// 2. Limpieza universal de cualquier otro elemento con icono en toda la página
+										var itemsConIcono = document.querySelectorAll('.BKTT-EventoDetalle__metaItem, .BKTT-Button, dl dd, .BKTT-Tags li');
+										itemsConIcono.forEach(function (elem) {
+											// Omitir los dd de enlace ya procesados arriba
+											if (elem.querySelector('.BKTT-Link')) return;
+
+											var tieneDato = false;
+											var clon = elem.cloneNode(true);
+											// Eliminar iconos, dt, svgs y etiquetas de accesibilidad de SharePoint
+											clon.querySelectorAll('.BKTT-Icon, svg, i, span[class*="fa-"], dt, [id$="_label"], .sr-only, script, style').forEach(function (el) { el.remove(); });
+											var txt = clon.textContent.replace(/[\s\u00A0\u200B\n\r\t]+/g, '').trim();
+											
+																																			
+											if (txt.length > 0) {
+			
+												tieneDato = true;
+
+											}
+
+				  
+											if (!tieneDato) {
+												elem.style.setProperty('display', 'none', 'important');
+				   
+												var prevDt = elem.previousElementSibling;
+											
+												if (prevDt && prevDt.tagName === 'DT') prevDt.style.setProperty('display', 'none', 'important');
+
+											} else {
+												elem.style.removeProperty('display');
+			  
+											}
+										});
+
+										// 3. Ocultar columnas (.col) en localizacion si todos sus dd están ocultos
+										var secLoc = document.getElementById('localizacion');
+										if (secLoc) {
+											secLoc.querySelectorAll('.row .col').forEach(function (col) {
+												var dds = col.querySelectorAll('dd');
+												if (dds.length > 0) {
+													var ddsVisibles = Array.prototype.filter.call(dds, function (d) {
+														return d.style.display !== 'none';
+													});
+													if (ddsVisibles.length === 0) {
+														col.style.setProperty('display', 'none', 'important');
+				   
+													} else {
+														col.style.removeProperty('display');
+			  
+													}
+												}
+											});
+		   
+
+											// 4. Evaluar si la sección Localización debe mostrarse o esconderse
+											var spAddressField = secLoc.querySelector('[itemprop="address"] span, [itemprop="address"]');
+											var textoSP = '';
+											if (spAddressField) {
+												   
+										
+														  
+												var clonAddr = spAddressField.cloneNode(true);
+												clonAddr.querySelectorAll('.BKTT-Icon, svg, i, span[class*="fa-"]').forEach(function (i) { i.remove(); });
+												textoSP = clonAddr.textContent.replace(/[\s\u00A0\u200B\n\r\t]+/g, '').trim();
+
+											}
+
+											var mapDiv = secLoc.querySelector('#map');
+											var tieneMapa = false;
+											if (mapDiv) {
+												var st = mapDiv.getAttribute('style') || '';
+												tieneMapa = st.indexOf('display: none') === -1 && mapDiv.children.length > 0;
+											}
+
+											var hayContactosVisibles = false;
+   
+											secLoc.querySelectorAll('.row .col').forEach(function (col) {
+												if (col.style.display !== 'none') hayContactosVisibles = true;
+
+											});
+
+						 
+											if (!textoSP && !tieneMapa && !hayContactosVisibles) {
+	 
+												secLoc.style.setProperty('display', 'none', 'important');
+												var tabLoc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+												 
+	 
+												if (tabLoc && tabLoc.closest('li')) tabLoc.closest('li').style.setProperty('display', 'none', 'important');
+			 
+											} else {
+	 
+												secLoc.style.removeProperty('display');
+												var tabLocVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+												if (tabLocVis && tabLocVis.closest('li')) tabLocVis.closest('li').style.removeProperty('display');
+
+											}
+										}
+
+										// 5. Evaluar Descripción
+										var secDesc = document.getElementById('descripcion');
+										if (secDesc) {
+											var clonDesc = secDesc.cloneNode(true);
+											clonDesc.querySelectorAll('h1, h2, h3, h4, h5, h6, .BKTT-Icon, svg, i, span[class*="fa-"], dt.sr-only, .sr-only').forEach(function (h) { h.remove(); });
+											var descTxt = clonDesc.textContent.replace(/[\s\u00A0\u200B\n\r\t]+/g, '').trim();
+											var descMedia = clonDesc.querySelector('img, iframe, .cwp, .card') !== null;
+											if (!descTxt && !descMedia) {
+	  
+												secDesc.style.setProperty('display', 'none', 'important');
+												var tabDesc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+												   
+	  
+												if (tabDesc && tabDesc.closest('li')) tabDesc.closest('li').style.setProperty('display', 'none', 'important');
+			 
+											} else {
+	  
+												secDesc.style.removeProperty('display');
+												var tabDescVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+												if (tabDescVis && tabDescVis.closest('li')) tabDescVis.closest('li').style.removeProperty('display');
+
+											}
+										}
+										// 6. Asignar pestaña activa
+										var tabsVisibles = document.querySelectorAll('.BKTT-EventoDetalle__tabs li:not([style*="display: none"]) a');
+										document.querySelectorAll('.BKTT-EventoDetalle__tabs a').forEach(function (a) { a.classList.remove('is-active'); });
+										if (tabsVisibles.length > 0) {
+											tabsVisibles[0].classList.add('is-active');
+										} else {
+											var nav = document.querySelector('.BKTT-EventoDetalle__tabsWrapper');
+   
+	 
+											if (nav) nav.style.setProperty('display', 'none', 'important');
+   
+										}
+									}
+
+									// Ejecución multifase para cubrir todo el ciclo de vida de SharePoint
+									if (document.readyState === 'loading') {
+										document.addEventListener('DOMContentLoaded', limpiarTodoDOM);
+									} else {
+										limpiarTodoDOM();
+									}
+									window.addEventListener('load', limpiarTodoDOM);
+									setTimeout(limpiarTodoDOM, 100);
+									setTimeout(limpiarTodoDOM, 400);
+									setTimeout(limpiarTodoDOM, 1000);
+
+									if (typeof _spBodyOnLoadFunctionNames !== 'undefined') {
+										_spBodyOnLoadFunctionNames.push('limpiarTodoDOMWrapper');
+										window.limpiarTodoDOMWrapper = limpiarTodoDOM;
+									}
+  
+								})();
+							</script>
 						</asp:Content>

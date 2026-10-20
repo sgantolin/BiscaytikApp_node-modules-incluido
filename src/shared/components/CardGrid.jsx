@@ -7,9 +7,9 @@ function CardGrid({ cards, bgColor, title, headerBgColor = 'var(--primary-color)
   return (
     <div className="BKTT-CardGrid" style={bgColor ? { backgroundColor: bgColor } : undefined}>
       {title && <h2 className="BKTT-CardGrid__sectionTitle BKTT-TitleBar">{title}</h2>}
-      <div className="row g-3">
+      <ul className="row g-3 BKTT-CardContainer">
         {cards.map((card, i) => (
-          <div key={i} className="BKTT-CardGrid__item">
+          <li key={i} className="BKTT-CardGrid__item col">
             <a
               className="BKTT-CardGrid__card card h-100"
               style={{ cursor: card.link ? 'pointer' : 'default' }}
@@ -22,9 +22,9 @@ function CardGrid({ cards, bgColor, title, headerBgColor = 'var(--primary-color)
                 <h5 className="BKTT-CardGrid__title" style={titleColor ? { color: titleColor } : undefined}>{card.title}</h5>
               </div>
             </a>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
