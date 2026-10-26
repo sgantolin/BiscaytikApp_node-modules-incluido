@@ -1,30 +1,34 @@
 .system-dialog,
 .BKTT-Modal .modal-dialog {
- min-height: fit-content;
- max-width: 768px;
- box-shadow: 0px 0px 16px var(--box-shadow-color);
+  min-height: fit-content;
+  max-width: 768px;
+  box-shadow: 0px 0px 16px var(--box-shadow-color);
 }
-.BKTT-Modal .modal-content{
- width:100%;
+
+.BKTT-Modal .modal-content {
+  width: 100%;
 }
- /*.p-component-overlay,*/
- .BKTT-Modal.fade.show {
+
+/*.p-component-overlay,*/
+.BKTT-Modal.fade.show {
   position: absolute;
   top: 0;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255, 255, 255, .6);
   backdrop-filter: blur(25px);
   width: 100%;
   height: 100%;
- }
-/*.p-component-overlay::before,*/ .BKTT-Modal.fade.show::before {
+}
+
+/*.p-component-overlay::before,*/
+.BKTT-Modal.fade.show::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,.3);
+  background: rgba(255, 255, 255, .3);
   pointer-events: none;
 }
 
- .BKTT-ModalAlert {
+.BKTT-ModalAlert {
   background-color: var(--theme-white);
   top: 20%;
   left: 50%;
@@ -32,12 +36,30 @@
   margin-left: -384px;
   margin-right: 0;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
- }
+}
 
- @media (max-width: 768px) {
+.BKTT-Modal .modal-dialog {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.BKTT-Modal .modal-dialog strong {
+  font-size: 0.85rem;
+}
+
+.BKTT-Modal .modal-dialog h3 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
 
   .without-maxwidth-dialog.more-width {
-   min-width: inherit;
-   width: calc(100% - 2rem);
+    min-width: inherit;
+    width: calc(100% - 2rem);
   }
- }
+}

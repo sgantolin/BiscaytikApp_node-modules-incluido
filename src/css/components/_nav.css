@@ -50,7 +50,7 @@
     z-index: 999;
     columns: 4;
     column-gap: 16px;
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
     max-width: 800px;
@@ -106,42 +106,76 @@
     margin-left: 0.5rem;
 }
 
-/*@media (max-width: 1255px) {
-    .BKTT-Nav .container-fluid {
-        padding: 0;
+/*nav max*/
+    .BKTT-Header .container{
+        align-items:center;
+            max-height: 100px;
     }
+    .BKTT-Nav .navbar-nav{
+        align-items:center;
+    }
+    .BKTT-Nav .nav-item .nav-link{
+    max-width: 148px;
+        border-radius:0;
+}
+    .BKTT-Nav .navbar-nav:has(> :nth-child(6)) .nav-item .nav-link {
+        font-size: .8rem;
+        max-width:161px;
+    }
+    .BKTT-Nav .navbar-nav:has(> :nth-child(6)) .nav-item .nav-link .BKTT-Icon{
+        display:none;
+    }
+    .BKTT-Logo{
+        max-width:15%!important;
+    }
+    .BKTT-Logo + div {
+        max-width:85%;
+        justify-content: space-between;
+    }
+    .BKTT-Logo + div .BKTT-Search{
+            padding-left: 100px;
+    }
+    .BKTT-Nav{
+        max-width:75%;
+    }
+    .BKTT-Nav .navbar-nav li a{
+         white-space: normal;
+            /*display: flex; con esto sin elipsis pero 3 líneas*/
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    /**/
+    .navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+}
 
-    .BKTT-Nav .container-fluid .navbar-toggle {
-        border: none;
-        padding-right: 0;
-        padding-left: 0;
-    }
+.navbar-nav > .nav-item {
+    flex: 1 1 auto;
+    min-width: fit-content;
+}
 
-    .BKTT-Nav .navbar-collapse {
-        position: absolute;
-        width: 400px;
-        right: -12px;
-        top: 55px;
-        background-color: var(--custom-white);
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    }
+.navbar-nav .nav-link {
+    text-overflow: ellipsis;
+    white-space: normal;
 
-    .BKTT-Nav .navbar-collapse .nav-item .row {
-        flex-direction: column;
-    }
+    /*display: -webkit-box;*/
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 
-    .BKTT-Nav .navbar-collapse .nav-item .row .col:first-child {
-        display: none;
+    max-width: 220px;
+    line-height: 1.2;
+    max-height: calc(1.6em * 2);
+    overflow: hidden;
+    align-items:center!important;
+}
+    .BKTT-Nav .navbar-nav a:hover + .dropdown-menu{
+        margin-top:0;
+        top: 100%;
     }
-
-    .BKTT-Nav .navbar-collapse .nav-item .row .col ul {
-        padding-left: 0;
-    }
-
-    .BKTT-Nav .navbar-collapse .nav-item .row .col ul a {
-        padding-left: 0;
-    }
-}*/
 
 @media (max-width: 991px) {
     .BKTT-Nav .navbar-nav .dropdown-menu {

@@ -60,7 +60,7 @@
           <div class="row">
            <div class="WPZT-ListCont--Default col-12">
             <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="BottomLeftZone"
-             FrameType="TitleBarOnly" Title="Zona 1" Orientation="Vertical">
+             FrameType="TitleBarOnly" Title="Zona 1" Orientation="Horizontal">
              <ZoneTemplate></ZoneTemplate>
             </WebPartPages:WebPartZone>
            </div>
@@ -104,7 +104,7 @@
         <div class="container">
          <div id="grid-container" class="cquery">
           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopZone" FrameType="TitleBarOnly"
-           Title="Zona 6" Orientation="Vertical">
+           Title="Zona 6" Orientation="Horizontal">
            <ZoneTemplate></ZoneTemplate>
           </WebPartPages:WebPartZone>
          </div>
