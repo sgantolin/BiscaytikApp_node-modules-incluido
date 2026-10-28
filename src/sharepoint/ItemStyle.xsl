@@ -691,22 +691,21 @@
       </div>
       <div class="cq-l-grid-desc">
       	<xsl:if test="@TurismoEventStart | @TurismoEventEnd">
-      		
-		        <xsl:choose>
-		          <xsl:when test="bittek:GetCultureString() = 'eu'">
-		            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'yyyy/MM/dd')" /> 
-		            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'yyyy/MM/dd')" />
-		          </xsl:when>
-		          <xsl:when test="bittek:GetCultureString() = 'en'">
-		            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'MM/dd/yyyy')" /> 
-		            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'MM/dd/yyyy')" />
-		          </xsl:when>
-		          <xsl:otherwise>
-		            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'dd/MM/yyyy')" /> 
-		            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'dd/MM/yyyy')" />
+        <xsl:choose>
+          <xsl:when test="bittek:GetCultureString() = 'eu'">
+            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'yyyy/MM/dd')" /> 
+            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'yyyy/MM/dd')" />
+          </xsl:when>
+          <xsl:when test="bittek:GetCultureString() = 'en'">
+            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'MM/dd/yyyy')" /> 
+            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'MM/dd/yyyy')" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventStart, 'dd/MM/yyyy')" /> 
+            - <xsl:value-of select="bittek:FormatDateWithFormat(@TurismoEventEnd, 'dd/MM/yyyy')" />
 
-		          </xsl:otherwise>
-		        </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
 	        
 		</xsl:if>
       </div>
@@ -1198,13 +1197,14 @@
               </time>
             </xsl:if>
 
-            <!-- SEPARADOR -->
+            <!-- SEPARADOR 
             <xsl:if test="($HasFechaInicio or $HasFechaFin) and ($HasHoraInicio or $HasHoraFin)">
               <xsl:text>&#160;|&#160;</xsl:text>
-            </xsl:if>
+            </xsl:if>-->
 
             <!-- HORA INICIO -->
             <xsl:if test="$HasHoraInicio">
+             <span class="BKTT-Icon fa-light fa-clock ms-2 me-2" aria-hidden="true">&#8203;</span>
               <span class="BKTT-Label"><xsl:value-of select="@HoraInicio"/></span>
               <xsl:if test="not($HasHoraFin)">h</xsl:if>
             </xsl:if>
@@ -1366,7 +1366,7 @@
         <span class="BKTT-Icon fa-light fa-calendar me-2">
          <xsl:text>&#8203;</xsl:text>
         </span>
-        <time datetime="2026-01-12" itemprop="startDate">
+        <time datetime="" itemprop="startDate">
          <xsl:if test="normalize-space(@TurismoEventStart) != ''">
           <xsl:choose>
             <xsl:when test="bittek:GetCultureString() = 'eu'">
@@ -1381,7 +1381,7 @@
           </xsl:choose>
          </xsl:if>
         </time>
-        <time datetime="2026-01-15" itemprop="endDate">
+        <time datetime="" itemprop="endDate">
          <xsl:if test="normalize-space(@TurismoEventEnd) != ''">
          <xsl:text>&#160;-&#160;</xsl:text>
          <xsl:choose>
@@ -1836,8 +1836,10 @@
 
   <xsl:variable name="RawWebReserva" select="@TurismoWebReserva" />
   <xsl:variable name="HasGastoMedio" select="string-length(normalize-space(@GastoMedio)) &gt; 0" />
-  <xsl:variable name="HasEstrellas" select="string-length(normalize-space(@AlojamientoEstrellas)) &gt; 0" />
-  <xsl:variable name="HasInnerLinkText" select="contains($RawWebReserva, '&gt;') and contains(substring-after($RawWebReserva, '&gt;'), '&lt;') and string-length(normalize-space(substring-before(substring-after($RawWebReserva, '&gt;'), '&lt;'))) &gt; 0" />
+  <!-- Comprobación segura: nos aseguramos de que el valor sea numérico antes de formatearlo -->
+  <xsl:variable name="CleanEstrellas" select="normalize-space(@AlojamientoEstrellas)" />
+  <xsl:variable name="HasEstrellas" select="string-length($CleanEstrellas) &gt; 0 and string(number($CleanEstrellas)) != 'NaN'" />
+  <xsl:variable name="HasInnerLinkText" select="string-length(normalize-space($RawWebReserva)) &gt; 0 and ((contains($RawWebReserva, '&gt;') and contains(substring-after($RawWebReserva, '&gt;'), '&lt;') and string-length(normalize-space(substring-before(substring-after($RawWebReserva, '&gt;'), '&lt;'))) &gt; 0) or not(contains($RawWebReserva, '&lt;')))" />
 
 	<li class="BKTT-CardContainer__item col" itemscope="" itemtype="https://schema.org/CreativeWork">
 	 <div class="BKTT-CardContainer__card card">
@@ -1879,14 +1881,22 @@
            </div>
          </xsl:if>
   	     <xsl:if test="$HasEstrellas">
-           <span itemprop="ratingValue">
+           <p itemprop="ratingValue">
             <span class="BKTT-Icon fa-light fa-stars me-2">
              <xsl:text>&#8203;</xsl:text>
             </span>
             <span class="BKTT-Label">
-             <xsl:value-of select="format-number(@AlojamientoEstrellas, '0')"/> Estrellas
+             <xsl:choose>
+               <xsl:when test="string(number($CleanEstrellas)) != 'NaN'">
+                 <xsl:value-of select="format-number(number($CleanEstrellas), '0')"/>
+               </xsl:when>
+               <xsl:otherwise>
+                 <xsl:value-of select="$CleanEstrellas"/>
+               </xsl:otherwise>
+             </xsl:choose>
+             <xsl:text> Estrellas</xsl:text>
             </span>
-           </span>
+           </p>
           </xsl:if>
         </div>
       </xsl:if>
@@ -1895,7 +1905,14 @@
           <div class="campo-web-reserva">
             <div class="BKTT-Button">
               <span class="BKTT-Icon fa-light fa-link" aria-hidden="true">&#8203;</span>
-              <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
+              <xsl:choose>
+                <xsl:when test="contains($RawWebReserva, '&lt;')">
+                  <xsl:value-of select="$RawWebReserva" disable-output-escaping="yes" />
+                </xsl:when>
+                <xsl:otherwise>
+                  <a href="{$RawWebReserva}" target="_blank">Reservar</a>
+                </xsl:otherwise>
+              </xsl:choose>
             </div>
           </div>
         </div>
@@ -1953,17 +1970,17 @@
           </h3>
         </xsl:if>
         <div class="BKTT-Card__Body">
-          <xsl:if test="$HasDuracion or $HasDificultad">
-            <div class="BKTT-Card__Data">
+          <div class="BKTT-Card__Data">
+            <xsl:if test="$HasDuracion or $HasDificultad">
               <xsl:if test="$HasDuracion">
-               <span itemprop="activityDuration">
+              <span itemprop="activityDuration" class="me-2">
                 <span class="BKTT-Icon fa-light fa-clock me-2">
                   <xsl:text>&#8203;</xsl:text>
                 </span>
                 <span class="BKTT-Label" itemprop="duration">
                   <xsl:value-of select="@TurismoDuracionRuta"/>
                 </span>
-               </span>
+              </span>
               </xsl:if>
               <xsl:if test="$HasDificultad">
                 <xsl:variable name="RawDificultad" select="translate(@TurismoRutaDificultad, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')" />
@@ -2010,20 +2027,20 @@
                   </strong>
                 </xsl:if>
               </xsl:if>
-             </div>
-          </xsl:if>
-          <xsl:if test="$HasTextoDestacado">
-             <p class="BKTT-Label" itemprop="description">
-               <xsl:choose>
-                 <xsl:when test="string-length(@TextoDestacado) &gt; 200">
-                   <xsl:value-of select="substring(@TextoDestacado, 1, 200)"/>...
-                 </xsl:when>
-                 <xsl:otherwise>
-                   <xsl:value-of select="@TextoDestacado"/>
-                 </xsl:otherwise>
-               </xsl:choose>
-             </p>
-          </xsl:if>
+            </xsl:if>
+          </div>
+          <p class="BKTT-Label  mt-2" itemprop="description">
+            <xsl:if test="$HasTextoDestacado">
+              <xsl:choose>
+                <xsl:when test="string-length(@TextoDestacado) &gt; 200">
+                  <xsl:value-of select="substring(@TextoDestacado, 1, 200)"/>...
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="@TextoDestacado"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:if>
+          </p>
         </div>
       </div>
     </div>

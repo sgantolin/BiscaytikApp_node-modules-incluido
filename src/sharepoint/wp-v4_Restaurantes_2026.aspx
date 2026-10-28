@@ -101,12 +101,10 @@
          </div>
         </div>
        <div class="container">
-        <div id="grid-container" class="cquery">
-         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopZone" FrameType="TitleBarOnly"
-          Title="Zona 6" Orientation="Vertical">
+         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="ButtonZone" FrameType="TitleBarOnly"
+          Title="Zona 6" Orientation="Horizontal">
           <ZoneTemplate></ZoneTemplate>
          </WebPartPages:WebPartZone>
-        </div>
        </div>
 
 

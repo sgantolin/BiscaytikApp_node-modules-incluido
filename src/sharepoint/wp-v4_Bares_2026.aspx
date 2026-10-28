@@ -40,10 +40,10 @@
       </asp:Content>
       <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
 
-       <div id="BKTT-ListadoBares" class="BKTT-Listado row">
+       <div class="BKTT-Listado row">
         <div class="container">
          <nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
-          <biscaytik:ExtendedBreadcrumb ShowCurrentPage="false" SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
+          <biscaytik:ExtendedBreadcrumb2026 ShowCurrentPage="false" SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
            runat="server" />
          </nav>
         </div>
@@ -54,50 +54,60 @@
            </SharePointWebControls:TextField>
           </h1>
          </div>
-         <!--<figure class="BKTT-FigureImg" itemprop="image" itemscope
-											itemtype="https://schema.org/ImageObject">
-											<img src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/listadoimg.jpg"
-												class="card-img-top" alt="Berdel eguna" itemprop="image">
-											
-										</figure>-->
         </section>
 
-        <div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
+        <div class="BKTT-WebPartZone-fullContainerWidth--Top col-12">
+
+
          <div class="container">
           <div class="row">
            <div class="WPZT-ListCont--Default col-12">
-            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="BottomLeftZone"
-             FrameType="TitleBarOnly" Title="Zona 1" Orientation="Vertical">
-             <ZoneTemplate></ZoneTemplate>
-            </WebPartPages:WebPartZone>
-           </div>
-          </div>
-          <div class="row g-4">
-           <div class="BKTT-WebPartZone-H50--L col-md-6">
-            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="BottomLeftCenter"
-             FrameType="TitleBarOnly" Title="Zona 2" Orientation="Vertical">
-             <ZoneTemplate></ZoneTemplate>
-            </WebPartPages:WebPartZone>
-           </div>
-           <div class="BKTT-WebPartZone-H50--R col-md-6">
-            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="BottomRightZone"
-             FrameType="TitleBarOnly" Title="Zona 3" Orientation="Vertical">
-             <ZoneTemplate></ZoneTemplate>
-            </WebPartPages:WebPartZone>
-
-           </div>
-          </div>
-          <div class="row">
-           <div id="grid-container" class="cquery">
-            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopZone" FrameType="TitleBarOnly"
-             Title="Zona 4" Orientation="Vertical">
+            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopFullZone"
+             FrameType="TitleBarOnly" Title="Zona 1" Orientation="Horizontal">
              <ZoneTemplate></ZoneTemplate>
             </WebPartPages:WebPartZone>
            </div>
           </div>
          </div>
         </div>
-       </div>
+        <div class="container">
+         <div class="row g-4">
+          <div class="BKTT-WebPartZone-H50--L col-md-6">
+           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftCenter"
+            FrameType="TitleBarOnly" Title="Zona 2" Orientation="Vertical">
+            <ZoneTemplate></ZoneTemplate>
+           </WebPartPages:WebPartZone>
+          </div>
+          <div class="BKTT-WebPartZone-H50--R col-md-6">
+           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="RightCenter"
+            FrameType="TitleBarOnly" Title="Zona 3" Orientation="Vertical">
+            <ZoneTemplate></ZoneTemplate>
+           </WebPartPages:WebPartZone>
+          </div>
+         </div>
+        </div>
+        <div class="container">
+         <div class="row g-4">
+          <div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12">
+           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftSmallZone"
+            FrameType="TitleBarOnly" Title="Zona 4" Orientation="Horizontal">
+            <ZoneTemplate></ZoneTemplate>
+           </WebPartPages:WebPartZone>
+          </div>
+          <div class="BKTT-WebPartZone-H75--R col-md-9 col-sm-6 col-xs-12">
+           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="RightBigZone"
+            FrameType="TitleBarOnly" Title="Zona 5" Orientation="Vertical">
+            <ZoneTemplate></ZoneTemplate>
+           </WebPartPages:WebPartZone>
+          </div>
+         </div>
+        </div>
+        <div class="container">
+         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="ButtonZone" FrameType="TitleBarOnly"
+          Title="Zona 6" Orientation="Vertical">
+          <ZoneTemplate></ZoneTemplate>
+         </WebPartPages:WebPartZone>
+        </div>
 
 
       </asp:Content>

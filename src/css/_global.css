@@ -122,7 +122,8 @@ body main .BKTT-Badge.bg-primary {
   font-weight: 100;
 }
 
-.BKTT-Badge, .forminputservicios  {
+.BKTT-Badge,
+.forminputservicios li {
   padding: 4px 8px;
   background-color: var(--grey__background) !important;
   gap: 8px;
@@ -265,6 +266,11 @@ h3,
   overflow: hidden;
 }
 
+.BKTT-Map,
+#map {
+  z-index: 88;
+}
+
 /* Ensure leaflet's container stretches to the parent */
 .BKTT-Map .leaflet-container,
 .BKTT-Map .leaflet-pane,
@@ -382,7 +388,8 @@ h3,
 }
 
 /*end listado*/
-.BKTT-Tags, .BKTT-Tags ul {
+.BKTT-Tags,
+.BKTT-Tags ul {
   padding-left: 0;
   display: flex;
   align-items: center;
@@ -395,9 +402,14 @@ h3,
   white-space: normal;
 }
 
+.BKTT-Tags li img {
+  max-height: 21px;
+}
+
 .BKTT-Tags li span,
 .BKTT-Tags li span:before {
   color: var(--text-color__grey);
+  font-weight: bold;
 }
 
 .BKTT-FigureImg {
@@ -571,16 +583,16 @@ h3,
 .BKTT-Main dd {
   display: flex;
   align-items: center;
-  gap: 24px;
+  /*gap: 24px;*/
 }
 
 .BKTT-Main .share-options {
   top: 35px;
 }
 
-.BKTT-Main dd {
+/*.BKTT-Main dd {
   gap: 24px;
-}
+}*/
 
 /*"horario"*/
 .BKTT-Label table tr td {
@@ -601,6 +613,14 @@ h3,
 
 .BKTT-Label table tr td li:first-child {
   border-top: none;
+}
+
+.biscaytik-servicio-nombre {
+  margin: 0 !important;
+}
+
+.BKTT-Tags li img {
+  max-height: 21px;
 }
 
 /* Responsive */
