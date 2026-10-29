@@ -55,10 +55,7 @@
           </h1>
          </div>
         </section>
-
         <div class="BKTT-WebPartZone-fullContainerWidth--Top col-12">
-
-
          <div class="container">
           <div class="row">
            <div class="WPZT-ListCont--Default col-12">
@@ -90,7 +87,7 @@
          <div class="row g-4">
           <div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12">
            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftSmallZone"
-            FrameType="TitleBarOnly" Title="Zona 4" Orientation="Horizontal">
+            FrameType="TitleBarOnly" Title="Zona 4" Orientation="horizontal">
             <ZoneTemplate></ZoneTemplate>
            </WebPartPages:WebPartZone>
           </div>

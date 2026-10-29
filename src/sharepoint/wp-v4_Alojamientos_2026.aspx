@@ -42,6 +42,7 @@
 
        <div class="BKTT-Listado row">
         <div class="container">
+
          <nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
           <biscaytik:ExtendedBreadcrumb2026 ShowCurrentPage="false" SiteCollectionWeb="false" id="ExtendedBreadcrumb1"
            runat="server" />
@@ -56,36 +57,36 @@
          </div>
         </section>
         <div class="BKTT-WebPartZone-fullContainerWidth--Top col-12">
-         <div class="container">
-          <div class="row">
+       <div class="container">
+        <div class="row">
            <div class="WPZT-ListCont--Default col-12">
-            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopFullZone"
-             FrameType="TitleBarOnly" Title="Zona 1" Orientation="Horizontal">
-             <ZoneTemplate></ZoneTemplate>
-            </WebPartPages:WebPartZone>
-           </div>
-          </div>
+         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="TopFullZone"
+          FrameType="TitleBarOnly" Title="Zona 1" Orientation="Horizontal">
+          <ZoneTemplate></ZoneTemplate>
+         </WebPartPages:WebPartZone>
+        </div>
+       </div>
          </div>
         </div>
         <div class="container">
          <div class="row g-4">
           <div class="BKTT-WebPartZone-H50--L col-md-6">
-           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftCenter"
-            FrameType="TitleBarOnly" Title="Zona 2" Orientation="Vertical">
-            <ZoneTemplate></ZoneTemplate>
-           </WebPartPages:WebPartZone>
-          </div>
-
-          <div class="BKTT-WebPartZone-H50--R col-md-6">
-           <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="RightZone" FrameType="TitleBarOnly"
-            Title="Zona 3" Orientation="Vertical">
-            <ZoneTemplate></ZoneTemplate>
-           </WebPartPages:WebPartZone>
-          </div>
-         </div>
+         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftCenter"
+          FrameType="TitleBarOnly" Title="Zona 2" Orientation="Vertical">
+          <ZoneTemplate></ZoneTemplate>
+         </WebPartPages:WebPartZone>
         </div>
-        <div class="container">
-         <div class="row g-4">
+
+        <div class="BKTT-WebPartZone-H50--R col-md-6">
+         <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="RightZone"
+          FrameType="TitleBarOnly" Title="Zona 3" Orientation="Vertical">
+          <ZoneTemplate></ZoneTemplate>
+         </WebPartPages:WebPartZone>
+        </div>
+       </div>
+      </div>
+       <div class="container">
+        <div class="row g-4">
           <div class="BKTT-WebPartZone-H25--L col-md-3 col-sm-6 col-xs-12">
            <WebPartPages:WebPartZone runat="server" AllowPersonalization="false" ID="LeftSmallZone"
             FrameType="TitleBarOnly" Title="Zona 4" Orientation="horizontal">

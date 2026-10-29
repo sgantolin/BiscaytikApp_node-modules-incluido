@@ -70,7 +70,8 @@
  object-fit: cover;
  /* Comporta igual que background-size: cover */
  object-position: center;
- background-color: var(--border-color);
+ /*background-color: var(--border-color);*/
+  background:transparent;
  display: block;
  /* Centra la imagen */
 }

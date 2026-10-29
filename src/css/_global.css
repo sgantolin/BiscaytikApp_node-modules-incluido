@@ -623,6 +623,26 @@ h3,
   max-height: 21px;
 }
 
+/*galería*/
+.BKTT-Main #GMapdiv .ui-tabs-nav {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border-color: var(--border-color);
+}
+
+.BKTT-Main #GMapdiv .ui-tabs-nav li {
+  border-radius: 0;
+  margin: 0;
+  background: transparent;
+  border: none !important;
+  padding: 0;
+}
+
+.BKTT-Main #GMapdiv .ui-tabs-nav li a {
+  font-family: var(--font-family);
+}
+
 /* Responsive */
 @media (max-width: 991px) {
 

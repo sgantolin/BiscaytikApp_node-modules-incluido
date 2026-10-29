@@ -35,7 +35,7 @@
     color: var(--primary-color);
 }
 
-.BKTT-Nav .navbar-nav a:hover + .dropdown-menu {
+.BKTT-Nav /*.navbar-nav a:hover +*/ .dropdown-menu {
     background-color: var(--primary-color);
     background-image: var(--menu-image);
     background-position: left bottom;
@@ -115,7 +115,8 @@
         align-items:center;
     }
     .BKTT-Nav .nav-item .nav-link{
-    max-width: 148px;
+    /*max-width: 148px;*/
+    max-width: 170px;
         border-radius:0;
 }
     .BKTT-Nav .navbar-nav:has(> :nth-child(6)) .nav-item .nav-link {
