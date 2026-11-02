@@ -102,7 +102,7 @@ h3.BKTT-CardGrid__title {
 }
 
 .BKTT-CardContainer__card--no-image .BKTT-Badge {
-  margin: 1rem 0 1rem 1rem;
+  margin: 0 0 1rem 0;
 }
 
 /*noticias end*/

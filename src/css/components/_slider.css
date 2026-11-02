@@ -437,9 +437,9 @@
         margin-right: 4%;
     }
 
-    .BKTT-FigureSlider .BKTT-CarrouselControl {
+    /*.BKTT-FigureSlider .BKTT-CarrouselControl {
         margin-left: -45%;
-    }
+    }*/
 }
 
 @media (max-width: 991px) {
