@@ -322,7 +322,7 @@
                    <!--BKTT-Nav-->
                    <nav class="BKTT-Nav navbar navbar-expand-lg" role="navigation">
                     <div class="container-fluid">
-                     <button type="button" data-bs-toggle="collapse" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle d-sm-block d-md-none" aria-label="Toggle navigation">  
+                     <button type="button" id="menuMobile" data-bs-toggle="collapse" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle d-sm-block d-md-none" aria-label="Toggle navigation">  
                       <span class="BKTT-Icon fa-regular fa-bars"></span>
                      </button>
                      <div id="defaultmenu" class="navbar-collapse collapse">
@@ -371,12 +371,11 @@
             <biscaytik:SocialWebControl id="barrasocialtop" runat="server" zone="Top"/>
         </div>
          
-        <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>	
+        <biscaytik:PortalContentWebControl id="contentleftbotton" runat="server" zone="bottonleft"/>
        </div>
       </div>
       <div class="BKTT_Logos--footer d-flex justify-content-center mt-5">
-       <img alt="logotipo diputación Bizkaia Bizkaiko Foru aldundia" style="max-height:50px;" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/diputacion_Bizkaia.svg" />
-       <img alt="logotipo govierno vasco - eusko jaurlaritza" style="max-height:50px;" src="/_layouts/15/Turismo2013.Files/custom_web/assets/themes/default/media/eusko_jaurlaritza.svg" />
+		<biscaytik:PortalContentWebControl id="contentbottomlogos" runat="server" zone="BottomLogos"/>
       </div>
       <div class="row mt-4">
        <div class="col-12 d-flex justify-content-between">
@@ -459,10 +458,137 @@
     $(document).on('click', '.fhmm .dropdown-menu', function (e) {
         e.stopPropagation()
     })
-    //]]></script>
+    //]]>
+</script>
 
 
 
 
+	<!-- Modal con spinner -->
+	<script type="text/javascript">
+		var whiteListSelectors = [
+			".no-loading",
+			"[data-no-loading='true']",
 
+			".BKTT-FigureSlider",
+
+			//Cinta de Sharepoint
+			"#suiteBar",
+			"#suiteBarTop",
+			"#suiteBarDelta",
+
+			// Menús SharePoint
+			".ms-core-menu-link",
+			".ms-core-menu-item",
+			".ms-contextmenu-link",
+
+			// Menú de la rueda dentada
+			"#DeltaSiteSettings",
+			"#O15_MainLink_Settings",
+			"[title='Configuración']",
+			"[title='Settings']",
+
+			// Menú usuario
+			"#DeltaPlaceHolderName",
+			"#DeltaUserDisplay",
+
+			// Menús desplegables SharePoint
+			".ms-cui-ctl",
+			".ms-cui-menu",
+			".ms-cui-topBar2",
+
+			".ms-dlgCloseBtn",
+			".ms-dlgTitleBtns",
+			".ms-webpart-menuLink",
+			".ms-wpMenuDiv",
+			"[href^='javascript:']",
+			
+			//Agregar o cancelar nuevo webpart
+			".ms-wpadder-buttonArea",
+			".ms-wpadder-zoneArea",
+			
+			// Slider
+			".BKTT-FigureSlider",
+			// Galería
+			"[id*='GalleriaContent']",
+			//Horarios de rutas
+			".BKTT-HorariosTabs",
+			//Colapsable del menú
+			".BKTT-Collapse",
+			//Compartir de los detalles
+			".BKTT-EventoDetalle__share",
+			//Boton menu navegacion moviles
+			"#menuMobile",
+			//Botón buscador movil
+			"#toggle-search"
+		];
+		$(document).on("click", "a, button, input[type='submit'], input[type='button']", function () {
+
+			var $element = $(this);
+
+			var isExcluded = whiteListSelectors.some(function (selector) {
+				return $element.is(selector) || $element.closest(selector).length > 0;
+			});
+
+			if (isExcluded) {
+				return;
+			}
+
+			var target = ($element.attr("target") || "").toLowerCase();
+			if (target === "_blank") {
+				return;
+			}
+			var href = $element.attr("href");
+			if (href) {
+
+				var href = $element.attr("href") || "";
+
+				if (href === "#" || href.indexOf("#") === 0) {
+					return;
+				}
+				if (href.indexOf("javascript:") === 0) {
+					return;
+				}
+				if ($element.attr("download")) {
+					return;
+				}
+			}
+			if (window.location.href.indexOf("ToolPaneView") >= 0) {
+				return;
+			}
+			if ($(".ms-ToolPaneBody").length > 0) {
+				return;
+			}
+
+			MostrarModal()
+		});
+		
+		//Función para mostrar la modal
+		function MostrarModal() {
+			var loadingModal = new bootstrap.Modal(document.getElementById("loadingModal"));
+			loadingModal.show();
+		}
+		
+		//Ocultamos la capa al volver atrás en el navegador
+		window.onpageshow = function () {
+			$("#loadingModal").hide();
+			$(".modal-backdrop").remove();
+			$("body").removeClass("modal-open");
+		};
+	</script>
+	<div class="BKTT-Modal modal fade" id="loadingModal" tabindex="-1"
+		aria-labelledby="loadingModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered justify-content-center">
+			<div class="">
+				<div class="modal-body text-center">
+					<div class="spinner-border text-primary" role="status">
+						<span class="visually-hidden">Cargando...</span>
+					</div>
+					<strong class="d-block mt-3">Cargando...</strong>
+					<h3 class="mt-3 BKTT-CSecondary">Enseguida estamos</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal -->
 </SharePointWebControls:SPHtmlTag>

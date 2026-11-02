@@ -1,0 +1,22 @@
+/*importación ojas estilos componentes*/
+@import url('./components/_slider.css');
+@import url('./components/_BKTTCard.css');
+@import url('./components/_BKTTBreadcrumb.css');
+@import url('./components/_BKTT-Wrapper.css');
+@import url('./components/_BKTT-Filters.css');
+@import url('./components/_BKTTFigureGaleria.css');
+@import url('./components/_CardGrid.css');
+@import url('./components/_dialog.css');
+
+/*carousel*/
+.BKTT-carousel {
+ margin-bottom: 60px;
+}
+/*dropdown*/
+.BKTT-ThemeTurismo .dropdown-toggle:after {
+  display: none;
+  font-family: "Font Awesome 6 Pro";
+  content: "\f078";
+  color: var(--primary-color);
+  position: absolute;
+}
