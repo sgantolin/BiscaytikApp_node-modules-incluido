@@ -47,7 +47,7 @@
       <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
        <a class="sr-only sr-only-focusable" href="#maincontent"><asp:Literal text="<%$Resources:Turismo2013.Layouts,saltarAlContenido%>" runat="server" />
        </a>
-       <div id="maincontent" role="main" class="page_title2" itemscope itemtype="https://schema.org/Event">
+       <div id="maincontent" role="main" class="BKTT-Detalle" itemscope itemtype="https://schema.org/TouristTrip">
         <div class="row">
          <div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
           <div class=" container">
@@ -161,9 +161,9 @@
               <li><a href="#descripcion">
                 <asp:Literal text="<%$Resources:Turismo2013.Layouts,descripcion%>" runat="server" />
                </a></li>
-              <li><a href="#horarios">
+              <!--<li><a href="#horarios">
                 <asp:Literal text="<%$Resources:Turismo2013.Layouts,horarios%>" runat="server" />
-               </a></li>
+               </a></li>-->
               <li><a href="#itinerario">
                 <asp:Literal text="<%$Resources:Turismo2013.Layouts,itinerario%>" runat="server" />
                </a></li>
@@ -237,11 +237,11 @@
               <PublishingWebControls:RichHtmlField ID="RichHtmlField3" FieldName="TurismoDescripcion" runat="server" />
              </p>
             </section>
-            <section id="horarios" role="region" aria-labelledby="horarios-heading">
+            <!--<section id="horarios" role="region" aria-labelledby="horarios-heading">
              <h2 id="horarios-heading">
               <asp:Literal text="<%$Resources:Turismo2013.Layouts,horarios%>" runat="server" />
              </h2>
-             <!-- Origen de datos (Ocultos para consumo del script) -->
+             <!-- Origen de datos (Ocultos para consumo del script) --
              <div style="display:none;" aria-hidden="true">
               <div id="raw-data-manana">
                <SharePointWebControls:FieldValue ID="fvManana" FieldName="RutaHoraManana" runat="server" />
@@ -254,7 +254,7 @@
               </div>
              </div>
 
-             <!-- Pestañas -->
+             <!-- Pestañas --
              <div class="BKTT-HorariosTabs" id="BKTT-HorariosTabs" role="tablist" style="display:none;">
               <button type="button" class="BKTT-HorariosTab" data-period="manana" role="tab" aria-selected="false">
                <asp:Literal text="<%$Resources:Turismo2013.Layouts,manana%>" runat="server" />
@@ -267,10 +267,10 @@
               </button>
              </div>
 
-             <!-- Contenedor donde se pintan las horas -->
+             <!-- Contenedor donde se pintan las horas --
              <div class="BKTT-HorariosContainer" id="BKTT-HorariosContainer" role="tabpanel"></div>
 
-             <!-- Lógica JS -->
+             <!-- Lógica JS --
              <script type="text/javascript">
               (function () {
                var horariosData = { manana: [], tarde: [], noche: [] };
@@ -375,7 +375,7 @@
               <PublishingWebControls:RichHtmlField ID="RichHtmlField29" FieldName="TurismoDescripcionRuta"
                runat="server" />
              </p>
-            </section>
+            </section>-->
             <section id="itinerario" class="BKTT-EventoDetalle__section" itemprop="location" itemscope
              itemtype="https://schema.org/Place" role="region" aria-labelledby="itinerario-heading">
              <h2 id="itinerario-heading">
