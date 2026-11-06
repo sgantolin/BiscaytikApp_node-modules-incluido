@@ -426,13 +426,13 @@ h3,
 /* Cabecera */
 
 .BKTT-Detalle__header,
-.BKTT-EventoDetalle__header {
+.BKTT-Detalle__header {
   display: flex;
   justify-content: space-between;
 }
 
 .BKTT-Detalle__share,
-.BKTT-EventoDetalle__share {
+.BKTT-Detalle__share {
   appearance: none;
   border: 0;
   background: transparent;
@@ -443,13 +443,13 @@ h3,
 /* Pestañas */
 
 .BKTT-Detalle__tabsWrapper,
-.BKTT-EventoDetalle__tabsWrapper {
+.BKTT-Detalle__tabsWrapper {
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
 }
 
 .BKTT-Detalle__tabs,
-.BKTT-EventoDetalle__tabs {
+.BKTT-Detalle__tabs {
   display: flex;
   gap: 16px;
   margin: 0;
@@ -457,14 +457,14 @@ h3,
 }
 
 .BKTT-Detalle__tabs li,
-.BKTT-EventoDetalle__tabs li {
+.BKTT-Detalle__tabs li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .BKTT-Detalle__tabs a,
-.BKTT-EventoDetalle__tabs a {
+.BKTT-Detalle__tabs a {
   position: relative;
   display: block;
   padding: 0.5rem 0.8rem 0.65rem;
@@ -475,17 +475,17 @@ h3,
 }
 
 .BKTT-Detalle__tabs a:hover,
-.BKTT-EventoDetalle__tabs a:hover {
+.BKTT-Detalle__tabs a:hover {
   color: var(--primary-color);
 }
 
 .BKTT-Detalle__tabs a.is-active,
-.BKTT-EventoDetalle__tabs a.is-active {
+.BKTT-Detalle__tabs a.is-active {
   color: var(--text-color);
 }
 
 .BKTT-Detalle__tabs a.is-active::after,
-.BKTT-EventoDetalle__tabs a.is-active::after {
+.BKTT-Detalle__tabs a.is-active::after {
   content: "";
   position: absolute;
   right: 0;
@@ -498,7 +498,7 @@ h3,
 /* Metadatos */
 
 .BKTT-Detalle__meta dd,
-.BKTT-EventoDetalle__meta dd {
+.BKTT-Detalle__meta dd {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -507,7 +507,7 @@ h3,
 /* Descripción */
 
 .BKTT-Detalle__section,
-.BKTT-EventoDetalle__section {
+.BKTT-Detalle__section {
   margin-top: 2rem;
 }
 
@@ -530,19 +530,19 @@ h3,
 /* Tarjeta lateral */
 
 .BKTT-DetalleAside,
-.BKTT-EventoDetalleAside {
+.BKTT-DetalleAside {
   padding: 1.25rem;
   background: var(--grey__background);
 }
 
 .BKTT-DetalleAside h2,
-.BKTT-EventoDetalleAside h2 {
+.BKTT-DetalleAside h2 {
   font-size: 1rem;
   font-weight: 600;
 }
 
 .BKTT-DetalleAside__price,
-.BKTT-EventoDetalleAside__price {
+.BKTT-DetalleAside__price {
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
@@ -551,7 +551,7 @@ h3,
 }
 
 .BKTT-DetalleAside__price span,
-.BKTT-EventoDetalleAside__price span {
+.BKTT-DetalleAside__price span {
   font-size: 0.75rem;
   color: var(--text-color__grey);
 }
@@ -674,12 +674,12 @@ h3,
   }
 
   .BKTT-Detalle__title,
-  .BKTT-EventoDetalle__title {
+  .BKTT-Detalle__title {
     font-size: 1.75rem;
   }
 
   .BKTT-DetalleAside,
-  .BKTT-EventoDetalleAside {
+  .BKTT-DetalleAside {
     margin-top: 1rem;
   }
 
@@ -726,16 +726,16 @@ h3,
   /*}
 @media (max-width: 575px) {*/
   .BKTT-Detalle,
-  .BKTT-EventoDetalle {
+  .BKTT-Detalle {
     padding-top: 1rem;
   }
 
   .BKTT-Detalle__title,
-  .BKTT-EventoDetalle__title {
+  .BKTT-Detalle__title {
     font-size: 1.5rem;
   }
 
-  .BKTT-EventoDetalle__tabs,
+  .BKTT-Detalle__tabs,
   .BKTT-Detalle__tabs {
     gap: 1.25rem;
   }
