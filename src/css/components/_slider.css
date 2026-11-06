@@ -155,7 +155,7 @@
 .BKTT-FigureSlider .BKTT-CarrouselControl {
     position: absolute;
     bottom: 40px;
-    left: 50%;
+    left: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,7 +165,7 @@
     padding: 12px 8px;
     border-radius: 25px;
     height: 51px;
-    margin-left: -36%;
+    /*margin-left: -36%;*/
 }
 
 .BKTT-FigureSlider .BKTT-CarrouselControl>div {
@@ -188,7 +188,7 @@
 }
 .BKTT-FigureSlider .carousel-inner .carousel-caption{
     bottom: 22%;
-    left: 14%;
+    /*left: 14%;*/
     text-align: left;
     height: fit-content;
     max-width: 37%;
@@ -332,7 +332,8 @@
 
 .BKTT-Main .galleria-thumbnails {
     width: fit-content !important;
-    max-width: 50%;
+    /*max-width: 50%;*/
+    max-width: 100%;
 }
 
 .BKTT-Main .galleria-thumbnails .galleria-image {
@@ -358,6 +359,7 @@
     left: 0 !important;
     top: 0 !important;
     margin-bottom: 0;
+    height: 500px;
 }
 
 .BKTT-Main .galleria-info {

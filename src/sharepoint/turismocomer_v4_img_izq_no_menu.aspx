@@ -11,7 +11,7 @@
         <%@ Register Tagprefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation"
           Assembly="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"
           %>
-          <%@Register TagPrefix="biscaytik" Namespace="Turismo2013.WebParts"
+          <%@ Register TagPrefix="biscaytik" Namespace="Turismo2013.WebParts"
             Assembly="Turismo2013.WebParts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f2cc5471da6bb42" %>
             <asp:Content ContentPlaceholderID="PlaceHolderAdditionalPageHead" runat="server">
 
@@ -48,7 +48,9 @@
             </asp:Content>
 
             <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
-              <a class="sr-only sr-only-focusable" href="#maincontent">Saltar al contenido</a>
+              <a class="sr-only sr-only-focusable" href="#maincontent">
+                <asp:Literal text="<%$Resources:Turismo2013.Layouts,saltarAlContenido%>" runat="server" />
+              </a>
               <div id="maincontent" role="main" class="page_title2" itemscope itemtype="https://schema.org/Event">
                 <div class="row">
                   <div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
@@ -68,9 +70,9 @@
                           AllowHyperLinks="false" runat="server" />
                       </figure>
                     </biscaytik:HideWhenBlank>
-                    <div class="BKTT-EventoDetalle__header container mt-5">
-                      <div class="BKTT-EventoDetalle__heading">
-                        <h1 class="BKTT-EventoDetalle__title" itemprop="name">
+                    <div class="BKTT-Detalle__header container mt-5">
+                      <div class="BKTT-Detalle__heading">
+                        <h1 class="BKTT-Detalle__title" itemprop="name">
                           <span class="BKTT-Icon fa-light fa-plate-utensils"></span>
                           <SharePointWebControls:TextField ID="TextField1" runat="server" FieldName="Title" />
                         </h1>
@@ -78,24 +80,24 @@
 
                       <!-- Botón de compartir -->
                       <div class="share-container">
-                        <button id="shareButton" class="BKTT-EventoDetalle__share" type="button"
-                          aria-label="Compartir restaurante"><span class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
+                        <button id="shareButton" class="BKTT-Detalle__share" type="button"
+                          aria-label="Compartir evento"><span class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
                             aria-hidden="true"></span></button>
                         <div id="shareOptions" class="share-options" hidden>
                           <a id="shareWhatsApp" target="_blank" rel="noopener noreferrer">
-                            WhatsApp
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,whatsApp%>" runat="server" />
                           </a>
                           <a id="shareFacebook" target="_blank" rel="noopener noreferrer">
-                            Facebook
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,facebook%>" runat="server" />
                           </a>
                           <a id="shareX" target="_blank" rel="noopener noreferrer">
-                            X
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,x%>" runat="server" />
                           </a>
                           <a id="shareLinkedIn" target="_blank" rel="noopener noreferrer">
-                            LinkedIn
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,linkedIn%>" runat="server" />
                           </a>
                           <a id="shareEmail">
-                            Email
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,email%>" runat="server" />
                           </a>
                         </div>
                       </div>
@@ -202,24 +204,30 @@
                     </div>
                   </div>
                 </div>
-                <div class="WPZT-DetCont--Default BKTT-EventoDetalle">
+                <div class="WPZT-DetCont--Default BKTT-Detalle">
                   <div class="container">
                     <div class="row g-4">
                       <div class="BKTT-WebPartZone-H75--L col-lg-9">
-                        <nav class="BKTT-EventoDetalle__tabsWrapper" aria-label="Contenido del evento">
-                          <ul class="BKTT-EventoDetalle__tabs">
-                            <li><a href="#descripcion" class="is-active">Descripción</a>
+                        <nav class="BKTT-Detalle__tabsWrapper" aria-label="Contenido del evento">
+                          <ul class="BKTT-Detalle__tabs">
+                            <li><a href="#descripcion" class="is-active">
+                                <asp:Literal text="<%$Resources:Turismo2013.Layouts,descripcion%>" runat="server" />
+                              </a>
                             </li>
-                            <li><a href="#localizacion">Localización</a></li>
+                            <li><a href="#localizacion">
+                                <asp:Literal text="<%$Resources:Turismo2013.Layouts,localizacion%>" runat="server" />
+                              </a></li>
                             <!-- <li><a href="#relacionados">Relacionados</a></li> -->
                           </ul>
                         </nav>
-                        <section id="descripcion" class="BKTT-EventoDetalle__section" itemprop="description"
-                          role="region" aria-labelledby="descripcion-heading">
-                          <dl class="BKTT-EventoDetalle__meta" aria-label="Información del evento">
+                        <section id="descripcion" class="BKTT-Detalle__section" itemprop="description" role="region"
+                          aria-labelledby="descripcion-heading">
+                          <dl class="BKTT-Detalle__meta" aria-label="Información del evento">
                             <biscaytik:HideWhenBlank ID="HideWhenBlank15" runat="server" FieldNameToCheck="TipoComida">
-                              <div class="BKTT-EventoDetalle__metaItem">
-                                <dt class="sr-only">Tipo de comida</dt>
+                              <div class="BKTT-Detalle__metaItem">
+                                <dt class="sr-only">
+                                  <asp:Literal text="<%$Resources:Turismo2013.Layouts,tipoComida%>" runat="server" />
+                                </dt>
                                 <dd>
                                   <span class="BKTT-Icon fa-light fa-plate-utensils"></span>
 
@@ -228,15 +236,15 @@
                                   <biscaytik:HideWhenBlank ID="HideWhenBlank25" runat="server"
                                     FieldNameToCheck="OpcionDestacada">
                                     <span class="BKTT-Badge badge bg-light text-dark">
-                                      <SharePointWebControls:TextField ID="TextField25"
-                                        FieldName="OpcionDestacada" runat="server" />
+                                      <SharePointWebControls:TextField ID="TextField25" FieldName="OpcionDestacada"
+                                        runat="server" />
                                     </span>
                                   </biscaytik:HideWhenBlank>
                                 </dd>
                               </div>
-                      </biscaytik:HideWhenBlank>
-                      <!--<biscaytik:HideWhenBlank ID="HideWhenBlank24" runat="server" FieldNameToCheck="GastoMedio">
-                        <div class="BKTT-EventoDetalle__metaItem">
+                            </biscaytik:HideWhenBlank>
+                            <!--<biscaytik:HideWhenBlank ID="HideWhenBlank24" runat="server" FieldNameToCheck="GastoMedio">
+                        <div class="BKTT-Detalle__metaItem">
                           <dt class="sr-only">Gasto medio</dt>
                           <dd>
                             <strong>
@@ -246,71 +254,74 @@
                           </dd>
                         </div>
                       </biscaytik:HideWhenBlank>-->
-                      <h3 class="mt-4">Servicios</h3>
-                      <biscaytik:HideWhenBlank ID="HideWhenBlank9" runat="server" FieldNameToCheck="ServiciosComer">
-                        <div class="BKTT-Tags">
-                          <biscaytik:ServiciosWebControl id="servicioswc" runat="server" fieldname="ServiciosComer"
-                            listname="ServiciosComer" />
-                        </div>
-                      </biscaytik:HideWhenBlank>
-                      <script type="text/javascript">
-                        (function () {
-                          function mostrarTextosServiciosComer() {
-                            var items = document.querySelectorAll("ul.forminputservicios li.forminputservicios img");
-                            items.forEach(function (img) {
-                              if (img.nextElementSibling && img.nextElementSibling.classList.contains("biscaytik-servicio-nombre")) {
-                                return;
-                              }
-                              var texto = img.getAttribute("alt") || img.getAttribute("title");
-                              if (texto) {
-                                var span = document.createElement("span");
-                                span.className = "biscaytik-servicio-nombre";
-                                span.textContent = texto;
-                                span.style.marginLeft = "8px";
-                                span.style.verticalAlign = "middle";
-                                img.style.verticalAlign = "middle";
-                                img.parentNode.appendChild(span);
-                              }
-                            });
-                          }
+                            <h3 class="mt-4">
+                              <asp:Literal text="<%$Resources:Turismo2013.Layouts,servicios%>" runat="server" />
+                            </h3>
+                            <biscaytik:HideWhenBlank ID="HideWhenBlank9" runat="server"
+                              FieldNameToCheck="ServiciosComer">
+                              <div class="BKTT-Tags">
+                                <biscaytik:ServiciosWebControl id="servicioswc" runat="server"
+                                  fieldname="ServiciosComer" listname="ServiciosComer" />
+                              </div>
+                            </biscaytik:HideWhenBlank>
+                            <script type="text/javascript">
+                              (function () {
+                                function mostrarTextosServiciosComer() {
+                                  var items = document.querySelectorAll("ul.forminputservicios li.forminputservicios img");
+                                  items.forEach(function (img) {
+                                    if (img.nextElementSibling && img.nextElementSibling.classList.contains("biscaytik-servicio-nombre")) {
+                                      return;
+                                    }
+                                    var texto = img.getAttribute("alt") || img.getAttribute("title");
+                                    if (texto) {
+                                      var span = document.createElement("span");
+                                      span.className = "biscaytik-servicio-nombre";
+                                      span.textContent = texto;
+                                      span.style.marginLeft = "8px";
+                                      span.style.verticalAlign = "middle";
+                                      img.style.verticalAlign = "middle";
+                                      img.parentNode.appendChild(span);
+                                    }
+                                  });
+                                }
 
-                          if (document.readyState === "loading") {
-                            document.addEventListener("DOMContentLoaded", mostrarTextosServiciosComer);
-                          } else {
-                            mostrarTextosServiciosComer();
-                          }
-                        })();
-                      </script>
-                      <biscaytik:HideWhenBlank ID="HideWhenBlank2" runat="server" FieldNameToCheck="TurismoHour">
-                        <div class="BKTT-EventoDetalle__metaItem">
+                                if (document.readyState === "loading") {
+                                  document.addEventListener("DOMContentLoaded", mostrarTextosServiciosComer);
+                                } else {
+                                  mostrarTextosServiciosComer();
+                                }
+                              })();
+                            </script>
+                            <!--<biscaytik:HideWhenBlank ID="HideWhenBlank2" runat="server" FieldNameToCheck="TurismoHour">
+                        <div class="BKTT-Detalle__metaItem">
                           <dt class="sr-only">
                             <h3>
-                              <asp:Label text="<%$Resources:Turismo2013.Layouts,horario%>" runat="server" />
+                              <asp:Literal text="<%$Resources:Turismo2013.Layouts,horario%>" runat="server" />
                             </h3>
                           </dt>
                           <dd>
                             <span class="BKTT-Icon fa-light fa-clock" aria-hidden="true"></span>
                             <span class="BKTT-Label">
-                              <asp:Label text="Horario" runat="server" />
+                              <asp:Literal text="<%$Resources:Turismo2013.Layouts,horario%>" runat="server" />
                               <PublishingWebControls:RichHtmlField ID="RichHtmlField2" FieldName="TurismoHour"
                                 runat="server" />
                             </span>
                           </dd>
                         </div>
-                      </biscaytik:HideWhenBlank>
-                      </dl>
+                      </biscaytik:HideWhenBlank>-->
+                          </dl>
 
-                      <biscaytik:HideWhenBlank ID="HideWhenBlank10" runat="server"
-                        FieldNameToCheck="TurismoDescripcion">
-                        <h2 id="descripcion-heading">
-                          <asp:Label text="<%$Resources:Turismo2013.Layouts,descripcion%>" runat="server" />
-                        </h2>
-                        <p>
-                          <PublishingWebControls:RichHtmlField ID="RichHtmlField3" FieldName="TurismoDescripcion"
-                            runat="server" />
-                        </p>
-                      </biscaytik:HideWhenBlank>
-                      <!-- <biscaytik:HideWhenBlank ID="HideWhenBlank20" runat="server" FieldNameToCheck="TurismoMenu">
+                          <biscaytik:HideWhenBlank ID="HideWhenBlank10" runat="server"
+                            FieldNameToCheck="TurismoDescripcion">
+                            <h2 id="descripcion-heading">
+                              <asp:Literal text="<%$Resources:Turismo2013.Layouts,descripcion%>" runat="server" />
+                            </h2>
+                            <p>
+                              <PublishingWebControls:RichHtmlField ID="RichHtmlField3" FieldName="TurismoDescripcion"
+                                runat="server" />
+                            </p>
+                          </biscaytik:HideWhenBlank>
+                          <!-- <biscaytik:HideWhenBlank ID="HideWhenBlank20" runat="server" FieldNameToCheck="TurismoMenu">
                         <a class="BKTT-Collapse" data-bs-toggle="collapse" href="#collapseMenu" role="button"
                           aria-expanded="false" aria-controls="collapseMenu">Ver menú completo
                           <span class="BKTT-Icon fa-light fa-chevron-down ms-2">
@@ -327,135 +338,124 @@
                             runat="server" />
                         </div>
                       </biscaytik:HideWhenBlank>-->
-                      <biscaytik:HideWhenBlank ID="HideWhenBlank12" runat="server"
-                        FieldNameToCheck="TurismoGrupoGaleria">
-                        <biscaytik:GalleryContentPageWebPart id="GalleriaContent" runat="server"
-                          __WebPartId="{C0A48ADF-4184-48DA-BF35-A2237A8C8565}" __MarkupType="vsattributemarkup"
-                          WebPart="true" Height="" Width=""></biscaytik:GalleryContentPageWebPart>
-                      </biscaytik:HideWhenBlank>
-                      </section>
-                      <section id="localizacion" class="BKTT-EventoDetalle__section" itemprop="location" itemscope
-                        itemtype="https://schema.org/Place" role="region" aria-labelledby="localizacion-heading">
-                        <h2 id="localizacion-heading">Localización</h2>
-                        <dl>
-                          <biscaytik:HideWhenBlank ID="HideWhenBlank22" runat="server" FieldNameToCheck="WorkAddress">
-                            <!--SS dirección con microdatos PostalAddress-->
-                            <dt class="sr-only">
-                              <span class="BKTT-Label">Dirección</span>
-                            </dt>
-                            <dd>
-                              <span class="BKTT-Icon fa-light fa-location-dot me-2"></span>
-                              <strong itemprop="name">Plaza de la Iglesia</strong>
-                              <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                                <span itemprop="streetAddress">C. Villa de Plentzia
-                                  Kalea, 14</span><br />
-                                <span itemprop="postalCode">48930</span>
-                                <span itemprop="addressLocality">Areeta</span>
-                              </div>
-
-                              <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                                <SharePoint:FieldValue ID="FieldValue22" runat="server" FieldName="WorkAddress" />
-                              </div>
-                              <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                              </div>
-                            </dd>
+                          <biscaytik:HideWhenBlank ID="HideWhenBlank12" runat="server"
+                            FieldNameToCheck="TurismoGrupoGaleria">
+                            <biscaytik:GalleryContentPageWebPart id="GalleriaContent" runat="server"
+                              __WebPartId="{C0A48ADF-4184-48DA-BF35-A2237A8C8565}" __MarkupType="vsattributemarkup"
+                              WebPart="true" Height="" Width=""></biscaytik:GalleryContentPageWebPart>
                           </biscaytik:HideWhenBlank>
-                          <!--SS mapa ejem-->
-                          <biscaytik:HideWhenBlank ID="HideWhenBlank23" runat="server"
-                            FieldNameToCheck="TurismoCoordenadas">
-                            <!-- CSS de Leaflet -->
-                            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                        </section>
+                        <section id="localizacion" class="BKTT-Detalle__section" itemprop="location" itemscope
+                          itemtype="https://schema.org/Place" role="region" aria-labelledby="localizacion-heading">
+                          <h2 id="localizacion-heading">
+                            <asp:Literal text="<%$Resources:Turismo2013.Layouts,localizacion%>" runat="server" />
+                          </h2>
+                          <dl>
+                            <biscaytik:HideWhenBlank ID="HideWhenBlank22" runat="server" FieldNameToCheck="WorkAddress">
+                              <!--SS dirección con microdatos PostalAddress-->
+                              <dt class="sr-only">
+                                <span class="BKTT-Label">
+                                  <asp:Literal text="<%$Resources:Turismo2013.Layouts,direccion%>" runat="server" />
+                                </span>
+                              </dt>
+                              <dd>
+                                <span class="BKTT-Icon fa-light fa-location-dot me-2"></span>
+                                <strong itemprop="name">Plaza de la Iglesia</strong>
+                                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                  <span itemprop="streetAddress">C. Villa de Plentzia
+                                    Kalea, 14</span><br />
+                                  <span itemprop="postalCode">48930</span>
+                                  <span itemprop="addressLocality">Areeta</span>
+                                </div>
 
-                            <!-- Mapa -->
-                            <div id="map"
-                              style="width: 100%; height: 500px; overflow: hidden; background-color: var(--grey__background); margin-bottom: 2rem;">
-                            </div>
+                                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                  <SharePoint:FieldValue ID="FieldValue22" runat="server" FieldName="WorkAddress" />
+                                </div>
+                                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                </div>
+                              </dd>
+                            </biscaytik:HideWhenBlank>
+                            <!--SS mapa ejem-->
+                            <biscaytik:HideWhenBlank ID="HideWhenBlank23" runat="server"
+                              FieldNameToCheck="TurismoCoordenadas">
+                              <!-- CSS de Leaflet -->
+                              <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-                            <!-- JS de Leaflet -->
-                            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                              <!-- Mapa -->
+                              <div id="map"
+                                style="width: 100%; height: 500px; overflow: hidden; background-color: var(--grey__background); margin-bottom: 2rem;">
+                              </div>
 
-                            <script>
-                              // Inicializar el mapa centrado en unas coordenadas y un nivel de zoom
-                              var map = L.map('map').setView([<SharePoint:FieldValue ID="FieldValue23" runat="server"
-                                FieldName="TurismoCoordenadas" />], 13);
+                              <!-- JS de Leaflet -->
+                              <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-                              // Añadir la capa base de OpenStreetMap
-                              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 19,
-                                attribution: '© OpenStreetMap'
-                              }).addTo(map);
+                              <script>
+                                // Inicializar el mapa centrado en unas coordenadas y un nivel de zoom
+                                var map = L.map('map').setView([<SharePoint:FieldValue ID="FieldValue23" runat="server"
+                                  FieldName="TurismoCoordenadas" />], 13);
 
-                              // Añadir un marcador
-                              var marker = L.marker([<SharePoint:FieldValue ID="FieldValue24" runat="server"
-                                FieldName="TurismoCoordenadas" />]).addTo(map);
+                                // Añadir la capa base de OpenStreetMap
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                  maxZoom: 19,
+                                  attribution: '© OpenStreetMap'
+                                }).addTo(map);
 
-                              marker.bindPopup("<b>¡Hola!</b><br />Estamos en la ubicación.").openPopup();
+                                // Añadir un marcador
+                                var marker = L.marker([<SharePoint:FieldValue ID="FieldValue24" runat="server"
+                                  FieldName="TurismoCoordenadas" />]).addTo(map);
 
-                              setTimeout(function () {
-                                map.invalidateSize();
-                              }, 500);
-                            </script>
-                          </biscaytik:HideWhenBlank>
-                          <!--end SS mapa ejem-->
-                          <!--end SS dirección con microdatos-->
-                          <div class="row">
-                            <biscaytik:HideWhenBlank ID="HideWhenBlank3" runat="server" FieldNameToCheck="TurismoPhone">
+                                marker.bindPopup("<b><asp:Literal text='<%$Resources:Turismo2013.Layouts,mapaPopupTitulo%>' runat='server' /></b><br /><asp:Literal text='<%$Resources:Turismo2013.Layouts,mapaPopupTexto%>' runat='server' />").openPopup();
+
+                                setTimeout(function () {
+                                  map.invalidateSize();
+                                }, 500);
+                              </script>
+                            </biscaytik:HideWhenBlank>
+                            <!--end SS mapa ejem-->
+                            <!--end SS dirección con microdatos-->
+                            <div class="row">
                               <div class="col">
+                                <biscaytik:HideWhenBlank ID="HideWhenBlank3" runat="server"
+                                FieldNameToCheck="TurismoPhone">
                                 <dt class="sr-only">
                                   <span class="BKTT-Label">
-                                    <asp:Label text="Teléfono" runat="server" />
+                                    <asp:Literal text="<%$Resources:Turismo2013.Layouts,telefono%>" runat="server" />
                                   </span>
                                 </dt>
                                 <dd>
-                                  <span class="BKTT-Icon fa-light fa-mobile"></span>
+                                  <span class="BKTT-Icon fa-light fa-mobile me-2"></span>
                                   <SharePointWebControls:TextField ID="TextField2" FieldName="TurismoPhone"
                                     runat="server" />
                                 </dd>
-                              </div>
-                            </biscaytik:HideWhenBlank>
-                            <div class="col">
-                              <biscaytik:HideWhenBlank ID="HideWhenBlank4" runat="server" FieldNameToCheck="TurismoWeb">
-                                <dt class="sr-only">
-                                  <span class="BKTT-Label">
-                                    <asp:Label text="Web" runat="server" />
-                                  </span>
-                                </dt>
-                                <dd>
-                                  <span class="BKTT-Icon fa-light fa-browser"></span>
-                                  <span class="BKTT-Link">
-                                    <PublishingWebControls:RichLinkField ID="RichLinkField1" FieldName="TurismoWeb"
-                                      runat="server" />
-                                  </span>
-                                </dd>
-                              </biscaytik:HideWhenBlank>
-                              <biscaytik:HideWhenBlank ID="HideWhenBlank5" runat="server"
-                                FieldNameToCheck="TurismoMail">
-                                <dt class="sr-only">
-                                  <span class="BKTT-Label">
-                                    <asp:Label text="Email" runat="server" />
-                                  </span>
-                                </dt>
-                                <dd>
-                                  <span class="BKTT-Icon fa-light fa-envelope"></span>
-                                  <span class="BKTT-Link">
-                                    <SharePointWebControls:TextField ID="TextField3" FieldName="TurismoMail"
-                                      runat="server" />
-                                  </span>
-                                </dd>
-                              </biscaytik:HideWhenBlank>
-                            </div>
-                            <div class="col">
-                              <biscaytik:HideWhenBlank ID="HideWhenBlank6" runat="server"
+
+                                </biscaytik:HideWhenBlank>
+                                <biscaytik:HideWhenBlank ID="HideWhenBlank6" runat="server"
                                 FieldNameToCheck="TurismoFacebook">
                                 <dt class="sr-only">
                                   <span class="BKTT-Label">
-                                    <asp:Label text="Facebook: " runat="server" />
+                                    <asp:Literal text="<%$Resources:Turismo2013.Layouts,facebook%>" runat="server" />:
                                   </span>
                                 </dt>
                                 <dd>
-                                  <span class="BKTT-Icon fa-brands fa-facebook"></span>
+                                  <span class="BKTT-Icon fa-brands fa-facebook me-2"></span>
                                   <span class="BKTT-Link">
                                     <PublishingWebControls:RichLinkField ID="RichLinkField2" FieldName="TurismoFacebook"
+                                      runat="server" />
+                                  </span>
+                                </dd>
+                              </biscaytik:HideWhenBlank>
+                              </div>
+                              <div class="col">
+                              <biscaytik:HideWhenBlank ID="HideWhenBlank4" runat="server" FieldNameToCheck="TurismoWeb">
+                                <dt class="sr-only">
+                                  <span class="BKTT-Label">
+                                    <asp:Literal text="<%$Resources:Turismo2013.Layouts,web%>" runat="server" />
+                                  </span>
+                                </dt>
+                                <dd>
+                                  <span class="BKTT-Icon fa-light fa-browser me-2"></span>
+                                  <span class="BKTT-Link">
+                                    <PublishingWebControls:RichLinkField ID="RichLinkField1" FieldName="TurismoWeb"
                                       runat="server" />
                                   </span>
                                 </dd>
@@ -464,11 +464,11 @@
                                 FieldNameToCheck="TurismoTwitter">
                                 <dt class="sr-only">
                                   <span class="BKTT-Label">
-                                    <asp:Label text="Twitter:" runat="server" />
+                                    <asp:Literal text="<%$Resources:Turismo2013.Layouts,twitter%>" runat="server" />:
                                   </span>
                                 </dt>
                                 <dd>
-                                  <span class="BKTT-Icon fa-light fa-square-rss"></span>
+                                  <span class="BKTT-Icon fa-light fa-square-rss me-2"></span>
                                   <span class="BKTT-Link">
                                     <PublishingWebControls:RichLinkField ID="RichLinkField3" FieldName="TurismoTwitter"
                                       runat="server" />
@@ -476,48 +476,70 @@
                                 </dd>
                               </biscaytik:HideWhenBlank>
                             </div>
-                          </div>
-                        </dl>
-                        <div class="editmode">
-                          <PublishingWebControls:EditModePanel ID="EditModePanel2" runat="server">
-                            <asp:Label text="IDGaleria" runat="server" />
-                            <SharePointWebControls:TextField ID="TextField5" FieldName="TurismoGrupoGaleria"
-                              runat="server" />
-                            <asp:Label text="Coordenadas" runat="server" />
-                            <SharePointWebControls:TextField ID="TextField6" FieldName="TurismoCoordenadas"
-                              runat="server" />
-                            <asp:Label text="Servicios" runat="server" />
-                            <SharePointWebControls:MultipleLookupField ID="MultipleLookupField1"
-                              FieldName="ServiciosComer" runat="server">
-                            </SharePointWebControls:MultipleLookupField>
-                            <asp:Label text="miniatura" runat="server">
-                            </asp:Label>
-                          </PublishingWebControls:EditModePanel>
-                          <!-- end divider line -->
-                          <biscaytik:HideWhenBlank ID="HideWhenBlank11" runat="server"
-                            FieldNameToCheck="TurismoCoordenadas">
-                            <div class="mapzonelayout">
-                              <biscaytik:GMapSingleCoordinateWebPart id="StaticMap" runat="server"
-                                Municipality="Mundaka" __WebPartId="{7F294BEE-B080-4E86-B8F1-7E1C069CD5E6}"
-                                __MarkupType="vsattributemarkup" WebPart="true" Height="" Width="" ChromeType="None">
-                              </biscaytik:GMapSingleCoordinateWebPart>
+                            <div class="col">
+                              <biscaytik:HideWhenBlank ID="HideWhenBlank5" runat="server"
+                                FieldNameToCheck="TurismoMail">
+                                <dt class="sr-only">
+                                  <span class="BKTT-Label">
+                                    <asp:Literal text="<%$Resources:Turismo2013.Layouts,email%>" runat="server" />
+                                  </span>
+                                </dt>
+                                <dd>
+                                  <span class="BKTT-Icon fa-light fa-envelope me-2"></span>
+                                  <span class="BKTT-Link">
+                                    <SharePointWebControls:TextField ID="TextField3" FieldName="TurismoMail"
+                                      runat="server" />
+                                  </span>
+                                </dd>
+                              </biscaytik:HideWhenBlank>
+                              
+                              
                             </div>
-                          </biscaytik:HideWhenBlank>
-                        </div>
+                      </div>
+                      </dl>
+                      <div class="editmode">
+                        <PublishingWebControls:EditModePanel ID="EditModePanel2" runat="server">
+                          <asp:Literal text="<%$Resources:Turismo2013.Layouts,idGaleria%>" runat="server" />
+                          <SharePointWebControls:TextField ID="TextField5" FieldName="TurismoGrupoGaleria"
+                            runat="server" />
+                          <asp:Literal text="<%$Resources:Turismo2013.Layouts,coordenadas%>" runat="server" />
+                          <SharePointWebControls:TextField ID="TextField6" FieldName="TurismoCoordenadas"
+                            runat="server" />
+                          <asp:Literal text="<%$Resources:Turismo2013.Layouts,servicios%>" runat="server" />
+                          <SharePointWebControls:MultipleLookupField ID="MultipleLookupField1"
+                            FieldName="ServiciosComer" runat="server">
+                          </SharePointWebControls:MultipleLookupField>
+                          <asp:Literal text="<%$Resources:Turismo2013.Layouts,miniatura%>" runat="server" />
+                        </PublishingWebControls:EditModePanel>
+                        <!-- end divider line -->
+                        <biscaytik:HideWhenBlank ID="HideWhenBlank11" runat="server"
+                          FieldNameToCheck="TurismoCoordenadas">
+                          <div class="mapzonelayout">
+                            <biscaytik:GMapSingleCoordinateWebPart id="StaticMap" runat="server" Municipality="Mundaka"
+                              __WebPartId="{7F294BEE-B080-4E86-B8F1-7E1C069CD5E6}" __MarkupType="vsattributemarkup"
+                              WebPart="true" Height="" Width="" ChromeType="None">
+                            </biscaytik:GMapSingleCoordinateWebPart>
+                          </div>
+                        </biscaytik:HideWhenBlank>
+                      </div>
                       </section>
                     </div>
                     <aside class="BKTT-WebPartZone-H25--R col-lg-3">
-                      <div class="BKTT-EventoDetalleAside" itemprop="offers" itemscope=""
-                        itemtype="https://schema.org/Offer" role="region" aria-labelledby="destacado-heading">
-                        <h2 id="destacado-heading">Destacado</h2>
+                      <div class="BKTT-DetalleAside" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer"
+                        role="region" aria-labelledby="destacado-heading">
+                        <h2 id="destacado-heading">
+                          <asp:Literal text="<%$Resources:Turismo2013.Layouts,destacado%>" runat="server" />
+                        </h2>
                         <biscaytik:HideWhenBlank ID="HideWhenBlank18" runat="server" FieldNameToCheck="TextoDestacado">
                           <p>
                             <SharePoint:FieldValue ID="FieldValue18" runat="server" FieldName="TextoDestacado" />
                           </p>
                         </biscaytik:HideWhenBlank>
                         <biscaytik:HideWhenBlank ID="HideWhenBlank16" runat="server" FieldNameToCheck="GastoMedio">
-                          <div class="BKTT-EventoDetalleAside__price">
-                            <span>por persona</span>
+                          <div class="BKTT-DetalleAside__price">
+                            <span>
+                              <asp:Literal text="<%$Resources:Turismo2013.Layouts,porPersona%>" runat="server" />
+                            </span>
                             <meta itemprop="price" content="15">
                             <meta itemprop="priceCurrency" content="EUR">
                             <strong>
@@ -568,7 +590,7 @@
                       }
                     });
                     // 2. Limpieza universal de cualquier otro elemento con icono en toda la página
-                    var itemsConIcono = document.querySelectorAll('.BKTT-EventoDetalle__metaItem, .BKTT-Button, dl dd, .BKTT-Tags li');
+                    var itemsConIcono = document.querySelectorAll('.BKTT-Detalle__metaItem, .BKTT-Button, dl dd, .BKTT-Tags li');
                     itemsConIcono.forEach(function (elem) {
                       // Omitir los dd de enlace ya procesados arriba
                       if (elem.querySelector('.BKTT-Link')) return;
@@ -627,11 +649,11 @@
                       });
                       if (!textoSP && !tieneMapa && !hayContactosVisibles) {
                         secLoc.style.setProperty('display', 'none', 'important');
-                        var tabLoc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+                        var tabLoc = document.querySelector('.BKTT-Detalle__tabs a[href="#localizacion"]');
                         if (tabLoc && tabLoc.closest('li')) tabLoc.closest('li').style.setProperty('display', 'none', 'important');
                       } else {
                         secLoc.style.removeProperty('display');
-                        var tabLocVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+                        var tabLocVis = document.querySelector('.BKTT-Detalle__tabs a[href="#localizacion"]');
                         if (tabLocVis && tabLocVis.closest('li')) tabLocVis.closest('li').style.removeProperty('display');
                       }
                     }
@@ -644,23 +666,23 @@
                       var descMedia = clonDesc.querySelector('img, iframe, .cwp, .card') !== null;
                       if (!descTxt && !descMedia) {
                         secDesc.style.setProperty('display', 'none', 'important');
-                        var tabDesc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+                        var tabDesc = document.querySelector('.BKTT-Detalle__tabs a[href="#descripcion"]');
                         if (tabDesc && tabDesc.closest('li')) tabDesc.closest('li').style.setProperty('display', 'none', 'important');
                       } else {
 
                         secDesc.style.removeProperty('display');
-                        var tabDescVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+                        var tabDescVis = document.querySelector('.BKTT-Detalle__tabs a[href="#descripcion"]');
                         if (tabDescVis && tabDescVis.closest('li')) tabDescVis.closest('li').style.removeProperty('display');
 
                       }
                     }
                     // 6. Asignar pestaña activa
-                    var tabsVisibles = document.querySelectorAll('.BKTT-EventoDetalle__tabs li:not([style*="display: none"]) a');
-                    document.querySelectorAll('.BKTT-EventoDetalle__tabs a').forEach(function (a) { a.classList.remove('is-active'); });
+                    var tabsVisibles = document.querySelectorAll('.BKTT-Detalle__tabs li:not([style*="display: none"]) a');
+                    document.querySelectorAll('.BKTT-Detalle__tabs a').forEach(function (a) { a.classList.remove('is-active'); });
                     if (tabsVisibles.length > 0) {
                       tabsVisibles[0].classList.add('is-active');
                     } else {
-                      var nav = document.querySelector('.BKTT-EventoDetalle__tabsWrapper');
+                      var nav = document.querySelector('.BKTT-Detalle__tabsWrapper');
                       if (nav) nav.style.setProperty('display', 'none', 'important');
                     }
                   }

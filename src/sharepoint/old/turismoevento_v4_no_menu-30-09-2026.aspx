@@ -63,35 +63,35 @@
              AllowHyperLinks="false" runat="server" />
            </figure>
           </biscaytik:HideWhenBlank>
-          <div class="BKTT-EventoDetalle__header container mt-5">
-           <div class="BKTT-EventoDetalle__heading">
-            <h1 class="BKTT-EventoDetalle__title" itemprop="name">
+          <div class="BKTT-Detalle__header container mt-5">
+           <div class="BKTT-Detalle__heading">
+            <h1 class="BKTT-Detalle__title" itemprop="name">
              <span class="BKTT-Icon fa-light fa-party-horn"></span>
              <SharePointWebControls:TextField ID="TextField1" runat="server" FieldName="Title" />
             </h1>
            </div>
-           <button class="BKTT-EventoDetalle__share" type="button" aria-label="Compartir evento"><span
+           <button class="BKTT-Detalle__share" type="button" aria-label="Compartir evento"><span
              class="BKTT-Icon fa-light fa-arrow-up-from-bracket" aria-hidden="true"></span></button>
           </div>
          </div>
         </div>
-        <div class="WPZT-DetCont--Default BKTT-EventoDetalle">
+        <div class="WPZT-DetCont--Default BKTT-Detalle">
          <div class="container">
           <div class="row g-4">
            <div class="BKTT-WebPartZone-H75--L col-lg-9">
-            <nav class="BKTT-EventoDetalle__tabsWrapper" aria-label="Contenido del evento">
-             <ul class="BKTT-EventoDetalle__tabs">
+            <nav class="BKTT-Detalle__tabsWrapper" aria-label="Contenido del evento">
+             <ul class="BKTT-Detalle__tabs">
               <li><a href="#descripcion" class="is-active">Descripción</a>
               </li>
               <li><a href="#localizacion">Localización</a></li>
               <li><a href="#relacionados">Relacionados</a></li>
              </ul>
             </nav>
-            <section id="descripcion" class="BKTT-EventoDetalle__section" itemprop="description" role="region"
+            <section id="descripcion" class="BKTT-Detalle__section" itemprop="description" role="region"
              aria-labelledby="descripcion-heading">
-             <dl class="BKTT-EventoDetalle__meta" aria-label="Información del evento">
+             <dl class="BKTT-Detalle__meta" aria-label="Información del evento">
               <biscaytik:HideWhenBlank ID="HideWhenBlank26" runat="server" FieldNameToCheck="TurismoEventStart">
-               <div class="BKTT-EventoDetalle__metaItem">
+               <div class="BKTT-Detalle__metaItem">
                 <dt class="sr-only">Fecha de inicio (y fin)</dt>
                 <dd>
                  <span class="BKTT-Icon fa-light fa-calendar"></span>
@@ -104,7 +104,7 @@
                </div>
               </biscaytik:HideWhenBlank>
               <biscaytik:HideWhenBlank ID="HideWhenBlank28" runat="server" FieldNameToCheck="HoraInicio">
-               <div class="BKTT-EventoDetalle__metaItem">
+               <div class="BKTT-Detalle__metaItem">
                 <dt class="sr-only">Hora de inicio (y fin)</dt>
                 <dd>
                  <span class="BKTT-Icon fa-light fa-clock"></span>
@@ -117,7 +117,7 @@
                </div>
               </biscaytik:HideWhenBlank>
               <biscaytik:HideWhenBlank ID="HideWhenBlank30" runat="server" FieldNameToCheck="Location">
-               <div class="BKTT-EventoDetalle__metaItem">
+               <div class="BKTT-Detalle__metaItem">
                 <dt class="sr-only">
                  <asp:Label text="<%$Resources:Turismo2013.Layouts,horario%>" runat="server" />
                 </dt>
@@ -142,7 +142,7 @@
                Height="" Width=""></biscaytik:GalleryContentPageWebPart>
              </biscaytik:HideWhenBlank>
             </section>
-            <section id="localizacion" class="BKTT-EventoDetalle__section" itemprop="location" itemscope
+            <section id="localizacion" class="BKTT-Detalle__section" itemprop="location" itemscope
              itemtype="https://schema.org/Place" role="region" aria-labelledby="localizacion-heading">
              <h2 id="localizacion-heading">Localización</h2>
              <dl>
@@ -233,7 +233,7 @@
             </section>
            </div>
            <aside class="BKTT-WebPartZone-H25--R col-lg-3">
-            <div class="BKTT-EventoDetalleAside" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer"
+            <div class="BKTT-DetalleAside" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer"
              role="region" aria-labelledby="destacado-heading">
              <h2 id="destacado-heading">Destacado</h2>
              <biscaytik:HideWhenBlank ID="HideWhenBlank18" runat="server" FieldNameToCheck="TextoDestacado">
@@ -373,7 +373,7 @@
          </div>
         </div>
         <!--add SS interesante
-        <section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
+        <section class="WPZB-HTML--FOOTER BKTT-DetalleInterest">
          <div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
           <div class="container">
            <h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte</h2>

@@ -68,16 +68,16 @@
                           AllowHyperLinks="false" runat="server" />
                       </figure>
                     </biscaytik:HideWhenBlank>
-                    <div class="BKTT-EventoDetalle__header container mt-5">
-                      <div class="BKTT-EventoDetalle__heading">
-                        <h1 class="BKTT-EventoDetalle__title" itemprop="name">
+                    <div class="BKTT-Detalle__header container mt-5">
+                      <div class="BKTT-Detalle__heading">
+                        <h1 class="BKTT-Detalle__title" itemprop="name">
                           <span class="BKTT-Icon fa-light fa-party-horn"></span>
                           <SharePointWebControls:TextField ID="TextField1" runat="server" FieldName="Title" />
                         </h1>
                       </div>
                       <!-- Botón de compartir -->
                       <div class="share-container">
-                        <button id="shareButton" class="BKTT-EventoDetalle__share" type="button"
+                        <button id="shareButton" class="BKTT-Detalle__share" type="button"
                           aria-label="Compartir evento"><span class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
                             aria-hidden="true"></span></button>
                         <div id="shareOptions" class="share-options" hidden>
@@ -200,23 +200,23 @@
                     </div>
                   </div>
                 </div>
-                <div class="WPZT-DetCont--Default BKTT-EventoDetalle">
+                <div class="WPZT-DetCont--Default BKTT-Detalle">
                   <div class="container">
                     <div class="row g-4">
                       <div class="BKTT-WebPartZone-H75--L col-lg-9">
-                        <nav class="BKTT-EventoDetalle__tabsWrapper" aria-label="Contenido del evento">
-                          <ul class="BKTT-EventoDetalle__tabs">
+                        <nav class="BKTT-Detalle__tabsWrapper" aria-label="Contenido del evento">
+                          <ul class="BKTT-Detalle__tabs">
                             <li><a href="#descripcion" class="is-active">Descripción</a>
                             </li>
                             <li><a href="#localizacion">Localización</a></li>
                           </ul>
                         </nav>
-                        <section id="descripcion" class="BKTT-EventoDetalle__section" itemprop="description"
+                        <section id="descripcion" class="BKTT-Detalle__section" itemprop="description"
                           role="region" aria-labelledby="descripcion-heading">
-                          <dl class="BKTT-EventoDetalle__meta" aria-label="Información del evento">
+                          <dl class="BKTT-Detalle__meta" aria-label="Información del evento">
                             <biscaytik:HideWhenBlank ID="HideWhenBlank26" runat="server"
                               FieldNameToCheck="TurismoEventStart">
-                              <div class="BKTT-EventoDetalle__metaItem">
+                              <div class="BKTT-Detalle__metaItem">
                                 <dt class="sr-only">Fecha de inicio (y fin)</dt>
                                 <dd>
                                   <span class="BKTT-Icon fa-light fa-calendar"></span>
@@ -236,7 +236,7 @@
                               </div>
                             </biscaytik:HideWhenBlank>
 
-                            <div class="BKTT-EventoDetalle__metaItem">
+                            <div class="BKTT-Detalle__metaItem">
                               <dt class="sr-only">Hora de inicio (y fin)</dt>
                               <dd>
                                 <span class="BKTT-Icon fa-light fa-clock"></span>
@@ -259,7 +259,7 @@
                             </div>
                             </biscaytik:HideWhenBlank>
                             <biscaytik:HideWhenBlank ID="HideWhenBlank30" runat="server" FieldNameToCheck="Location">
-                              <div class="BKTT-EventoDetalle__metaItem">
+                              <div class="BKTT-Detalle__metaItem">
                                 <dt class="sr-only">
                                   <asp:Label text="<%$Resources:Turismo2013.Layouts,horario%>" runat="server" />
                                 </dt>
@@ -329,7 +329,7 @@
                               WebPart="true" Height="" Width=""></biscaytik:GalleryContentPageWebPart>
                           </biscaytik:HideWhenBlank>
                         </section>
-                        <section id="localizacion" class="BKTT-EventoDetalle__section" itemprop="location" itemscope
+                        <section id="localizacion" class="BKTT-Detalle__section" itemprop="location" itemscope
                           itemtype="https://schema.org/Place" role="region" aria-labelledby="localizacion-heading">
                           <h2 id="localizacion-heading">Localización</h2>
                           <dl>
@@ -426,7 +426,7 @@
                         </section>
                       </div>
                       <aside class="BKTT-WebPartZone-H25--R col-lg-3">
-                        <div class="BKTT-EventoDetalleAside" itemprop="offers" itemscope=""
+                        <div class="BKTT-DetalleAside" itemprop="offers" itemscope=""
                           itemtype="https://schema.org/Offer" role="region" aria-labelledby="destacado-heading">
                           <h2 id="destacado-heading">Destacado</h2>
                           <biscaytik:HideWhenBlank ID="HideWhenBlank18" runat="server"
@@ -568,7 +568,7 @@
                   </div>
                 </div>
                 <!--add SS interesante
-        <section class="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
+        <section class="WPZB-HTML--FOOTER BKTT-DetalleInterest">
          <div class="BKTT-CardGrid" style="background-color: var(--secondary-color);">
           <div class="container">
            <h2 class="BKTT-CardGrid__sectionTitle BKTT-TitleBar">Podría interesarte</h2>
@@ -631,7 +631,7 @@
                       });
 
                       // 2. Limpieza universal de cualquier otro elemento con icono en toda la página
-                      var itemsConIcono = document.querySelectorAll('.BKTT-EventoDetalle__metaItem, .BKTT-Button, dl dd, .BKTT-Tags li');
+                      var itemsConIcono = document.querySelectorAll('.BKTT-Detalle__metaItem, .BKTT-Button, dl dd, .BKTT-Tags li');
                       itemsConIcono.forEach(function (elem) {
                         if (elem.querySelector('.BKTT-Link')) return;
 
@@ -693,11 +693,11 @@
 
                         if (!textoSP && !tieneMapa && !hayContactosVisibles) {
                           secLoc.style.setProperty('display', 'none', 'important');
-                          var tabLoc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+                          var tabLoc = document.querySelector('.BKTT-Detalle__tabs a[href="#localizacion"]');
                           if (tabLoc && tabLoc.closest('li')) tabLoc.closest('li').style.setProperty('display', 'none', 'important');
                         } else {
                           secLoc.style.removeProperty('display');
-                          var tabLocVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#localizacion"]');
+                          var tabLocVis = document.querySelector('.BKTT-Detalle__tabs a[href="#localizacion"]');
                           if (tabLocVis && tabLocVis.closest('li')) tabLocVis.closest('li').style.removeProperty('display');
                         }
                       }
@@ -711,22 +711,22 @@
                         var descMedia = clonDesc.querySelector('img, iframe, .cwp, .card') !== null;
                         if (!descTxt && !descMedia) {
                           secDesc.style.setProperty('display', 'none', 'important');
-                          var tabDesc = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+                          var tabDesc = document.querySelector('.BKTT-Detalle__tabs a[href="#descripcion"]');
                           if (tabDesc && tabDesc.closest('li')) tabDesc.closest('li').style.setProperty('display', 'none', 'important');
                         } else {
                           secDesc.style.removeProperty('display');
-                          var tabDescVis = document.querySelector('.BKTT-EventoDetalle__tabs a[href="#descripcion"]');
+                          var tabDescVis = document.querySelector('.BKTT-Detalle__tabs a[href="#descripcion"]');
                           if (tabDescVis && tabDescVis.closest('li')) tabDescVis.closest('li').style.removeProperty('display');
                         }
                       }
 
                       // 6. Asignar pestaña activa
-                      var tabsVisibles = document.querySelectorAll('.BKTT-EventoDetalle__tabs li:not([style*="display: none"]) a');
-                      document.querySelectorAll('.BKTT-EventoDetalle__tabs a').forEach(function (a) { a.classList.remove('is-active'); });
+                      var tabsVisibles = document.querySelectorAll('.BKTT-Detalle__tabs li:not([style*="display: none"]) a');
+                      document.querySelectorAll('.BKTT-Detalle__tabs a').forEach(function (a) { a.classList.remove('is-active'); });
                       if (tabsVisibles.length > 0) {
                         tabsVisibles[0].classList.add('is-active');
                       } else {
-                        var nav = document.querySelector('.BKTT-EventoDetalle__tabsWrapper');
+                        var nav = document.querySelector('.BKTT-Detalle__tabsWrapper');
                         if (nav) nav.style.setProperty('display', 'none', 'important');
                       }
                     }

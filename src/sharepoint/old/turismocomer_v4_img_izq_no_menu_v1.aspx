@@ -64,33 +64,33 @@
 												FieldName="PublishingRollupImage" AllowHyperLinks="false"
 												runat="server" />
 										</biscaytik:HideWhenBlank>
-										<div class="BKTT-EventoDetalle__header container mt-5">
-											<div class="BKTT-EventoDetalle__heading">
-												<h1 class="BKTT-EventoDetalle__title" itemprop="name">
+										<div class="BKTT-Detalle__header container mt-5">
+											<div class="BKTT-Detalle__heading">
+												<h1 class="BKTT-Detalle__title" itemprop="name">
 													<SharePointWebControls:TextField ID="TextField1" runat="server"
 														FieldName="Title" />
 											</div>
-											<button class="BKTT-EventoDetalle__share" type="button"
+											<button class="BKTT-Detalle__share" type="button"
 												aria-label="Compartir evento"><span
 													class="BKTT-Icon fa-light fa-arrow-up-from-bracket"
 													aria-hidden="true"></span></button>
 										</div>
 									</div>
 								</div>
-								<div class="WPZT-DetCont--Default BKTT-EventoDetalle">
+								<div class="WPZT-DetCont--Default BKTT-Detalle">
 									<div class="container">
 										<div class="row g-4">
 											<div class="BKTT-WebPartZone-H75--L col-lg-9">
-												<nav class="BKTT-EventoDetalle__tabsWrapper"
+												<nav class="BKTT-Detalle__tabsWrapper"
 													aria-label="Contenido del evento">
-													<ul class="BKTT-EventoDetalle__tabs">
+													<ul class="BKTT-Detalle__tabs">
 														<li><a href="#descripcion" class="is-active">Descripción</a>
 														</li>
 														<li><a href="#localizacion">Localización</a></li>
 														<li><a href="#eventos-similares">Eventos relacionados</a></li>
 													</ul>
 												</nav>
-												<section class="BKTT-EventoDetalle__section" itemprop="description">
+												<section class="BKTT-Detalle__section" itemprop="description">
 													<h2>Descripción</h2>
 													<asp:Label text="<%$Resources:Turismo2013.Layouts,descripcion%>"
 														runat="server" />

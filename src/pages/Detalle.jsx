@@ -19,7 +19,7 @@ import hotel3 from '../assets/themes/default/media/hotel3.jpg';
 import playa from '../assets/themes/default/media/playa.png';
 import titleDatepicker2 from '../assets/themes/default/title & datepicker (1).png';
 
-function EventoDetalle() {
+function Detalle() {
  const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
 
  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://example.com/detalle';
@@ -201,19 +201,19 @@ function EventoDetalle() {
        <img
         src={titleDatepicker2}
         alt="Plentzia SummerFest"
-        className="BKTT-EventoDetalleHero__image"
+        className="BKTT-DetalleHero__image"
        />
       </figure>
 
-      <div className="BKTT-EventoDetalle__header container mt-5">
-       <div className="BKTT-EventoDetalle__heading">
-        <h1 className="BKTT-EventoDetalle__title" itemProp="name">Plentzia SummerFest</h1>
+      <div className="BKTT-Detalle__header container mt-5">
+       <div className="BKTT-Detalle__heading">
+        <h1 className="BKTT-Detalle__title" itemProp="name">Plentzia SummerFest</h1>
        </div>
 
        <div className="share-container">
         <button
          id="shareButton"
-         className="BKTT-EventoDetalle__share"
+         className="BKTT-Detalle__share"
          type="button"
          aria-label="Compartir evento"
          aria-expanded={isShareMenuOpen}
@@ -247,7 +247,7 @@ function EventoDetalle() {
     </div>
    </div>
 
-   <div className="WPZT-DetCont--Default BKTT-EventoDetalle">
+   <div className="WPZT-DetCont--Default BKTT-Detalle">
     <div className="container">
 
      {/* CONTENIDO PRINCIPAL 75/25 */}
@@ -257,10 +257,10 @@ function EventoDetalle() {
       {/* COLUMNA IZQUIERDA 75 % */}
 
       <div className="BKTT-WebPartZone-H75--L col-lg-9">
-       <nav className="BKTT-EventoDetalle__tabsWrapper"
+       <nav className="BKTT-Detalle__tabsWrapper"
         aria-label="Contenido del evento"
        >
-        <ul className="BKTT-EventoDetalle__tabs">
+        <ul className="BKTT-Detalle__tabs">
          <li>
           <a href="#descripcion" className="is-active">Descripción</a>
          </li>
@@ -272,8 +272,8 @@ function EventoDetalle() {
          </li>
         </ul>
        </nav>
-       <dl className="BKTT-EventoDetalle__meta" aria-label="Información del evento">
-        <div className="BKTT-EventoDetalle__metaItem">
+       <dl className="BKTT-Detalle__meta" aria-label="Información del evento">
+        <div className="BKTT-Detalle__metaItem">
          <dt className="sr-only">Fechas</dt>
          <dd>
           <span className="BKTT-Icon fa-light fa-calendar" aria-hidden="true" />
@@ -282,14 +282,14 @@ function EventoDetalle() {
           <time dateTime="2026-06-24T23:59:59">24/06/2026</time>
          </dd>
         </div>
-        <div className="BKTT-EventoDetalle__metaItem">
+        <div className="BKTT-Detalle__metaItem">
          <dt className="sr-only">Horario</dt>
          <dd>
           <span className="BKTT-Icon fa-light fa-clock" aria-hidden="true" />
           <span>10:00 - 20:00</span>
          </dd>
         </div>
-        <div className="BKTT-EventoDetalle__metaItem">
+        <div className="BKTT-Detalle__metaItem">
          <dt className="sr-only">Ubicación</dt>
          <dd>
           <span className="BKTT-Icon fa-light fa-location-dot" aria-hidden="true" />
@@ -302,7 +302,7 @@ function EventoDetalle() {
         <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-music me-2"></span><span>Música</span></span></li>
         <li><span className="BKTT-Badge badge bg-light text-dark"><span className="BKTT-Icon fa-solid fa-water me-2"></span><span>Mar</span></span></li>
        </ul>
-       <section className="BKTT-EventoDetalle__section" itemprop="description" >
+       <section className="BKTT-Detalle__section" itemprop="description" >
         <h2>Descripción</h2>
         <h3>Acerca del evento</h3>
         <p itemprop="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -329,9 +329,9 @@ function EventoDetalle() {
          showThumbs
         />
        </section>
-       <section id="localizacion" className="BKTT-EventoDetalle__section" itemprop="location" itemscope itemtype="https://schema.org/Place">
+       <section id="localizacion" className="BKTT-Detalle__section" itemprop="location" itemscope itemtype="https://schema.org/Place">
         <h2>Localización</h2>
-        <address className="BKTT-EventoDetalle__address">
+        <address className="BKTT-Detalle__address">
          <strong>Plaza de la iglesia</strong>
          <br />
          C. Villa de Plentzia Kalea, 14
@@ -339,17 +339,17 @@ function EventoDetalle() {
          48980 Plentzia
         </address>
         <meta itemprop="address" content="Playa Plentzia, Plentzia, Vizcaya" />
-        <div id="map" className="BKTT-Map BKTT-EventoDetalle__map" itemprop="hasMap" itemtype="https://schema.org/Map" />
+        <div id="map" className="BKTT-Map BKTT-Detalle__map" itemprop="hasMap" itemtype="https://schema.org/Map" />
        </section>
       </div>
 
       {/* COLUMNA DERECHA 25 % */}
 
       <aside className="BKTT-WebPartZone-H25--R col-lg-3">
-       <div className="BKTT-EventoDetalleAside" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
+       <div className="BKTT-DetalleAside" itemprop="offers" itemscope="" itemtype="https://schema.org/Offer">
         <h2>Destacado</h2>
         <p>Este SummerFest pretende rendir homenaje a nuestros antepasados mostrando al público la evolución, sacrificio y trabajo de quienes durante siglos supieron hacer del caserío vasco una institución autosuficiente.</p>
-        <div className="BKTT-EventoDetalleAside__price">
+        <div className="BKTT-DetalleAside__price">
          <span>por persona</span>
          <meta itemprop="price" content="15" />
          <meta itemprop="priceCurrency" content="EUR" />
@@ -371,7 +371,7 @@ function EventoDetalle() {
        id="eventos-similares"
        className="BKTT-WebPartZone-fullWidth--MiddleContainer col-12"
       >
-       <section className="BKTT-EventoDetalle__similar">
+       <section className="BKTT-Detalle__similar">
         <h3>Eventos similares</h3>
         <CardContainer
          cards={eventosSimilares}
@@ -387,7 +387,7 @@ function EventoDetalle() {
         Bloque antes del footer
         ===================================================== */}
 
-   <section className="WPZB-HTML--FOOTER BKTT-EventoDetalleInterest">
+   <section className="WPZB-HTML--FOOTER BKTT-DetalleInterest">
     <div className="">
      <CardGrid
       cards={interesCards}
@@ -402,4 +402,4 @@ function EventoDetalle() {
  );
 }
 
-export default EventoDetalle;
+export default Detalle;

@@ -58,9 +58,9 @@
 				<biscaytik:HideWhenBlank ID="HideWhenBlank12" runat="server" FieldNameToCheck="TurismoGrupoGaleria">
 					<biscaytik:GalleryContentPageWebPart id="GalleriaContent" runat="server" __WebPartId="{C0A48ADF-4184-48DA-BF35-A2237A8C8565}" __MarkupType="vsattributemarkup" WebPart="true" Height="" Width=""></biscaytik:GalleryContentPageWebPart>
 				</biscaytik:HideWhenBlank>
-				<div class="BKTT-EventoDetalle__header container mt-5">
-					<div class="BKTT-EventoDetalle__heading">
-						<h1 class="BKTT-EventoDetalle__title" itemprop="name">
+				<div class="BKTT-Detalle__header container mt-5">
+					<div class="BKTT-Detalle__heading">
+						<h1 class="BKTT-Detalle__title" itemprop="name">
 							<span class="BKTT-Icon fa-light fa-plate-utensils"></span>
 							<SharePointWebControls:TextField ID="TextField1" runat="server"
 								FieldName="Title" />
@@ -68,7 +68,7 @@
 					</div>
 					<!-- Botón de compartir -->
 					<div class="share-container">
-						<button id="shareButton" class="BKTT-EventoDetalle__share" type="button" aria-label="Compartir evento"><span
+						<button id="shareButton" class="BKTT-Detalle__share" type="button" aria-label="Compartir evento"><span
 							class="BKTT-Icon fa-light fa-arrow-up-from-bracket" aria-hidden="true"></span></button>
 						<div id="shareOptions" class="share-options" hidden>
 							<a id="shareWhatsApp" target="_blank" rel="noopener noreferrer">
@@ -190,13 +190,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="WPZT-DetCont--Default BKTT-EventoDetalle">
+		<div class="WPZT-DetCont--Default BKTT-Detalle">
 			<div class="container">
 				<div class="row g-4">
 					<div class="BKTT-WebPartZone-H75--L col-lg-9">
-						<nav class="BKTT-EventoDetalle__tabsWrapper"
+						<nav class="BKTT-Detalle__tabsWrapper"
 							aria-label="Contenido del evento">
-							<ul class="BKTT-EventoDetalle__tabs">
+							<ul class="BKTT-Detalle__tabs">
 								<li><a href="#servicios" class="is-active"><asp:Literal text="<%$Resources:Turismo2013.Layouts,servicios%>" runat="server" /></a></li>
 								<li><a href="#descripcion"><asp:Literal text="<%$Resources:Turismo2013.Layouts,descripcion%>" runat="server" /></a></li>
 								<li><a href="#horarios"><asp:Literal text="<%$Resources:Turismo2013.Layouts,horarios%>" runat="server" /></a></li>
@@ -204,7 +204,7 @@
 							</ul>
 						</nav>
 						<section id="servicios" role="region" aria-labelledby="servicios-heading">
-							<div class="BKTT-EventoDetalle__metaItem">
+							<div class="BKTT-Detalle__metaItem">
 								<span class="BKTT-Icon fa-light fa-clock"></span>
 								<span class="BKTT-MetaValue">
 									<SharePoint:FieldValue ID="FVDistanciaRuta"
@@ -214,7 +214,7 @@
 								<span style="vertical-align:middle;"> Km</span>
 							</div>
 
-							<div class="BKTT-EventoDetalle__metaItem">
+							<div class="BKTT-Detalle__metaItem">
 								<span class="BKTT-Icon fa-light fa-clock"></span>
 								<span class="BKTT-MetaValue">
 									<SharePoint:FieldValue ID="FVIdiomaRuta"
@@ -223,7 +223,7 @@
 								</span>
 							</div>
 
-							<div class="BKTT-EventoDetalle__metaItem">
+							<div class="BKTT-Detalle__metaItem">
 								<span class="BKTT-Icon fa-light fa-clock"></span>
 								<span class="BKTT-MetaValue">
 									<SharePoint:FieldValue ID="FVDuracionRuta"
@@ -266,7 +266,7 @@
 								window.addEventListener("load", mostrarTextosServiciosRuta);
 							</script>
 						</section>
-						<section id="descripcion" class="BKTT-EventoDetalle__section" role="region"
+						<section id="descripcion" class="BKTT-Detalle__section" role="region"
 						itemprop="description" aria-labelledby="descripcion-heading">	
 							<biscaytik:HideWhenBlank ID="HideWhenBlank10" runat="server"
 								FieldNameToCheck="TurismoDescripcion">
@@ -406,7 +406,7 @@
 									FieldName="TurismoDescripcionRuta" runat="server" />
 							</p>
 						</section>	
-						<section id="itinerario" class="BKTT-EventoDetalle__section"
+						<section id="itinerario" class="BKTT-Detalle__section"
 							itemprop="location" itemscope itemtype="https://schema.org/Place"
 							role="region" aria-labelledby="itinerario-heading">
 							<h2 id="itinerario-heading"><asp:Literal text="<%$Resources:Turismo2013.Layouts,itinerario%>" runat="server" /></h2>
@@ -439,7 +439,7 @@
 						</script>
 					</div>
 					<aside class="BKTT-WebPartZone-H25--R col-lg-3">
-						<div class="BKTT-EventoDetalleAside" itemprop="offers" itemscope=""
+						<div class="BKTT-DetalleAside" itemprop="offers" itemscope=""
 							itemtype="https://schema.org/Offer" role="region"
 							aria-labelledby="destacado-heading">
 							<h2 id="destacado-heading"><asp:Literal text="<%$Resources:Turismo2013.Layouts,destacado%>" runat="server" /></h2>
@@ -510,7 +510,7 @@
 					
 							<biscaytik:HideWhenBlank ID="HideWhenBlank16" runat="server"
 								FieldNameToCheck="GastoMedio">
-								<div class="BKTT-EventoDetalleAside__price">
+								<div class="BKTT-DetalleAside__price">
 									<span><asp:Literal text="<%$Resources:Turismo2013.Layouts,porPersona%>" runat="server" /></span>
 									<meta itemprop="price" content="15">
 									<meta itemprop="priceCurrency" content="EUR">
@@ -543,7 +543,7 @@
 		(function () {
 			function limpiarLayoutRutas() {
 				// 1. Limpieza de items huérfanos con icono en #servicios
-				var metaItems = document.querySelectorAll('#servicios .BKTT-EventoDetalle__metaItem');
+				var metaItems = document.querySelectorAll('#servicios .BKTT-Detalle__metaItem');
 				metaItems.forEach(function (item) {
 					var metaVal = item.querySelector('.BKTT-MetaValue');
 					var textoVal = metaVal ? metaVal.textContent.replace(/[\s\u00A0]+/g, '').trim() : '';
@@ -553,7 +553,7 @@
 				});
 
 				// 2. Comprobar secciones y pestañas
-				var tabLinks = document.querySelectorAll('.BKTT-EventoDetalle__tabs a');
+				var tabLinks = document.querySelectorAll('.BKTT-Detalle__tabs a');
 				var firstVisible = null;
 
 				tabLinks.forEach(function (link) {
@@ -571,7 +571,7 @@
 					var tieneContenido = false;
 
 					if (targetId === '#servicios') {
-						var itemsVisibles = sec.querySelectorAll('.BKTT-EventoDetalle__metaItem:not([style*="display: none"])');
+						var itemsVisibles = sec.querySelectorAll('.BKTT-Detalle__metaItem:not([style*="display: none"])');
 						var tieneServicios = sec.querySelector('.BKTT-Tags img') !== null;
 						tieneContenido = itemsVisibles.length > 0 || tieneServicios;
 					} else if (targetId === '#horarios') {
@@ -607,7 +607,7 @@
 				if (firstVisible) {
 					firstVisible.classList.add('is-active');
 				} else {
-					var nav = document.querySelector('.BKTT-EventoDetalle__tabsWrapper');
+					var nav = document.querySelector('.BKTT-Detalle__tabsWrapper');
 					if (nav) nav.style.setProperty('display', 'none', 'important');
 				}
 			}
