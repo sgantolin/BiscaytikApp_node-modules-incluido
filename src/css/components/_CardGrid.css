@@ -77,21 +77,18 @@ h3.BKTT-CardGrid__title {
 }
 
 /*25 w*/
-.BKTT-WebPartZone-H25--L,
-.BKTT-WebPartZone-H25--R {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] {
   overflow: hidden;
   overflow-x: auto;
 }
 
-.BKTT-WebPartZone-H25--L ul,
-.BKTT-WebPartZone-H25--R ul {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] ul {
   gap: 8px !important;
   overflow-y: hidden;
   flex-wrap: nowrap !important;
 }
 
-.BKTT-WebPartZone-H25--L .BKTT-CardContainer__item,
-.BKTT-WebPartZone-H25--R .BKTT-CardContainer__item {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] .BKTT-CardContainer__item {
   max-width: 48%;
 }
 
@@ -281,6 +278,11 @@ h3.BKTT-CardGrid__title {
   align-items: center;
   margin-bottom: 0 !important;
 }
+.BKTT-CardContainer__card .BKTT-Tags {
+  gap: 4px !important;
+  margin-top: 4px;
+  margin-bottom:0;
+}
 
 .BKTT-CardContainer__card--horizontal .BKTT-progress__Container {
   margin-top: 0;
@@ -314,23 +316,19 @@ h3.BKTT-CardGrid__title {
   left: 30px;
 }
 
-.BKTT-WebPartZone-H25--L {
+/*.BKTT-WebPartZone-H25--L*/.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] {
   overflow-x: hidden;
 }
 
-/*.BKTT-WebPartZone-H25--L * {
-  width: 100%;
-}*/
-
-.BKTT-WebPartZone-H25--L .ms-webpart-zone {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] .ms-webpart-zone {
   display: block;
 }
 
-.BKTT-WebPartZone-H25--L .ms-webpart-zone .BKTT-CardContainer__item {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] .ms-webpart-zone .BKTT-CardContainer__item {
   max-width: 75%;
 }
 
-.BKTT-Main .BKTT-WebPartZone-H25--L .dfwp-column {
+.BKTT-Main div[class*="BKTT-WebPartZone-H25--"] .dfwp-column {
   padding-bottom: 8px;
   margin-bottom: 0;
 }

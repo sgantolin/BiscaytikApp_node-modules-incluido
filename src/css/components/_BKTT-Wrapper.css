@@ -25,7 +25,6 @@
   max-width: 1400px;
 }
 
-.BKTT-Block__button {}
 
 /* ─── Layouts: text-image / image-text / text-cards (replica Banner) ──────── */
 
@@ -385,22 +384,17 @@ h2.BKTT-Block__title {
   margin-right: 0 !important;
 }
 
-.BKTT-CardContainer__card .BKTT-Tags {
-  gap: 4px !important;
-  margin-top: 4px;
-}
-
 .BKTT-CardContainer__card .BKTT-Tags .BKTT-Icon {
   opacity: 0.5;
   max-height: 18px;
+  margin-right: 4px!important;
 }
 
 .BKTT-CardContainer__card .BKTT-Tags .BKTT-Badge .BKTT-Icon {
   opacity: 1;
 }
 
-.BKTT-WebPartZone-H25--L ul .BKTT-Tags,
-.BKTT-WebPartZone-H25--R ul .BKTT-Tags {
+[class*="BKTT-WebPartZone-H25--"] ul .BKTT-Tags{
   flex-wrap: wrap !important;
 }
 

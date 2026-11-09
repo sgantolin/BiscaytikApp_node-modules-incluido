@@ -1,0 +1,4 @@
+.env*
+*.key
+/config/secrets.*
+userData/
