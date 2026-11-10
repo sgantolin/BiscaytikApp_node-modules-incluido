@@ -199,12 +199,12 @@
     </head>
     <body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
     <div class="BKTT-cookies cookiesms" id="cookie1">
-	    <asp:Label ID="cookiesText" runat="server">PRUEBA COOKIES</asp:Label> <a id="linkCookies" href="/eu-ES/Orriak/Politicadecookies.aspx">
-		<asp:Label ID="cookiesLink" runat="server"> ENLACE </asp:Label></a>
+	    <asp:Label ID="cookiesText" runat="server"></asp:Label> <a id="linkCookies" href="/eu-ES/Orriak/Politicadecookies.aspx">
+		<asp:Label ID="cookiesLink" runat="server"></asp:Label></a>
 	    <button class="botonCookies" onclick="controlcookies()"> 
-		<asp:Label ID="cookiesBoton" runat="server">BOTON</asp:Label></button>
+		<asp:Label ID="cookiesBoton" runat="server"></asp:Label></button>
 	    <div  class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">
-			<asp:Label ID="cookiesHead" runat="server">COOKIES</asp:Label></div>
+			<asp:Label ID="cookiesHead" runat="server"></asp:Label></div>
     </div>
     <script type="text/javascript">
         if (localStorage.controlcookie > 0) {
@@ -277,7 +277,7 @@
                    <!--form-->
                    <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" BlockElement="true" CssClass="BKTT-Search " runat="server">
                     <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
-                     <label for="BKTTSearch" class="visually-hidden">Buscador web</label>
+                     <label for="BKTTSearch" class="visually-hidden"><asp:Literal text="<%$Resources:Turismo2013.Layouts,buscadorWeb%>" runat="server" /></label>
                     
 					<!-- Contenedor escritorio -->
 					<div class="input-group d-flex align-items-center">
@@ -507,6 +507,10 @@
 			".ms-wpadder-buttonArea",
 			".ms-wpadder-zoneArea",
 			
+			//Agregar o cancelar nuevo webpart
+			"#sourcedialog_okbutton",
+			"#sourcedialog_cancelbutton",
+			
 			// Slider
 			".BKTT-FigureSlider",
 			// Galería
@@ -516,11 +520,13 @@
 			//Colapsable del menú
 			".BKTT-Collapse",
 			//Compartir de los detalles
-			".BKTT-Detalle__share",
+			".BKTT-EventoDetalle__share",
 			//Boton menu navegacion moviles
 			"#menuMobile",
 			//Botón buscador movil
-			"#toggle-search"
+			"#toggle-search",
+			//Filtros de los listados
+			".BKTT-Filtros
 		];
 		$(document).on("click", "a, button, input[type='submit'], input[type='button']", function () {
 
@@ -582,10 +588,10 @@
 			<div class="">
 				<div class="modal-body text-center">
 					<div class="spinner-border text-primary" role="status">
-						<span class="visually-hidden">Cargando...</span>
+						<span class="visually-hidden"><asp:Literal text="<%$Resources:Turismo2013.Layouts,cargando%>" runat="server" /></span>
 					</div>
-					<strong class="d-block mt-3">Cargando...</strong>
-					<h3 class="mt-3 BKTT-CSecondary">Enseguida estamos</h3>
+					<strong class="d-block mt-3"><asp:Literal text="<%$Resources:Turismo2013.Layouts,cargando%>" runat="server" /></strong>
+					<h3 class="mt-3 BKTT-CSecondary"><asp:Literal text="<%$Resources:Turismo2013.Layouts,enseguidaEstamos%>" runat="server" /></h3>
 				</div>
 			</div>
 		</div>

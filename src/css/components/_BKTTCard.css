@@ -29,7 +29,7 @@
 /* === CARD === */
 .BKTT-CardContainer__card.card {
  width: 100%;
- border-radius: var(--theme-border-radius)!important;
+ border-radius: var(--theme-border-radius) !important;
  overflow: hidden;
  border: 0 !important;
 }
@@ -68,12 +68,9 @@
  width: 100%;
  height: 100%;
  object-fit: cover;
- /* Comporta igual que background-size: cover */
  object-position: center;
- /*background-color: var(--border-color);*/
-  background:transparent;
+ background: transparent;
  display: block;
- /* Centra la imagen */
 }
 
 /* === MAIN === */
@@ -94,7 +91,7 @@
  -webkit-line-clamp: 2;
  overflow: hidden;
  text-overflow: ellipsis;
- margin-bottom: 1rem;
+ margin-bottom: 0.5rem;
 }
 
 .BKTT-Card__title * {
@@ -114,7 +111,7 @@
  flex: 1;
  display: flex;
  flex-direction: column;
- overflow: hidden;
+ /*overflow: hidden;*/
 }
 
 .BKTT-Card__Body p {
@@ -126,10 +123,9 @@
  text-overflow: ellipsis;
 }
 
-.BKTT-Card__Data {
+.BKTT-ThemeTurismo main .BKTT-Card__Data * {
  font-size: 0.8rem;
- gap:8px;
- display: flex;
+ gap: 8px;
 }
 
 .BKTT-Card__Data data {
@@ -145,8 +141,9 @@
 .BKTT-Card__Data .BKTT-Date {
  font-size: 0.9rem;
 }
-.BKTT-Card__Data .BKTT-Icon{
-    padding-left:1px;
+
+.BKTT-Card__Data .BKTT-Icon {
+ padding-left: 1px;
 }
 
 .BKTT-Date {
@@ -226,7 +223,6 @@
  background-color: var(--custom-white);
 }
 
-
 .BKTT-CardContainer__card.BKTT-CardContainer__card--horizontal {
  flex-direction: row;
  padding: 0.5rem;
@@ -273,13 +269,8 @@
 
 /* === RESPONSIVE === */
 @media (max-width: 991px) {
- 
-}
-
-@media (max-width: 768px) {
  .BKTT-CardContainer--scroll {
   max-height: none;
   overflow-y: visible;
  }
 }
-
