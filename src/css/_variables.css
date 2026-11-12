@@ -103,7 +103,8 @@
 
     /*Header & Footer colors*/
     --header-bg-color: var(--theme-white);
-    --footer-bg-color: var(--theme-beige);
+    --footer-bg-color: var(--theme-footer-bg-color);
+    --footer-text-color: var(--theme-footer-text-color);
 
     /*images*/
     --menu-image: var(--theme-menu-image);

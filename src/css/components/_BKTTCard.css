@@ -57,11 +57,13 @@
  top: 0.5rem;
  left: 0.5rem;
  z-index: 1;
- max-width: 20ch;
+ font-weight: 500;
+}
+.BKTT-Card__figure .BKTT-Badge > span{
+ max-width: 120px;
  overflow: hidden;
  text-overflow: ellipsis;
  white-space: nowrap;
- font-weight: 500;
 }
 
 .BKTT-Card__figure img {

@@ -6,7 +6,7 @@
     border-radius: 20px;
     transition: all 0.3s ease-out;
     text-decoration: none;
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family);
     font-size: 14px;
     white-space: normal;
     flex-direction: row;

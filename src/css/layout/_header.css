@@ -27,6 +27,7 @@
  width: fit-content;
  min-width: 180px;
  border: none;
+ background-color: transparent;
 }
 
 .BKTT-Search .input-group input {
@@ -41,15 +42,17 @@
  margin-left: 0;
  height: 37px;
  line-height: 35px;
+ font-style: italic;
+ font-family: var(--font-family);
 }
 
-.BKTT-Search .input-group input[value="Búsqueda..."] {
+/*.BKTT-Search .input-group input[value="Búsqueda..."] {
  font-family: var(--font-family-italic);
 }
 
 .BKTT-Search .input-group input::placeholder {
  font-style: italic;
-}
+}*/
 
 .BKTT-Search .input-group input:focus {
  border-radius: 20px !important;
@@ -78,7 +81,8 @@
 
 .BKTT-LangSelect {
  position: relative;
- display: block!important;
+ display: block !important;
+ margin-left: 8px;
 }
 
 .BKTT-Nav+.BKTT-LangSelect ul {
@@ -108,13 +112,29 @@
  display: none;
 }
 
+.BKTT-LangSelect:before {
+ border-left: 1px solid var(--primary-color);
+ content: "";
+ margin-right: 8px;
+}
+
 .BKTT-LangSelect .dropdown-toggle {
  min-width: fit-content;
  padding-right: 30px;
+ border-radius: 20px;
+ font-family: var(--font-family);
+ font-weight: 700;
+ font-size: 14px;
+}
+
+.BKTT-LangSelect .dropdown-toggle.show {
+ box-shadow: none;
+ border-color: var(--primary-color);
 }
 
 .BKTT-LangSelect .BKTT-Icon {
  margin-right: 8px !important;
+ margin-left: 0;
 }
 
 .BKTT-LangSelect .dropdown-toggle::after {
@@ -130,6 +150,8 @@
 
 .BKTT-LangSelect .dropdown-menu {
  right: 0;
+ background-color: var(--primary-color);
+ color: var(--custom-white);
 }
 
 .BKTT-LangSelect .dropdown-menu ul {
@@ -138,20 +160,18 @@
 }
 
 .BKTT-LangSelect .dropdown-menu li {
+ font-family: var(--font-family);
  list-style: none;
+ font-weight: bold;
 }
 
 .BKTT-LangSelect .dropdown-menu li a {
- color: var(--primary-color);
+ color: var(--custom-white);
  text-decoration: none;
+ font-weight: normal;
 }
 
 @media (max-width: 1255px) {
- /*.BKTT-Header .container .d-flex .BKTT-Logo {
-  margin: 0;
- }*/
-
-
  .BKTT-Nav .container-fluid .navbar-toggle {
   background: transparent;
  }
@@ -159,9 +179,10 @@
 
 
 @media (max-width: 991px) {
-    .BKTT-Logo {
-    max-width: 50% !important;
-}
+ .BKTT-Logo {
+  max-width: 50% !important;
+ }
+
  .BKTT-Header {
   min-height: fit-content;
  }
@@ -179,9 +200,11 @@
   padding: 2rem 1rem;
   background-color: var(--primary-color);
  }
-#header .justify-content-between{
-            height: 55px;
-        }
+
+ #header .justify-content-between {
+  height: 55px;
+ }
+
  .BKTT-Search--mobile:has(.BKTT-Button:hover) .container.show {
   display: block;
   position: absolute;
@@ -200,12 +223,14 @@
   background-color: transparent !important;
   border-color: transparent !important;
  }
-.BKTT-Nav .container-fluid{
-    padding: 0;
-}
+
+ .BKTT-Nav .container-fluid {
+  padding: 0;
+ }
+
  .BKTT-Nav .container-fluid .navbar-toggle {
   min-width: fit-content;
-  border:none;
+  border: none;
  }
 
  .BKTT-Search--mobile .BKTT-Button:hover,
@@ -266,6 +291,11 @@
 
  .BKTT-LangSelect {
   padding-right: 15px;
+ }
+
+ .BKTT-LangSelect::before {
+  border-left: none;
+  margin-right: 0;
  }
 
  .BKTT-LangSelect .BKTT-Icon {

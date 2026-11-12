@@ -54,10 +54,6 @@ body *:focus {
  line-height: 21px;
 }
 
-.BKTT-ThemeTurismo {
- margin-top: 56px;
-}
-
 .BKTT-ThemeTurismo h2 * {
  font-size: 2rem !important;
 }
@@ -101,13 +97,17 @@ body main .BKTT-Badge.bg-primary,
 .BKTT-Main .bg-primary {
  background-color: var(--primary-color) !important;
 }
+.BKTT-ThemeTurismo {
+ margin-top: 56px;
+ background-color: var(--custom-white);
+}
 
 #root,
-#s4-workspace,
-.BKTT-ThemeTurismo {
+#s4-workspace{
  overflow-x: clip;
  padding-bottom: 0 !important;
  height: 100vh !important;
+ background-color: transparent;
 }
 
 ::placeholder,
@@ -125,6 +125,12 @@ body main .BKTT-Badge.bg-primary,
  display: flex !important;
  align-items: center;
  width: fit-content !important;
+}
+
+.BKTT-Badge .BKTT-Icon {
+ max-height: 18px;
+ margin-right: 0 !important;
+ width: auto;
 }
 
 .BKTT-Main .BKTT-CSecondary {

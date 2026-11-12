@@ -18,13 +18,15 @@
     --theme-secondary-color: #2D2D31;
 
     --theme-black: #2D2D31;
-    --theme-grey__text:#71717A;
+    --theme-grey__text: #71717A;
     --theme-border-color: #ddd;
     --theme-grey__background: #f1f1f1;
+    --theme-footer-bg-color: var(--theme-black);
+    --theme-footer-text-color: var(--theme-white);
 
     --theme-menu-image: none;
- --theme-list-image: none;
+    --theme-list-image: none;
 
- --theme-border-radius: 5px;
-    
+    --theme-border-radius: 5px;
+
 }

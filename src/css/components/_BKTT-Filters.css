@@ -1,28 +1,43 @@
-.BKTT-Filters{
+/*.BKTT-Filters, */
+.BKTT-Filtros {
   margin-bottom: 1rem;
-  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.BKTT-Filters .card{
+
+.BKTT-Filtros .BKTT-Filters__chips {
+  gap: 8px;
+  display: flex;
+}
+
+/*.BKTT-Filters .card, 
+.BKTT-Filtros .card {
   border-radius: 0;
   border-right-color: var(--custom-white);
   border-left-color: var(--custom-white);
   border-top-color: var(--custom-white);
-}
-.BKTT-Filters .filtros-principales{
+}*/
+
+/*.BKTT-Filters .filtros-principales, 
+.BKTT-Filtros .filtros-principales {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+}*/
 
-.BKTT-Filters--vertical {
+/*.BKTT-Filters--vertical, 
+.BKTT-Filtros--vertical {
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
-}
+}*/
 
-.BKTT-Filters button {
+/*.BKTT-Filters button, .BKTT-Filters .BKTT-ChipBtn, .BKTT-Filtros button,*/
+.BKTT-Filtros .BKTT-ChipBtn {
   border: 1px solid var(--primary-color);
   background: var(--custom-white);
   color: var(--primary-color);
@@ -32,11 +47,10 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  /*min-width: auto;*/
 }
 
-.BKTT-Filters__filterBtn,
-.BKTT-Filters__order {
+/*.BKTT-Filters__filterBtn,
+.BKTT-Filters__order, *.BKTT-Filtros .BKTT-ChipBtn{
   border-color: transparent !important;
   color: var(--text-color) !important;
 }
@@ -91,79 +105,63 @@
   justify-content: flex-end;
   gap: 0.5rem;
   margin-top: 0.85rem;
-}
+}*/
 
-.BKTT-Filters__chips {
-  /*display: flex;
-  align-items: center;*/
-  gap: 8px;
-  /*flex-wrap: wrap;*/
-  /*flex: 1;*/
+/*.BKTT-Filtros button.BKTT-Filters__chips, */
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn {
   transition: all .2s ease;
+  border: 1px solid var(--primary-color);
+  background: var(--custom-white);
+  color: var(--primary-color);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.BKTT-Filters__chips.is-selected, .BKTT-Filters__chips[aria-pressed="true"] {
+/*.BKTT-Filtros button.BKTT-Filters__chips img*/
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn img {
+  margin-right: 0 !important;
+  opacity: 0.5;
+}
+
+/*.BKTT-Filtros button.BKTT-Filters__chips.is-selected,
+.BKTT-Filters__chips[aria-pressed="true"]*/
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn.is-selected {
   background: var(--primary-color);
   color: var(--custom-white);
 }
+
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn.is-selected::after {
+  font-family: "Font Awesome 6 Pro";
+  content: "\f00d";
+  margin-left: 12px;
+  font-size: 4px;
+  line-height: 1;
+  color: currentColor;
+}
+
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn.is-selected img {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn .BKTT-Label {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn.is-selected .BKTT-Label {
+  color: var(--custom-white);
+}
+
 @media (max-width: 991px) {
-  .BKTT-Filters{
+  .BKTT-Filters {
     flex-wrap: wrap !important;
     overflow-x: auto;
     flex-direction: row;
   }
 }
-/**/
-/*categorias*
-.BKTT-Filters {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	gap: 12px;
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-.BKTT-Filters input {
-	position: absolute;
-	opacity: 0;
-	pointer-events: none;
-}
-
-.BKTT-Filters label {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	padding: 12px 20px;
-	border-radius: 999px;
-	border: 2px solid #2f92ea;
-	background: var(--custom-white);
-	color: #1267b1;
-	font-weight: 600;
-	cursor: pointer;
-	transition: all .2s ease;
-}
-
-/* Hover *
-.BKTT-Filters label:hover {
-	background: #f4f9ff;
-}
-
-/* Estado seleccionado *
-.BKTT-Filters .BKTT-Filters__chips[aria-pressed="true"] {
-	background: var(--primary-color);
-	border-color: var(--primary-color);
-	color: var(--custom-white);
-}
-/* Focus accesible *
-.BKTT-Filters input:focus-visible+label {
-	outline: 3px solid #000;
-	outline-offset: 3px;
-}
-
-/* Cruz de deselección *
-.BKTT-close {
-	font-size: 18px;
-	line-height: 1;
-}*/
