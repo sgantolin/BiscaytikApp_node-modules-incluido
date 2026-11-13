@@ -59,7 +59,8 @@
  z-index: 1;
  font-weight: 500;
 }
-.BKTT-Card__figure .BKTT-Badge > span{
+
+.BKTT-Card__figure .BKTT-Badge>span {
  max-width: 120px;
  overflow: hidden;
  text-overflow: ellipsis;
@@ -94,6 +95,7 @@
  overflow: hidden;
  text-overflow: ellipsis;
  margin-bottom: 0.5rem;
+ min-height: 1.6rem;
 }
 
 .BKTT-Card__title * {
@@ -124,9 +126,11 @@
  overflow: hidden;
  text-overflow: ellipsis;
 }
-
+.BKTT-ThemeTurismo main .BKTT-Card__Data{
+ flex-direction:row!important;
+ width:100%;
+}
 .BKTT-ThemeTurismo main .BKTT-Card__Data * {
- font-size: 0.8rem;
  gap: 8px;
 }
 
@@ -267,6 +271,26 @@
 .BKTT-CardContainer--scroll {
  max-height: 835px;
  overflow-y: auto;
+}
+
+.BKTT-ThemeTurismo main .BKTT-Card__Data strong[itemprop="priceRange"],
+.BKTT-ThemeTurismo main .BKTT-Card__Data strong[itemprop="price"] {
+ font-size: 1rem;
+ text-transform: uppercase;
+}
+.BKTT-ThemeTurismo main .BKTT-Card__Data span[itemprop="address"] , .BKTT-ThemeTurismo main .BKTT-Card__Data span[itemprop="openingHours"],.BKTT-ThemeTurismo main .BKTT-Card__Data strong[itemprop="price"]{
+ width: fit-content;
+ line-height: 1rem;
+}
+
+.BKTT-ThemeTurismo main .BKTT-Card__Data span[itemprop="openingHours"] {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+
+.BKTT-ThemeTurismo main .BKTT-Card__Data span br {
+ display: none;
 }
 
 /* === RESPONSIVE === */

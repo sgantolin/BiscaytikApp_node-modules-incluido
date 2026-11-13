@@ -2114,7 +2114,7 @@
 			<div class="BKTT-Card__Data d-flex flex-column justify-content-between mb-2">
 			 <xsl:if test="$HasHour">
 			  <span itemprop="openingHours">
-			   <span class="BKTT-Icon fa-light fa-clock me-2">
+			   <span class="BKTT-Icon fa-light fa-clock">
 				<xsl:text>&#8203;</xsl:text>
 			   </span>
 			   <span class="BKTT-Label">

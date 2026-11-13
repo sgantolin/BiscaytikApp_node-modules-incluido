@@ -125,6 +125,7 @@
 .BKTT-Filtros .BKTT-Filters__chips .BKTT-ChipBtn img {
   margin-right: 0 !important;
   opacity: 0.5;
+  max-height: 18px;
 }
 
 /*.BKTT-Filtros button.BKTT-Filters__chips.is-selected,

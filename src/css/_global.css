@@ -97,13 +97,14 @@ body main .BKTT-Badge.bg-primary,
 .BKTT-Main .bg-primary {
  background-color: var(--primary-color) !important;
 }
+
 .BKTT-ThemeTurismo {
  margin-top: 56px;
  background-color: var(--custom-white);
 }
 
 #root,
-#s4-workspace{
+#s4-workspace {
  overflow-x: clip;
  padding-bottom: 0 !important;
  height: 100vh !important;
@@ -237,6 +238,7 @@ h3,
  transition: all 0.3s ease-in-out;
  min-width: auto;
  font-weight: 600;
+ font-family: var(--font-family);
 }
 
 .BKTT-Main .BKTT-Button span {
@@ -417,6 +419,8 @@ h3,
 .BKTT-Tags li {
  list-style: none;
  white-space: normal;
+ display: flex;
+ align-items: center;
 }
 
 .BKTT-Tags li img {
@@ -427,6 +431,7 @@ h3,
 .BKTT-Tags li span:before {
  color: var(--text-color__grey);
  font-weight: bold;
+ font-family: var(--font-family);
 }
 
 .BKTT-FigureImg {
@@ -438,9 +443,32 @@ h3,
  width: 100%;
  height: 100%;
  object-fit: cover;
+ object-position: center center;
 }
 
 /* Cabecera */
+.BKTT-Detalle .rounded-circle {
+ overflow: hidden;
+ margin-bottom: 0;
+}
+
+.BKTT-Detalle .rounded-circle,
+.BKTT-Detalle .rounded-circle .ms-rtestate-field {
+ width: 75px;
+ height: 75px;
+}
+
+.BKTT-Detalle .rounded-circle img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ object-position: center;
+}
+
+.BKTT-Lebel[itemprop="author"] {
+ font-style: italic;
+ font-family: var(--font-family);
+}
 
 .BKTT-Detalle__header,
 .BKTT-Detalle__header {
@@ -754,6 +782,7 @@ h3,
 
 .BKTT-Detalle .BKTT-Tags ul {
  width: 100%;
+ margin-bottom: 0;
 }
 
 .BKTT-Detalle .BKTT-Tags li {
@@ -767,7 +796,7 @@ h3,
  font-size: .85rem;
  transition: transform .2s;
  flex: 0 0 auto;
- max-width: 20% !important;
+ /*max-width: 20% !important;*/
  min-width: 100px;
 }
 
