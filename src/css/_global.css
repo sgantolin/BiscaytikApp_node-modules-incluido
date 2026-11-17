@@ -121,7 +121,7 @@ body main .BKTT-Badge.bg-primary,
 .BKTT-Badge,
 .forminputservicios li {
  padding: 4px 8px;
- background-color: var(--grey__background) !important;
+ /*background-color: var(--grey__background) !important;*/
  gap: 8px;
  display: flex !important;
  align-items: center;
@@ -174,8 +174,8 @@ body main .BKTT-Badge.bg-primary,
 h3,
 .h3 {
  font-size: 18px;
- line-height: 24px;
- font-weight: 600;
+ line-height: inherit;
+ /*font-weight: 600;*/
 }
 
 .BKTT-ThemeTurismo main p,
@@ -228,7 +228,7 @@ h3,
  align-items: center;
  justify-content: center;
  gap: 8px;
- width: 100%;
+ /*width: 100%;*/
  padding: 0.5rem 1rem;
  border: 0;
  border-radius: 0.2rem;
@@ -236,7 +236,7 @@ h3,
  color: var(--custom-white) !important;
  text-decoration: none;
  transition: all 0.3s ease-in-out;
- min-width: auto;
+ /*min-width: auto;*/
  font-weight: 600;
  font-family: var(--font-family);
 }
@@ -438,6 +438,10 @@ h3,
  height: 383px;
  overflow: hidden;
 }
+.BKTT-FigureImg > .ms-rtestate-field,
+.BKTT-FigureImg > .ms-rtestate-field > .ms-rtestate-field{
+    height: 100%;
+}
 
 .BKTT-FigureImg img {
  width: 100%;
@@ -516,8 +520,9 @@ h3,
  padding: 0.5rem 0.8rem 0.65rem;
  line-height: 1;
  text-decoration: none;
- font-weight: 500;
+ font-weight: 700;
  color: var(--text-color__grey);
+ font-family: var(--font-family);
 }
 
 .BKTT-Detalle__tabs a:hover,
@@ -576,27 +581,21 @@ h3,
 
 /* Tarjeta lateral */
 
-.BKTT-DetalleAside,
 .BKTT-DetalleAside {
  padding: 1.25rem;
- background: var(--grey__background);
+ background: var(--important-bg-color);
 }
 
-.BKTT-DetalleAside h2,
 .BKTT-DetalleAside h2 {
  font-size: 1rem;
  font-weight: 600;
 }
 
-.BKTT-DetalleAside h2 {
+.BKTT-DetalleAside h2 , .BKTT-DetalleAside .BKTT-DetalleAside__price strong {
  font-size: 1.5rem;
+ font-family: var(--font-family);
 }
 
-.BKTT-DetalleAside .BKTT-DetalleAside__price strong {
- font-size: 1.5rem;
-}
-
-.BKTT-DetalleAside__price,
 .BKTT-DetalleAside__price {
  display: flex;
  align-items: baseline;
@@ -605,7 +604,6 @@ h3,
  margin-bottom: 1rem;
 }
 
-.BKTT-DetalleAside__price span,
 .BKTT-DetalleAside__price span {
  font-size: 0.75rem;
  color: var(--text-color__grey);
@@ -791,7 +789,7 @@ h3,
  gap: .35rem;
  padding: 1rem .5rem;
  border-radius: 1rem;
- background: var(--lb-sand);
+ background: var(--important-bg-color);
  font-weight: 600;
  font-size: .85rem;
  transition: transform .2s;

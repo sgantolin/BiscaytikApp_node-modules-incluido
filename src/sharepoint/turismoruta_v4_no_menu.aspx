@@ -50,7 +50,7 @@
        <div id="maincontent" role="main" class="BKTT-Detalle" itemscope itemtype="https://schema.org/TouristTrip">
         <div class="row">
          <div class="BKTT-WebPartZone-fullWidth--TopContainer col-12">
-          <div class=" container">
+
            <div class="container">
             <nav class="BKTT-Breadcrumb__list BKTT-Breadcrumb">
              <biscaytik:ExtendedBreadcrumb2026 ShowCurrentPage="false" SiteCollectionWeb="false"

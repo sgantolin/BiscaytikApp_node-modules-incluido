@@ -115,23 +115,23 @@
 
 /* MASONRY */
 
-.BKTT-WebPartZone-H75--L .BKTT-Masonry {
+.BKTT-Detalle .BKTT-Masonry {
   column-count: 3;
   column-gap: 1rem;
 }
 
-.BKTT-WebPartZone-H75--L .BKTT-Masonry .masonry-item {
+.BKTT-Detalle .BKTT-Masonry .masonry-item {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
   break-inside: avoid;
 }
 
-.BKTT-WebPartZone-H75--L .BKTT-Masonry .masonry-item .card img {
+.BKTT-Detalle .BKTT-Masonry .masonry-item .card img {
   display: block;
 }
 
-.BKTT-WebPartZone-H75--L .BKTT-Masonry .masonry-item .card {
+.BKTT-Detalle .BKTT-Masonry .masonry-item .card {
   line-height: 0;
 }
 
@@ -145,7 +145,7 @@
     height: 54px;
   }*/
 
-  .BKTT-WebPartZone-H75--L .BKTT-Masonry {
+  .BKTT-Detalle .BKTT-Masonry {
     column-count: 2;
   }
 }

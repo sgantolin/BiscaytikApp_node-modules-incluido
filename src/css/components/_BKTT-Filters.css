@@ -139,7 +139,7 @@
   font-family: "Font Awesome 6 Pro";
   content: "\f00d";
   margin-left: 12px;
-  font-size: 4px;
+  /*font-size: 4px;*/
   line-height: 1;
   color: currentColor;
 }

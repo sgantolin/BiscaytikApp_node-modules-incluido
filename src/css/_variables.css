@@ -106,6 +106,8 @@
     --footer-bg-color: var(--theme-footer-bg-color);
     --footer-text-color: var(--theme-footer-text-color);
 
+    --important-bg-color: var(--theme-important-color);
+
     /*images*/
     --menu-image: var(--theme-menu-image);
     --list-image: var(--theme-list-image);
