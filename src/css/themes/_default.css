@@ -12,13 +12,6 @@
     font-style: italic;
 }
 
-/*@font-face {
- font-family: 'Poppins Bold';
- src: url('./../../assets/themes/default/fonts/Poppins/Poppins-Bold.ttf') format('woff2');
- font-weight: 600;
- font-style: normal;
-}*/
-
 :root {
     /*default font*/
     --theme-font-family: 'Poppins', sans-serif;
